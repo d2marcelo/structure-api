@@ -37,4 +37,19 @@ gulp.task('mocha', function() {
 
 })
 
+gulp.task('mocha-graphql', function() {
+
+  return gulp
+    .src([
+      './test/helpers/graphql-runner.js',
+      //'./test/unit/**/*.js',
+      './test/integration/nodes/*.js',
+    ], {read: false})
+    .pipe(mocha({reporter: 'spec'}))
+    .once('end', function () {
+      process.exit()
+    })
+
+})
+
 gulp.task('t',      ['mocha'])
