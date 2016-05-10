@@ -1,43 +1,122 @@
-import {
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString
-} from 'graphql'
-
 import {chalk, logger} from '../../lib/logger'
-import r from '../../lib/database/driver'
-
-let textTypeToGraphQLType = {
-  string: new GraphQLNonNull(GraphQLString)
-}
-
-function fieldArgsToGraphQLType(field) {
-
-  if(field.args) {
-    Object.keys(field.args).forEach( (argKey) => {
-
-      var arg = field.args[argKey]
-
-      if(arg.type) {
-        switch(arg.type) {
-          case 'string':
-            arg.type = textTypeToGraphQLType['string']
-            break
-        }
-      }
-
-      field.args[argKey] = arg
-    })
-
-  }
-
-}
+import ObjectMap       from '../../lib/utils/object/map'
+import ShortId         from '../../services/short-id'
+import thinky          from '../../lib/database/driver'
+import uuid            from '../../lib/utils/uuid'
 
 class RootNode {
 
-  constructor() {
+  constructor(options = {}) {
+    this.defaults = {
+      fields: {
+        foreignKey: 'id'
+      }
+    }
 
+    this.permissions = {
+      create:  ['admin'],
+      delete:  ['admin'],
+      read:    ['public'],
+      replace: ['admin'],
+      update:  ['admin'],
+    }
+
+    Object.assign(this, options)
+
+    /*
+    Map to Thinky Schema requirements
+    */
+    var schema = {}
+    if(this.schema) {
+      Object.keys(this.schema).forEach( (key) => {
+        switch(this.schema[key].type) {
+          case 'date':
+
+            schema[key] = Date
+
+            break
+
+          case 'object':
+
+            schema[key] = Object
+
+            break
+
+          case 'string':
+
+            schema[key] = String
+
+            break
+
+          default:
+            //console.error('what is o', o)
+        }
+      })
+    }
+
+    var name = this.entityName
+
+    if(name) {
+      name = name.replace('-', '_')
+
+      if(!thinky.models[name]) {
+        this.Model = thinky.createModel(name, schema, {init: false})
+      }
+
+      else {
+        this.Model = thinky.models[name]
+      }
+    }
+
+  }
+
+  create(req) {
+    var pkg = req.body
+
+    pkg.createdAt = thinky.r.now()
+    pkg.updatedAt  = thinky.r.now()
+    pkg.id  = uuid()
+    pkg.sid = new ShortId().issue(pkg.id)
+
+    return new Promise( async (resolve, reject) => {
+
+      var doc = await this.Model.save(pkg)
+
+      if(doc.id) {
+
+        if(pkg.__links && pkg.__links.length > 0) {
+
+          var links = []
+          pkg.__links.forEach( (link) => {
+            links.push(this.linkTo('belongsTo', doc.id, link))
+          })
+
+          return Promise
+            .all(links)
+            .then( () => {
+              resolve(doc)
+            })
+            .catch(reject)
+        }
+
+        else {
+          return resolve(doc)
+        }
+
+      }
+
+      else {
+        logger.error('Could not create', doc)
+        return reject(doc)
+      }
+
+    })
+  }
+
+  delete(req) {
+    var id = req.params.id
+
+    return Promise.resolve()
   }
 
   fields() {
@@ -47,41 +126,122 @@ class RootNode {
     }
   }
 
-  schema(Nodes) {
+  getById(req) {
+    var id = (typeof req == 'string') ? req : req.params.id
 
-    var mutationFields = {},
-        queryFields    = {}
+    // Short ID
+    if(id.length <= 10) {
 
-    Nodes.forEach( (Node) => {
-      var node = new Node()
+      return new Promise( (resolve, reject) => {
 
-      mutationFields = Object.assign({}, mutationFields, node.fields().mutation)
-      queryFields    = Object.assign({}, queryFields, node.fields().query)
-    })
+        thinky.r.db(process.env.RETHINK_DB_NAME).table(this.Model.getTableName()).filter({sid: id}).limit(1).run()
+          /*
+          This is so that it's possible to use thinky methods after getting
+          */
+          .then( async (res) => {
+            var res2 = await this.Model.get(res[0].id)
+            resolve(res2)
+          })
+          .catch(reject)
 
-    Object.keys(mutationFields).forEach( (fieldKey) => {
-      var field = mutationFields[fieldKey]
-      fieldArgsToGraphQLType(field)
-    })
-
-    Object.keys(queryFields).map( (fieldKey) => {
-      var field = queryFields[fieldKey]
-      fieldArgsToGraphQLType(field)
-    })
-
-    return new GraphQLSchema({
-      mutation: new GraphQLObjectType({
-        name: 'RootMutation',
-        description: 'Root Mutation of the Nodes',
-        fields: mutationFields
-      }),
-      query: new GraphQLObjectType({
-        name: 'RootQuery',
-        description: 'Root Query of the Nodes',
-        fields: queryFields
       })
+    }
+
+    // Long ID
+    else {
+      return this.Model.get(id)
+    }
+
+  }
+
+  /*
+  TODO: need more pagination logic
+  */
+  getAll(req) {
+    return thinky.r.db(process.env.RETHINK_DB_NAME).table(this.Model.getTableName()).orderBy(thinky.r.desc('updatedAt')).limit(10)
+  }
+
+  getRelations(type) {
+    var relations = []
+
+    Object.keys(this.relations).forEach( (relation) => {
+
+      if(relation == type) {
+        relations = this.relations[relation]
+      }
+
     })
 
+    return relations
+  }
+
+  linkTo(type, id, link) {
+
+    return new Promise( (resolve, reject) => {
+      var inserts = []
+      Object.keys(link).forEach( async (key) => {
+        var linkPkg = {}
+        linkPkg[`${this.linkName}Id`] = id // local key
+        linkPkg[key] = link[key]           // foreign key
+
+        switch(type) {
+          case 'belongsTo':
+            linkPkg.name = `${key.replace('Id', '')}_has_${this.linkName}`
+            linkPkg.type = 'belongsTo'
+
+            break
+        }
+
+        linkPkg.node = this.linkName
+
+        inserts.push(this.linkInsert(linkPkg))
+      })
+
+      Promise
+        .all(inserts)
+        .then(resolve)
+        .catch(reject)
+
+    })
+
+  }
+
+  linkInsert(pkg = {}) {
+
+    return thinky.r.db(process.env.RETHINK_DB_NAME).table('links').insert(pkg)
+
+  }
+
+  update(req) {
+    var id = req.params.id,
+        options = {},
+        pkg = req.body
+
+    options.conflict = options.conflict || 'update'
+
+    return new Promise( (resolve, reject) => {
+
+      this.getById(req).then( (doc) => {
+
+        /*
+        TODO: this is dangerous - should figure out a safer way
+        */
+        Object.assign(doc, pkg)
+
+        doc
+          .save()
+          /*.then((doc) => {console.error('updated doc', doc)})
+          .catch( (err) => {
+            console.error('Could not update doc', err)
+          })*/
+        resolve(doc)
+      })
+      .catch( (err) => {
+        logger.error('Error updating', err)
+        reject(err)
+      })
+
+    })
   }
 
 }

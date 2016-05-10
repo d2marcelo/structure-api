@@ -1,111 +1,86 @@
-import {
-  GraphQLBoolean,
-  GraphQLID,
-  GraphQLInputObjectType,
-  GraphQLList,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString
-} from 'graphql'
-
-import {
-  GraphQLEmailType,
-  GraphQLGenericObjectType,
-  GraphQLJSON,
-  GraphQLURLType
-} from '../types'
-
 import {chalk, logger} from '../../lib/logger'
-import r               from '../../lib/database/driver'
 import RootNode        from '../root'
-import {RootBucket}    from './schemas'
-import uuid            from '../../lib/utils/uuid'
 
 class BucketNode extends RootNode {
 
-  constructor() {
-    super()
+  constructor(options = {}) {
+    super(Object.assign({}, {
+      entityName: 'buckets',
+      linkName: 'bucket',
+      table: 'buckets',
 
-    this.mapping = {
-      fields: {
+      mapping: {
+        fields: {
 
-      }
-    }
-
-    this.table = 'buckets'
-  }
-
-  fields() {
-
-    return {
-      mutation: {
-        createBucket: {
-          args: {
-            data: {type: GraphQLGenericObjectType},
-            desc: {type: 'string'},
-            title: {type: 'string'},
-          },
-          description: 'Create a bucket',
-          type: RootBucket,
-          resolve: async (root, params, options) => {
-            var pkg = {
-              createdAt: r.now(),
-              desc: params.desc,
-              title: params.title,
-              id: uuid(),
-              updatedAt: r.now()
-            }
-
-            const bucket = await r.db(process.env.RETHINK_DB_NAME).table(this.table).insert(pkg, {
-              durability: 'hard',
-              returnChanges: true
-            })
-
-            if(!bucket) {
-              logger.error(`Bucket could not be created`, pkg)
-              return
-            }
-
-            return bucket.changes[0].new_val
-          }
         }
       },
-      query: {
-        bucket: {
-          args: {
-            id: {type: new GraphQLNonNull(GraphQLString)}
+      permissions: {
+        create:  ['admin'],
+        delete:  ['admin'],
+        read:    ['organization'],
+        replace: ['admin'],
+        update:  ['admin'],
+      },
+      relations: {
+        belongsTo: [
+          {
+            Node: 'Channel',
+            foreignKey: 'id',
+            localField: 'channel',
+            localKey: 'channelId'
           },
-          description: 'Get the bucket by ID',
-          type: RootBucket,
-          resolve: async (root, params, options) => {
-            const bucket = await r.db(process.env.RETHINK_DB_NAME).table(this.table).get(params.id)
-
-            if(!bucket) {
-              logger.error(`Bucket with id could not be found: ${params.id}`)
-              return
-            }
-
-            return bucket
+          {
+            Node: 'Organization',
+            foreignKey: 'id',
+            localField: 'organization',
+            localKey: 'organizationId'
           }
+        ]
+      },
+      schema: {
+        data: {
+          type: 'object'
         },
-        buckets: {
-          description: 'Get a list of buckets',
-          type: new GraphQLList(RootBucket),
-          resolve: async (root, params, options) => {
-            const buckets = await r.db(process.env.RETHINK_DB_NAME).table(this.table)
+        desc: {
+          type: 'string'
+        },
+        /*
+        Example of a query with some documents
 
-            if(!buckets) {
-              logger.error(`Could not get buckets`)
-              return
-            }
-
-            return buckets
+        query: [
+          {
+            id: 5
+          },
+          // Get one article by author with id 543; this would get their latest article
+          {
+            filter: {
+              authorId: 543
+            },
+            limit: 1
+          },
+          // Get up to 5 articles that are in the category "trending"
+          {
+            filter: {
+              category: 'trending'
+            },
+            limit: 5
+          },
+          // Get up to 10 documents that have "Kardashian" as the title
+          {
+            match: /$kardashian$/,
+            key: 'title',
+            limit: 10
           }
+        ]
+        */
+        query: {
+          type: 'array'
+        },
+        title: {
+          type: 'string'
         }
       }
-    }
-
+    }, options))
   }
 
 }

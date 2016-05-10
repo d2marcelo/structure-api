@@ -7,48 +7,56 @@ class PasswordService {
     this.options = options
   }
 
-  issue(s, cb) {
+  issue(s) {
 
-    if(typeof s != 'string') return cb({
-      message: 'Password must be a string',
-      resource: 'PasswordService'
-    })
+    return new Promise( (resolve, reject) => {
 
-    bcrypt.genSalt(
-      parseInt(this.options.genSalt) ||
-      parseInt(process.env.SALT_FACTOR) ||
-      10,
-    function PasswordService_genSaltCallback(err, salt) {
-      if(err) {
-        logger.error('Could not generate salt', err)
-        return cb(err)
-      }
+      if(typeof s != 'string') return cb({
+        message: 'Password must be a string',
+        resource: 'PasswordService'
+      })
 
-      bcrypt.hash(s, salt, function PasswordService_hashCallback(err, hash) {
+      bcrypt.genSalt(
+        parseInt(this.options.genSalt) ||
+        parseInt(process.env.SALT_FACTOR) ||
+        10,
+      function PasswordService_genSaltCallback(err, salt) {
         if(err) {
-          logger.error('Could not generate hash', err)
-          return cb(err)
+          logger.error('Could not generate salt', err)
+          return reject(err)
         }
 
-        cb(null, hash)
+        bcrypt.hash(s, salt, function PasswordService_hashCallback(err, hash) {
+          if(err) {
+            logger.error('Could not generate hash', err)
+            return reject(err)
+          }
+
+          resolve(hash)
+        })
+
       })
 
     })
 
   }
 
-  verify(s, hash, cb) {
+  verify(s, hash) {
 
-    bcrypt.compare(s, hash, function PasswordService_compareCallback(err, match) {
+    return new Promise( (resolve, reject) => {
 
-      if(err) {
-        logger.error('Could not verify password', err)
-        logger.debug('Password', s)
-        logger.debug('Hash', hash)
-        return cb(err)
-      }
+      bcrypt.compare(s, hash, function PasswordService_compareCallback(err, match) {
 
-      return cb(null, true)
+        if(err) {
+          logger.error('Could not verify password', err)
+          logger.debug('Password', s)
+          logger.debug('Hash', hash)
+          return reject(err)
+        }
+
+        return resolve(true)
+
+      })
 
     })
 

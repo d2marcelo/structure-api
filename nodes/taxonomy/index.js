@@ -1,13 +1,13 @@
 import {chalk, logger} from '../../lib/logger'
 import RootNode        from '../root'
 
-class OrgNode extends RootNode {
+class TaxonomyNode extends RootNode {
 
   constructor(options = {}) {
     super(Object.assign({}, {
-      entityName: 'orgs',
-      linkName: 'org',
-      table: 'organizations',
+      entityName: 'taxonomies',
+      linkName: 'taxonomy',
+      table: 'taxonomies',
 
       mapping: {
         fields: {
@@ -22,28 +22,33 @@ class OrgNode extends RootNode {
         update:  ['admin'],
       },
       relations: {
+        belongsTo: [
+          {
+            Node: 'Organization',
+            foreignKey: 'id',
+            localField: 'organization',
+            localKey: 'organizationId'
+          },
+          {
+            Node: 'Taxonomy',
+            foreignKey: 'id',
+            localField: 'taxonomy',
+            localKey: 'taxonomyId'
+          },
+        ],
         hasMany: [
           {
-            Node: 'App',
+            Node: 'Taxonomy',
             foreignKey: 'id',
-            localField: 'apps',
-            localKey: 'appIds'
+            localField: 'taxonomys',
+            localKey: 'taxonomysId'
           },
-          {
-            Node: 'Bucket',
-            foreignKey: 'id',
-            localField: 'buckts',
-            localKey: 'bucketIds'
-          },
-          {
-            Node: 'User',
-            foreignKey: 'id',
-            localField: 'users',
-            localKey: 'userIds'
-          }
         ]
       },
       schema: {
+        data: {
+          type: 'object'
+        },
         desc: {
           type: 'string'
         },
@@ -56,4 +61,4 @@ class OrgNode extends RootNode {
 
 }
 
-export default OrgNode
+export default TaxonomyNode

@@ -12,8 +12,10 @@ var chalk                  = require('chalk'),
 gulp.task('lint', function () {
 
     return gulp.src([
-      'models/**/*.js',
+      'lib/**/*.js',
+      'nodes/**/*.js',
       'schemas/**/*.js',
+      'services/**/*.js',
       'test/**/*.js'
     ])
     .pipe(eslint())

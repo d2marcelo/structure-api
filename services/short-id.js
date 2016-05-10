@@ -7,11 +7,9 @@ class ShortIdService {
     this.options = options
   }
 
-  issue(id, cb) {
+  issue(id) {
 
     var sid = shorthash.unique(id)
-
-    if(cb) return cb(null, sid)
 
     return sid
 

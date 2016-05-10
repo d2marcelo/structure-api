@@ -1,106 +1,71 @@
-import {
-  GraphQLBoolean,
-  GraphQLID,
-  GraphQLInputObjectType,
-  GraphQLList,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString
-} from 'graphql'
-
 import {chalk, logger} from '../../lib/logger'
-import r               from '../../lib/database/driver'
 import RootNode        from '../root'
-import {RootUser}      from './schemas'
-import uuid            from '../../lib/utils/uuid'
+import PasswordService from '../../services/password'
+import thinky          from '../../lib/database/driver'
 
 class UserNode extends RootNode {
 
-  constructor() {
-    super()
+  constructor(options = {}) {
+    super(Object.assign({}, {
+      entityName: 'users',
+      linkName: 'user',
+      table: 'users',
 
-    this.mapping = {
-      fields: {
-        firstName: 'firstName',
-        lastName: 'lastName'
-      }
-    }
+      mapping: {
+        fields: {
 
-    this.table = 'users'
-  }
-
-  fields() {
-
-    return {
-      mutation: {
-        createUser: {
-          args: {
-            email: {type: 'string'},
-            firstName: {type: 'string'},
-            lastName: {type: 'string'},
-            username: {type: 'string'}
-          },
-          description: 'Create a user',
-          type: RootUser,
-          resolve: async (root, params, options) => {
-            var pkg = {
-              createdAt: r.now(),
-              email: params.email,
-              id: uuid(),
-              updatedAt: r.now(),
-              username: params.username
-            }
-
-            const user = await r.db(process.env.RETHINK_DB_NAME).table('users').insert(pkg, {
-              durability: 'hard',
-              returnChanges: true
-            })
-
-            if(!user) {
-              logger.error(`User could not be created`, pkg)
-              return
-            }
-
-            return user.changes[0].new_val
-          }
         }
       },
-      query: {
-        user: {
-          args: {
-            id: {type: new GraphQLNonNull(GraphQLString)}
-          },
-          description: 'Get the user by ID',
-          type: RootUser,
-          resolve: async (root, params, options) => {
-            const user = await r.db(process.env.RETHINK_DB_NAME).table(this.table).get(params.id)
-
-            if(!user) {
-              logger.error(`User with id could not be found: ${params.id}`)
-              return
-            }
-
-            return user
+      permissions: {
+        create:  ['admin'],
+        delete:  ['admin'],
+        read:    ['organization'],
+        replace: ['admin'],
+        update:  ['self', 'admin'],
+      },
+      relations: {
+        belongsTo: [
+          {
+            Node: 'Organization',
+            foreignKey: 'id',
+            localField: 'organization',
+            localKey: 'organizationId'
           }
+        ]
+      },
+      schema: {
+        email: {
+          type: 'string'
         },
-        users: {
-          description: 'Get the users',
-          type: new GraphQLList(RootUser),
-          resolve: async (root, params, options) => {
-            const users = await r.db(process.env.RETHINK_DB_NAME).table(this.table)
-
-            if(!users) {
-              logger.error(`Could not get users`)
-              return
-            }
-
-            return users
-          }
+        username: {
+          type: 'string'
         }
       }
-    }
+    }, options))
+  }
 
+  create(req) {
+    var id = req.params.id
+
+    return new Promise( async (resolve, reject) => {
+
+      pkg.hash = await new PasswordService().issue(pkg.password)
+      delete pkg.password
+
+      var doc = await RootNode.prototype.create.call(this, pkg)
+
+      resolve(doc)
+
+    })
+
+  }
+
+  getByEmail(email) {
+    return thinky.r.db(process.env.RETHINK_DB_NAME).table(this.Model.getTableName()).filter({email}).limit(1)
+  }
+
+  getByUsername(username) {
+    return thinky.r.db(process.env.RETHINK_DB_NAME).table(this.Model.getTableName()).filter({username}).limit(1)
   }
 
 }
