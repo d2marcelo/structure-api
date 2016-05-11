@@ -1,5 +1,6 @@
 bower_components
 coverage
+.DS_Store
 .grunt
 lib-cov
 .lock-wscript
