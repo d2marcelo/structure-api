@@ -118,6 +118,29 @@ class DocumentNode extends RootNode {
     })
   }
 
+  getAll() {
+    return new Promise( async (resolve, reject) => {
+
+      var docs = await RootNode.prototype.getAll.call(this),
+          docsResolved = []
+
+      docs.forEach( (doc) => {
+        docsResolved.push(this.getActiveRevision(doc).then( (revision) => {
+          return Object.assign(doc, {
+            fields: revision.fields,
+            title: revision.title
+          })
+        }))
+      })
+
+      Promise.all(docsResolved)
+        .then( (docs) => {
+          resolve(docs)
+        })
+
+    })
+  }
+
   getById(req) {
     var id = (typeof req == 'string') ? req : req.params.id
 
@@ -130,23 +153,7 @@ class DocumentNode extends RootNode {
         return reject(doc)
       }
 
-      /*
-      NOTE:
-      Revisions are created on save, not doc creation, which means they aren't guaranteed exist after initial creation unless app does both
-      */
-      if(doc.activeRevisionId) {
-        var revision = await this.getActiveRevision(doc.activeRevisionId)
-        if(!revision.id) {
-          logger.error('Could not get document revision', doc.id)
-          return reject(revision)
-        }
-      }
-
-      else {
-        var revision = {
-          fields: []
-        }
-      }
+      var revision = await this.getActiveRevision(doc)
 
       Object.assign(doc, {
         fields: revision.fields,
@@ -159,19 +166,32 @@ class DocumentNode extends RootNode {
 
   }
 
-  getActiveRevision(id) {
-    return new DocumentRevision().getById(id)
-    //return thinky.r.db(process.env.RETHINK_DB_NAME).table('document_revisions').get(id)
+  /*
+  NOTE:
+  Revisions are created on save, not doc creation, which means they aren't guaranteed exist after initial creation.
+  The create method has been recently modified to add a revision if the `fields` property is passed
+  */
+  getActiveRevision(doc) {
+
+    return new Promise( async (resolve, reject) => {
+
+      if(!doc.activeRevisionId) return resolve({
+        fields: [],
+        title: doc.title
+      })
+
+      var revision = await new DocumentRevision().getById(doc.activeRevisionId)
+
+      if(!revision.id) {
+        logger.error('Could not get document revision for', doc.id)
+        return reject(revision)
+      }
+
+      resolve(revision)
+
+    })
+
   }
-
-  /*resolveFieldHTML(id, body) {
-    var field = config.fields.filter( (field) => {
-      if(field.id == id) return field
-    })[0]
-
-    var html = require(`${field.moduleName}/src/templates/resolve.html`)
-    console.log('html', html)
-  }*/
 
 }
 

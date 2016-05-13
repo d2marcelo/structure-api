@@ -44,36 +44,42 @@ class TemplateNode extends RootNode {
     }, options))
   }
 
+  getAll() {
+    return new Promise( async (resolve, reject) => {
+
+      var docs = await RootNode.prototype.getAll.call(this),
+          docsResolved = []
+
+      docs.forEach( (doc) => {
+        docsResolved.push(this.getActiveRevision(doc).then( (revision) => {
+          return Object.assign(doc, {
+            fields: revision.fields,
+            title: revision.title
+          })
+        }))
+      })
+
+      Promise.all(docsResolved)
+        .then( (docs) => {
+          resolve(docs)
+        })
+
+    })
+  }
+
   getById(req) {
     var id = (typeof req == 'string') ? req : req.params.id
 
     return new Promise( async (resolve, reject) => {
 
-      var doc = await RootNode.prototype.getById.call(this, req)
+      var doc = await RootNode.prototype.getById.call(this, id)
 
       if(!doc.id) {
         logger.error('Could not get template', id)
         return reject(doc)
       }
 
-      /*
-      NOTE:
-      Revisions are created on save, not doc creation, which means they aren't guaranteed exist after initial creation unless app does both
-      */
-      if(doc.activeRevisionId) {
-        var revision = await this.getActiveRevision(doc.activeRevisionId)
-        if(!revision.id) {
-          logger.error('Could not get template revision', doc.id)
-          return reject(revision)
-        }
-      }
-
-      else {
-        var revision = {
-          fields: []
-        }
-      }
-
+      var revision = await this.getActiveRevision(doc)
 
       Object.assign(doc, {
         fields: revision.fields,
@@ -86,8 +92,26 @@ class TemplateNode extends RootNode {
 
   }
 
-  getActiveRevision(id) {
-    return new TemplateRevision().getById(id)
+  getActiveRevision(doc) {
+
+    return new Promise( async (resolve, reject) => {
+
+      if(!doc.activeRevisionId) return resolve({
+        fields: [],
+        title: doc.title
+      })
+
+      var revision = await new TemplateRevision().getById(doc.activeRevisionId)
+
+      if(!revision.id) {
+        logger.error('Could not get template revision for', doc.id)
+        return reject(revision)
+      }
+
+      resolve(revision)
+
+    })
+
   }
 
 }
