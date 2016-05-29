@@ -45,17 +45,22 @@ class UserNode extends RootNode {
   }
 
   create(req) {
-    var id = req.params.id
+    var pkg = req.body
 
     return new Promise( async (resolve, reject) => {
 
       pkg.hash = await new PasswordService().issue(pkg.password)
       delete pkg.password
 
-      var doc = await RootNode.prototype.create.call(this, pkg)
+      var doc = await RootNode.prototype.create.call(this, {body: pkg})
+
+      if(!doc.id) return reject(doc)
 
       resolve(doc)
 
+    })
+    .catch( (err) => {
+      console.error('hello???', err)
     })
 
   }

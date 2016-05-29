@@ -121,11 +121,11 @@ class DocumentRevisionNode extends RootNode {
 
     return new Promise( (resolve, reject) => {
 
-      if(!field.__links) {
+      if(!field.__refs) {
         return resolve(field)
       }
 
-      field.__links.forEach( (link) => {
+      field.__refs.forEach( (link) => {
         this.getFieldLink(link)
           .then( (res) => {
 
@@ -159,7 +159,7 @@ class DocumentRevisionNode extends RootNode {
 
             resolvedLinks++
 
-            if(field.__links.length == resolvedLinks) {
+            if(field.__refs.length == resolvedLinks) {
               resolve(field)
             }
           })

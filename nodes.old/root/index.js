@@ -80,35 +80,33 @@ class RootNode {
 
     return new Promise( async (resolve, reject) => {
 
-      var doc = await this.Model.save(pkg)
+      this.Model
+        .save(pkg)
+        .then( (doc) => {
+          logger.debug('Document created', doc)
+          if(pkg.__refs && pkg.__refs.length > 0) {
 
-      if(doc.id) {
-
-        if(pkg.__links && pkg.__links.length > 0) {
-
-          var links = []
-          pkg.__links.forEach( (link) => {
-            links.push(this.linkTo('belongsTo', doc.id, link))
-          })
-
-          return Promise
-            .all(links)
-            .then( () => {
-              resolve(doc)
+            var links = []
+            pkg.__refs.forEach( (link) => {
+              links.push(this.linkTo('belongsTo', doc.id, link))
             })
-            .catch(reject)
-        }
 
-        else {
-          return resolve(doc)
-        }
+            return Promise
+              .all(links)
+              .then( () => {
+                resolve(doc)
+              })
+              .catch(reject)
+          }
 
-      }
-
-      else {
-        logger.error('Could not create', doc)
-        return reject(doc)
-      }
+          else {
+            return resolve(doc)
+          }
+        })
+        .catch((err) => {
+          logger.error('Could not create', err)
+          return reject(err)
+        })
 
     })
   }

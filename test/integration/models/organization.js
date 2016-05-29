@@ -1,68 +1,79 @@
-import Organization            from '../../../models/organization'
-import {OrganizationGenerator} from 'structure-test-helpers'
+import {chalk, logger}   from '../../../lib/logger'
+import Organization      from '../../../models/organization'
+import test              from 'ava'
 
-describe('Integration: Models: Organization', function() {
+import {
+  OrganizationGenerator
+} from 'structure-test-helpers'
 
-  it('should create a organization', function(done) {
+test(`should create an organization`, async (t) => {
 
-    var organization = new Organization()
+  var model = new Organization()
+  var pkg   = new OrganizationGenerator()
 
-    var pkg = new OrganizationGenerator()
+  var res = await model.create(pkg)
 
-    organization.create(pkg, function(err, res) {
+  if(res.id && res.sid) {
+    t.pass()
+    return
+  }
 
-      expect(res).to.be.an('object')
+  t.fail()
 
-      done()
+})
 
-    })
+test(`should get an organization by ID`, async (t) => {
 
-  })
+  var model = new Organization()
+  var pkg   = new OrganizationGenerator()
 
-  it('should get by ID', function(done) {
+  var res = await model.create(pkg)
 
-    var organization = new Organization()
+  var res2 = await model.getById(res.id)
 
-    var pkg = new OrganizationGenerator()
+  if(res2.id) {
+    t.is(res.id, res2.id)
+    t.pass()
+    return
+  }
 
-    organization.create(pkg, function(err, res) {
+  t.fail()
 
-      organization.get(res.id, (err2, res2) => {
+})
 
-        expect(res).to.be.an('object')
-        expect(res.id).to.equal(res2.id)
+test(`should update an organization by ID`, async (t) => {
 
-        done()
+  var model = new Organization()
+  var pkg   = new OrganizationGenerator()
 
-      })
+  var res  = await model.create(pkg)
+  var res2 = await model.update(res.id, {foo: 'bar'})
+  var res3 = await model.getById(res.id)
 
-    })
+  if(res3.foo) {
+    t.is(res3.foo, 'bar')
+    t.pass()
+    return
+  }
 
-  })
+  t.fail()
 
-  it('should update by ID', function(done) {
+})
 
-    var organization = new Organization()
+test(`should get all organizations`, async (t) => {
 
-    var pkg = new OrganizationGenerator()
+  var model = new Organization()
+  var pkg   = new OrganizationGenerator()
 
-    organization.create(pkg, function(err, res) {
+  var res = await model.create(pkg)
 
-      var pkg2 = {
-        title: 'TT2'
-      }
+  var res2 = await model.getAll()
 
-      organization.update(res.id, pkg2, (err, res) => {
+  if(res2[0] && res2[0].id) {
+    t.pass()
+    return
+  }
 
-        expect(res).to.be.an('object')
-        expect(res.title).to.equal('TT2')
-
-        done()
-
-      })
-
-    })
-
-  })
+  t.fail()
 
 })

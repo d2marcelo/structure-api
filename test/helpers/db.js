@@ -1,55 +1,51 @@
-import Nodes             from './nodes'
-import thinky            from '../../lib/database/driver'
-var r = thinky.r
-
-var tests = {
-  links: {
-    Node: function() {
-      return {
-        entityName: 'links'
-      }
-    }
-  },
-}
-
-Nodes.forEach( (Node) => {
-  var node = new Node()
-
-  tests[node.linkName] = {
-    Node
-  }
+process.on('uncaughtException', function(err) {
+  console.error('Unhandled Exception')
+  console.error(err)
 })
 
-//console.log('Tables', Object.keys(tests))
+process.on('unhandledRejection', function(err) {
+  console.error('Unhandled Rejection')
+  console.error(err)
+})
 
-var count = 0,
-    len   = Object.keys(tests).length
+import config from '../../lib/database/config'
+import r      from '../../lib/database/driver'
 
-Object.keys(tests).forEach( async (key) => {
+var tableOperations = []
+
+config.tables.forEach( async (table) => {
+  try {
+    tableOperations.push(await r.tableDrop(table))
+    console.error(`Dropped table ${table}`)
+  }
+  catch(err) {
+    if(err.message.indexOf('does not exist') == -1) {
+      console.error(`Error dropping table ${table}`)
+      console.error(err)
+    }
+  }
 
   try {
-    var node = new tests[key].Node()
-    var res  = await r.db('test').tableDrop(node.entityName).run()
-    console.error('Dropped table', node.entityName)
+    tableOperations.push(await r.tableCreate(table))
+    console.error(`Created table ${table}`)
   }
-  catch(e) {
-    console.error(`Error dropping table ${key}`)
-  }
-
-  try {
-    var res2 = await r.db('test').tableCreate(node.entityName).run()
-    console.error('Created table', node.entityName)
-  }
-  catch(e) {
-    console.error(`Error creating table ${key}`)
+  catch(err) {
+    console.error(`Error creating table ${table}`)
+    console.error(err)
   }
 
-  count++
+})
 
-  if(count == len) {
+Promise
+  .all(tableOperations)
+  .then( () => {
+    // Let console messages pipe out before process exits
     setTimeout(function() {
       process.exit(0)
     }, 250)
-  }
-
-})
+  })
+  .catch( (err) => {
+    console.error('Database operation failed')
+    console.error(err)
+    process.exit(1)
+  })
