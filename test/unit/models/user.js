@@ -4,10 +4,9 @@ import Model from '../../../src/models/user'
 
 describe('User', function() {
 
-  it('should create a user',  async function(done) => {
+  it('should create a user', async function(done) {
 
-    var template = new User({
-      name: 'users'
+    var user = new User({
     })
 
     var res = await user.create({
@@ -19,4 +18,4 @@ describe('User', function() {
     done()
 
   })
-}
+})
