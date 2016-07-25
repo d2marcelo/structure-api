@@ -1,6 +1,6 @@
 var config = require('./config').default
 
-if(process.env.NODE_ENV == 'test') {
+if(process.env.TEST_TYPE == 'unit') {
   config = {
     port: 28016
   }

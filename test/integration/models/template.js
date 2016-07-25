@@ -12,7 +12,9 @@ describe('Template', function() {
       name: 'templates'
     })
 
-    // here
+    var res = await template.create({
+      title: 'Fun Template'
+    })
 
     expect(res.title).to.equal('Fun Template')
 
