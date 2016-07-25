@@ -1,19 +1,19 @@
 import {Schema, type} from 'eisley'
 import r              from '../../../src/lib/database/driver'
-import Model from '../../../src/models/user'
+import User           from '../../../src/models/user'
 
 describe('User', function() {
 
   it('should create a user', async function(done) {
 
-    var user = new User({
-    })
+    var user = new User()
 
     var res = await user.create({
-      title: 'Test User'
+      firstName: 'Ted',
+      password: 'foo88'
     })
 
-    expect(res.title).to.equal('Test User')
+    expect(res.firstName).to.equal('Ted')
 
     done()
 

@@ -42,23 +42,22 @@ class UserModel extends Model {
     }, options))
   }
 
-  create(req) {
-    var pkg = req.body
+  create(pkg = {}) {
 
     return new Promise( async (resolve, reject) => {
 
       pkg.hash = await new PasswordService().issue(pkg.password)
       delete pkg.password
 
-      var doc = await Model.prototype.create.call(this, {body: pkg})
+      try {
+        var doc = await Model.prototype.create.call(this, pkg)
 
-      if(!doc.id) return reject(doc)
+        resolve(doc)
+      }
+      catch(e) {
+        throw new Error(e)
+      }
 
-      resolve(doc)
-
-    })
-    .catch( (err) => {
-      console.error('hello???', err)
     })
 
   }
