@@ -3798,7 +3798,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\n\nclass UserModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'users',\n\n      mapping: {\n        fields: {\n\n        }\n      },\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['self', 'admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n        email: {\n          type: 'string'\n        },\n        username: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  create(req) {\n    var pkg = req.body\n\n    return new Promise( async (resolve, reject) => {\n\n      pkg.hash = await new PasswordService().issue(pkg.password)\n      delete pkg.password\n\n      var doc = await Model.prototype.create.call(this, {body: pkg})\n\n      if(!doc.id) return reject(doc)\n\n      resolve(doc)\n\n    })\n    .catch( (err) => {\n      console.error('hello???', err)\n    })\n\n  }\n\n  getByEmail(email) {\n    return r.db(process.env.RETHINK_DB_NAME).table(this.table).filter({email}).limit(1)\n  }\n\n  getByUsername(username) {\n    return new Promise( async (resolve, reject) => {\n      var user = await thinky.r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)\n\n      if(!user) return reject(user)\n\n      resolve(user[0])\n    })\n  }\n\n}\n\nexport default UserModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\n\n/**\n * UserModel Class\n *\n * @public\n * @class UserModel\n */\nclass UserModel extends Model {\n\n  /**\n   * UserModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'users',\n\n      mapping: {\n        fields: {\n\n        }\n      },\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['self', 'admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n        email: {\n          type: 'string'\n        },\n        username: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Create, or save, user data for the model\n   *\n   * @public\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  create(pkg = {}, options = {}) {\n\n    return new Promise( async (resolve, reject) => {\n\n      pkg.hash = await new PasswordService().issue(pkg.password)\n      delete pkg.password\n\n      try {\n        var doc = await Model.prototype.create.call(this, pkg, options)\n\n        resolve(doc)\n      }\n      catch(e) {\n        throw new Error(e)\n      }\n\n    })\n\n  }\n\n  /**\n   * Get user by email\n   *\n   * @public\n   * @param {String} email\n   */\n  getByEmail(email) {\n    return r.db(process.env.RETHINK_DB_NAME).table(this.table).filter({email}).limit(1)\n  }\n\n  /**\n   * Get user by username\n   *\n   * @public\n   * @param {String} username\n   */\n  getByUsername(username) {\n    return new Promise( async (resolve, reject) => {\n      var user = await thinky.r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)\n\n      if(!user) return reject(user)\n\n      resolve(user[0])\n    })\n  }\n\n}\n\nexport default UserModel\n"
   },
   {
     "__docId__": 180,
@@ -3808,13 +3808,18 @@
     "name": "UserModel",
     "memberof": "src/models/user/index.js",
     "longname": "src/models/user/index.js~UserModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/user/index.js",
     "importStyle": "UserModel",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "UserModel Class",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "UserModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
@@ -3828,19 +3833,25 @@
     "name": "constructor",
     "memberof": "src/models/user/index.js~UserModel",
     "longname": "src/models/user/index.js~UserModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "access": "public",
+    "description": "UserModel constructor",
+    "lineNumber": 26,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -3853,16 +3864,29 @@
     "name": "create",
     "memberof": "src/models/user/index.js~UserModel",
     "longname": "src/models/user/index.js~UserModel#create",
-    "access": null,
-    "description": null,
-    "lineNumber": 45,
-    "undocument": true,
+    "access": "public",
+    "description": "Create, or save, user data for the model",
+    "lineNumber": 70,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "Data to be saved"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "return": {
@@ -3880,16 +3904,19 @@
     "name": "getByEmail",
     "memberof": "src/models/user/index.js~UserModel",
     "longname": "src/models/user/index.js~UserModel#getByEmail",
-    "access": null,
-    "description": null,
-    "lineNumber": 66,
-    "undocument": true,
+    "access": "public",
+    "description": "Get user by email",
+    "lineNumber": 96,
     "params": [
       {
-        "name": "email",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "email",
+        "description": ""
       }
     ],
     "return": {
@@ -3907,16 +3934,19 @@
     "name": "getByUsername",
     "memberof": "src/models/user/index.js~UserModel",
     "longname": "src/models/user/index.js~UserModel#getByUsername",
-    "access": null,
-    "description": null,
-    "lineNumber": 70,
-    "undocument": true,
+    "access": "public",
+    "description": "Get user by username",
+    "lineNumber": 106,
     "params": [
       {
-        "name": "username",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "username",
+        "description": ""
       }
     ],
     "return": {

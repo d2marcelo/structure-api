@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/lib/utils/uuid.js"],"names":[],"mappings":";;;;;kBAEwB,Y;;AAFxB;;;;;;AAEe,SAAS,YAAT,GAAwB;AACrC,SAAO,mBAAK,EAAL,EAAP;AACD","file":"uuid.js","sourcesContent":["import uuid from 'node-uuid'\n\nexport default function generateUUID() {\n  return uuid.v4()\n}\n"]}

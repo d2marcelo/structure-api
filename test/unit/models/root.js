@@ -1,12 +1,13 @@
 import {Schema, type} from 'eisley'
 
-import Model from '../../../src/models/root'
+import RootModel from '../../../src/models/root'
 
+/** @test {RootModel} */
 describe('Root', function() {
 
   it('should initialize', function(done) {
 
-    var model = new Model({
+    var model = new RootModel({
       name: 'root',
       schema: new Schema({
         foo: type('string')
@@ -27,7 +28,7 @@ describe('Root', function() {
 
   it.skip('should validate successfully', function(done) {
 
-    var model = new Model({
+    var model = new RootModel({
       name: 'root',
       schema: new Schema({
         foo: type('string')
@@ -44,7 +45,7 @@ describe('Root', function() {
 
   it.skip('should validate unsuccessfully', function(done) {
 
-    var model = new Model({
+    var model = new RootModel({
       name: 'root',
       schema: new Schema({
         foo: type('string')

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/controllers/root.js"],"names":[],"mappings":";;;;;;;;;;;;IAAM,uB,GAEJ,mCAA0B;AAAA,MAAd,OAAc,yDAAJ,EAAI;AAAA;;AACxB,OAAK,OAAL,GAAe,OAAf;AACD,C;;kBAIY,uB","file":"root.js","sourcesContent":["class StructureRootController {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n}\n\nexport default StructureRootController\n"]}

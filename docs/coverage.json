@@ -1,7 +1,7 @@
 {
-  "coverage": "3.6%",
+  "coverage": "6.18%",
   "expectCount": 194,
-  "actualCount": 7,
+  "actualCount": 12,
   "files": {
     "src/models/application/index.js": {
       "expectCount": 2,
@@ -455,14 +455,8 @@
     },
     "src/models/user/index.js": {
       "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        6,
-        8,
-        45,
-        66,
-        70
-      ]
+      "actualCount": 5,
+      "undocumentLines": []
     },
     "src/services/user.js": {
       "expectCount": 8,
