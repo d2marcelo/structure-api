@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../lib/logger'
 import EventEmitter    from '../lib/eventemitter'
 import mixin           from '../lib/mixin'
@@ -5,11 +10,37 @@ import ShortId         from '../services/short-id'
 import r               from '../lib/database/driver'
 import uuid            from '../lib/utils/uuid'
 
+/**
+ * RootModel Class
+ *
+ * @public
+ * @class RootModel
+ */
 class RootModel {
 
+  /**
+   * RootModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
+
+    /**
+     * Default parameters
+     *
+     * @private
+     * @type {Object}
+     */
     this.defaults = {}
 
+    /**
+     * Default read/write permissions for model.
+     *
+     * @private
+     * @type {Object}
+     */
     this.permissions = {
       create:  ['admin'],
       delete:  ['admin'],
@@ -22,8 +53,21 @@ class RootModel {
     if(!this.name) {
       throw new Error('model.name must be defined')
     }
+
+    /**
+     * Name of the default table the model works with.
+     *
+     * @private
+     * @type {String}
+     */
     if(!this.table) this.table = this.name.replace(/\-/g, '_')
 
+    /**
+     * (optional) Table schema
+     *
+     * @private
+     * @type {Object}
+     */
     var schema = {}
     if(this.schema) {
 
@@ -31,6 +75,13 @@ class RootModel {
 
   }
 
+  /**
+   * Create, or save, data for the model
+   *
+   * @public
+   * @param {Object} pkg - Data to be saved
+   * @param {Object} options - Options
+   */
   create(pkg = {}, options = {}) {
 
     var insertOptions = {
@@ -83,10 +134,22 @@ class RootModel {
     })
   }
 
+  /**
+   * Delete by id
+   *
+   * @public
+   * @param {String} id
+   */
   delete(id) {
     return Promise.resolve()
   }
 
+  /**
+   * Get model by id
+   *
+   * @public
+   * @param {String} id
+   */
   getById(id) {
 
     // Short ID
@@ -114,13 +177,22 @@ class RootModel {
 
   }
 
-  /*
-  TODO: need more pagination logic
-  */
+  /**
+   * Get all from table
+   *
+   * @public
+   * @todo Add logic to limit, paginate, etc.
+   */
   getAll() {
     return r.table(this.table).orderBy(r.desc('updatedAt')).limit(10)
   }
 
+  /**
+   * Get model relationships
+   *
+   * @private
+   * @param {String} Relationship type
+   */
   getRelations(type) {
     var relations = []
 
@@ -135,6 +207,14 @@ class RootModel {
     return relations
   }
 
+  /**
+   * Create, or save, data for the model
+   *
+   * @private
+   * @param {String} Relationship type
+   * @param {String} id
+   * @param {Object} Reference object
+   */
   referenceTo(type, id, reference) {
 
     return new Promise( (resolve, reject) => {
@@ -167,10 +247,24 @@ class RootModel {
 
   }
 
+  /**
+   * Insert model reference to table 'refs'
+   *
+   * @private
+   * @param {Object} Reference to be saved
+   */
   insertReference(pkg = {}) {
     return r.table('refs').insert(pkg)
   }
 
+  /**
+   * Update a model
+   *
+   * @public
+   * @param {String} id
+   * @param {Object} pkg - Data to be saved
+   * @param {Object} options - Options
+   */
   update(id, pkg = {}, options = {}) {
 
     pkg.__version  = process.env.npm_package_version
@@ -195,6 +289,11 @@ class RootModel {
 
 }
 
+/**
+ * Mixin EventEmitter.prototype properties onto RootModel.prototype
+ *
+ * @ignore
+ */
 mixin(RootModel, EventEmitter)
 
 export default RootModel

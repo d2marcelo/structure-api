@@ -1,6 +1,6 @@
-import StructureRootController from '../root'
+import RootController from '../root'
 
-class StructureBucketsController extends StructureRootController {
+class BucketsController extends RootController {
 
   constructor(options = {}) {
     super(options)
@@ -8,4 +8,4 @@ class StructureBucketsController extends StructureRootController {
 
 }
 
-export default StructureBucketsController
+export default BucketsController

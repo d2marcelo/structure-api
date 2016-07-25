@@ -1,15 +1,15 @@
-import StructureRootController from '../root'
+import RootController from '../root'
 
-class StructureDigitalAssetsController extends StructureRootController {
+class DigitalAssetsController extends RootController {
 
   constructor(options = {}) {
     super(options)
   }
 
   view() {
-    
+
   }
 
 }
 
-export default StructureDigitalAssetsController
+export default DigitalAssetsController

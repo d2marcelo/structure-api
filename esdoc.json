@@ -4,17 +4,26 @@
   "index": "./src/manual/overview.md",
   "source": "./src",
   "destination": "./docs",
+
+  "manual": {
+    "overview": ["./src/manual/overview.md"],
+    "installation": ["./src/manual/installation.md"],
+    "usage": ["./src/manual/usage.md"],
+    "tutorial": ["./src/manual/tutorial.md"],
+    "configuration": ["./src/manual/configuration.md"],
+    "faq": ["./src/manual/faq.md"],
+    "development": ["./src/manual/development.md"],
+    "changelog": ["./CHANGELOG.md"]
+  },
+
   "plugins": [
     {
       "name": "esdoc-es7-plugin"
     }
   ],
 
-  "styles": ["./docs/public/css/style.css"],
-
   "test": {
     "type": "mocha",
-    "source": "./test/unit",
-    "includes": ["./test/unit/test_container.js"]
+    "source": "./test/unit"
   }
 }

@@ -1,6 +1,6 @@
-import StructureRootController from '../root'
+import RootController from '../root'
 
-class StructureTemplateRevisionsController extends StructureRootController {
+class TemplateRevisionsController extends RootController {
 
   constructor(options = {}) {
     super(options)
@@ -8,4 +8,4 @@ class StructureTemplateRevisionsController extends StructureRootController {
 
 }
 
-export default StructureTemplateRevisionsController
+export default TemplateRevisionsController

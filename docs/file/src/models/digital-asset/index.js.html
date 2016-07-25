@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/models/digital-asset/index.js | Structure Core API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="https://github.com/structurejs/core.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/root.js~RootController.html">RootController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/applications</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/applications/index.js~ApplicationController.html">ApplicationController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/auth/index.js~AuthController.html">AuthController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/buckets</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/buckets/index.js~BucketsController.html">BucketsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/digital-assets</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/digital-assets/index.js~DigitalAssetsController.html">DigitalAssetsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/document-revisions</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html">DocumentRevisionsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/documents</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/documents/index.js~DocumentsController.html">DocumentsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/fields</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/fields/index.js~FieldsController.html">FieldsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/organizations</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/organizations/index.js~OrganizationController.html">OrganizationController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/registry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/registry/index.js~RegistryController.html">RegistryController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/taxonomies</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/taxonomies/index.js~TaxonomiesController.html">TaxonomiesController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/template-revisions</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html">TemplateRevisionsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/templates</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/templates/index.js~TemplatesController.html">TemplatesController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/users</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/users/index.js~UserController.html">UserController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/eventemitter.js~EventEmitter.html">EventEmitter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/mapper.js~Mapper.html">Mapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-r">r</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">mixins</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/log.js~Log.html">Log</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/middleware.js~Middleware.html">Middleware</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/scrape.js~Scrape.html">Scrape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/stream-extras.js~StreamExtras.html">StreamExtras</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/root.js~RootModel.html">RootModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/application</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/application/index.js~AppModel.html">AppModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/auth/index.js~AuthModel.html">AuthModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/bucket</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/bucket/index.js~BucketModel.html">BucketModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/channel</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/channel/index.js~ChannelModel.html">ChannelModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/digital-asset</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/digital-asset/index.js~DigitalAssetModel.html">DigitalAssetModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/document</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/document/index.js~DocumentModel.html">DocumentModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/document-revision</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/document-revision/index.js~DocumentRevisionModel.html">DocumentRevisionModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/field</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/field/index.js~FieldModel.html">FieldModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/organization</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/organization/index.js~OrganizationModel.html">OrganizationModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/registry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/registry/index.js~RegistryModel.html">RegistryModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/revision</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/revision/index.js~RevisionModel.html">RevisionModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/taxonomy</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/taxonomy/index.js~TaxonomyModel.html">TaxonomyModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/template</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/template/index.js~TemplateModel.html">TemplateModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/template-revision</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/template-revision/index.js~TemplateRevisionModel.html">TemplateRevisionModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/user</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/user/index.js~UserModel.html">UserModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/server/dispatcher.js~Dispatcher.html">Dispatcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/server/router.js~Router.html">Router</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/app.js~AppService.html">AppService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/auth.js~AuthService.html">AuthService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html">OrganizationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/package.js~PackageService.html">PackageService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/password.js~PasswordService.html">PasswordService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/short-id.js~ShortIdService.html">ShortIdService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/template.js~TemplateService.html">TemplateService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/token.js~TokenService.html">TokenService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/user.js~UserService.html">UserService</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/models/digital-asset/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {chalk, logger} from &apos;../../lib/logger&apos;
+import fs              from &apos;fs&apos;
+import Model           from &apos;../root&apos;
+import request         from &apos;superagent&apos;
+import r               from &apos;../../lib/database/driver&apos;
+
+class DigitalAssetModel extends Model {
+
+  constructor(options = {}) {
+    super(Object.assign({}, {
+      name: &apos;digital-assets&apos;,
+
+      permissions: {
+        create:  [&apos;user&apos;],
+        delete:  [&apos;admin&apos;],
+        read:    [&apos;organization&apos;],
+        replace: [&apos;admin&apos;],
+        update:  [&apos;user&apos;],
+      },
+      relations: {
+        belongsTo: [
+          {
+            Node: &apos;Organization&apos;,
+            foreignKey: &apos;id&apos;,
+            localField: &apos;organization&apos;,
+            localKey: &apos;organizationId&apos;
+          }
+        ],
+        hasMany: [
+          {
+            Node: &apos;Taxonomy&apos;,
+            foreignKey: &apos;id&apos;,
+            localField: &apos;taxonomys&apos;,
+            localKey: &apos;taxonomysId&apos;
+          },
+        ]
+      },
+      schema: {
+        desc: {
+          type: &apos;string&apos;
+        },
+        title: {
+          type: &apos;string&apos;
+        }
+      }
+    }, options))
+  }
+
+  create(req) {
+    var pkg = req.body
+
+    return new Promise( (resolve, reject) =&gt; {
+
+      var createFilesPromises = []
+
+      pkg.files.forEach( (file) =&gt; {
+        var insert = {
+          diskFileName: file.diskFileName,
+          mimetype: file.mimetype,
+          originalFileName: file.originalFileName,
+          originalSize: file.size,
+          storageAdaptor: file.storageAdaptor
+        }
+
+        createFilesPromises.push(Model.prototype.create.call(this, {body: insert}))
+      })
+
+      Promise.all(createFilesPromises)
+        .then( (values) =&gt; {
+          //console.error(&apos;create values&apos;, values)
+          values = this.pkgAll(values)
+          resolve(values)
+        })
+        .catch( (err) =&gt; reject(err))
+
+    })
+
+  }
+
+  embedScript(type) {
+
+    switch(type) {
+
+      case &apos;imgur&apos;:
+        return `&lt;script async src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;`
+
+      case &apos;instagram&apos;:
+        return `&lt;script async defer src=\&quot;//platform.instagram.com/en_US/embeds.js\&quot;&gt;&lt;/script&gt;`
+
+      case &apos;pinterest&apos;:
+        return `&lt;script async defer src=&quot;//assets.pinterest.com/js/pinit.js&quot;&gt;&lt;/script&gt;`
+
+      case &apos;reddit&apos;:
+        return `&lt;script async src=\&quot;https://www.redditstatic.com/comment-embed.js\&quot;&gt;&lt;/script&gt;`
+
+      case &apos;twitter&apos;:
+        return `&lt;script async src=\&quot;//platform.twitter.com/widgets.js\&quot; charset=\&quot;utf-8\&quot;&gt;&lt;/script&gt;`
+
+      case &apos;tumblr&apos;:
+        return `&lt;script async src=\&quot;https://secure.assets.tumblr.com/post.js\&quot;&gt;&lt;/script&gt;`
+
+      default:
+        return &apos;&apos;
+
+    }
+
+  }
+
+  fetchEmbed(req) {
+    var type = req.params.type,
+        url  = &apos;&apos;
+
+    return new Promise( (resolve, reject) =&gt; {
+
+      switch(type) {
+
+        case &apos;aol&apos;:
+          url = `http://api.embed.ly/1/oembed?url=${req.params.url}`
+          break
+
+        case &apos;dailymotion&apos;:
+          url = `http://www.dailymotion.com/services/oembed?url=${req.params.url}`
+          break
+
+        case &apos;deviantart&apos;:
+          url = `http://backend.deviantart.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;flickr&apos;:
+          url = `http://www.flickr.com/services/oembed/?url=${req.params.url}`
+          break
+
+        case &apos;funnyordie&apos;:
+          url = `http://www.funnyordie.com/oembed.json?url=${req.params.url}`
+          break
+
+        case &apos;getty&apos;:
+          url = ` http://embed.gettyimages.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;gfycat&apos;:
+          url = `https://api.gfycat.com/v1/oembed?url=${req.params.url}`
+          break
+
+        case &apos;hulu&apos;:
+          url = `http://www.hulu.com/api/oembed.xml?url=${req.params.url}`
+          break
+
+        case &apos;ifttt&apos;:
+          url = `https://ifttt.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;imgur&apos;:
+          url = `http://api.imgur.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;instagram&apos;:
+          url = `https://api.instagram.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;kickstarter&apos;:
+          url = `http://www.kickstarter.com/services/oembed?url=${req.params.url}`
+          break
+
+        case &apos;meetup&apos;:
+          url = `https://api.meetup.com/oembed?format=json&amp;url=${req.params.url}`
+          break
+
+        case &apos;newyorktimes&apos;:
+          url = `https://www.nytimes.com/svc/oembed/html/?url=${req.params.url}`
+          break
+
+        case &apos;pinterest&apos;:
+          return resolve({
+            html: `&lt;a data-pin-do=&quot;embedPin&quot; data-pin-width=&quot;${(req.body.size || &apos;small&apos;)}&quot; href=&quot;${req.params.url}&quot;&gt;&lt;/a&gt;`,
+            pinSize: req.body.size || &apos;small&apos;,
+            script: this.embedScript(req.params.type)
+          })
+
+        case &apos;soundcloud&apos;:
+          url = `https://soundcloud.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;reddit&apos;:
+          url = `https://www.reddit.com/oembed?url=${req.params.url}`
+          break
+
+        case &apos;twitter&apos;:
+          url = `https://api.twitter.com/1/statuses/oembed.json?url=${req.params.url}`
+          break
+
+        case &apos;tumblr&apos;:
+          url = `http://www.tumblr.com/oembed/1.0?url=${req.params.url}`
+          break
+
+        case &apos;ustream&apos;:
+          url = `http://www.ustream.tv/oembed?url=${req.params.url}`
+          break
+
+        case &apos;vimeo&apos;:
+          url = `https://vimeo.com/api/oembed.json?url=${req.params.url}`
+          break
+
+        case &apos;vine&apos;:
+          url = `https://vine.co/oembed.json?url=${req.params.url}`
+          break
+
+        case &apos;youtube&apos;:
+          url = `https://www.youtube.com/oembed?url=${req.params.url}?v=${req.params.v}&amp;format=json`
+          break
+
+        default:
+          return Promise.reject()
+      }
+
+      request
+        .get(url)
+        .end( (err, res) =&gt; {
+
+          if(err) {
+            logger.error(&apos;There was an error fetching the embed&apos;)
+            console.error(err)
+            return reject(err)
+          }
+
+          return resolve(Object.assign(res.body, {
+            script: this.embedScript(type)
+          }))
+
+        })
+
+    })
+
+  }
+
+  getAll(req) {
+    return new Promise( (resolve, reject) =&gt; {
+
+      Model.prototype.getAll.call(this)
+        .then( (values) =&gt; {
+          values = this.pkgAll(values)
+
+          resolve(values)
+        })
+        .catch((err) =&gt; {
+          reject(err)
+        })
+
+    })
+  }
+
+  pkg(value) {
+
+    value.src = {
+      url: `http://${process.env.HOST}/api/v0.1/${this.entityName}/${value.sid}/view`
+    }
+
+    return value
+
+  }
+
+  pkgAll(values) {
+    values = values.map(this.pkg.bind(this))
+
+    return values
+  }
+
+  view(req, res) {
+
+    var id = req.params.id
+
+    /*
+    TODO:
+    This is the disk adapter - need to account for each adaptor
+    */
+    this.getById(id)
+      .then( (doc) =&gt; {
+        const filePath = `/tmp/uploads/${doc.diskFileName}`
+
+        res.sendFile(filePath)
+      })
+      .catch((err) =&gt; {
+        logger.error(&apos;Could not find asset&apos;, err)
+      })
+
+  }
+
+}
+
+export default DigitalAssetModel
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

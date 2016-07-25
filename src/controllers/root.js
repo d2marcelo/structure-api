@@ -1,4 +1,4 @@
-class StructureRootController {
+class RootController {
 
   constructor(options = {}) {
     this.options = options
@@ -6,4 +6,4 @@ class StructureRootController {
 
 }
 
-export default StructureRootController
+export default RootController

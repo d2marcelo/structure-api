@@ -1,0 +1,1975 @@
+{
+  "type": "Program",
+  "start": 0,
+  "end": 1561,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 51,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "start": 0,
+      "end": 72,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 72
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 7,
+          "end": 37,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 37
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 7,
+            "end": 37,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 7
+              },
+              "end": {
+                "line": 1,
+                "column": 37
+              }
+            },
+            "name": "StructureApplicationController"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 44,
+        "end": 72,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 44
+          },
+          "end": {
+            "line": 1,
+            "column": 72
+          }
+        },
+        "value": "./controllers/applications",
+        "rawValue": "./controllers/applications",
+        "raw": "'./controllers/applications'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 73,
+      "end": 139,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 66
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 80,
+          "end": 105,
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 7
+            },
+            "end": {
+              "line": 2,
+              "column": 32
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 80,
+            "end": 105,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 7
+              },
+              "end": {
+                "line": 2,
+                "column": 32
+              }
+            },
+            "name": "StructureApplicationModel"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 117,
+        "end": 139,
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 44
+          },
+          "end": {
+            "line": 2,
+            "column": 66
+          }
+        },
+        "value": "./models/application",
+        "rawValue": "./models/application",
+        "raw": "'./models/application'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 141,
+      "end": 206,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 65
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 148,
+          "end": 167,
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 7
+            },
+            "end": {
+              "line": 4,
+              "column": 26
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 148,
+            "end": 167,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 7
+              },
+              "end": {
+                "line": 4,
+                "column": 26
+              }
+            },
+            "name": "StructureDispatcher"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 185,
+        "end": 206,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 44
+          },
+          "end": {
+            "line": 4,
+            "column": 65
+          }
+        },
+        "value": "./server/dispatcher",
+        "rawValue": "./server/dispatcher",
+        "raw": "'./server/dispatcher'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 207,
+      "end": 265,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 58
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 214,
+          "end": 229,
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 7
+            },
+            "end": {
+              "line": 5,
+              "column": 22
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 214,
+            "end": 229,
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 7
+              },
+              "end": {
+                "line": 5,
+                "column": 22
+              }
+            },
+            "name": "StructureLogger"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 251,
+        "end": 265,
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 44
+          },
+          "end": {
+            "line": 5,
+            "column": 58
+          }
+        },
+        "value": "./lib/logger",
+        "rawValue": "./lib/logger",
+        "raw": "'./lib/logger'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 267,
+      "end": 340,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 73
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 274,
+          "end": 305,
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 7
+            },
+            "end": {
+              "line": 7,
+              "column": 38
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 274,
+            "end": 305,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 7
+              },
+              "end": {
+                "line": 7,
+                "column": 38
+              }
+            },
+            "name": "StructureOrganizationController"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 311,
+        "end": 340,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 44
+          },
+          "end": {
+            "line": 7,
+            "column": 73
+          }
+        },
+        "value": "./controllers/organizations",
+        "rawValue": "./controllers/organizations",
+        "raw": "'./controllers/organizations'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 341,
+      "end": 408,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 67
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 348,
+          "end": 374,
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 7
+            },
+            "end": {
+              "line": 8,
+              "column": 33
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 348,
+            "end": 374,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 7
+              },
+              "end": {
+                "line": 8,
+                "column": 33
+              }
+            },
+            "name": "StructureOrganizationModel"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 385,
+        "end": 408,
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 44
+          },
+          "end": {
+            "line": 8,
+            "column": 67
+          }
+        },
+        "value": "./models/organization",
+        "rawValue": "./models/organization",
+        "raw": "'./models/organization'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 410,
+      "end": 475,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 65
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 417,
+          "end": 441,
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 7
+            },
+            "end": {
+              "line": 10,
+              "column": 31
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 417,
+            "end": 441,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 7
+              },
+              "end": {
+                "line": 10,
+                "column": 31
+              }
+            },
+            "name": "StructurePasswordService"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 454,
+        "end": 475,
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 44
+          },
+          "end": {
+            "line": 10,
+            "column": 65
+          }
+        },
+        "value": "./services/password",
+        "rawValue": "./services/password",
+        "raw": "'./services/password'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 477,
+      "end": 537,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 60
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 484,
+          "end": 501,
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 7
+            },
+            "end": {
+              "line": 12,
+              "column": 24
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 484,
+            "end": 501,
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 7
+              },
+              "end": {
+                "line": 12,
+                "column": 24
+              }
+            },
+            "name": "StructureRegistry"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 521,
+        "end": 537,
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 44
+          },
+          "end": {
+            "line": 12,
+            "column": 60
+          }
+        },
+        "value": "./lib/registry",
+        "rawValue": "./lib/registry",
+        "raw": "'./lib/registry'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 539,
+      "end": 603,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 64
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 546,
+          "end": 569,
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 7
+            },
+            "end": {
+              "line": 14,
+              "column": 30
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 546,
+            "end": 569,
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 7
+              },
+              "end": {
+                "line": 14,
+                "column": 30
+              }
+            },
+            "name": "StructureRootController"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 583,
+        "end": 603,
+        "loc": {
+          "start": {
+            "line": 14,
+            "column": 44
+          },
+          "end": {
+            "line": 14,
+            "column": 64
+          }
+        },
+        "value": "./controllers/root",
+        "rawValue": "./controllers/root",
+        "raw": "'./controllers/root'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 604,
+      "end": 663,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 59
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 611,
+          "end": 629,
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 7
+            },
+            "end": {
+              "line": 15,
+              "column": 25
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 611,
+            "end": 629,
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 7
+              },
+              "end": {
+                "line": 15,
+                "column": 25
+              }
+            },
+            "name": "StructureRootModel"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 648,
+        "end": 663,
+        "loc": {
+          "start": {
+            "line": 15,
+            "column": 44
+          },
+          "end": {
+            "line": 15,
+            "column": 59
+          }
+        },
+        "value": "./models/root",
+        "rawValue": "./models/root",
+        "raw": "'./models/root'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 665,
+      "end": 726,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 61
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 672,
+          "end": 687,
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 7
+            },
+            "end": {
+              "line": 17,
+              "column": 22
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 672,
+            "end": 687,
+            "loc": {
+              "start": {
+                "line": 17,
+                "column": 7
+              },
+              "end": {
+                "line": 17,
+                "column": 22
+              }
+            },
+            "name": "StructureRouter"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 709,
+        "end": 726,
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 44
+          },
+          "end": {
+            "line": 17,
+            "column": 61
+          }
+        },
+        "value": "./server/router",
+        "rawValue": "./server/router",
+        "raw": "'./server/router'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 727,
+      "end": 781,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 54
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 734,
+          "end": 749,
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 7
+            },
+            "end": {
+              "line": 18,
+              "column": 22
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 734,
+            "end": 749,
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 7
+              },
+              "end": {
+                "line": 18,
+                "column": 22
+              }
+            },
+            "name": "StructureServer"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 771,
+        "end": 781,
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 44
+          },
+          "end": {
+            "line": 18,
+            "column": 54
+          }
+        },
+        "value": "./server",
+        "rawValue": "./server",
+        "raw": "'./server'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 782,
+      "end": 847,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 65
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 789,
+          "end": 812,
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 7
+            },
+            "end": {
+              "line": 19,
+              "column": 30
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 789,
+            "end": 812,
+            "loc": {
+              "start": {
+                "line": 19,
+                "column": 7
+              },
+              "end": {
+                "line": 19,
+                "column": 30
+              }
+            },
+            "name": "StructureShortIdService"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 826,
+        "end": 847,
+        "loc": {
+          "start": {
+            "line": 19,
+            "column": 44
+          },
+          "end": {
+            "line": 19,
+            "column": 65
+          }
+        },
+        "value": "./services/short-id",
+        "rawValue": "./services/short-id",
+        "raw": "'./services/short-id'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 848,
+      "end": 918,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 20,
+          "column": 70
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 855,
+          "end": 879,
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 7
+            },
+            "end": {
+              "line": 20,
+              "column": 31
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 855,
+            "end": 879,
+            "loc": {
+              "start": {
+                "line": 20,
+                "column": 7
+              },
+              "end": {
+                "line": 20,
+                "column": 31
+              }
+            },
+            "name": "StructureStorageAdaptors"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 892,
+        "end": 918,
+        "loc": {
+          "start": {
+            "line": 20,
+            "column": 44
+          },
+          "end": {
+            "line": 20,
+            "column": 70
+          }
+        },
+        "value": "./server/storageAdaptors",
+        "rawValue": "./server/storageAdaptors",
+        "raw": "'./server/storageAdaptors'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 919,
+      "end": 981,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
+          "column": 62
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 926,
+          "end": 947,
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 7
+            },
+            "end": {
+              "line": 21,
+              "column": 28
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 926,
+            "end": 947,
+            "loc": {
+              "start": {
+                "line": 21,
+                "column": 7
+              },
+              "end": {
+                "line": 21,
+                "column": 28
+              }
+            },
+            "name": "StructureTokenService"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 963,
+        "end": 981,
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 44
+          },
+          "end": {
+            "line": 21,
+            "column": 62
+          }
+        },
+        "value": "./services/token",
+        "rawValue": "./services/token",
+        "raw": "'./services/token'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 983,
+      "end": 1048,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 65
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 990,
+          "end": 1013,
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 7
+            },
+            "end": {
+              "line": 23,
+              "column": 30
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 990,
+            "end": 1013,
+            "loc": {
+              "start": {
+                "line": 23,
+                "column": 7
+              },
+              "end": {
+                "line": 23,
+                "column": 30
+              }
+            },
+            "name": "StructureUserController"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 1027,
+        "end": 1048,
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 44
+          },
+          "end": {
+            "line": 23,
+            "column": 65
+          }
+        },
+        "value": "./controllers/users",
+        "rawValue": "./controllers/users",
+        "raw": "'./controllers/users'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 1049,
+      "end": 1108,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 59
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 1056,
+          "end": 1074,
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 7
+            },
+            "end": {
+              "line": 24,
+              "column": 25
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1056,
+            "end": 1074,
+            "loc": {
+              "start": {
+                "line": 24,
+                "column": 7
+              },
+              "end": {
+                "line": 24,
+                "column": 25
+              }
+            },
+            "name": "StructureUserModel"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 1093,
+        "end": 1108,
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 44
+          },
+          "end": {
+            "line": 24,
+            "column": 59
+          }
+        },
+        "value": "./models/user",
+        "rawValue": "./models/user",
+        "raw": "'./models/user'"
+      }
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 1110,
+      "end": 1560,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 0
+        },
+        "end": {
+          "line": 50,
+          "column": 1
+        }
+      },
+      "declaration": null,
+      "specifiers": [
+        {
+          "type": "ExportSpecifier",
+          "start": 1121,
+          "end": 1151,
+          "loc": {
+            "start": {
+              "line": 27,
+              "column": 2
+            },
+            "end": {
+              "line": 27,
+              "column": 32
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1121,
+            "end": 1151,
+            "loc": {
+              "start": {
+                "line": 27,
+                "column": 2
+              },
+              "end": {
+                "line": 27,
+                "column": 32
+              }
+            },
+            "name": "StructureApplicationController"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1121,
+            "end": 1151,
+            "loc": {
+              "start": {
+                "line": 27,
+                "column": 2
+              },
+              "end": {
+                "line": 27,
+                "column": 32
+              }
+            },
+            "name": "StructureApplicationController"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1155,
+          "end": 1180,
+          "loc": {
+            "start": {
+              "line": 28,
+              "column": 2
+            },
+            "end": {
+              "line": 28,
+              "column": 27
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1155,
+            "end": 1180,
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 2
+              },
+              "end": {
+                "line": 28,
+                "column": 27
+              }
+            },
+            "name": "StructureApplicationModel"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1155,
+            "end": 1180,
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 2
+              },
+              "end": {
+                "line": 28,
+                "column": 27
+              }
+            },
+            "name": "StructureApplicationModel"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1185,
+          "end": 1204,
+          "loc": {
+            "start": {
+              "line": 30,
+              "column": 2
+            },
+            "end": {
+              "line": 30,
+              "column": 21
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1185,
+            "end": 1204,
+            "loc": {
+              "start": {
+                "line": 30,
+                "column": 2
+              },
+              "end": {
+                "line": 30,
+                "column": 21
+              }
+            },
+            "name": "StructureDispatcher"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1185,
+            "end": 1204,
+            "loc": {
+              "start": {
+                "line": 30,
+                "column": 2
+              },
+              "end": {
+                "line": 30,
+                "column": 21
+              }
+            },
+            "name": "StructureDispatcher"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1208,
+          "end": 1223,
+          "loc": {
+            "start": {
+              "line": 31,
+              "column": 2
+            },
+            "end": {
+              "line": 31,
+              "column": 17
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1208,
+            "end": 1223,
+            "loc": {
+              "start": {
+                "line": 31,
+                "column": 2
+              },
+              "end": {
+                "line": 31,
+                "column": 17
+              }
+            },
+            "name": "StructureLogger"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1208,
+            "end": 1223,
+            "loc": {
+              "start": {
+                "line": 31,
+                "column": 2
+              },
+              "end": {
+                "line": 31,
+                "column": 17
+              }
+            },
+            "name": "StructureLogger"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1228,
+          "end": 1259,
+          "loc": {
+            "start": {
+              "line": 33,
+              "column": 2
+            },
+            "end": {
+              "line": 33,
+              "column": 33
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1228,
+            "end": 1259,
+            "loc": {
+              "start": {
+                "line": 33,
+                "column": 2
+              },
+              "end": {
+                "line": 33,
+                "column": 33
+              }
+            },
+            "name": "StructureOrganizationController"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1228,
+            "end": 1259,
+            "loc": {
+              "start": {
+                "line": 33,
+                "column": 2
+              },
+              "end": {
+                "line": 33,
+                "column": 33
+              }
+            },
+            "name": "StructureOrganizationController"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1263,
+          "end": 1289,
+          "loc": {
+            "start": {
+              "line": 34,
+              "column": 2
+            },
+            "end": {
+              "line": 34,
+              "column": 28
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1263,
+            "end": 1289,
+            "loc": {
+              "start": {
+                "line": 34,
+                "column": 2
+              },
+              "end": {
+                "line": 34,
+                "column": 28
+              }
+            },
+            "name": "StructureOrganizationModel"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1263,
+            "end": 1289,
+            "loc": {
+              "start": {
+                "line": 34,
+                "column": 2
+              },
+              "end": {
+                "line": 34,
+                "column": 28
+              }
+            },
+            "name": "StructureOrganizationModel"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1294,
+          "end": 1318,
+          "loc": {
+            "start": {
+              "line": 36,
+              "column": 2
+            },
+            "end": {
+              "line": 36,
+              "column": 26
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1294,
+            "end": 1318,
+            "loc": {
+              "start": {
+                "line": 36,
+                "column": 2
+              },
+              "end": {
+                "line": 36,
+                "column": 26
+              }
+            },
+            "name": "StructurePasswordService"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1294,
+            "end": 1318,
+            "loc": {
+              "start": {
+                "line": 36,
+                "column": 2
+              },
+              "end": {
+                "line": 36,
+                "column": 26
+              }
+            },
+            "name": "StructurePasswordService"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1322,
+          "end": 1339,
+          "loc": {
+            "start": {
+              "line": 37,
+              "column": 2
+            },
+            "end": {
+              "line": 37,
+              "column": 19
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1322,
+            "end": 1339,
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 2
+              },
+              "end": {
+                "line": 37,
+                "column": 19
+              }
+            },
+            "name": "StructureRegistry"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1322,
+            "end": 1339,
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 2
+              },
+              "end": {
+                "line": 37,
+                "column": 19
+              }
+            },
+            "name": "StructureRegistry"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1344,
+          "end": 1367,
+          "loc": {
+            "start": {
+              "line": 39,
+              "column": 2
+            },
+            "end": {
+              "line": 39,
+              "column": 25
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1344,
+            "end": 1367,
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 2
+              },
+              "end": {
+                "line": 39,
+                "column": 25
+              }
+            },
+            "name": "StructureRootController"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1344,
+            "end": 1367,
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 2
+              },
+              "end": {
+                "line": 39,
+                "column": 25
+              }
+            },
+            "name": "StructureRootController"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1371,
+          "end": 1389,
+          "loc": {
+            "start": {
+              "line": 40,
+              "column": 2
+            },
+            "end": {
+              "line": 40,
+              "column": 20
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1371,
+            "end": 1389,
+            "loc": {
+              "start": {
+                "line": 40,
+                "column": 2
+              },
+              "end": {
+                "line": 40,
+                "column": 20
+              }
+            },
+            "name": "StructureRootModel"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1371,
+            "end": 1389,
+            "loc": {
+              "start": {
+                "line": 40,
+                "column": 2
+              },
+              "end": {
+                "line": 40,
+                "column": 20
+              }
+            },
+            "name": "StructureRootModel"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1394,
+          "end": 1409,
+          "loc": {
+            "start": {
+              "line": 42,
+              "column": 2
+            },
+            "end": {
+              "line": 42,
+              "column": 17
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1394,
+            "end": 1409,
+            "loc": {
+              "start": {
+                "line": 42,
+                "column": 2
+              },
+              "end": {
+                "line": 42,
+                "column": 17
+              }
+            },
+            "name": "StructureRouter"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1394,
+            "end": 1409,
+            "loc": {
+              "start": {
+                "line": 42,
+                "column": 2
+              },
+              "end": {
+                "line": 42,
+                "column": 17
+              }
+            },
+            "name": "StructureRouter"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1413,
+          "end": 1428,
+          "loc": {
+            "start": {
+              "line": 43,
+              "column": 2
+            },
+            "end": {
+              "line": 43,
+              "column": 17
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1413,
+            "end": 1428,
+            "loc": {
+              "start": {
+                "line": 43,
+                "column": 2
+              },
+              "end": {
+                "line": 43,
+                "column": 17
+              }
+            },
+            "name": "StructureServer"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1413,
+            "end": 1428,
+            "loc": {
+              "start": {
+                "line": 43,
+                "column": 2
+              },
+              "end": {
+                "line": 43,
+                "column": 17
+              }
+            },
+            "name": "StructureServer"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1432,
+          "end": 1455,
+          "loc": {
+            "start": {
+              "line": 44,
+              "column": 2
+            },
+            "end": {
+              "line": 44,
+              "column": 25
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1432,
+            "end": 1455,
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 2
+              },
+              "end": {
+                "line": 44,
+                "column": 25
+              }
+            },
+            "name": "StructureShortIdService"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1432,
+            "end": 1455,
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 2
+              },
+              "end": {
+                "line": 44,
+                "column": 25
+              }
+            },
+            "name": "StructureShortIdService"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1459,
+          "end": 1483,
+          "loc": {
+            "start": {
+              "line": 45,
+              "column": 2
+            },
+            "end": {
+              "line": 45,
+              "column": 26
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1459,
+            "end": 1483,
+            "loc": {
+              "start": {
+                "line": 45,
+                "column": 2
+              },
+              "end": {
+                "line": 45,
+                "column": 26
+              }
+            },
+            "name": "StructureStorageAdaptors"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1459,
+            "end": 1483,
+            "loc": {
+              "start": {
+                "line": 45,
+                "column": 2
+              },
+              "end": {
+                "line": 45,
+                "column": 26
+              }
+            },
+            "name": "StructureStorageAdaptors"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1487,
+          "end": 1508,
+          "loc": {
+            "start": {
+              "line": 46,
+              "column": 2
+            },
+            "end": {
+              "line": 46,
+              "column": 23
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1487,
+            "end": 1508,
+            "loc": {
+              "start": {
+                "line": 46,
+                "column": 2
+              },
+              "end": {
+                "line": 46,
+                "column": 23
+              }
+            },
+            "name": "StructureTokenService"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1487,
+            "end": 1508,
+            "loc": {
+              "start": {
+                "line": 46,
+                "column": 2
+              },
+              "end": {
+                "line": 46,
+                "column": 23
+              }
+            },
+            "name": "StructureTokenService"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1513,
+          "end": 1536,
+          "loc": {
+            "start": {
+              "line": 48,
+              "column": 2
+            },
+            "end": {
+              "line": 48,
+              "column": 25
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1513,
+            "end": 1536,
+            "loc": {
+              "start": {
+                "line": 48,
+                "column": 2
+              },
+              "end": {
+                "line": 48,
+                "column": 25
+              }
+            },
+            "name": "StructureUserController"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1513,
+            "end": 1536,
+            "loc": {
+              "start": {
+                "line": 48,
+                "column": 2
+              },
+              "end": {
+                "line": 48,
+                "column": 25
+              }
+            },
+            "name": "StructureUserController"
+          }
+        },
+        {
+          "type": "ExportSpecifier",
+          "start": 1540,
+          "end": 1558,
+          "loc": {
+            "start": {
+              "line": 49,
+              "column": 2
+            },
+            "end": {
+              "line": 49,
+              "column": 20
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 1540,
+            "end": 1558,
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 2
+              },
+              "end": {
+                "line": 49,
+                "column": 20
+              }
+            },
+            "name": "StructureUserModel"
+          },
+          "exported": {
+            "type": "Identifier",
+            "start": 1540,
+            "end": 1558,
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 2
+              },
+              "end": {
+                "line": 49,
+                "column": 20
+              }
+            },
+            "name": "StructureUserModel"
+          }
+        }
+      ],
+      "source": null
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-import StructureRootController from '../root'
+import RootController from '../root'
 
-class StructureTaxonomiesController extends StructureRootController {
+class TaxonomiesController extends RootController {
 
   constructor(options = {}) {
     super(options)
@@ -8,4 +8,4 @@ class StructureTaxonomiesController extends StructureRootController {
 
 }
 
-export default StructureTaxonomiesController
+export default TaxonomiesController

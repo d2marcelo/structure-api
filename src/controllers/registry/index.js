@@ -1,6 +1,6 @@
-import StructureRootController from '../root'
+import RootController from '../root'
 
-class StructureRegistryController extends StructureRootController {
+class RegistryController extends RootController {
 
   constructor(options = {}) {
     super(options)
@@ -8,4 +8,4 @@ class StructureRegistryController extends StructureRootController {
 
 }
 
-export default StructureRegistryController
+export default RegistryController

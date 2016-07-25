@@ -1,6 +1,6 @@
-import StructureRootController from '../root'
+import RootController from '../root'
 
-class StructureUserController extends StructureRootController {
+class UserController extends RootController {
 
   constructor(options = {}) {
     super(options)
@@ -8,4 +8,4 @@ class StructureUserController extends StructureRootController {
 
 }
 
-export default StructureUserController
+export default UserController

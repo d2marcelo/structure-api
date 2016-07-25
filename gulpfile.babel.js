@@ -107,10 +107,18 @@ gulp.task('mocha-unit', async function(done) {
       //done()
     })
     .once('error', function (e) {
-      exec('node_modules/forever/bin/forever stop node_modules/reqlite/lib/node.js --port-offset 1 -s')
-      process.exit(1)
       //done()
     })
+
+})
+
+gulp.task('stop-reqlite', function(done) {
+
+  try {
+    exec('node_modules/forever/bin/forever stop node_modules/reqlite/lib/node.js --port-offset 1 -s')
+  }
+  catch(e) {}
+  process.exit(1)
 
 })
 
