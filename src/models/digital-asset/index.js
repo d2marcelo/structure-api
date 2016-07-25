@@ -46,8 +46,7 @@ class DigitalAssetModel extends Model {
     }, options))
   }
 
-  create(req) {
-    var pkg = req.body
+  create(pkg = {}) {
 
     return new Promise( (resolve, reject) => {
 
@@ -62,7 +61,7 @@ class DigitalAssetModel extends Model {
           storageAdaptor: file.storageAdaptor
         }
 
-        createFilesPromises.push(Model.prototype.create.call(this, {body: insert}))
+        createFilesPromises.push(Model.prototype.create.call(this, insert))
       })
 
       Promise.all(createFilesPromises)
@@ -106,8 +105,8 @@ class DigitalAssetModel extends Model {
 
   }
 
-  fetchEmbed(req) {
-    var type = req.params.type,
+  fetchEmbed(pkg = {}) {
+    var type = pkg.type,
         url  = ''
 
     return new Promise( (resolve, reject) => {
@@ -115,98 +114,98 @@ class DigitalAssetModel extends Model {
       switch(type) {
 
         case 'aol':
-          url = `http://api.embed.ly/1/oembed?url=${req.params.url}`
+          url = `http://api.embed.ly/1/oembed?url=${pkg.url}`
           break
 
         case 'dailymotion':
-          url = `http://www.dailymotion.com/services/oembed?url=${req.params.url}`
+          url = `http://www.dailymotion.com/services/oembed?url=${pkg.url}`
           break
 
         case 'deviantart':
-          url = `http://backend.deviantart.com/oembed?url=${req.params.url}`
+          url = `http://backend.deviantart.com/oembed?url=${pkg.url}`
           break
 
         case 'flickr':
-          url = `http://www.flickr.com/services/oembed/?url=${req.params.url}`
+          url = `http://www.flickr.com/services/oembed/?url=${pkg.url}`
           break
 
         case 'funnyordie':
-          url = `http://www.funnyordie.com/oembed.json?url=${req.params.url}`
+          url = `http://www.funnyordie.com/oembed.json?url=${pkg.url}`
           break
 
         case 'getty':
-          url = ` http://embed.gettyimages.com/oembed?url=${req.params.url}`
+          url = ` http://embed.gettyimages.com/oembed?url=${pkg.url}`
           break
 
         case 'gfycat':
-          url = `https://api.gfycat.com/v1/oembed?url=${req.params.url}`
+          url = `https://api.gfycat.com/v1/oembed?url=${pkg.url}`
           break
 
         case 'hulu':
-          url = `http://www.hulu.com/api/oembed.xml?url=${req.params.url}`
+          url = `http://www.hulu.com/api/oembed.xml?url=${pkg.url}`
           break
 
         case 'ifttt':
-          url = `https://ifttt.com/oembed?url=${req.params.url}`
+          url = `https://ifttt.com/oembed?url=${pkg.url}`
           break
 
         case 'imgur':
-          url = `http://api.imgur.com/oembed?url=${req.params.url}`
+          url = `http://api.imgur.com/oembed?url=${pkg.url}`
           break
 
         case 'instagram':
-          url = `https://api.instagram.com/oembed?url=${req.params.url}`
+          url = `https://api.instagram.com/oembed?url=${pkg.url}`
           break
 
         case 'kickstarter':
-          url = `http://www.kickstarter.com/services/oembed?url=${req.params.url}`
+          url = `http://www.kickstarter.com/services/oembed?url=${pkg.url}`
           break
 
         case 'meetup':
-          url = `https://api.meetup.com/oembed?format=json&url=${req.params.url}`
+          url = `https://api.meetup.com/oembed?format=json&url=${pkg.url}`
           break
 
         case 'newyorktimes':
-          url = `https://www.nytimes.com/svc/oembed/html/?url=${req.params.url}`
+          url = `https://www.nytimes.com/svc/oembed/html/?url=${pkg.url}`
           break
 
         case 'pinterest':
           return resolve({
-            html: `<a data-pin-do="embedPin" data-pin-width="${(req.body.size || 'small')}" href="${req.params.url}"></a>`,
-            pinSize: req.body.size || 'small',
-            script: this.embedScript(req.params.type)
+            html: `<a data-pin-do="embedPin" data-pin-width="${(pkg.size || 'small')}" href="${pkg.url}"></a>`,
+            pinSize: pkg.size || 'small',
+            script: this.embedScript(pkg.type)
           })
 
         case 'soundcloud':
-          url = `https://soundcloud.com/oembed?url=${req.params.url}`
+          url = `https://soundcloud.com/oembed?url=${pkg.url}`
           break
 
         case 'reddit':
-          url = `https://www.reddit.com/oembed?url=${req.params.url}`
+          url = `https://www.reddit.com/oembed?url=${pkg.url}`
           break
 
         case 'twitter':
-          url = `https://api.twitter.com/1/statuses/oembed.json?url=${req.params.url}`
+          url = `https://api.twitter.com/1/statuses/oembed.json?url=${pkg.url}`
           break
 
         case 'tumblr':
-          url = `http://www.tumblr.com/oembed/1.0?url=${req.params.url}`
+          url = `http://www.tumblr.com/oembed/1.0?url=${pkg.url}`
           break
 
         case 'ustream':
-          url = `http://www.ustream.tv/oembed?url=${req.params.url}`
+          url = `http://www.ustream.tv/oembed?url=${pkg.url}`
           break
 
         case 'vimeo':
-          url = `https://vimeo.com/api/oembed.json?url=${req.params.url}`
+          url = `https://vimeo.com/api/oembed.json?url=${pkg.url}`
           break
 
         case 'vine':
-          url = `https://vine.co/oembed.json?url=${req.params.url}`
+          url = `https://vine.co/oembed.json?url=${pkg.url}`
           break
 
         case 'youtube':
-          url = `https://www.youtube.com/oembed?url=${req.params.url}?v=${req.params.v}&format=json`
+          url = `https://www.youtube.com/oembed?url=${pkg.url}?v=${pkg.v}&format=json`
           break
 
         default:

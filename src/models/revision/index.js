@@ -37,7 +37,7 @@ class RevisionModel extends Model {
     }, options))
   }
 
-  getAll(req) {
+  getAll() {
 
     return new Promise( (resolve, reject) => {
 
@@ -66,8 +66,7 @@ class RevisionModel extends Model {
 
   }
 
-  getById(req) {
-    var id = (typeof req == 'string') ? req : req.params.id
+  getById(id) {
 
     return new Promise( async (resolve, reject) => {
 

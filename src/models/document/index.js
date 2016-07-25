@@ -127,8 +127,7 @@ class DocumentModel extends Model {
     })
   }
 
-  getById(req) {
-    var id = (typeof req == 'string') ? req : req.params.id
+  getById(id) {
 
     return new Promise( async (resolve, reject) => {
 

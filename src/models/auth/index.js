@@ -49,8 +49,7 @@ class AuthModel extends Model {
     })
   }
 
-  login(req) {
-    var pkg = req.body
+  login(pkg = {}) {
 
     return new Promise( async (resolve, reject) => {
 
@@ -77,13 +76,11 @@ class AuthModel extends Model {
 
       if(!validated) {
         Model.prototype.create.call(this, {
-          body: {
-            authenticated: false,
-            err: 'BAD_PASSWORD',
-            //password: pkg.password,
-            userId: user.id,
-            username: pkg.username
-          }
+          authenticated: false,
+          err: 'BAD_PASSWORD',
+          //password: pkg.password,
+          userId: user.id,
+          username: pkg.username
         })
         logger.error('Auth: Bad Password')
         return reject({
@@ -96,11 +93,9 @@ class AuthModel extends Model {
       }
 
       Model.prototype.create.call(this, {
-        body: {
-          authenticated: true,
-          userId: user.id,
-          username: user.username
-        }
+        authenticated: true,
+        userId: user.id,
+        username: user.username
       })
 
       return resolve(user)
