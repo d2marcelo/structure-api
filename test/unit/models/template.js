@@ -73,9 +73,9 @@ describe('Template', function() {
 
   })
 
-  it('should update a template revision', function(done) {
+  it('should update a template revision', async function(done) {
 
-    
+
 
   })
 
