@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/server/storageAdaptors.js"],"names":[],"mappings":";;;;;;AAAA;;;;;;kBAEe;AACb,QAAM;AACJ,aAAS,IAAI,sCAAK,OAAT,EADL;AAEJ,UAAM;AAFF;AADO,C","file":"storageAdaptors.js","sourcesContent":["import Disk from 'structure-storage-disk-adaptor'\n\nexport default {\n  disk: {\n    adaptor: new Disk.Adaptor(),\n    name: 'disk'\n  }\n}\n"]}

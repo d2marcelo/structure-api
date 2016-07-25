@@ -1,7 +1,17 @@
-import r    from '../../../../lib/database/driver'
-import test from 'ava'
+import r    from '../../../../src/lib/database/driver'
 
-test('should be able to r.now()', (t) => {
-  r.now()
-  t.pass()
+describe('Driver', function() {
+
+  /*
+  NOTE: this may seem like a silly test, but it's necessary. If this test fails,
+  it means the driver is not being exported correctly.
+  */
+  it('should use r.now()', function(done) {
+
+    r.now()
+
+    done()
+
+  })
+
 })

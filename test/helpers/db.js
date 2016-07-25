@@ -8,44 +8,58 @@ process.on('unhandledRejection', function(err) {
   console.error(err)
 })
 
-import config from '../../lib/database/config'
-import r      from '../../lib/database/driver'
+import {chalk, logger} from '../../src/lib/logger'
+import config          from '../../src/lib/database/config'
+import r               from '../../src/lib/database/driver'
 
-var tableOperations = []
+module.exports = function(argv) {
 
-config.tables.forEach( async (table) => {
-  try {
-    tableOperations.push(await r.tableDrop(table))
-    console.error(`Dropped table ${table}`)
-  }
-  catch(err) {
-    if(err.message.indexOf('does not exist') == -1) {
-      console.error(`Error dropping table ${table}`)
-      console.error(err)
+  var debug = argv.debug
+
+  async function tableOperations() {
+
+    try {
+      await r.dbCreate('test')
+      logger.debug('Created database test')
     }
+    catch(e) {}
+
+    for(let i = 0, l = config.tables.length; i < l; i++) {
+      let table = config.tables[i]
+
+      if(argv.drop) {
+        try {
+          await r.tableDrop(table)
+          logger.debug(`Dropped table ${table}`)
+        }
+        catch(err) {
+          if(err.message.indexOf('does not exist') == -1) {
+            logger.error(`Error dropping table ${table}`)
+            console.error(err)
+          }
+        }
+      }
+
+      try {
+        await r.tableCreate(table)
+        logger.debug(`Created table ${table}`)
+      }
+      catch(err) {
+        if(err.message.indexOf('already exists') == -1) {
+          logger.error(`Error creating table ${table}`)
+          console.error(err)
+        }
+        else {
+          logger.error(`Cannot create table ${table}; already exists`)
+        }
+      }
+    }
+
+    logger.debug('Completed dropping & adding tables')
+    process.exit(0)
+
   }
 
-  try {
-    tableOperations.push(await r.tableCreate(table))
-    console.error(`Created table ${table}`)
-  }
-  catch(err) {
-    console.error(`Error creating table ${table}`)
-    console.error(err)
-  }
+  tableOperations()
 
-})
-
-Promise
-  .all(tableOperations)
-  .then( () => {
-    // Let console messages pipe out before process exits
-    setTimeout(function() {
-      process.exit(0)
-    }, 250)
-  })
-  .catch( (err) => {
-    console.error('Database operation failed')
-    console.error(err)
-    process.exit(1)
-  })
+}
