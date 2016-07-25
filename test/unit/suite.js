@@ -12,4 +12,7 @@ describe('Unit', function() {
     require('./models/user')
   })
 
+  describe('Documents', function() {
+    require('./models/document')
+  })
 })
