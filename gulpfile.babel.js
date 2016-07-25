@@ -76,6 +76,25 @@ gulp.task('mocha-graphql', function() {
 
 })
 
+gulp.task('mocha-integration', async function(done) {
+
+  return gulp
+    .src([
+      './test/helpers/start.js',
+      './test/integration/suite.js',
+    ], {read: false})
+    .pipe(mocha({reporter: 'spec'}))
+    .once('end', function () {
+      process.exit()
+      //done()
+    })
+    .on('error', function (e) {
+      //process.exit(1)
+      //done()
+    })
+
+})
+
 gulp.task('mocha-unit', async function(done) {
 
   return gulp
