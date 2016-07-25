@@ -1,10 +1,28 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
 
+/**
+ * UserModel Class
+ *
+ * @public
+ * @class UserModel
+ */
 class UserModel extends Model {
 
+  /**
+   * UserModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'users',
@@ -42,7 +60,14 @@ class UserModel extends Model {
     }, options))
   }
 
-  create(pkg = {}) {
+  /**
+   * Create, or save, user data for the model
+   *
+   * @public
+   * @param {Object} pkg - Data to be saved
+   * @param {Object} options - Options
+   */
+  create(pkg = {}, options = {}) {
 
     return new Promise( async (resolve, reject) => {
 
@@ -50,7 +75,7 @@ class UserModel extends Model {
       delete pkg.password
 
       try {
-        var doc = await Model.prototype.create.call(this, pkg)
+        var doc = await Model.prototype.create.call(this, pkg, options)
 
         resolve(doc)
       }
@@ -62,10 +87,22 @@ class UserModel extends Model {
 
   }
 
+  /**
+   * Get user by email
+   *
+   * @public
+   * @param {String} email
+   */
   getByEmail(email) {
     return r.db(process.env.RETHINK_DB_NAME).table(this.table).filter({email}).limit(1)
   }
 
+  /**
+   * Get user by username
+   *
+   * @public
+   * @param {String} username
+   */
   getByUsername(username) {
     return new Promise( async (resolve, reject) => {
       var user = await thinky.r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)
