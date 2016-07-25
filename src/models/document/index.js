@@ -65,47 +65,40 @@ class DocumentModel extends Model {
     }, options))
   }
 
-  create(req) {
-    if(!req.body.fields) return Model.prototype.getById.apply(this, arguments)
+  create(pkg = {}) {
 
     /*
     NOTE:
     When a template is created with fields, we need to take those fields and place them on a revision
     */
-
-    var fields = req.body.fields.slice(0)
-    delete req.body.fields
+    var fields = []
+    if(pkg.fields) {
+      fields = pkg.fields.slice(0)
+      delete pkg.fields
+    }
 
     return new Promise( async (resolve, reject) => {
       // Create document
-      var doc = await Model.prototype.create.call(this, req)
+      var doc = await Model.prototype.create.call(this, pkg)
 
       // Create revision
-
       var revision = await new DocumentRevision().create({
         body: {
-          documentId: 2,
+          documentId: doc.id,
           fields
         }
       })
 
       // Associate document with revision
-      var update = await this.update({
+      var update = await this.update(doc.id, {
         body: {
           activeRevisionId: revision.id,
           revisionIds: [revision.id]
-        },
-        params: {
-          id: doc.id
         }
       })
 
       // Get document with first revision
-      var docFinalized = await this.getById({
-        params: {
-          id: doc.id
-        }
-      })
+      var docFinalized = await this.getById(doc.id)
 
       resolve(docFinalized)
     })

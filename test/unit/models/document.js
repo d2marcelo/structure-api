@@ -37,7 +37,7 @@ describe('Document', function() {
     })
 
     var revisionRes = await revision.create({
-      documentId:documentRes.id,
+      documentId: documentRes.id,
       fields: [
         {
           fieldType: 'text-input',
@@ -53,9 +53,10 @@ describe('Document', function() {
     done()
 
   })
-    it('should update a document revision', async function(done) {
 
-    var document = new Documents({
+  it('should update a document revision', async function(done) {
+
+    var document = new Document({
       name: 'documents'
     })
 
@@ -100,7 +101,8 @@ describe('Document', function() {
     expect(revisionUpdatedRes.fields[0].title).to.equal('Revision Title')
     expect(revisionUpdatedRes.fields[1].title).to.equal('Description')
 
-    done() 
-    }) 
+    done()
+
+  })
 
 })
