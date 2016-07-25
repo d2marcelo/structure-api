@@ -1,7 +1,7 @@
 var chalk                  = require('chalk'),
     clean                  = require('gulp-clean'),
     concat                 = require('gulp-concat'),
-    execAsync               = require('child_process').exec,
+    execSync               = require('child_process').execSync,
     eslint                 = require('gulp-eslint'),
     gulp                   = require('gulp'),
     gutil                  = require('gulp-util'),
@@ -14,8 +14,7 @@ var chalk                  = require('chalk'),
 
 function exec(cmd) {
 
-  //execAsync(cmd, {stdio:[0,1,2]})
-  var proc = spawn(cmd, {stdio:[0,1,2]})
+  exec(cmd, {stdio:[0,1,2]})
 
 }
 
@@ -107,8 +106,9 @@ gulp.task('mocha-unit', async function(done) {
       process.exit()
       //done()
     })
-    .on('error', function (e) {
-      //process.exit(1)
+    .once('error', function (e) {
+      exec('node_modules/forever/bin/forever stop node_modules/reqlite/lib/node.js --port-offset 1 -s')
+      process.exit(1)
       //done()
     })
 
