@@ -180,7 +180,8 @@ class RootModel {
     return new Promise( async (resolve, reject) => {
 
       try {
-        var res = await this.getById(id).update(pkg, options)
+        var res = await r.table(this.table).get(id).update(pkg, options)
+
         return resolve(res.changes[0].new_val)
       }
       catch(err) {

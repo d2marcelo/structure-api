@@ -42,7 +42,7 @@ describe('Template', function() {
 
   })
 
-  it('should create a template revision',  async (done) => {
+  it('should create a template revision',  async function(done) {
 
     var template = new Template({
       name: 'templates'
@@ -53,7 +53,7 @@ describe('Template', function() {
     })
 
     var revision = new Revision({
-
+      templateId: res.id
     })
 
     var res2 = await revision.create({
@@ -66,8 +66,14 @@ describe('Template', function() {
       title: 'Fun Template 2'
     })
 
+    var res3 = await template.update(res.id, {
+      activeRevisionId: res2.id,
+      revisionIds: [res2.id]
+    })
+
     expect(res2.fields.length).to.equal(1)
     expect(res2.fields[0].title).to.equal('Document Title')
+    expect(res3.activeRevisionId).to.equal(res2.id)
 
     done()
 
