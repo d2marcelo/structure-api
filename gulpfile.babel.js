@@ -14,7 +14,7 @@ var chalk                  = require('chalk'),
 
 function exec(cmd) {
 
-  exec(cmd, {stdio:[0,1,2]})
+  execSync(cmd, {stdio:[0,1,2]})
 
 }
 
