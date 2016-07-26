@@ -41,7 +41,7 @@ class Dispatcher {
           status = 200
 
       try {
-        var result = await action.call(controller, req)
+        var result = await action.call(controller, req, res)
 
         if(req.method == 'PUT') status = 201
 

@@ -1,20 +1,24 @@
-import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
-import TaxonomyModel      from '../../../src/models/taxonomy'
+import {Schema, type}     from 'eisley'
+import r                  from '../../../src/lib/database/driver'
+import TaxonomiesController from '../../../src/controllers/taxonomies'
 
-/** @test {TaxonomyModel} */
-describe('Tag', function() {
+/** @test {TaxonomiesController} */
+describe('Taxonomies', function() {
 
-  /** @test {TaxonomyModel#create} */
-  it('should create a taxonomy', async function(done) {
+  /** @test {TaxonomiesController#create} */
+  it('should create an taxonomy', async function(done) {
 
-      var tag = new TaxonomyModel()
+      var taxonomy = new TaxonomiesController()
 
-      var res = await tag.create({
-        title: 'Sports',
-        slug: 'sports',
-        description: 'All of our sports content'
-      })
+      var req = {
+        body: {
+          title: 'Sports',
+          slug: 'sports',
+          description: 'All of our sports content'
+        }
+      }
+
+      var res = await taxonomy.create(req)
 
       expect(res.title).to.equal('Sports')
       expect(res.slug).to.equal('sports')
@@ -24,8 +28,8 @@ describe('Tag', function() {
 
   })
 
-  /** @test {TaxonomyModel#update} */
-  it('should update a taxonomy', async function(done) {
+  /** @test {TaxonomiesController#update} */
+  it.skip('should update a taxonomy', async function(done) {
 
     var tag = new TaxonomyModel()
 

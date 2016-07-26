@@ -3,6 +3,7 @@
  *
  * @ignore
  */
+import TaxonomyModel  from '../../models/taxonomy'
 import RootController from '../root'
 
 /**
@@ -22,6 +23,22 @@ class TaxonomiesController extends RootController {
    */
   constructor(options = {}) {
     super(options)
+  }
+
+  /**
+   * Create new taxonomy
+   *
+   * @public
+   * @constructor
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
+  create(req, res) {
+
+    var taxonomy = new TaxonomyModel()
+
+    return taxonomy.create(req.body)
+
   }
 
 }
