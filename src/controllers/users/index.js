@@ -32,26 +32,27 @@ class UsersController extends RootController {
    * @param {Object} res - Express res
    */
   create(req, res) {
-  var user = new UserModel()
 
-  return user.create(req.body)
+    var user = new UserModel()
 
-}
+    return user.create(req.body)
 
-/**
- * Update a user
- *
- * @public
- * @param {Object} req - Express req
- * @param {Object} res - Express res
- */
+  }
+
+  /**
+   * Update a user
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
   update(req, res) {
 
-  var user = new UserModel()
+    var user = new UserModel()
 
-  return user.update(req.params.id, req.body)
+    return user.update(req.params.id, req.body)
 
-}
+  }
 
 }
 
