@@ -7,7 +7,7 @@ import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
-
+f
 /**
  * UserModel Class
  *
@@ -50,10 +50,19 @@ class UserModel extends Model {
         ]
       },
       schema: {
+        firstName: {
+          type: 'string'
+        },
+        lastName: {
+          type: 'string'
+        },
         email: {
           type: 'string'
         },
         username: {
+          type: 'string'
+        },
+        password: {
           type: 'string'
         }
       }
