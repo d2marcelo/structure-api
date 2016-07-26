@@ -7,7 +7,6 @@ import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
-f
 /**
  * UserModel Class
  *
