@@ -3,6 +3,7 @@
  *
  * @ignore
  */
+import TaxonomyModel  from '../../models/user'
 import RootController from '../root'
 
 /**
