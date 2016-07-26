@@ -672,7 +672,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "/**\n * RootController Class\n *\n * @public\n * @class RootController\n */\nclass RootController {\n\n  /**\n   * RootController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    this.options = options\n  }\n\n}\n\nexport default RootController\n"
+    "content": "/**\n * RootController Class\n *\n * @public\n * @class RootController\n */\nclass RootController {\n\n  /**\n   * RootController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n\n    /**\n     * Options\n     *\n     * @private\n     * @type {Object}\n     */\n    this.options = options\n  }\n\n}\n\nexport default RootController\n"
   },
   {
     "__docId__": 29,
@@ -735,14 +735,16 @@
     "name": "options",
     "memberof": "src/controllers/root.js~RootController",
     "longname": "src/controllers/root.js~RootController#options",
-    "access": null,
-    "description": null,
-    "lineNumber": 17,
-    "undocument": true,
+    "access": "private",
+    "description": "Options",
+    "lineNumber": 24,
     "type": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
@@ -1032,7 +1034,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import StructureApplicationController  from './controllers/applications'\nimport StructureApplicationModel       from './models/application'\n\nimport StructureDispatcher             from './server/dispatcher'\nimport StructureLogger                 from './lib/logger'\n\nimport StructureOrganizationController from './controllers/organizations'\nimport StructureOrganizationModel      from './models/organization'\n\nimport StructurePasswordService        from './services/password'\n\nimport StructureRegistry               from './lib/registry'\n\nimport StructureRootController         from './controllers/root'\nimport StructureRootModel              from './models/root'\n\nimport StructureRouter                 from './server/router'\nimport StructureServer                 from './server'\nimport StructureShortIdService         from './services/short-id'\nimport StructureStorageAdaptors        from './server/storageAdaptors'\nimport StructureTokenService           from './services/token'\n\nimport StructureUserController         from './controllers/users'\nimport StructureUserModel              from './models/user'\n\nexport {\n  StructureApplicationController,\n  StructureApplicationModel,\n\n  StructureDispatcher,\n  StructureLogger,\n\n  StructureOrganizationController,\n  StructureOrganizationModel,\n\n  StructurePasswordService,\n  StructureRegistry,\n\n  StructureRootController,\n  StructureRootModel,\n\n  StructureRouter,\n  StructureServer,\n  StructureShortIdService,\n  StructureStorageAdaptors,\n  StructureTokenService,\n\n  StructureUserController,\n  StructureUserModel\n}\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport StructureApplicationController  from './controllers/applications'\nimport StructureApplicationModel       from './models/application'\n\nimport StructureDispatcher             from './server/dispatcher'\nimport StructureLogger                 from './lib/logger'\n\nimport StructureOrganizationController from './controllers/organizations'\nimport StructureOrganizationModel      from './models/organization'\n\nimport StructurePasswordService        from './services/password'\n\nimport StructureRegistry               from './lib/registry'\n\nimport StructureRootController         from './controllers/root'\nimport StructureRootModel              from './models/root'\n\nimport StructureRouter                 from './server/router'\nimport StructureServer                 from './server'\nimport StructureShortIdService         from './services/short-id'\nimport StructureStorageAdaptors        from './server/storageAdaptors'\nimport StructureTokenService           from './services/token'\n\nimport StructureUserController         from './controllers/users'\nimport StructureUserModel              from './models/user'\n\nexport {\n  StructureApplicationController,\n  StructureApplicationModel,\n\n  StructureDispatcher,\n  StructureLogger,\n\n  StructureOrganizationController,\n  StructureOrganizationModel,\n\n  StructurePasswordService,\n  StructureRegistry,\n\n  StructureRootController,\n  StructureRootModel,\n\n  StructureRouter,\n  StructureServer,\n  StructureShortIdService,\n  StructureStorageAdaptors,\n  StructureTokenService,\n\n  StructureUserController,\n  StructureUserModel\n}\n"
   },
   {
     "__docId__": 45,
@@ -1079,7 +1081,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "var config = require('./config').default\n\nif(process.env.TEST_TYPE == 'unit') {\n  config = {\n    port: 28016\n  }\n}\n\nvar r = require('rethinkdbdash')(config)\n\nr.getPoolMaster().on('log', function() {\n  console.error.apply(console, arguments)\n})\n\nexport default r\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nvar config = require('./config').default\n\nif(process.env.TEST_TYPE == 'unit') {\n  config = {\n    port: 28016\n  }\n}\n\nvar r = require('rethinkdbdash')(config)\n\nr.getPoolMaster().on('log', function() {\n  console.error.apply(console, arguments)\n})\n\nexport default r\n"
   },
   {
     "__docId__": 48,
@@ -1093,9 +1095,9 @@
     "export": false,
     "importPath": "structure-core/src/lib/database/driver.js",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Module Dependencies",
+    "lineNumber": 6,
+    "ignore": true,
     "type": {
       "types": [
         "*"
@@ -1115,7 +1117,7 @@
     "importPath": "structure-core/src/lib/database/driver.js",
     "importStyle": "r",
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 14,
     "undocument": true,
     "type": {
       "types": [
@@ -1339,7 +1341,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import chalk   from 'chalk'\nimport winston from 'winston'\n\nvar logger = new winston.Logger({\n\n  transports:[\n    new winston.transports.Console({\n      colorize: true,\n      level: process.env.LOG_LEVEL\n    })\n  ]\n\n})\n\nexport {chalk}\nexport {logger}\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport chalk   from 'chalk'\nimport winston from 'winston'\n\nvar logger = new winston.Logger({\n\n  transports:[\n    new winston.transports.Console({\n      colorize: true,\n      level: process.env.LOG_LEVEL\n    })\n  ]\n\n})\n\nexport {chalk}\nexport {logger}\n"
   },
   {
     "__docId__": 61,
@@ -1354,7 +1356,7 @@
     "importPath": "structure-core/src/lib/logger.js",
     "importStyle": "{logger}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 9,
     "undocument": true,
     "type": {
       "types": [
@@ -1373,7 +1375,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from './logger'\n\nclass Mapper {\n\n  constructor(Nodes) {\n    this.Nodes = Nodes\n  }\n\n  relations() {\n\n    this.Nodes.forEach( (Node) => {\n      var node = new Node()\n\n      Object.keys(this.relations).forEach( (relation) => {\n\n        Object.keys(relation).forEach( (key) => {\n          var options  = relation[key]\n\n          options.forEach( (option) => {\n            var Node = require(`../${option.Node}`).default\n\n            switch(key) {\n              case 'belongsTo':\n\n                try {\n                  this.Model.belongsTo(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: belongsTo', e)\n                }\n\n                break\n\n              case 'hasAndBelongsToMany':\n\n                try {\n                  this.Model.hasAndBelongsToMany(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: hasAndBelongsToMany', e)\n                }\n\n                break\n\n              case 'hasMany':\n\n                try {\n                  this.Model.hasMany(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: hasMany', e)\n                }\n\n                break\n\n              case 'hasOne':\n\n                try {\n                  this.Model.hasOne(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: hasOne', e)\n                }\n\n                break\n            }\n\n          })\n\n        })\n\n      })\n    })\n\n  }\n\n}\n\nexport default Mapper\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from './logger'\n\nclass Mapper {\n\n  constructor(Nodes) {\n    this.Nodes = Nodes\n  }\n\n  relations() {\n\n    this.Nodes.forEach( (Node) => {\n      var node = new Node()\n\n      Object.keys(this.relations).forEach( (relation) => {\n\n        Object.keys(relation).forEach( (key) => {\n          var options  = relation[key]\n\n          options.forEach( (option) => {\n            var Node = require(`../${option.Node}`).default\n\n            switch(key) {\n              case 'belongsTo':\n\n                try {\n                  this.Model.belongsTo(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: belongsTo', e)\n                }\n\n                break\n\n              case 'hasAndBelongsToMany':\n\n                try {\n                  this.Model.hasAndBelongsToMany(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: hasAndBelongsToMany', e)\n                }\n\n                break\n\n              case 'hasMany':\n\n                try {\n                  this.Model.hasMany(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: hasMany', e)\n                }\n\n                break\n\n              case 'hasOne':\n\n                try {\n                  this.Model.hasOne(Node, option.localField, option.localKey, option.foreignKey || this.defaults.fields.foreignKey)\n                }\n                catch(e) {\n                  logger.error('Relationship failed: hasOne', e)\n                }\n\n                break\n            }\n\n          })\n\n        })\n\n      })\n    })\n\n  }\n\n}\n\nexport default Mapper\n"
   },
   {
     "__docId__": 63,
@@ -1388,7 +1390,7 @@
     "importPath": "structure-core/src/lib/mapper.js",
     "importStyle": "Mapper",
     "description": null,
-    "lineNumber": 3,
+    "lineNumber": 8,
     "undocument": true,
     "interface": false
   },
@@ -1402,7 +1404,7 @@
     "longname": "src/lib/mapper.js~Mapper#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 10,
     "undocument": true,
     "params": [
       {
@@ -1424,7 +1426,7 @@
     "longname": "src/lib/mapper.js~Mapper#Nodes",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 11,
     "undocument": true,
     "type": {
       "types": [
@@ -1442,7 +1444,7 @@
     "longname": "src/lib/mapper.js~Mapper#relations",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 14,
     "undocument": true,
     "params": [],
     "generator": false
@@ -1502,7 +1504,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Disk from 'structure-storage-disk-adaptor'\n\nexport default {\n  items: [\n    Object.assign({\n      status: 'active',\n      type: 'adaptor'\n    }, Disk.config)\n  ]\n}\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport Disk from 'structure-storage-disk-adaptor'\n\nexport default {\n  items: [\n    Object.assign({\n      status: 'active',\n      type: 'adaptor'\n    }, Disk.config)\n  ]\n}\n"
   },
   {
     "__docId__": 70,
@@ -1608,7 +1610,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import uuid from 'node-uuid'\n\nexport default function generateUUID() {\n  return uuid.v4()\n}\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport uuid from 'node-uuid'\n\nexport default function generateUUID() {\n  return uuid.v4()\n}\n"
   },
   {
     "__docId__": 75,
@@ -1623,7 +1625,7 @@
     "importPath": "structure-core/src/lib/utils/uuid.js",
     "importStyle": "generateUUID",
     "description": null,
-    "lineNumber": 3,
+    "lineNumber": 8,
     "undocument": true,
     "params": [],
     "return": {
@@ -2087,7 +2089,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\nimport TokenService    from '../../services/token'\n\n/**\n * AuthModel Class\n *\n * @public\n * @class AuthModel\n */\nclass AuthModel extends Model {\n\n  /**\n   * AuthModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'auth',\n\n      permissions: {\n        create:  ['user', 'admin'],\n        delete:  ['admin'],\n        read:    ['organization', 'admin'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'user',\n            localKey: 'userId'\n          }\n        ]\n      },\n      schema: {\n        authenticatedAt: {\n          type: 'date'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Login user\n   *\n   * @public\n   * @param {Object} pkg - Login data\n   */\n  login(pkg = {}) {\n\n    return new Promise( async (resolve, reject) => {\n\n      var user = await this.getByUsername(pkg.username)\n\n      if(!user) {\n        Model.prototype.create.call(this, {\n          body: {\n            authenticated: false,\n            err: 'NO_USER',\n            username: pkg.username\n          }\n        })\n\n        return reject({\n          err: {\n            message: 'Could not get user: ' + pkg.username,\n            resource: 'AuthNode'\n          }\n        })\n      }\n\n      var validated = await new PasswordService().verify(pkg.password, user.hash)\n\n      if(!validated) {\n        Model.prototype.create.call(this, {\n          authenticated: false,\n          err: 'BAD_PASSWORD',\n          //password: pkg.password,\n          userId: user.id,\n          username: pkg.username\n        })\n        logger.error('Auth: Bad Password')\n        return reject({\n          err: {\n            message: 'Could not validate password',\n            resource: 'AuthNode'\n          }\n        })\n\n      }\n\n      Model.prototype.create.call(this, {\n        authenticated: true,\n        userId: user.id,\n        username: user.username\n      })\n\n      return resolve(user)\n\n    })\n  }\n\n  authByFacebook(req) {\n    console.error('handle args', req.body)\n    return new Promise( (resolve, reject) => {\n\n      r.db(process.env.RETHINK_DB_NAME)\n        .table('users')\n        .filter({\n          strategies: {\n            facebook: {\n              id: req.body.profile.id\n            }\n          }\n        })\n        .limit(1)\n        .run()\n        .then( (res) => {\n          console.log('handle res', res)\n          resolve()\n        })\n        .catch( (err) => {\n          console.error('handle err', err)\n          reject()\n        })\n\n    })\n  }\n\n}\n\nexport default AuthModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\nimport TokenService    from '../../services/token'\n\n/**\n * AuthModel Class\n *\n * @public\n * @class AuthModel\n */\nclass AuthModel extends Model {\n\n  /**\n   * AuthModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'auth',\n\n      permissions: {\n        create:  ['user', 'admin'],\n        delete:  ['admin'],\n        read:    ['organization', 'admin'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'user',\n            localKey: 'userId'\n          }\n        ]\n      },\n      schema: {\n        authenticatedAt: {\n          type: 'date'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Login user\n   *\n   * @public\n   * @param {Object} pkg - Login data\n   */\n  login(pkg = {}) {\n\n    return new Promise( async (resolve, reject) => {\n\n      var user = await this.getByUsername(pkg.username)\n\n      if(!user) {\n        Model.prototype.create.call(this, {\n          body: {\n            authenticated: false,\n            err: 'NO_USER',\n            username: pkg.username\n          }\n        })\n\n        return reject({\n          err: {\n            message: 'Could not get user: ' + pkg.username,\n            resource: 'AuthNode'\n          }\n        })\n      }\n\n      var validated = await new PasswordService().verify(pkg.password, user.hash)\n\n      if(!validated) {\n        Model.prototype.create.call(this, {\n          authenticated: false,\n          err: 'BAD_PASSWORD',\n          //password: pkg.password,\n          userId: user.id,\n          username: pkg.username\n        })\n        logger.error('Auth: Bad Password')\n        return reject({\n          err: {\n            message: 'Could not validate password',\n            resource: 'AuthNode'\n          }\n        })\n\n      }\n\n      Model.prototype.create.call(this, {\n        authenticated: true,\n        userId: user.id,\n        username: user.username\n      })\n\n      return resolve(user)\n\n    })\n  }\n\n  /**\n   * Facebook authentication\n   *\n   * @public\n   * @param {Object} pkg - Login data\n   * @todo Needs work\n   */\n  authByFacebook(pkg) {\n    console.error('handle args', req.body)\n    return new Promise( (resolve, reject) => {\n\n      r.db(process.env.RETHINK_DB_NAME)\n        .table('users')\n        .filter({\n          strategies: {\n            facebook: {\n              id: req.body.profile.id\n            }\n          }\n        })\n        .limit(1)\n        .run()\n        .then( (res) => {\n          console.log('handle res', res)\n          resolve()\n        })\n        .catch( (err) => {\n          console.error('handle err', err)\n          reject()\n        })\n\n    })\n  }\n\n}\n\nexport default AuthModel\n"
   },
   {
     "__docId__": 99,
@@ -2183,16 +2185,22 @@
     "name": "authByFacebook",
     "memberof": "src/models/auth/index.js~AuthModel",
     "longname": "src/models/auth/index.js~AuthModel#authByFacebook",
-    "access": null,
-    "description": null,
-    "lineNumber": 116,
-    "undocument": true,
+    "access": "public",
+    "description": "Facebook authentication",
+    "lineNumber": 123,
+    "todo": [
+      "Needs work"
+    ],
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "Login data"
       }
     ],
     "return": {
@@ -3414,7 +3422,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\nimport EventEmitter    from '../lib/eventemitter'\nimport mixin           from '../lib/mixin'\nimport ShortId         from '../services/short-id'\nimport r               from '../lib/database/driver'\nimport uuid            from '../lib/utils/uuid'\n\n/**\n * RootModel Class\n *\n * @public\n * @class RootModel\n */\nclass RootModel {\n\n  /**\n   * RootModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n\n    /**\n     * Default parameters\n     *\n     * @private\n     * @type {Object}\n     */\n    this.defaults = {}\n\n    /**\n     * Default read/write permissions for model.\n     *\n     * @private\n     * @type {Object}\n     */\n    this.permissions = {\n      create:  ['admin'],\n      delete:  ['admin'],\n      read:    ['public'],\n      replace: ['admin'],\n      update:  ['admin'],\n    }\n\n    Object.assign(this, options)\n    if(!this.name) {\n      throw new Error('model.name must be defined')\n    }\n\n    /**\n     * Name of the default table the model works with.\n     *\n     * @private\n     * @type {String}\n     */\n    if(!this.table) this.table = this.name.replace(/\\-/g, '_')\n\n    /**\n     * (optional) Table schema\n     *\n     * @private\n     * @type {Object}\n     */\n    var schema = {}\n    if(this.schema) {\n\n    }\n\n  }\n\n  /**\n   * Create, or save, data for the model\n   *\n   * @public\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  create(pkg = {}, options = {}) {\n\n    var insertOptions = {\n      returnChanges: options.returnChanges || true\n    }\n\n    pkg.createdAt  = r.now()\n    pkg.id         = pkg.id || uuid()\n    pkg.sid        = new ShortId().issue(pkg.id)\n    pkg.updatedAt  = r.now()\n    pkg.__version  = process.env.npm_package_version\n\n    return new Promise( async (resolve, reject) => {\n\n      try {\n\n        var res = await r.table(options.table || this.table).insert(pkg, insertOptions)\n        if(res.errors && res.errors > 0) {\n          throw new Error(res.first_error)\n        }\n\n        var doc = res.changes[0].new_val\n\n        //logger.debug('Document created', doc)\n        if(pkg.__refs && pkg.__refs.length > 0) {\n\n          var refs = []\n          pkg.__refs.forEach( (ref) => {\n            refs.push(this.referenceTo('belongsTo', doc.id, ref))\n          })\n\n          return Promise\n            .all(refs)\n            .then( () => {\n              resolve(doc)\n            })\n            .catch(reject)\n        }\n\n        else {\n          return resolve(doc)\n        }\n      }\n      catch(err) {\n        logger.error('Could not create')\n        console.error(err)\n        throw err\n      }\n\n    })\n  }\n\n  /**\n   * Delete by id\n   *\n   * @public\n   * @param {String} id\n   */\n  delete(id) {\n    return Promise.resolve()\n  }\n\n  /**\n   * Get model by id\n   *\n   * @public\n   * @param {String} id\n   */\n  getById(id) {\n\n    // Short ID\n    if(id.length <= 10) {\n\n      return new Promise( async (resolve, reject) => {\n\n        try {\n          var doc = await r.table(this.table).filter({sid: id}).limit(1)\n          return resolve(this.getById(doc[0].id))\n        }\n        catch(err) {\n          logger.error('Could not get by id')\n          console.error(err.stack)\n          throw err\n        }\n\n      })\n    }\n\n    // Long ID\n    else {\n      return r.table(this.table).get(id)\n    }\n\n  }\n\n  /**\n   * Get all from table\n   *\n   * @public\n   * @todo Add logic to limit, paginate, etc.\n   */\n  getAll() {\n    return r.table(this.table).orderBy(r.desc('updatedAt')).limit(10)\n  }\n\n  /**\n   * Get model relationships\n   *\n   * @private\n   * @param {String} Relationship type\n   */\n  getRelations(type) {\n    var relations = []\n\n    Object.keys(this.relations).forEach( (relation) => {\n\n      if(relation == type) {\n        relations = this.relations[relation]\n      }\n\n    })\n\n    return relations\n  }\n\n  /**\n   * Create, or save, data for the model\n   *\n   * @private\n   * @param {String} Relationship type\n   * @param {String} id\n   * @param {Object} Reference object\n   */\n  referenceTo(type, id, reference) {\n\n    return new Promise( (resolve, reject) => {\n      var inserts = []\n\n      Object.keys(reference).forEach( async (key) => {\n        var referencePkg = {}\n        referencePkg[`${this.name}Id`] = id // local key\n        referencePkg[key] = reference[key]  // foreign key\n\n        switch(type) {\n          case 'belongsTo':\n            //referencePkg.name = `${key.replace('Id', '')}_has_${this.name}`\n            referencePkg.type = 'belongsTo'\n\n            break\n        }\n\n        referencePkg.node = this.name\n\n        inserts.push(this.insertReference(referencePkg))\n      })\n\n      Promise\n        .all(inserts)\n        .then(resolve)\n        .catch(reject)\n\n    })\n\n  }\n\n  /**\n   * Insert model reference to table 'refs'\n   *\n   * @private\n   * @param {Object} Reference to be saved\n   */\n  insertReference(pkg = {}) {\n    return r.table('refs').insert(pkg)\n  }\n\n  /**\n   * Update a model\n   *\n   * @public\n   * @param {String} id\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  update(id, pkg = {}, options = {}) {\n\n    pkg.__version  = process.env.npm_package_version\n\n    options.returnChanges = options.returnChanges || true\n\n    return new Promise( async (resolve, reject) => {\n\n      try {\n        var res = await r.table(this.table).get(id).update(pkg, options)\n\n        return resolve(res.changes[0].new_val)\n      }\n      catch(err) {\n        logger.error('Error updating')\n        console.error(err.stack)\n        throw err\n      }\n\n    })\n  }\n\n}\n\n/**\n * Mixin EventEmitter.prototype properties onto RootModel.prototype\n *\n * @ignore\n */\nmixin(RootModel, EventEmitter)\n\nexport default RootModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\nimport EventEmitter    from '../lib/eventemitter'\nimport mixin           from '../lib/mixin'\nimport ShortId         from '../services/short-id'\nimport r               from '../lib/database/driver'\nimport uuid            from '../lib/utils/uuid'\n\n/**\n * RootModel Class\n *\n * @public\n * @class RootModel\n */\nclass RootModel {\n\n  /**\n   * RootModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n\n    /**\n     * Default parameters\n     *\n     * @private\n     * @type {Object}\n     */\n    this.defaults = {}\n\n    /**\n     * Default read/write permissions for model.\n     *\n     * @private\n     * @type {Object}\n     */\n    this.permissions = {\n      create:  ['admin'],\n      delete:  ['admin'],\n      read:    ['public'],\n      replace: ['admin'],\n      update:  ['admin'],\n    }\n\n    /**\n     * Assign options to this\n     *\n     * @private\n     * @type {Object}\n     */\n    Object.assign(this, options)\n    if(!this.name) {\n      throw new Error('model.name must be defined')\n    }\n\n    /**\n     * Name of the default table the model works with.\n     *\n     * @private\n     * @type {String}\n     */\n    if(!this.table) this.table = this.name.replace(/\\-/g, '_')\n\n    /**\n     * (optional) Table schema\n     *\n     * @private\n     * @type {Object}\n     */\n    var schema = {}\n\n  }\n\n  /**\n   * Create, or save, data for the model\n   *\n   * @public\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  create(pkg = {}, options = {}) {\n\n    var insertOptions = {\n      returnChanges: options.returnChanges || true\n    }\n\n    pkg.createdAt  = r.now()\n    pkg.id         = pkg.id || uuid()\n    pkg.sid        = new ShortId().issue(pkg.id)\n    pkg.updatedAt  = r.now()\n    pkg.__version  = process.env.npm_package_version\n\n    return new Promise( async (resolve, reject) => {\n\n      try {\n\n        var res = await r.table(options.table || this.table).insert(pkg, insertOptions)\n        if(res.errors && res.errors > 0) {\n          throw new Error(res.first_error)\n        }\n\n        var doc = res.changes[0].new_val\n\n        //logger.debug('Document created', doc)\n        if(pkg.__refs && pkg.__refs.length > 0) {\n\n          var refs = []\n          pkg.__refs.forEach( (ref) => {\n            refs.push(this.referenceTo('belongsTo', doc.id, ref))\n          })\n\n          return Promise\n            .all(refs)\n            .then( () => {\n              resolve(doc)\n            })\n            .catch(reject)\n        }\n\n        else {\n          return resolve(doc)\n        }\n      }\n      catch(err) {\n        logger.error('Could not create')\n        console.error(err)\n        throw err\n      }\n\n    })\n  }\n\n  /**\n   * Delete by id\n   *\n   * @public\n   * @param {String} id\n   */\n  delete(id) {\n    return Promise.resolve()\n  }\n\n  /**\n   * Get model by id\n   *\n   * @public\n   * @param {String} id\n   */\n  getById(id) {\n\n    // Short ID\n    if(id.length <= 10) {\n\n      return new Promise( async (resolve, reject) => {\n\n        try {\n          var doc = await r.table(this.table).filter({sid: id}).limit(1)\n          return resolve(this.getById(doc[0].id))\n        }\n        catch(err) {\n          logger.error('Could not get by id')\n          console.error(err.stack)\n          throw err\n        }\n\n      })\n    }\n\n    // Long ID\n    else {\n      return r.table(this.table).get(id)\n    }\n\n  }\n\n  /**\n   * Get all from table\n   *\n   * @public\n   * @todo Add logic to limit, paginate, etc.\n   */\n  getAll() {\n    return r.table(this.table).orderBy(r.desc('updatedAt')).limit(10)\n  }\n\n  /**\n   * Get model relationships\n   *\n   * @private\n   * @param {String} Relationship type\n   */\n  getRelations(type) {\n    var relations = []\n\n    Object.keys(this.relations).forEach( (relation) => {\n\n      if(relation == type) {\n        relations = this.relations[relation]\n      }\n\n    })\n\n    return relations\n  }\n\n  /**\n   * Create, or save, data for the model\n   *\n   * @private\n   * @param {String} Relationship type\n   * @param {String} id\n   * @param {Object} Reference object\n   */\n  referenceTo(type, id, reference) {\n\n    return new Promise( (resolve, reject) => {\n      var inserts = []\n\n      Object.keys(reference).forEach( async (key) => {\n        var referencePkg = {}\n        referencePkg[`${this.name}Id`] = id // local key\n        referencePkg[key] = reference[key]  // foreign key\n\n        switch(type) {\n          case 'belongsTo':\n            //referencePkg.name = `${key.replace('Id', '')}_has_${this.name}`\n            referencePkg.type = 'belongsTo'\n\n            break\n        }\n\n        referencePkg.node = this.name\n\n        inserts.push(this.insertReference(referencePkg))\n      })\n\n      Promise\n        .all(inserts)\n        .then(resolve)\n        .catch(reject)\n\n    })\n\n  }\n\n  /**\n   * Insert model reference to table 'refs'\n   *\n   * @private\n   * @param {Object} Reference to be saved\n   */\n  insertReference(pkg = {}) {\n    return r.table('refs').insert(pkg)\n  }\n\n  /**\n   * Update a model\n   *\n   * @public\n   * @param {String} id\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  update(id, pkg = {}, options = {}) {\n\n    pkg.__version  = process.env.npm_package_version\n\n    options.returnChanges = options.returnChanges || true\n\n    return new Promise( async (resolve, reject) => {\n\n      try {\n        var res = await r.table(this.table).get(id).update(pkg, options)\n\n        return resolve(res.changes[0].new_val)\n      }\n      catch(err) {\n        logger.error('Error updating')\n        console.error(err.stack)\n        throw err\n      }\n\n    })\n  }\n\n}\n\n/**\n * Mixin EventEmitter.prototype properties onto RootModel.prototype\n *\n * @ignore\n */\nmixin(RootModel, EventEmitter)\n\nexport default RootModel\n"
   },
   {
     "__docId__": 152,
@@ -3519,7 +3527,7 @@
     "longname": "src/models/root.js~RootModel#table",
     "access": null,
     "description": null,
-    "lineNumber": 63,
+    "lineNumber": 69,
     "undocument": true,
     "type": {
       "types": [
@@ -3537,7 +3545,7 @@
     "longname": "src/models/root.js~RootModel#create",
     "access": "public",
     "description": "Create, or save, data for the model",
-    "lineNumber": 85,
+    "lineNumber": 88,
     "params": [
       {
         "nullable": null,
@@ -3577,7 +3585,7 @@
     "longname": "src/models/root.js~RootModel#delete",
     "access": "public",
     "description": "Delete by id",
-    "lineNumber": 143,
+    "lineNumber": 146,
     "params": [
       {
         "nullable": null,
@@ -3607,7 +3615,7 @@
     "longname": "src/models/root.js~RootModel#getById",
     "access": "public",
     "description": "Get model by id",
-    "lineNumber": 153,
+    "lineNumber": 156,
     "params": [
       {
         "nullable": null,
@@ -3637,7 +3645,7 @@
     "longname": "src/models/root.js~RootModel#getAll",
     "access": "public",
     "description": "Get all from table",
-    "lineNumber": 186,
+    "lineNumber": 189,
     "todo": [
       "Add logic to limit, paginate, etc."
     ],
@@ -3659,7 +3667,7 @@
     "longname": "src/models/root.js~RootModel#getRelations",
     "access": "private",
     "description": "Get model relationships",
-    "lineNumber": 196,
+    "lineNumber": 199,
     "params": [
       {
         "nullable": null,
@@ -3689,7 +3697,7 @@
     "longname": "src/models/root.js~RootModel#referenceTo",
     "access": "private",
     "description": "Create, or save, data for the model",
-    "lineNumber": 218,
+    "lineNumber": 221,
     "params": [
       {
         "nullable": null,
@@ -3739,7 +3747,7 @@
     "longname": "src/models/root.js~RootModel#insertReference",
     "access": "private",
     "description": "Insert model reference to table 'refs'",
-    "lineNumber": 256,
+    "lineNumber": 259,
     "params": [
       {
         "nullable": null,
@@ -3769,7 +3777,7 @@
     "longname": "src/models/root.js~RootModel#update",
     "access": "public",
     "description": "Update a model",
-    "lineNumber": 268,
+    "lineNumber": 271,
     "params": [
       {
         "nullable": null,
@@ -4275,7 +4283,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../lib/logger'\n\nclass Dispatcher {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  dispatch(controller, actionName) {\n\n    return async (req, res, next) => {\n\n      var action = controller[actionName]\n\n      if(req.files) {\n        console.error('files', req.files)\n        /*\n        TODO: what's a better way to handle this?\n        */\n        req.body.files = req.files.map( (file) => {\n          file.diskFileName     = file.filename\n          file.originalFileName = file.originalname.replace(/ /g, '_')\n          file.storageAdaptor   = storageAdaptors.disk.name\n\n          return file\n        })\n      }\n\n      var pkg    = {},\n          status = 200\n\n      try {\n        var result = await action.call(controller, req)\n\n        if(req.method == 'PUT') status = 201\n\n        // return collection name\n        if(actionName == 'getAll') {\n          pkg[controller.name] = result\n        }\n        // return item\n        else {\n          pkg = result\n        }\n\n        res.status(status).json({\n          pkg,\n          status\n        })\n      }\n      catch(err) {\n        logger.error(`Action ${actionName} failed`)\n        console.error(err.stack)\n\n        status = 403\n\n        res.status(status).json({\n          status\n        })\n      }\n\n    }\n\n  }\n\n}\n\nexport default Dispatcher\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\n\n/**\n * Dispatcher Class\n *\n * @public\n * @class Dispatcher\n */\nclass Dispatcher {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  dispatch(controller, actionName) {\n\n    return async (req, res, next) => {\n\n      var action = controller[actionName]\n\n      if(req.files) {\n        console.error('files', req.files)\n        /*\n        TODO: what's a better way to handle this?\n        */\n        req.body.files = req.files.map( (file) => {\n          file.diskFileName     = file.filename\n          file.originalFileName = file.originalname.replace(/ /g, '_')\n          file.storageAdaptor   = storageAdaptors.disk.name\n\n          return file\n        })\n      }\n\n      var pkg    = {},\n          status = 200\n\n      try {\n        var result = await action.call(controller, req)\n\n        if(req.method == 'PUT') status = 201\n\n        // return collection name\n        if(actionName == 'getAll') {\n          pkg[controller.name] = result\n        }\n        // return item\n        else {\n          pkg = result\n        }\n\n        res.status(status).json({\n          pkg,\n          status\n        })\n      }\n      catch(err) {\n        logger.error(`Action ${actionName} failed`)\n        console.error(err.stack)\n\n        status = 403\n\n        res.status(status).json({\n          status\n        })\n      }\n\n    }\n\n  }\n\n}\n\nexport default Dispatcher\n"
   },
   {
     "__docId__": 184,
@@ -4285,13 +4293,18 @@
     "name": "Dispatcher",
     "memberof": "src/server/dispatcher.js",
     "longname": "src/server/dispatcher.js~Dispatcher",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/server/dispatcher.js",
     "importStyle": "Dispatcher",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "Dispatcher Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "Dispatcher"
+      }
+    ],
     "interface": false
   },
   {
@@ -4304,7 +4317,7 @@
     "longname": "src/server/dispatcher.js~Dispatcher#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 16,
     "undocument": true,
     "params": [
       {
@@ -4329,7 +4342,7 @@
     "longname": "src/server/dispatcher.js~Dispatcher#options",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 17,
     "undocument": true,
     "type": {
       "types": [
@@ -4347,7 +4360,7 @@
     "longname": "src/server/dispatcher.js~Dispatcher#dispatch",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 20,
     "undocument": true,
     "params": [
       {
@@ -4381,7 +4394,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import bodyParser      from 'body-parser'\nimport {chalk, logger} from '../lib/logger'\nimport Dispatcher      from './dispatcher'\nimport express         from 'express'\nimport path            from 'path'\nimport r               from '../lib/database/driver'\nimport Router          from './router'\nimport serveStatic     from 'serve-static'\n\nfunction removePoweredBy(req, res, next) {\n  res.removeHeader('X-Powered-By')\n  next()\n}\n\nclass StructureServer {\n\n  constructor(options = {}) {\n\n    this.server = express()\n\n    this.server.use(serveStatic(path.join(__dirname, '../public')))\n    this.server.use(bodyParser.urlencoded({extended: true}))\n    this.server.use(bodyParser.json({strict: false}))\n    this.server.use(removePoweredBy)\n    if(process.env.NODE_ENV != 'test') {\n      this.server.use(this.logRequestInfo)\n    }\n\n    //this.loadRoutes()\n\n  }\n\n  getRoutes() {\n    var route, routes = []\n\n    this.server._router.stack.forEach(function(middleware) {\n      if(middleware.route) {\n        routes.push(middleware.route)\n      } else if(middleware.name === 'router') { // router middleware\n        middleware.handle.stack.forEach(function(handler) {\n          route = handler.route\n          route && routes.push(route)\n        })\n      }\n    })\n\n    return routes\n  }\n\n  loadRoutes() {\n    require('./routes')(this.server)\n  }\n\n  logRequestInfo(req, res, next) {\n\n    logger.info(req.method, req.originalUrl)\n    next()\n\n  }\n\n  start() {\n    this.router = this.router || new Router({\n      dispatcher: new Dispatcher(),\n      server: this.server\n    })\n\n    this.server = this.server.listen(process.env.EXPRESS_PORT)\n\n  }\n\n  stop() {\n\n    r.getPoolMaster().drain()\n    this.server.close()\n\n  }\n\n  use() {\n\n    this.server.use.apply(this.server, arguments)\n\n  }\n\n}\n\nmodule.exports = StructureServer\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport bodyParser      from 'body-parser'\nimport {chalk, logger} from '../lib/logger'\nimport Dispatcher      from './dispatcher'\nimport express         from 'express'\nimport path            from 'path'\nimport r               from '../lib/database/driver'\nimport Router          from './router'\nimport serveStatic     from 'serve-static'\n\nfunction removePoweredBy(req, res, next) {\n  res.removeHeader('X-Powered-By')\n  next()\n}\n\n/**\n * Server Class\n *\n * @public\n * @class Server\n */\nclass Server {\n\n  constructor(options = {}) {\n\n    this.server = express()\n\n    this.server.use(serveStatic(path.join(__dirname, '../public')))\n    this.server.use(bodyParser.urlencoded({extended: true}))\n    this.server.use(bodyParser.json({strict: false}))\n    this.server.use(removePoweredBy)\n    if(process.env.NODE_ENV != 'test') {\n      this.server.use(this.logRequestInfo)\n    }\n\n    //this.loadRoutes()\n\n  }\n\n  getRoutes() {\n    var route, routes = []\n\n    this.server._router.stack.forEach(function(middleware) {\n      if(middleware.route) {\n        routes.push(middleware.route)\n      } else if(middleware.name === 'router') { // router middleware\n        middleware.handle.stack.forEach(function(handler) {\n          route = handler.route\n          route && routes.push(route)\n        })\n      }\n    })\n\n    return routes\n  }\n\n  loadRoutes() {\n    require('./routes')(this.server)\n  }\n\n  logRequestInfo(req, res, next) {\n\n    logger.info(req.method, req.originalUrl)\n    next()\n\n  }\n\n  start() {\n    this.router = this.router || new Router({\n      dispatcher: new Dispatcher(),\n      server: this.server\n    })\n\n    this.server = this.server.listen(process.env.EXPRESS_PORT)\n\n  }\n\n  stop() {\n\n    r.getPoolMaster().drain()\n    this.server.close()\n\n  }\n\n  use() {\n\n    this.server.use.apply(this.server, arguments)\n\n  }\n\n}\n\nmodule.exports = Server\n"
   },
   {
     "__docId__": 189,
@@ -4396,7 +4409,7 @@
     "importPath": "structure-core/src/server/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 10,
+    "lineNumber": 15,
     "undocument": true,
     "params": [
       {
@@ -4425,16 +4438,21 @@
     "kind": "class",
     "static": true,
     "variation": null,
-    "name": "StructureServer",
+    "name": "Server",
     "memberof": "src/server/index.js",
-    "longname": "src/server/index.js~StructureServer",
-    "access": null,
+    "longname": "src/server/index.js~Server",
+    "access": "public",
     "export": false,
     "importPath": "structure-core/src/server/index.js",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
+    "description": "Server Class",
+    "lineNumber": 26,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "Server"
+      }
+    ],
     "interface": false
   },
   {
@@ -4443,11 +4461,11 @@
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#constructor",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 17,
+    "lineNumber": 28,
     "undocument": true,
     "params": [
       {
@@ -4468,11 +4486,11 @@
     "static": false,
     "variation": null,
     "name": "server",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#server",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#server",
     "access": null,
     "description": null,
-    "lineNumber": 19,
+    "lineNumber": 30,
     "undocument": true,
     "type": {
       "types": [
@@ -4486,11 +4504,11 @@
     "static": false,
     "variation": null,
     "name": "getRoutes",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#getRoutes",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#getRoutes",
     "access": null,
     "description": null,
-    "lineNumber": 33,
+    "lineNumber": 44,
     "undocument": true,
     "params": [],
     "return": {
@@ -4506,11 +4524,11 @@
     "static": false,
     "variation": null,
     "name": "loadRoutes",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#loadRoutes",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#loadRoutes",
     "access": null,
     "description": null,
-    "lineNumber": 50,
+    "lineNumber": 61,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4521,11 +4539,11 @@
     "static": false,
     "variation": null,
     "name": "logRequestInfo",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#logRequestInfo",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#logRequestInfo",
     "access": null,
     "description": null,
-    "lineNumber": 54,
+    "lineNumber": 65,
     "undocument": true,
     "params": [
       {
@@ -4555,11 +4573,11 @@
     "static": false,
     "variation": null,
     "name": "start",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#start",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#start",
     "access": null,
     "description": null,
-    "lineNumber": 61,
+    "lineNumber": 72,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4570,11 +4588,11 @@
     "static": false,
     "variation": null,
     "name": "router",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#router",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#router",
     "access": null,
     "description": null,
-    "lineNumber": 62,
+    "lineNumber": 73,
     "undocument": true,
     "type": {
       "types": [
@@ -4588,11 +4606,11 @@
     "static": false,
     "variation": null,
     "name": "server",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#server",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#server",
     "access": null,
     "description": null,
-    "lineNumber": 67,
+    "lineNumber": 78,
     "undocument": true,
     "type": {
       "types": [
@@ -4606,11 +4624,11 @@
     "static": false,
     "variation": null,
     "name": "stop",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#stop",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#stop",
     "access": null,
     "description": null,
-    "lineNumber": 71,
+    "lineNumber": 82,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4621,11 +4639,11 @@
     "static": false,
     "variation": null,
     "name": "use",
-    "memberof": "src/server/index.js~StructureServer",
-    "longname": "src/server/index.js~StructureServer#use",
+    "memberof": "src/server/index.js~Server",
+    "longname": "src/server/index.js~Server#use",
     "access": null,
     "description": null,
-    "lineNumber": 78,
+    "lineNumber": 89,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4641,7 +4659,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger}   from '../lib/logger'\nimport cors              from 'cors'\nimport multer            from 'multer'\nimport storageAdaptors   from './storageAdaptors'\n\nimport App               from '../controllers/applications'\nimport Auth              from '../controllers/auth'\nimport Bucket            from '../controllers/buckets'\nimport DigitalAsset      from '../controllers/digital-assets'\nimport Document          from '../controllers/documents'\nimport DocumentRevision  from '../controllers/document-revisions'\nimport Field             from '../controllers/fields'\nimport Org               from '../controllers/organizations'\nimport Registry          from '../controllers/registry'\nimport Taxonomy          from '../controllers/taxonomies'\nimport Template          from '../controllers/templates'\nimport TemplateRevision  from '../controllers/template-revisions'\nimport User              from '../controllers/users'\n\nconst Controllers = [App, Auth, Bucket, DigitalAsset, Document, DocumentRevision, Field, Org, Registry, Taxonomy, Template, TemplateRevision, User]\n\nvar upload = multer({storage: storageAdaptors.disk.adaptor}).any()\n\nclass Router {\n\n  constructor(options = {}) {\n    this.options     = options\n\n    this.Controllers = this.options.Controllers || Controllers\n    this.dispatcher  = this.options.dispatcher\n\n    this.routes      = options.routes\n    this.server      = options.server\n    //this.structRoute()\n    this.loadRoutes()\n    this.generateRoutesFromNodes()\n\n  }\n\n  generateRoutesFromNodes() {\n    var server  = this.server,\n        version = `v${process.env.API_VERSION}`\n\n    /*\n    TODO:\n    Make this a simple on/off flag\n    */\n    server.use(cors())\n\n    /*\n    TODO: build middleware to handle the extra routes needed per respective node(s)\n    */\n    var digitalAsset = new DigitalAsset()\n\n    server.get(`/api/${version}/digital-assets/embeds/:type/:url(*)`,  this.dispatcher.dispatch(new DigitalAsset(), 'fetchEmbed'))\n    server.get(`/api/${version}/digital-assets/:id/view`,              digitalAsset.view.bind(digitalAsset))\n    server.get(`/api/${version}/registry/settings/:name`,              this.dispatcher.dispatch(new Registry(), 'getSettingsByName'))\n\n    server.post(`/api/${version}/auth/login`,                          this.dispatcher.dispatch(new Auth(), 'login'))\n    server.post(`/api/${version}/auth/user/facebook`,                  this.dispatcher.dispatch(new Auth(), 'authByFacebook'))\n\n    server.put(`/api/${version}/digital-assets`,                       [upload, this.dispatcher.dispatch(new DigitalAsset(), 'create')])\n\n    this.Controllers.forEach( (Controller) => {\n      var controller = new Controller(),\n          routeName  = controller.name\n\n      server.get(`/api/${version}/${routeName}/:id`,                    this.dispatcher.dispatch(controller, 'getById'))\n      server.get(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'getAll'))\n\n      server.post(`/api/${version}/${routeName}/:id`,                   this.dispatcher.dispatch(controller, 'update'))\n\n      server.put(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'create'))\n\n      server.delete(`/api/${version}/${routeName}/:id`,                 this.dispatcher.dispatch(controller, 'delete'))\n    })\n\n  }\n\n  loadRoutes() {\n    this.routes.call(this, this.server)\n  }\n\n  structRoute() {\n    var server = this.server\n\n    var mapper = {\n      buckets: {\n        Node: 'bucket'\n      }\n    }\n\n    server.post(`/api/struct`, (req, res, next) => {\n\n      /* Example Query:\n      buckets: {\n        fields: ['data', 'desc', 'id', 'sid', 'title'],\n        id: 12345\n      }\n      */\n      var query = req.body.query\n\n      var fetch = {}\n\n      Object.keys(query).forEach( async (k, i) => {\n        var o = query[k]\n\n        var node = require(`../../nodes/${mapper[k].Node}`).default\n\n        /*\n        TODO: pluck the values instead of returning all the values\n        */\n        if(o.id) {\n          fetch[k] = await node.getById(o.id)\n        }\n\n        else {\n          fetch[k] = await node.getAll()\n        }\n\n      })\n\n      res.status(200).json({\n        pkg: fetch,\n        status: 200\n      })\n    })\n  }\n\n}\n\nexport default Router\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger}   from '../lib/logger'\nimport cors              from 'cors'\nimport multer            from 'multer'\nimport storageAdaptors   from './storageAdaptors'\n\nimport App               from '../controllers/applications'\nimport Auth              from '../controllers/auth'\nimport Bucket            from '../controllers/buckets'\nimport DigitalAsset      from '../controllers/digital-assets'\nimport Document          from '../controllers/documents'\nimport DocumentRevision  from '../controllers/document-revisions'\nimport Field             from '../controllers/fields'\nimport Org               from '../controllers/organizations'\nimport Registry          from '../controllers/registry'\nimport Taxonomy          from '../controllers/taxonomies'\nimport Template          from '../controllers/templates'\nimport TemplateRevision  from '../controllers/template-revisions'\nimport User              from '../controllers/users'\n\nconst Controllers = [App, Auth, Bucket, DigitalAsset, Document, DocumentRevision, Field, Org, Registry, Taxonomy, Template, TemplateRevision, User]\n\nvar upload = multer({storage: storageAdaptors.disk.adaptor}).any()\n\n/**\n * Router Class\n *\n * @public\n * @class Router\n */\nclass Router {\n\n  constructor(options = {}) {\n    this.options     = options\n\n    this.Controllers = this.options.Controllers || Controllers\n    this.dispatcher  = this.options.dispatcher\n\n    this.routes      = options.routes\n    this.server      = options.server\n    //this.structRoute()\n    this.loadRoutes()\n    this.generateRoutesFromNodes()\n\n  }\n\n  generateRoutesFromNodes() {\n    var server  = this.server,\n        version = `v${process.env.API_VERSION}`\n\n    /*\n    TODO:\n    Make this a simple on/off flag\n    */\n    server.use(cors())\n\n    /*\n    TODO: build middleware to handle the extra routes needed per respective node(s)\n    */\n    var digitalAsset = new DigitalAsset()\n\n    server.get(`/api/${version}/digital-assets/embeds/:type/:url(*)`,  this.dispatcher.dispatch(new DigitalAsset(), 'fetchEmbed'))\n    server.get(`/api/${version}/digital-assets/:id/view`,              digitalAsset.view.bind(digitalAsset))\n    server.get(`/api/${version}/registry/settings/:name`,              this.dispatcher.dispatch(new Registry(), 'getSettingsByName'))\n\n    server.post(`/api/${version}/auth/login`,                          this.dispatcher.dispatch(new Auth(), 'login'))\n    server.post(`/api/${version}/auth/user/facebook`,                  this.dispatcher.dispatch(new Auth(), 'authByFacebook'))\n\n    server.put(`/api/${version}/digital-assets`,                       [upload, this.dispatcher.dispatch(new DigitalAsset(), 'create')])\n\n    this.Controllers.forEach( (Controller) => {\n      var controller = new Controller(),\n          routeName  = controller.name\n\n      server.get(`/api/${version}/${routeName}/:id`,                    this.dispatcher.dispatch(controller, 'getById'))\n      server.get(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'getAll'))\n\n      server.post(`/api/${version}/${routeName}/:id`,                   this.dispatcher.dispatch(controller, 'update'))\n\n      server.put(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'create'))\n\n      server.delete(`/api/${version}/${routeName}/:id`,                 this.dispatcher.dispatch(controller, 'delete'))\n    })\n\n  }\n\n  loadRoutes() {\n    this.routes.call(this, this.server)\n  }\n\n  structRoute() {\n    var server = this.server\n\n    var mapper = {\n      buckets: {\n        Node: 'bucket'\n      }\n    }\n\n    server.post(`/api/struct`, (req, res, next) => {\n\n      /* Example Query:\n      buckets: {\n        fields: ['data', 'desc', 'id', 'sid', 'title'],\n        id: 12345\n      }\n      */\n      var query = req.body.query\n\n      var fetch = {}\n\n      Object.keys(query).forEach( async (k, i) => {\n        var o = query[k]\n\n        var node = require(`../../nodes/${mapper[k].Node}`).default\n\n        /*\n        TODO: pluck the values instead of returning all the values\n        */\n        if(o.id) {\n          fetch[k] = await node.getById(o.id)\n        }\n\n        else {\n          fetch[k] = await node.getAll()\n        }\n\n      })\n\n      res.status(200).json({\n        pkg: fetch,\n        status: 200\n      })\n    })\n  }\n\n}\n\nexport default Router\n"
   },
   {
     "__docId__": 202,
@@ -4656,7 +4674,7 @@
     "importPath": "structure-core/src/server/router.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 25,
     "undocument": true,
     "type": {
       "types": [
@@ -4677,7 +4695,7 @@
     "importPath": "structure-core/src/server/router.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 27,
     "undocument": true,
     "type": {
       "types": [
@@ -4693,13 +4711,18 @@
     "name": "Router",
     "memberof": "src/server/router.js",
     "longname": "src/server/router.js~Router",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/server/router.js",
     "importStyle": "Router",
-    "description": null,
-    "lineNumber": 24,
-    "undocument": true,
+    "description": "Router Class",
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "Router"
+      }
+    ],
     "interface": false
   },
   {
@@ -4712,7 +4735,7 @@
     "longname": "src/server/router.js~Router#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 37,
     "undocument": true,
     "params": [
       {
@@ -4737,7 +4760,7 @@
     "longname": "src/server/router.js~Router#options",
     "access": null,
     "description": null,
-    "lineNumber": 27,
+    "lineNumber": 38,
     "undocument": true,
     "type": {
       "types": [
@@ -4755,7 +4778,7 @@
     "longname": "src/server/router.js~Router#Controllers",
     "access": null,
     "description": null,
-    "lineNumber": 29,
+    "lineNumber": 40,
     "undocument": true,
     "type": {
       "types": [
@@ -4773,7 +4796,7 @@
     "longname": "src/server/router.js~Router#dispatcher",
     "access": null,
     "description": null,
-    "lineNumber": 30,
+    "lineNumber": 41,
     "undocument": true,
     "type": {
       "types": [
@@ -4791,7 +4814,7 @@
     "longname": "src/server/router.js~Router#routes",
     "access": null,
     "description": null,
-    "lineNumber": 32,
+    "lineNumber": 43,
     "undocument": true,
     "type": {
       "types": [
@@ -4809,7 +4832,7 @@
     "longname": "src/server/router.js~Router#server",
     "access": null,
     "description": null,
-    "lineNumber": 33,
+    "lineNumber": 44,
     "undocument": true,
     "type": {
       "types": [
@@ -4827,7 +4850,7 @@
     "longname": "src/server/router.js~Router#generateRoutesFromNodes",
     "access": null,
     "description": null,
-    "lineNumber": 40,
+    "lineNumber": 51,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4842,7 +4865,7 @@
     "longname": "src/server/router.js~Router#loadRoutes",
     "access": null,
     "description": null,
-    "lineNumber": 80,
+    "lineNumber": 91,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4857,7 +4880,7 @@
     "longname": "src/server/router.js~Router#structRoute",
     "access": null,
     "description": null,
-    "lineNumber": 84,
+    "lineNumber": 95,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4873,7 +4896,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Disk from 'structure-storage-disk-adaptor'\n\nexport default {\n  disk: {\n    adaptor: new Disk.Adaptor(),\n    name: 'disk'\n  }\n}\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport Disk from 'structure-storage-disk-adaptor'\n\nexport default {\n  disk: {\n    adaptor: new Disk.Adaptor(),\n    name: 'disk'\n  }\n}\n"
   },
   {
     "__docId__": 215,
@@ -4886,7 +4909,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import AppModel        from '../models/app'\nimport async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport ShortIdService  from '../services/short-id'\n\nclass AppService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService  = new ShortIdService(),\n        appModel   = new AppModel()\n\n    appModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create app',\n          resource: 'AppService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for app',\n            resource: 'AppService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var appModel = new AppModel()\n\n    appModel.get.apply(appModel, arguments)\n  }\n\n  getByShortId() {\n    var appModel = new AppModel()\n\n    appModel.getByShortId.apply(appModel, arguments)\n  }\n\n  update() {\n    var appModel = new AppModel()\n\n    appModel.update.apply(appModel, arguments)\n  }\n\n  updateByShortId() {\n    var appModel = new AppModel()\n\n    appModel.updateByShortId.apply(appModel, arguments)\n  }\n\n}\n\nexport default AppService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport AppModel        from '../models/app'\nimport {chalk, logger} from '../lib/logger'\nimport ShortIdService  from '../services/short-id'\n\n/**\n * AppService Class\n *\n * @public\n * @class AppService\n */\nclass AppService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService  = new ShortIdService(),\n        appModel   = new AppModel()\n\n    appModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create app',\n          resource: 'AppService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for app',\n            resource: 'AppService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var appModel = new AppModel()\n\n    appModel.get.apply(appModel, arguments)\n  }\n\n  getByShortId() {\n    var appModel = new AppModel()\n\n    appModel.getByShortId.apply(appModel, arguments)\n  }\n\n  update() {\n    var appModel = new AppModel()\n\n    appModel.update.apply(appModel, arguments)\n  }\n\n  updateByShortId() {\n    var appModel = new AppModel()\n\n    appModel.updateByShortId.apply(appModel, arguments)\n  }\n\n}\n\nexport default AppService\n"
   },
   {
     "__docId__": 216,
@@ -4896,13 +4919,18 @@
     "name": "AppService",
     "memberof": "src/services/app.js",
     "longname": "src/services/app.js~AppService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/app.js",
     "importStyle": "AppService",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "AppService Class",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "AppService"
+      }
+    ],
     "interface": false
   },
   {
@@ -4915,7 +4943,7 @@
     "longname": "src/services/app.js~AppService#create",
     "access": null,
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 18,
     "undocument": true,
     "params": [
       {
@@ -4946,7 +4974,7 @@
     "longname": "src/services/app.js~AppService#get",
     "access": null,
     "description": null,
-    "lineNumber": 50,
+    "lineNumber": 60,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4961,7 +4989,7 @@
     "longname": "src/services/app.js~AppService#getByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 56,
+    "lineNumber": 66,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4976,7 +5004,7 @@
     "longname": "src/services/app.js~AppService#update",
     "access": null,
     "description": null,
-    "lineNumber": 62,
+    "lineNumber": 72,
     "undocument": true,
     "params": [],
     "generator": false
@@ -4991,7 +5019,7 @@
     "longname": "src/services/app.js~AppService#updateByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 68,
+    "lineNumber": 78,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5007,7 +5035,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport PasswordService from './password'\nimport TokenService    from './token'\nimport UserModel       from '../models/user'\n\nclass AuthService {\n\n  authenticateById(id, password, cb) {\n\n    var passwordService = new PasswordService(),\n        userModel       = new UserModel()\n\n    userModel.get(id, function AuthService_authenticateGetCallback(err, user) {\n\n      if(err) {\n        return cb({\n          message: 'Could not get user: ' + id,\n          resource: 'AuthService'\n        })\n      }\n\n      passwordService.verify(password, user.hash, function(err, verified) {\n\n        if(err) {\n          return cb({\n            message: 'Could not verify password for user: ' + id,\n            resource: 'AuthService'\n          })\n        }\n\n        cb(null, user)\n\n      })\n\n    })\n\n  }\n\n  authenticateByUsername(username, password, cb) {\n\n    var passwordService = new PasswordService(),\n        userModel       = new UserModel()\n\n    userModel.getByUsername(username, function AuthService_authenticateGetCallback(err, user) {\n\n      if(err) {\n        logger.error('Could not get user', username)\n        return cb({\n          message: 'Could not get user: ' + username,\n          resource: 'AuthService'\n        })\n      }\n\n      passwordService.verify(password, user.hash, function(err, verified) {\n\n        if(err) {\n          logger.error('Could not validate password for user', username)\n          return cb({\n            message: 'Could not verify password for user: ' + username,\n            resource: 'AuthService'\n          })\n        }\n        logger.debug('auth by user/pass its ok', user)\n        cb(null, user)\n\n      })\n\n    })\n\n  }\n\n  authorize(id, token, cb) {\n\n    var tokenService = new TokenService()\n\n    tokenService.verify(token, function(err, verified) {\n\n      if(err) {\n        return cb({\n          message: 'Could not authorize user: ' + id,\n          resource: 'AuthService'\n        })\n      }\n\n      cb(null, token)\n\n    })\n\n  }\n\n  loginById(id, pkg = {}, cb) {\n    var _this = this\n\n    if(arguments.length == 2) {\n      pkg = arguments[0]\n      id  = pkg.id\n      cb  = arguments[1]\n    }\n\n    var tokenService = new TokenService()\n\n    async.parallel([\n      this.authenticateById.bind(this, id, pkg.password),\n      tokenService.issue.bind(tokenService, pkg.hash)\n    ], function AuthService_loginByIdCallBack(err, res) {\n      logger.debug('hit parallel call')\n      if(err) {\n        logger.error('Could not log in user', id)\n        logger.error(err)\n\n        return cb({\n          message: 'Could not log in user',\n          resource: 'AuthService'\n        })\n      }\n\n      var user = res[0]\n      user.token = res[1]\n\n      cb(null, user)\n\n    })\n\n  }\n\n  loginByUsername(username, pkg = {}, cb) {\n    var _this = this\n\n    if(arguments.length == 2) {\n      pkg       = arguments[0]\n      username  = pkg.username\n      cb        = arguments[1]\n    }\n\n    var tokenService = new TokenService()\n\n    async.parallel([\n      this.authenticateByUsername.bind(this, username, pkg.password),\n      //tokenService.issue.bind(tokenService, pkg.hash)\n    ], function AuthService_loginByUsernameCallBack(err, res) {\n\n      if(err) {\n        logger.error('Could not log in user', username)\n        logger.error(err)\n\n        return cb({\n          message: 'Could not log in user',\n          resource: 'AuthService'\n        })\n      }\n\n      var user = res[0]\n      //user.token = res[1]\n\n      cb(null, user)\n\n    })\n\n  }\n\n  logout() {\n\n  }\n\n  unauthenticate() {\n\n  }\n\n}\n\nexport default AuthService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\nimport PasswordService from './password'\nimport TokenService    from './token'\nimport UserModel       from '../models/user'\n\n/**\n * AuthService Class\n *\n * @public\n * @class AuthService\n */\nclass AuthService {\n\n  authenticateById(id, password, cb) {\n\n    var passwordService = new PasswordService(),\n        userModel       = new UserModel()\n\n    userModel.get(id, function AuthService_authenticateGetCallback(err, user) {\n\n      if(err) {\n        return cb({\n          message: 'Could not get user: ' + id,\n          resource: 'AuthService'\n        })\n      }\n\n      passwordService.verify(password, user.hash, function(err, verified) {\n\n        if(err) {\n          return cb({\n            message: 'Could not verify password for user: ' + id,\n            resource: 'AuthService'\n          })\n        }\n\n        cb(null, user)\n\n      })\n\n    })\n\n  }\n\n  authenticateByUsername(username, password, cb) {\n\n    var passwordService = new PasswordService(),\n        userModel       = new UserModel()\n\n    userModel.getByUsername(username, function AuthService_authenticateGetCallback(err, user) {\n\n      if(err) {\n        logger.error('Could not get user', username)\n        return cb({\n          message: 'Could not get user: ' + username,\n          resource: 'AuthService'\n        })\n      }\n\n      passwordService.verify(password, user.hash, function(err, verified) {\n\n        if(err) {\n          logger.error('Could not validate password for user', username)\n          return cb({\n            message: 'Could not verify password for user: ' + username,\n            resource: 'AuthService'\n          })\n        }\n        logger.debug('auth by user/pass its ok', user)\n        cb(null, user)\n\n      })\n\n    })\n\n  }\n\n  authorize(id, token, cb) {\n\n    var tokenService = new TokenService()\n\n    tokenService.verify(token, function(err, verified) {\n\n      if(err) {\n        return cb({\n          message: 'Could not authorize user: ' + id,\n          resource: 'AuthService'\n        })\n      }\n\n      cb(null, token)\n\n    })\n\n  }\n\n  loginById(id, pkg = {}, cb) {\n    var _this = this\n\n    if(arguments.length == 2) {\n      pkg = arguments[0]\n      id  = pkg.id\n      cb  = arguments[1]\n    }\n\n    var tokenService = new TokenService()\n\n    async.parallel([\n      this.authenticateById.bind(this, id, pkg.password),\n      tokenService.issue.bind(tokenService, pkg.hash)\n    ], function AuthService_loginByIdCallBack(err, res) {\n      logger.debug('hit parallel call')\n      if(err) {\n        logger.error('Could not log in user', id)\n        logger.error(err)\n\n        return cb({\n          message: 'Could not log in user',\n          resource: 'AuthService'\n        })\n      }\n\n      var user = res[0]\n      user.token = res[1]\n\n      cb(null, user)\n\n    })\n\n  }\n\n  loginByUsername(username, pkg = {}, cb) {\n    var _this = this\n\n    if(arguments.length == 2) {\n      pkg       = arguments[0]\n      username  = pkg.username\n      cb        = arguments[1]\n    }\n\n    var tokenService = new TokenService()\n\n    async.parallel([\n      this.authenticateByUsername.bind(this, username, pkg.password),\n      //tokenService.issue.bind(tokenService, pkg.hash)\n    ], function AuthService_loginByUsernameCallBack(err, res) {\n\n      if(err) {\n        logger.error('Could not log in user', username)\n        logger.error(err)\n\n        return cb({\n          message: 'Could not log in user',\n          resource: 'AuthService'\n        })\n      }\n\n      var user = res[0]\n      //user.token = res[1]\n\n      cb(null, user)\n\n    })\n\n  }\n\n  logout() {\n\n  }\n\n  unauthenticate() {\n\n  }\n\n}\n\nexport default AuthService\n"
   },
   {
     "__docId__": 223,
@@ -5017,13 +5045,18 @@
     "name": "AuthService",
     "memberof": "src/services/auth.js",
     "longname": "src/services/auth.js~AuthService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/auth.js",
     "importStyle": "AuthService",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "AuthService Class",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "AuthService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5036,7 +5069,7 @@
     "longname": "src/services/auth.js~AuthService#authenticateById",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 19,
     "undocument": true,
     "params": [
       {
@@ -5070,7 +5103,7 @@
     "longname": "src/services/auth.js~AuthService#authenticateByUsername",
     "access": null,
     "description": null,
-    "lineNumber": 40,
+    "lineNumber": 50,
     "undocument": true,
     "params": [
       {
@@ -5104,7 +5137,7 @@
     "longname": "src/services/auth.js~AuthService#authorize",
     "access": null,
     "description": null,
-    "lineNumber": 73,
+    "lineNumber": 83,
     "undocument": true,
     "params": [
       {
@@ -5138,7 +5171,7 @@
     "longname": "src/services/auth.js~AuthService#loginById",
     "access": null,
     "description": null,
-    "lineNumber": 92,
+    "lineNumber": 102,
     "undocument": true,
     "params": [
       {
@@ -5175,7 +5208,7 @@
     "longname": "src/services/auth.js~AuthService#loginByUsername",
     "access": null,
     "description": null,
-    "lineNumber": 127,
+    "lineNumber": 137,
     "undocument": true,
     "params": [
       {
@@ -5212,7 +5245,7 @@
     "longname": "src/services/auth.js~AuthService#logout",
     "access": null,
     "description": null,
-    "lineNumber": 162,
+    "lineNumber": 172,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5227,7 +5260,7 @@
     "longname": "src/services/auth.js~AuthService#unauthenticate",
     "access": null,
     "description": null,
-    "lineNumber": 166,
+    "lineNumber": 176,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5243,7 +5276,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport ShortIdService  from '../services/short-id'\nimport OrganizationModel   from '../models/organization'\n\nclass OrganizationService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService  = new ShortIdService(),\n        organizationModel   = new OrganizationModel()\n\n    organizationModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create organization',\n          resource: 'OrganizationService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for organization',\n            resource: 'OrganizationService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.get.apply(organizationModel, arguments)\n  }\n\n  getByShortId() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.getByShortId.apply(organizationModel, arguments)\n  }\n\n  list() {\n\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.list.apply(organizationModel, arguments)\n\n  }\n\n  update() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.update.apply(organizationModel, arguments)\n  }\n\n  updateByShortId() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.updateByShortId.apply(organizationModel, arguments)\n  }\n\n}\n\nexport default OrganizationService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\nimport ShortIdService  from '../services/short-id'\nimport OrganizationModel   from '../models/organization'\n\n/**\n * OrganizationService Class\n *\n * @public\n * @class OrganizationService\n */\nclass OrganizationService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService  = new ShortIdService(),\n        organizationModel   = new OrganizationModel()\n\n    organizationModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create organization',\n          resource: 'OrganizationService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for organization',\n            resource: 'OrganizationService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.get.apply(organizationModel, arguments)\n  }\n\n  getByShortId() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.getByShortId.apply(organizationModel, arguments)\n  }\n\n  list() {\n\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.list.apply(organizationModel, arguments)\n\n  }\n\n  update() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.update.apply(organizationModel, arguments)\n  }\n\n  updateByShortId() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.updateByShortId.apply(organizationModel, arguments)\n  }\n\n}\n\nexport default OrganizationService\n"
   },
   {
     "__docId__": 232,
@@ -5253,13 +5286,18 @@
     "name": "OrganizationService",
     "memberof": "src/services/organization.js",
     "longname": "src/services/organization.js~OrganizationService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/organization.js",
     "importStyle": "OrganizationService",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "OrganizationService Class",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "OrganizationService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5272,7 +5310,7 @@
     "longname": "src/services/organization.js~OrganizationService#create",
     "access": null,
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 18,
     "undocument": true,
     "params": [
       {
@@ -5303,7 +5341,7 @@
     "longname": "src/services/organization.js~OrganizationService#get",
     "access": null,
     "description": null,
-    "lineNumber": 50,
+    "lineNumber": 60,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5318,7 +5356,7 @@
     "longname": "src/services/organization.js~OrganizationService#getByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 56,
+    "lineNumber": 66,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5333,7 +5371,7 @@
     "longname": "src/services/organization.js~OrganizationService#list",
     "access": null,
     "description": null,
-    "lineNumber": 62,
+    "lineNumber": 72,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5348,7 +5386,7 @@
     "longname": "src/services/organization.js~OrganizationService#update",
     "access": null,
     "description": null,
-    "lineNumber": 70,
+    "lineNumber": 80,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5363,7 +5401,7 @@
     "longname": "src/services/organization.js~OrganizationService#updateByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 76,
+    "lineNumber": 86,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5379,7 +5417,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "class PackageService {\n\n  constructor() {\n\n  }\n\n  error(o = {}, options) {\n    var status = 400\n\n    if(typeof options == 'number') status = options\n    if(typeof options == 'object') {\n      status = options.status || status\n    }\n\n    return {\n      err: {},\n      status\n    }\n\n  }\n\n  success(o = {}, options) {\n    var status = 200\n\n    if(typeof options == 'number') status = options\n    if(typeof options == 'object') {\n      status = options.status || status\n    }\n\n    return {\n      pkg: o,\n      status\n    }\n\n  }\n\n}\n\nexport default PackageService\n"
+    "content": "/**\n * PackageService Class\n *\n * @public\n * @class PackageService\n */\nclass PackageService {\n\n  constructor() {\n\n  }\n\n  error(o = {}, options) {\n    var status = 400\n\n    if(typeof options == 'number') status = options\n    if(typeof options == 'object') {\n      status = options.status || status\n    }\n\n    return {\n      err: {},\n      status\n    }\n\n  }\n\n  success(o = {}, options) {\n    var status = 200\n\n    if(typeof options == 'number') status = options\n    if(typeof options == 'object') {\n      status = options.status || status\n    }\n\n    return {\n      pkg: o,\n      status\n    }\n\n  }\n\n}\n\nexport default PackageService\n"
   },
   {
     "__docId__": 240,
@@ -5389,13 +5427,18 @@
     "name": "PackageService",
     "memberof": "src/services/package.js",
     "longname": "src/services/package.js~PackageService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/package.js",
     "importStyle": "PackageService",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "PackageService Class",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "PackageService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5408,7 +5451,7 @@
     "longname": "src/services/package.js~PackageService#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 3,
+    "lineNumber": 9,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5423,7 +5466,7 @@
     "longname": "src/services/package.js~PackageService#error",
     "access": null,
     "description": null,
-    "lineNumber": 7,
+    "lineNumber": 13,
     "undocument": true,
     "params": [
       {
@@ -5459,7 +5502,7 @@
     "longname": "src/services/package.js~PackageService#success",
     "access": null,
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 28,
     "undocument": true,
     "params": [
       {
@@ -5496,7 +5539,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import bcrypt          from 'bcrypt'\nimport {chalk, logger} from '../lib/logger'\n\nclass PasswordService {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  issue(s) {\n\n    return new Promise( (resolve, reject) => {\n\n      if(typeof s != 'string') return cb({\n        message: 'Password must be a string',\n        resource: 'PasswordService'\n      })\n\n      bcrypt.genSalt(\n        parseInt(this.options.genSalt) ||\n        parseInt(process.env.SALT_FACTOR) ||\n        10,\n      function PasswordService_genSaltCallback(err, salt) {\n        if(err) {\n          logger.error('Could not generate salt', err)\n          return reject(err)\n        }\n\n        bcrypt.hash(s, salt, function PasswordService_hashCallback(err, hash) {\n          if(err) {\n            logger.error('Could not generate hash', err)\n            return reject(err)\n          }\n\n          resolve(hash)\n        })\n\n      })\n\n    })\n\n  }\n\n  verify(s, hash) {\n\n    return new Promise( (resolve, reject) => {\n\n      bcrypt.compare(s, hash, function PasswordService_compareCallback(err, match) {\n\n        if(err) {\n          logger.error('Could not verify password', err)\n          logger.debug('Password', s)\n          logger.debug('Hash', hash)\n          return reject(err)\n        }\n\n        return resolve(true)\n\n      })\n\n    })\n\n  }\n\n}\n\nexport default PasswordService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport bcrypt          from 'bcrypt'\nimport {chalk, logger} from '../lib/logger'\n\n/**\n * PasswordService Class\n *\n * @public\n * @class PasswordService\n */\nclass PasswordService {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  issue(s) {\n\n    return new Promise( (resolve, reject) => {\n\n      if(typeof s != 'string') return cb({\n        message: 'Password must be a string',\n        resource: 'PasswordService'\n      })\n\n      bcrypt.genSalt(\n        parseInt(this.options.genSalt) ||\n        parseInt(process.env.SALT_FACTOR) ||\n        10,\n      function PasswordService_genSaltCallback(err, salt) {\n        if(err) {\n          logger.error('Could not generate salt', err)\n          return reject(err)\n        }\n\n        bcrypt.hash(s, salt, function PasswordService_hashCallback(err, hash) {\n          if(err) {\n            logger.error('Could not generate hash', err)\n            return reject(err)\n          }\n\n          resolve(hash)\n        })\n\n      })\n\n    })\n\n  }\n\n  verify(s, hash) {\n\n    return new Promise( (resolve, reject) => {\n\n      bcrypt.compare(s, hash, function PasswordService_compareCallback(err, match) {\n\n        if(err) {\n          logger.error('Could not verify password', err)\n          logger.debug('Password', s)\n          logger.debug('Hash', hash)\n          return reject(err)\n        }\n\n        return resolve(true)\n\n      })\n\n    })\n\n  }\n\n}\n\nexport default PasswordService\n"
   },
   {
     "__docId__": 245,
@@ -5506,13 +5549,18 @@
     "name": "PasswordService",
     "memberof": "src/services/password.js",
     "longname": "src/services/password.js~PasswordService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/password.js",
     "importStyle": "PasswordService",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "PasswordService Class",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "PasswordService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5525,7 +5573,7 @@
     "longname": "src/services/password.js~PasswordService#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 17,
     "undocument": true,
     "params": [
       {
@@ -5550,7 +5598,7 @@
     "longname": "src/services/password.js~PasswordService#options",
     "access": null,
     "description": null,
-    "lineNumber": 7,
+    "lineNumber": 18,
     "undocument": true,
     "type": {
       "types": [
@@ -5568,7 +5616,7 @@
     "longname": "src/services/password.js~PasswordService#issue",
     "access": null,
     "description": null,
-    "lineNumber": 10,
+    "lineNumber": 21,
     "undocument": true,
     "params": [
       {
@@ -5595,7 +5643,7 @@
     "longname": "src/services/password.js~PasswordService#verify",
     "access": null,
     "description": null,
-    "lineNumber": 44,
+    "lineNumber": 55,
     "undocument": true,
     "params": [
       {
@@ -5629,7 +5677,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../lib/logger'\nimport shorthash       from 'shorthash'\n\nclass ShortIdService {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  issue(id) {\n\n    var sid = shorthash.unique(id)\n\n    return sid\n\n  }\n\n}\n\nexport default ShortIdService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\nimport shorthash       from 'shorthash'\n\n/**\n * ShortIdService Class\n *\n * @public\n * @class ShortIdService\n */\nclass ShortIdService {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  issue(id) {\n\n    var sid = shorthash.unique(id)\n\n    return sid\n\n  }\n\n}\n\nexport default ShortIdService\n"
   },
   {
     "__docId__": 251,
@@ -5639,13 +5687,18 @@
     "name": "ShortIdService",
     "memberof": "src/services/short-id.js",
     "longname": "src/services/short-id.js~ShortIdService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/short-id.js",
     "importStyle": "ShortIdService",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "ShortIdService Class",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "ShortIdService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5658,7 +5711,7 @@
     "longname": "src/services/short-id.js~ShortIdService#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 17,
     "undocument": true,
     "params": [
       {
@@ -5683,7 +5736,7 @@
     "longname": "src/services/short-id.js~ShortIdService#options",
     "access": null,
     "description": null,
-    "lineNumber": 7,
+    "lineNumber": 18,
     "undocument": true,
     "type": {
       "types": [
@@ -5701,7 +5754,7 @@
     "longname": "src/services/short-id.js~ShortIdService#issue",
     "access": null,
     "description": null,
-    "lineNumber": 10,
+    "lineNumber": 21,
     "undocument": true,
     "params": [
       {
@@ -5729,7 +5782,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import async             from 'async'\nimport {chalk, logger}   from '../lib/logger'\nimport OrganizationModel from '../models/organization'\nimport ShortIdService    from '../services/short-id'\nimport TemplateModel     from '../models/template'\n\nclass TemplateService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService    = new ShortIdService(),\n        templateModel     = new TemplateModel()\n\n    templateModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create template',\n          resource: 'TemplateService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for template',\n            resource: 'TemplateService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var templateModel = new TemplateModel()\n\n    templateModel.get.apply(templateModel, arguments)\n  }\n\n  getByShortId() {\n    var templateModel = new TemplateModel()\n\n    templateModel.getByShortId.apply(templateModel, arguments)\n  }\n\n  update() {\n    var templateModel = new TemplateModel()\n\n    templateModel.update.apply(templateModel, arguments)\n  }\n\n  updateByShortId() {\n    var templateModel = new TemplateModel()\n\n    templateModel.updateByShortId.apply(templateModel, arguments)\n  }\n\n}\n\nexport default TemplateService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport async             from 'async'\nimport {chalk, logger}   from '../lib/logger'\nimport OrganizationModel from '../models/organization'\nimport ShortIdService    from '../services/short-id'\nimport TemplateModel     from '../models/template'\n\n/**\n * TemplateService Class\n *\n * @public\n * @class TemplateService\n */\nclass TemplateService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService    = new ShortIdService(),\n        templateModel     = new TemplateModel()\n\n    templateModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create template',\n          resource: 'TemplateService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for template',\n            resource: 'TemplateService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var templateModel = new TemplateModel()\n\n    templateModel.get.apply(templateModel, arguments)\n  }\n\n  getByShortId() {\n    var templateModel = new TemplateModel()\n\n    templateModel.getByShortId.apply(templateModel, arguments)\n  }\n\n  update() {\n    var templateModel = new TemplateModel()\n\n    templateModel.update.apply(templateModel, arguments)\n  }\n\n  updateByShortId() {\n    var templateModel = new TemplateModel()\n\n    templateModel.updateByShortId.apply(templateModel, arguments)\n  }\n\n}\n\nexport default TemplateService\n"
   },
   {
     "__docId__": 256,
@@ -5739,13 +5792,18 @@
     "name": "TemplateService",
     "memberof": "src/services/template.js",
     "longname": "src/services/template.js~TemplateService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/template.js",
     "importStyle": "TemplateService",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "TemplateService Class",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TemplateService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5758,7 +5816,7 @@
     "longname": "src/services/template.js~TemplateService#create",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 20,
     "undocument": true,
     "params": [
       {
@@ -5789,7 +5847,7 @@
     "longname": "src/services/template.js~TemplateService#get",
     "access": null,
     "description": null,
-    "lineNumber": 51,
+    "lineNumber": 62,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5804,7 +5862,7 @@
     "longname": "src/services/template.js~TemplateService#getByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 57,
+    "lineNumber": 68,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5819,7 +5877,7 @@
     "longname": "src/services/template.js~TemplateService#update",
     "access": null,
     "description": null,
-    "lineNumber": 63,
+    "lineNumber": 74,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5834,7 +5892,7 @@
     "longname": "src/services/template.js~TemplateService#updateByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 69,
+    "lineNumber": 80,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5850,7 +5908,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import jwt from 'jsonwebtoken'\n\nclass TokenService {\n\n  constructor() {\n\n  }\n\n  issue(s) {\n\n    if(typeof s == 'number') s = s.toString()\n    if(typeof s != 'string') return false\n\n    var token = jwt.sign(s, cert, {\n      //expiresInMinutes: 1440 // 24 hours\n    })\n\n    return token\n\n  }\n\n  verify(token) {\n\n    return jwt.verify(token, process.env.JWT_SECRET)\n\n  }\n\n}\n\nexport default TokenService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport jwt from 'jsonwebtoken'\n\n/**\n * TokenService Class\n *\n * @public\n * @class TokenService\n */\nclass TokenService {\n\n  constructor() {\n\n  }\n\n  issue(s) {\n\n    if(typeof s == 'number') s = s.toString()\n    if(typeof s != 'string') return false\n\n    var token = jwt.sign(s, cert, {\n      //expiresInMinutes: 1440 // 24 hours\n    })\n\n    return token\n\n  }\n\n  verify(token) {\n\n    return jwt.verify(token, process.env.JWT_SECRET)\n\n  }\n\n}\n\nexport default TokenService\n"
   },
   {
     "__docId__": 263,
@@ -5860,13 +5918,18 @@
     "name": "TokenService",
     "memberof": "src/services/token.js",
     "longname": "src/services/token.js~TokenService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/token.js",
     "importStyle": "TokenService",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "TokenService Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TokenService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5879,7 +5942,7 @@
     "longname": "src/services/token.js~TokenService#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 16,
     "undocument": true,
     "params": [],
     "generator": false
@@ -5894,7 +5957,7 @@
     "longname": "src/services/token.js~TokenService#issue",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 20,
     "undocument": true,
     "params": [
       {
@@ -5921,7 +5984,7 @@
     "longname": "src/services/token.js~TokenService#verify",
     "access": null,
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 33,
     "undocument": true,
     "params": [
       {
@@ -5949,7 +6012,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport PasswordService from './password'\nimport ShortIdService  from '../services/short-id'\nimport TokenService    from './token'\nimport UserModel       from '../models/user'\n\nclass UserService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var passwordService = new PasswordService(),\n        shortidService  = new ShortIdService(),\n        tokenService    = new TokenService(),\n        userModel       = new UserModel()\n\n    /*\n    TODO: clean up this query, it could be optimized\n    */\n    passwordService.issue(pkg.password, function UserService_createIssueCallback(err, hash) {\n\n      if(err) {\n        logger.error(err)\n        logger.debug('cb', typeof cb)\n        return cb({\n          message: 'Could not create password hash',\n          resource: 'UserModel'\n        })\n      }\n\n      if(pkg.password) delete pkg.password // dont want to store actual password\n      if(pkg.organizationId) delete pkg.organizationId\n\n      pkg.hash = hash\n      pkg.organizations = pkg.organizations || []\n\n      async.parallel([\n        userModel.create.bind(userModel, pkg)\n      ], function UserService_createParallelCallback(err, res) {\n\n        if(err) {\n          logger.error(err)\n          return cb({\n            raw: err,\n            resource: 'UserModel'\n          })\n        }\n\n        var user = res[0]\n        var sid  = shortidService.issue(user.id)\n\n        async.parallel([\n          tokenService.issue.bind(tokenService, user.id),\n          userModel.addToOrganizationTable.bind(userModel, user.id, o.organizations[0]),\n          _this.update.bind(_this, user.id, {sid})\n        ], function UserService_createParallelCallback2(err2, res2) {\n\n          if(err2) {\n            logger.error(err2)\n            return cb({\n              raw: err2,\n              resource: 'UserModel'\n            })\n          }\n\n          user               = res2[2]\n          user.organizations = res2[1].organizations\n          user.token         = res2[0]\n\n          cb(null, user)\n\n        })\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var userModel = new UserModel()\n\n    userModel.get.apply(userModel, arguments)\n  }\n\n  getByShortId() {\n    var userModel = new UserModel()\n\n    userModel.getByShortId.apply(userModel, arguments)\n  }\n\n  getByUsername() {\n    var userModel = new UserModel()\n\n    userModel.getByUsername.apply(userModel, arguments)\n  }\n\n  list() {\n\n    var userModel = new UserModel()\n\n    userModel.list.apply(userModel, arguments)\n\n  }\n\n  update() {\n    var userModel = new UserModel()\n\n    userModel.update.apply(userModel, arguments)\n  }\n\n  updateByShortId() {\n    var userModel = new UserModel()\n\n    userModel.updateByShortId.apply(userModel, arguments)\n  }\n\n}\n\nexport default UserService\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport PasswordService from './password'\nimport ShortIdService  from '../services/short-id'\nimport TokenService    from './token'\nimport UserModel       from '../models/user'\n\n/**\n * UserService Class\n *\n * @public\n * @class UserService\n */\nclass UserService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var passwordService = new PasswordService(),\n        shortidService  = new ShortIdService(),\n        tokenService    = new TokenService(),\n        userModel       = new UserModel()\n\n    /*\n    TODO: clean up this query, it could be optimized\n    */\n    passwordService.issue(pkg.password, function UserService_createIssueCallback(err, hash) {\n\n      if(err) {\n        logger.error(err)\n        logger.debug('cb', typeof cb)\n        return cb({\n          message: 'Could not create password hash',\n          resource: 'UserModel'\n        })\n      }\n\n      if(pkg.password) delete pkg.password // dont want to store actual password\n      if(pkg.organizationId) delete pkg.organizationId\n\n      pkg.hash = hash\n      pkg.organizations = pkg.organizations || []\n\n      async.parallel([\n        userModel.create.bind(userModel, pkg)\n      ], function UserService_createParallelCallback(err, res) {\n\n        if(err) {\n          logger.error(err)\n          return cb({\n            raw: err,\n            resource: 'UserModel'\n          })\n        }\n\n        var user = res[0]\n        var sid  = shortidService.issue(user.id)\n\n        async.parallel([\n          tokenService.issue.bind(tokenService, user.id),\n          userModel.addToOrganizationTable.bind(userModel, user.id, o.organizations[0]),\n          _this.update.bind(_this, user.id, {sid})\n        ], function UserService_createParallelCallback2(err2, res2) {\n\n          if(err2) {\n            logger.error(err2)\n            return cb({\n              raw: err2,\n              resource: 'UserModel'\n            })\n          }\n\n          user               = res2[2]\n          user.organizations = res2[1].organizations\n          user.token         = res2[0]\n\n          cb(null, user)\n\n        })\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var userModel = new UserModel()\n\n    userModel.get.apply(userModel, arguments)\n  }\n\n  getByShortId() {\n    var userModel = new UserModel()\n\n    userModel.getByShortId.apply(userModel, arguments)\n  }\n\n  getByUsername() {\n    var userModel = new UserModel()\n\n    userModel.getByUsername.apply(userModel, arguments)\n  }\n\n  list() {\n\n    var userModel = new UserModel()\n\n    userModel.list.apply(userModel, arguments)\n\n  }\n\n  update() {\n    var userModel = new UserModel()\n\n    userModel.update.apply(userModel, arguments)\n  }\n\n  updateByShortId() {\n    var userModel = new UserModel()\n\n    userModel.updateByShortId.apply(userModel, arguments)\n  }\n\n}\n\nexport default UserService\n"
   },
   {
     "__docId__": 268,
@@ -5959,13 +6022,18 @@
     "name": "UserService",
     "memberof": "src/services/user.js",
     "longname": "src/services/user.js~UserService",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/services/user.js",
     "importStyle": "UserService",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "UserService Class",
+    "lineNumber": 19,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "UserService"
+      }
+    ],
     "interface": false
   },
   {
@@ -5978,7 +6046,7 @@
     "longname": "src/services/user.js~UserService#create",
     "access": null,
     "description": null,
-    "lineNumber": 10,
+    "lineNumber": 21,
     "undocument": true,
     "params": [
       {
@@ -6009,7 +6077,7 @@
     "longname": "src/services/user.js~UserService#get",
     "access": null,
     "description": null,
-    "lineNumber": 85,
+    "lineNumber": 96,
     "undocument": true,
     "params": [],
     "generator": false
@@ -6024,7 +6092,7 @@
     "longname": "src/services/user.js~UserService#getByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 91,
+    "lineNumber": 102,
     "undocument": true,
     "params": [],
     "generator": false
@@ -6039,7 +6107,7 @@
     "longname": "src/services/user.js~UserService#getByUsername",
     "access": null,
     "description": null,
-    "lineNumber": 97,
+    "lineNumber": 108,
     "undocument": true,
     "params": [],
     "generator": false
@@ -6054,7 +6122,7 @@
     "longname": "src/services/user.js~UserService#list",
     "access": null,
     "description": null,
-    "lineNumber": 103,
+    "lineNumber": 114,
     "undocument": true,
     "params": [],
     "generator": false
@@ -6069,7 +6137,7 @@
     "longname": "src/services/user.js~UserService#update",
     "access": null,
     "description": null,
-    "lineNumber": 111,
+    "lineNumber": 122,
     "undocument": true,
     "params": [],
     "generator": false
@@ -6084,7 +6152,7 @@
     "longname": "src/services/user.js~UserService#updateByShortId",
     "access": null,
     "description": null,
-    "lineNumber": 117,
+    "lineNumber": 128,
     "undocument": true,
     "params": [],
     "generator": false
@@ -6100,7 +6168,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "process.env.npm_package_version = process.env.npm_package_version || require('../package.json').version\n\nvar path = require('path')\nrequire('dotenv').config({path: path.join(__dirname, '../.env')})\n\n/*require('babel-core/register')\nrequire('babel-polyfill')*/\n\nvar Server = require('./lib/server')\n\nvar server = new Server()\n\nserver.start()\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nprocess.env.npm_package_version = process.env.npm_package_version || require('../package.json').version\n\nvar path = require('path')\nrequire('dotenv').config({path: path.join(__dirname, '../.env')})\n\nvar Server = require('./lib/server')\n\nvar server = new Server()\n\nserver.start()\n"
   },
   {
     "__docId__": 277,
@@ -6115,7 +6183,7 @@
     "importPath": "structure-core/src/start.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 3,
+    "lineNumber": 8,
     "undocument": true,
     "type": {
       "types": [
@@ -6136,7 +6204,7 @@
     "importPath": "structure-core/src/start.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 11,
     "undocument": true,
     "type": {
       "types": [
@@ -6157,7 +6225,7 @@
     "importPath": "structure-core/src/start.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 11,
+    "lineNumber": 13,
     "undocument": true,
     "type": {
       "types": [

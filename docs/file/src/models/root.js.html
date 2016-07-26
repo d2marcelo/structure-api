@@ -143,6 +143,12 @@ class RootModel {
       update:  [&apos;admin&apos;],
     }
 
+    /**
+     * Assign options to this
+     *
+     * @private
+     * @type {Object}
+     */
     Object.assign(this, options)
     if(!this.name) {
       throw new Error(&apos;model.name must be defined&apos;)
@@ -163,9 +169,6 @@ class RootModel {
      * @type {Object}
      */
     var schema = {}
-    if(this.schema) {
-
-    }
 
   }
 

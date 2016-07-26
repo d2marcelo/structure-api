@@ -92,7 +92,12 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/server/router.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {chalk, logger}   from &apos;../lib/logger&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import {chalk, logger}   from &apos;../lib/logger&apos;
 import cors              from &apos;cors&apos;
 import multer            from &apos;multer&apos;
 import storageAdaptors   from &apos;./storageAdaptors&apos;
@@ -115,6 +120,12 @@ const Controllers = [App, Auth, Bucket, DigitalAsset, Document, DocumentRevision
 
 var upload = multer({storage: storageAdaptors.disk.adaptor}).any()
 
+/**
+ * Router Class
+ *
+ * @public
+ * @class Router
+ */
 class Router {
 
   constructor(options = {}) {

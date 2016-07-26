@@ -1,8 +1,18 @@
-import async           from 'async'
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../lib/logger'
 import ShortIdService  from '../services/short-id'
 import OrganizationModel   from '../models/organization'
 
+/**
+ * OrganizationService Class
+ *
+ * @public
+ * @class OrganizationService
+ */
 class OrganizationService {
 
   create(o = {}, cb) {

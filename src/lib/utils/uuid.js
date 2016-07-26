@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import uuid from 'node-uuid'
 
 export default function generateUUID() {

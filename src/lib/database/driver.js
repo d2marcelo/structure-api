@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 var config = require('./config').default
 
 if(process.env.TEST_TYPE == 'unit') {

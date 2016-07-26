@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import bodyParser      from 'body-parser'
 import {chalk, logger} from '../lib/logger'
 import Dispatcher      from './dispatcher'
@@ -12,7 +17,13 @@ function removePoweredBy(req, res, next) {
   next()
 }
 
-class StructureServer {
+/**
+ * Server Class
+ *
+ * @public
+ * @class Server
+ */
+class Server {
 
   constructor(options = {}) {
 
@@ -83,4 +94,4 @@ class StructureServer {
 
 }
 
-module.exports = StructureServer
+module.exports = Server

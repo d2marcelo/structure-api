@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from './logger'
 
 class Mapper {

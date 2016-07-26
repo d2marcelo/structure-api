@@ -1,9 +1,19 @@
-import async           from 'async'
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../lib/logger'
 import PasswordService from './password'
 import TokenService    from './token'
 import UserModel       from '../models/user'
 
+/**
+ * AuthService Class
+ *
+ * @public
+ * @class AuthService
+ */
 class AuthService {
 
   authenticateById(id, password, cb) {

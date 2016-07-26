@@ -1,8 +1,18 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import AppModel        from '../models/app'
-import async           from 'async'
 import {chalk, logger} from '../lib/logger'
 import ShortIdService  from '../services/short-id'
 
+/**
+ * AppService Class
+ *
+ * @public
+ * @class AppService
+ */
 class AppService {
 
   create(o = {}, cb) {

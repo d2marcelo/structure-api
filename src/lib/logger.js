@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import chalk   from 'chalk'
 import winston from 'winston'
 

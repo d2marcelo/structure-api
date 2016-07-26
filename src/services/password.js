@@ -1,6 +1,17 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import bcrypt          from 'bcrypt'
 import {chalk, logger} from '../lib/logger'
 
+/**
+ * PasswordService Class
+ *
+ * @public
+ * @class PasswordService
+ */
 class PasswordService {
 
   constructor(options = {}) {

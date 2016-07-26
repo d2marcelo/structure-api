@@ -1,5 +1,16 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import jwt from 'jsonwebtoken'
 
+/**
+ * TokenService Class
+ *
+ * @public
+ * @class TokenService
+ */
 class TokenService {
 
   constructor() {

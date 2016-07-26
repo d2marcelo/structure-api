@@ -113,8 +113,15 @@ class AuthModel extends Model {
     })
   }
 
-  authByFacebook(req) {
-    console.error('handle args', req.body)
+  /**
+   * Facebook authentication
+   *
+   * @public
+   * @param {Object} pkg - Login data
+   * @todo Needs work
+   */
+  authByFacebook(pkg) {
+    console.error('handle args', pkg)
     return new Promise( (resolve, reject) => {
 
       r.db(process.env.RETHINK_DB_NAME)
@@ -122,7 +129,7 @@ class AuthModel extends Model {
         .filter({
           strategies: {
             facebook: {
-              id: req.body.profile.id
+              id: pkg.profile.id
             }
           }
         })

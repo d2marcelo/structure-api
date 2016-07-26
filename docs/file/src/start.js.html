@@ -92,13 +92,15 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/start.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">process.env.npm_package_version = process.env.npm_package_version || require(&apos;../package.json&apos;).version
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+process.env.npm_package_version = process.env.npm_package_version || require(&apos;../package.json&apos;).version
 
 var path = require(&apos;path&apos;)
 require(&apos;dotenv&apos;).config({path: path.join(__dirname, &apos;../.env&apos;)})
-
-/*require(&apos;babel-core/register&apos;)
-require(&apos;babel-polyfill&apos;)*/
 
 var Server = require(&apos;./lib/server&apos;)
 

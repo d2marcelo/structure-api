@@ -207,7 +207,14 @@ class AuthModel extends Model {
     })
   }
 
-  authByFacebook(req) {
+  /**
+   * Facebook authentication
+   *
+   * @public
+   * @param {Object} pkg - Login data
+   * @todo Needs work
+   */
+  authByFacebook(pkg) {
     console.error(&apos;handle args&apos;, req.body)
     return new Promise( (resolve, reject) =&gt; {
 

@@ -1,3 +1,9 @@
+/**
+ * PackageService Class
+ *
+ * @public
+ * @class PackageService
+ */
 class PackageService {
 
   constructor() {

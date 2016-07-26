@@ -14,6 +14,13 @@ class RootController {
    * @param {Object} options - Options
    */
   constructor(options = {}) {
+
+    /**
+     * Options
+     *
+     * @private
+     * @type {Object}
+     */
     this.options = options
   }
 

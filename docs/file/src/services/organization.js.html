@@ -92,11 +92,21 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/organization.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import async           from &apos;async&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from &apos;../lib/logger&apos;
 import ShortIdService  from &apos;../services/short-id&apos;
 import OrganizationModel   from &apos;../models/organization&apos;
 
+/**
+ * OrganizationService Class
+ *
+ * @public
+ * @class OrganizationService
+ */
 class OrganizationService {
 
   create(o = {}, cb) {

@@ -92,7 +92,12 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/server/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import bodyParser      from &apos;body-parser&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import bodyParser      from &apos;body-parser&apos;
 import {chalk, logger} from &apos;../lib/logger&apos;
 import Dispatcher      from &apos;./dispatcher&apos;
 import express         from &apos;express&apos;
@@ -106,7 +111,13 @@ function removePoweredBy(req, res, next) {
   next()
 }
 
-class StructureServer {
+/**
+ * Server Class
+ *
+ * @public
+ * @class Server
+ */
+class Server {
 
   constructor(options = {}) {
 
@@ -177,7 +188,7 @@ class StructureServer {
 
 }
 
-module.exports = StructureServer
+module.exports = Server
 </code></pre>
 
 </div>

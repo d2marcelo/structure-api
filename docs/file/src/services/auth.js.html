@@ -92,12 +92,22 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/auth.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import async           from &apos;async&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from &apos;../lib/logger&apos;
 import PasswordService from &apos;./password&apos;
 import TokenService    from &apos;./token&apos;
 import UserModel       from &apos;../models/user&apos;
 
+/**
+ * AuthService Class
+ *
+ * @public
+ * @class AuthService
+ */
 class AuthService {
 
   authenticateById(id, password, cb) {

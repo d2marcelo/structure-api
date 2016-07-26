@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import async           from 'async'
 import {chalk, logger} from '../lib/logger'
 import PasswordService from './password'
@@ -5,6 +10,12 @@ import ShortIdService  from '../services/short-id'
 import TokenService    from './token'
 import UserModel       from '../models/user'
 
+/**
+ * UserService Class
+ *
+ * @public
+ * @class UserService
+ */
 class UserService {
 
   create(o = {}, cb) {

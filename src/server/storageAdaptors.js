@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import Disk from 'structure-storage-disk-adaptor'
 
 export default {

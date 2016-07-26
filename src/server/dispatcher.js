@@ -1,5 +1,16 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../lib/logger'
 
+/**
+ * Dispatcher Class
+ *
+ * @public
+ * @class Dispatcher
+ */
 class Dispatcher {
 
   constructor(options = {}) {

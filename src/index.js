@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import StructureApplicationController  from './controllers/applications'
 import StructureApplicationModel       from './models/application'
 

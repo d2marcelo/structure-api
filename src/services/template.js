@@ -1,9 +1,20 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import async             from 'async'
 import {chalk, logger}   from '../lib/logger'
 import OrganizationModel from '../models/organization'
 import ShortIdService    from '../services/short-id'
 import TemplateModel     from '../models/template'
 
+/**
+ * TemplateService Class
+ *
+ * @public
+ * @class TemplateService
+ */
 class TemplateService {
 
   create(o = {}, cb) {

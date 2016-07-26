@@ -786,12 +786,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controllers/root.js~rootcontroller#options",
-    "class/src/controllers/root.js~RootController.html#instance-member-options",
-    "src/controllers/root.js~RootController#options",
-    "member"
-  ],
-  [
     "src/controllers/taxonomies/index.js",
     "file/src/controllers/taxonomies/index.js.html",
     "src/controllers/taxonomies/index.js",

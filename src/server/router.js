@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger}   from '../lib/logger'
 import cors              from 'cors'
 import multer            from 'multer'
@@ -21,6 +26,12 @@ const Controllers = [App, Auth, Bucket, DigitalAsset, Document, DocumentRevision
 
 var upload = multer({storage: storageAdaptors.disk.adaptor}).any()
 
+/**
+ * Router Class
+ *
+ * @public
+ * @class Router
+ */
 class Router {
 
   constructor(options = {}) {
