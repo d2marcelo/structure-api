@@ -29,21 +29,28 @@ describe('Taxonomies', function() {
   })
 
   /** @test {TaxonomiesController#update} */
-  it.skip('should update a taxonomy', async function(done) {
+  it('should update a taxonomy', async function(done) {
 
-    var tag = new TaxonomyModel()
+    var taxonomy = new TaxonomiesController()
 
-    var res = await tag.create({
+    var res = await taxonomy.create({
       title: 'Sports',
       slug: 'sports',
       description: 'All of our sports content'
     })
 
-    var res2 = await tag.update(res.id, {
-      title: 'Sports & Scores',
-      slug: 'sports_and_scores',
-      description: 'All of our sports content and the scores'
-    })
+    var req = {
+      body: {
+        title: 'Sports & Scores',
+        slug: 'sports_and_scores',
+        description: 'All of our sports content and the scores'
+      },
+      params: {
+        id: res.id
+      }
+    }
+
+    var res2 = await taxonomy.update(req)
 
     expect(res2.title).to.equal('Sports & Scores')
     expect(res2.slug).to.equal('sports_and_scores')

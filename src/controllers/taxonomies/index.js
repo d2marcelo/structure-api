@@ -29,7 +29,6 @@ class TaxonomiesController extends RootController {
    * Create new taxonomy
    *
    * @public
-   * @constructor
    * @param {Object} req - Express req
    * @param {Object} res - Express res
    */
@@ -38,6 +37,43 @@ class TaxonomiesController extends RootController {
     var taxonomy = new TaxonomyModel()
 
     return taxonomy.create(req.body)
+
+  }
+
+  /**
+   * Get taxonomy by id
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
+  getById(req, res) {
+
+  }
+
+  /**
+   * Get all taxonomies
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
+  getAll(req, res) {
+
+  }
+
+  /**
+   * Update a taxonomy
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
+  update(req, res) {
+
+    var taxonomy = new TaxonomyModel()
+
+    return taxonomy.update(req.params.id, req.body)
 
   }
 

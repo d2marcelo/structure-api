@@ -3,7 +3,7 @@ import r              from '../../../src/lib/database/driver'
 import TaxonomyModel      from '../../../src/models/taxonomy'
 
 /** @test {TaxonomyModel} */
-describe('Tag', function() {
+describe('Taxonomy', function() {
 
   /** @test {TaxonomyModel#create} */
   it('should create a taxonomy', async function(done) {
