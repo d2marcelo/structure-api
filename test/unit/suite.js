@@ -10,6 +10,7 @@ describe('Unit', function() {
     require('./models/root')
     require('./models/template')
     require('./models/user')
+    require('./models/tag')
   })
 
   describe('Documents', function() {
