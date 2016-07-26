@@ -7,14 +7,16 @@ var config = require('./config').default
 
 if(process.env.TEST_TYPE == 'unit') {
   config = {
-    port: 28016
+    max: 1,
+    port: 28016,
+    timeout: 5
   }
 }
 
 var r = require('rethinkdbdash')(config)
 
 r.getPoolMaster().on('log', function() {
-  console.error.apply(console, arguments)
+  //console.error.apply(console, arguments)
 })
 
-export default r
+module.exports = r

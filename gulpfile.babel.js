@@ -8,6 +8,7 @@ var chalk                  = require('chalk'),
     mocha                  = require('gulp-mocha'),
     nodemon                = require('nodemon'),
     path                   = require('path'),
+    r                      = require('./src/lib/database/driver'),
     sequence               = require('run-sequence'),
     size                   = require('gulp-size'),
     spawn                  = require('child_process').spawn
@@ -103,6 +104,7 @@ gulp.task('mocha-unit', async function(done) {
     ], {read: false})
     .pipe(mocha({reporter: 'spec'}))
     .once('end', function () {
+      r.getPoolMaster().drain()
       process.exit()
       //done()
     })
