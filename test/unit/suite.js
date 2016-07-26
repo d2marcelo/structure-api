@@ -8,13 +8,15 @@ describe('Unit', function() {
 
   describe('Models', function() {
     require('./models/root')
-    require('./models/document')
-    require('./models/taxonomy')
     require('./models/template')
     require('./models/user')
   })
 
-  describe('Controllers', function() {
-    require('./controllers/taxonomies')
+  describe('Documents', function() {
+    require('./models/document')
   })
+
+  describe('Organization', function(){
+    require('./models/organization')
+  }) 
 })
