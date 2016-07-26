@@ -1,11 +1,29 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import RootController from '../root'
 
-class UserController extends RootController {
+/**
+ * UsersController Class
+ *
+ * @public
+ * @class UsersController
+ */
+class UsersController extends RootController {
 
+  /**
+   * UsersController constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(options)
   }
 
 }
 
-export default UserController
+export default UsersController

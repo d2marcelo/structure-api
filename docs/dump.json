@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass ApplicationController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default ApplicationController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * ApplicationController Class\n *\n * @public\n * @class ApplicationController\n */\nclass ApplicationController extends RootController {\n\n  /**\n   * ApplicationController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default ApplicationController\n"
   },
   {
     "__docId__": 1,
@@ -20,13 +20,18 @@
     "name": "ApplicationController",
     "memberof": "src/controllers/applications/index.js",
     "longname": "src/controllers/applications/index.js~ApplicationController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/applications/index.js",
     "importStyle": "ApplicationController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "ApplicationController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "ApplicationController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -40,19 +45,25 @@
     "name": "constructor",
     "memberof": "src/controllers/applications/index.js~ApplicationController",
     "longname": "src/controllers/applications/index.js~ApplicationController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "ApplicationController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -68,7 +79,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass AuthController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default AuthController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * AuthController Class\n *\n * @public\n * @class AuthController\n */\nclass AuthController extends RootController {\n\n  /**\n   * AuthController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default AuthController\n"
   },
   {
     "__docId__": 4,
@@ -78,13 +89,18 @@
     "name": "AuthController",
     "memberof": "src/controllers/auth/index.js",
     "longname": "src/controllers/auth/index.js~AuthController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/auth/index.js",
     "importStyle": "AuthController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "AuthController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "AuthController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -98,19 +114,25 @@
     "name": "constructor",
     "memberof": "src/controllers/auth/index.js~AuthController",
     "longname": "src/controllers/auth/index.js~AuthController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "AuthController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -126,7 +148,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass BucketsController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default BucketsController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * BucketsController Class\n *\n * @public\n * @class BucketsController\n */\nclass BucketsController extends RootController {\n\n  /**\n   * BucketsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default BucketsController\n"
   },
   {
     "__docId__": 7,
@@ -136,13 +158,18 @@
     "name": "BucketsController",
     "memberof": "src/controllers/buckets/index.js",
     "longname": "src/controllers/buckets/index.js~BucketsController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/buckets/index.js",
     "importStyle": "BucketsController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "BucketsController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "BucketsController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -156,19 +183,25 @@
     "name": "constructor",
     "memberof": "src/controllers/buckets/index.js~BucketsController",
     "longname": "src/controllers/buckets/index.js~BucketsController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "BucketsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -184,7 +217,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass DigitalAssetsController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n  view() {\n\n  }\n\n}\n\nexport default DigitalAssetsController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * DigitalAssetController Class\n *\n * @public\n * @class DigitalAssetController\n */\nclass DigitalAssetsController extends RootController {\n\n  /**\n   * DigitalAssetsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n  /**\n   * View a digital asset\n   *\n   * @public\n   * @constructor\n   * @param {Object} req - Express req\n   * @param {Object} res - Express res\n   */\n  view(req, res) {\n\n  }\n\n}\n\nexport default DigitalAssetsController\n"
   },
   {
     "__docId__": 10,
@@ -194,13 +227,18 @@
     "name": "DigitalAssetsController",
     "memberof": "src/controllers/digital-assets/index.js",
     "longname": "src/controllers/digital-assets/index.js~DigitalAssetsController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/digital-assets/index.js",
     "importStyle": "DigitalAssetsController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "DigitalAssetController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "DigitalAssetController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -214,19 +252,25 @@
     "name": "constructor",
     "memberof": "src/controllers/digital-assets/index.js~DigitalAssetsController",
     "longname": "src/controllers/digital-assets/index.js~DigitalAssetsController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "DigitalAssetsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -239,11 +283,37 @@
     "name": "view",
     "memberof": "src/controllers/digital-assets/index.js~DigitalAssetsController",
     "longname": "src/controllers/digital-assets/index.js~DigitalAssetsController#view",
-    "access": null,
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
-    "params": [],
+    "access": "public",
+    "description": "View a digital asset",
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req",
+        "description": "Express req"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res",
+        "description": "Express res"
+      }
+    ],
     "generator": false
   },
   {
@@ -257,7 +327,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass DocumentRevisionsController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default DocumentRevisionsController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * DocumentRevisionsController Class\n *\n * @public\n * @class DocumentRevisionsController\n */\nclass DocumentRevisionsController extends RootController {\n\n  /**\n   * DocumentRevisionsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default DocumentRevisionsController\n"
   },
   {
     "__docId__": 14,
@@ -267,13 +337,18 @@
     "name": "DocumentRevisionsController",
     "memberof": "src/controllers/document-revisions/index.js",
     "longname": "src/controllers/document-revisions/index.js~DocumentRevisionsController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/document-revisions/index.js",
     "importStyle": "DocumentRevisionsController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "DocumentRevisionsController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "DocumentRevisionsController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -287,19 +362,25 @@
     "name": "constructor",
     "memberof": "src/controllers/document-revisions/index.js~DocumentRevisionsController",
     "longname": "src/controllers/document-revisions/index.js~DocumentRevisionsController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "DocumentRevisionsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -315,7 +396,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass DocumentsController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default DocumentsController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * DocumentsController Class\n *\n * @public\n * @class DocumentsController\n */\nclass DocumentsController extends RootController {\n\n  /**\n   * DocumentsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default DocumentsController\n"
   },
   {
     "__docId__": 17,
@@ -325,13 +406,18 @@
     "name": "DocumentsController",
     "memberof": "src/controllers/documents/index.js",
     "longname": "src/controllers/documents/index.js~DocumentsController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/documents/index.js",
     "importStyle": "DocumentsController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "DocumentsController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "DocumentsController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -345,19 +431,25 @@
     "name": "constructor",
     "memberof": "src/controllers/documents/index.js~DocumentsController",
     "longname": "src/controllers/documents/index.js~DocumentsController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "DocumentsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -373,7 +465,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass FieldsController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default FieldsController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * FieldsController Class\n *\n * @public\n * @class FieldsController\n */\nclass FieldsController extends RootController {\n\n  /**\n   * FieldsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default FieldsController\n"
   },
   {
     "__docId__": 20,
@@ -383,13 +475,18 @@
     "name": "FieldsController",
     "memberof": "src/controllers/fields/index.js",
     "longname": "src/controllers/fields/index.js~FieldsController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/fields/index.js",
     "importStyle": "FieldsController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "FieldsController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "FieldsController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -403,19 +500,25 @@
     "name": "constructor",
     "memberof": "src/controllers/fields/index.js~FieldsController",
     "longname": "src/controllers/fields/index.js~FieldsController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "FieldsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -431,23 +534,28 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass OrganizationController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default OrganizationController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * OrganizationsController Class\n *\n * @public\n * @class OrganizationsController\n */\nclass OrganizationsController extends RootController {\n\n  /**\n   * OrganizationsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default OrganizationsController\n"
   },
   {
     "__docId__": 23,
     "kind": "class",
     "static": true,
     "variation": null,
-    "name": "OrganizationController",
+    "name": "OrganizationsController",
     "memberof": "src/controllers/organizations/index.js",
-    "longname": "src/controllers/organizations/index.js~OrganizationController",
-    "access": null,
+    "longname": "src/controllers/organizations/index.js~OrganizationsController",
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/organizations/index.js",
-    "importStyle": "OrganizationController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "importStyle": "OrganizationsController",
+    "description": "OrganizationsController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "OrganizationsController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -459,21 +567,27 @@
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "src/controllers/organizations/index.js~OrganizationController",
-    "longname": "src/controllers/organizations/index.js~OrganizationController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "memberof": "src/controllers/organizations/index.js~OrganizationsController",
+    "longname": "src/controllers/organizations/index.js~OrganizationsController#constructor",
+    "access": "public",
+    "description": "OrganizationsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -489,7 +603,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass RegistryController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default RegistryController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * RegistryController Class\n *\n * @public\n * @class RegistryController\n */\nclass RegistryController extends RootController {\n\n  /**\n   * RegistryController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default RegistryController\n"
   },
   {
     "__docId__": 26,
@@ -499,13 +613,18 @@
     "name": "RegistryController",
     "memberof": "src/controllers/registry/index.js",
     "longname": "src/controllers/registry/index.js~RegistryController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/registry/index.js",
     "importStyle": "RegistryController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "RegistryController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "RegistryController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -519,19 +638,25 @@
     "name": "constructor",
     "memberof": "src/controllers/registry/index.js~RegistryController",
     "longname": "src/controllers/registry/index.js~RegistryController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "RegistryController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -547,7 +672,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "class RootController {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n}\n\nexport default RootController\n"
+    "content": "/**\n * RootController Class\n *\n * @public\n * @class RootController\n */\nclass RootController {\n\n  /**\n   * RootController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    this.options = options\n  }\n\n}\n\nexport default RootController\n"
   },
   {
     "__docId__": 29,
@@ -557,13 +682,18 @@
     "name": "RootController",
     "memberof": "src/controllers/root.js",
     "longname": "src/controllers/root.js~RootController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/root.js",
     "importStyle": "RootController",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "RootController Class",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "RootController"
+      }
+    ],
     "interface": false
   },
   {
@@ -574,19 +704,25 @@
     "name": "constructor",
     "memberof": "src/controllers/root.js~RootController",
     "longname": "src/controllers/root.js~RootController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "access": "public",
+    "description": "RootController constructor",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -601,7 +737,7 @@
     "longname": "src/controllers/root.js~RootController#options",
     "access": null,
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 17,
     "undocument": true,
     "type": {
       "types": [
@@ -620,7 +756,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass TaxonomiesController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default TaxonomiesController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * TaxonomiesController Class\n *\n * @public\n * @class TaxonomiesController\n */\nclass TaxonomiesController extends RootController {\n\n  /**\n   * TaxonomiesController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default TaxonomiesController\n"
   },
   {
     "__docId__": 33,
@@ -630,13 +766,18 @@
     "name": "TaxonomiesController",
     "memberof": "src/controllers/taxonomies/index.js",
     "longname": "src/controllers/taxonomies/index.js~TaxonomiesController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/taxonomies/index.js",
     "importStyle": "TaxonomiesController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "TaxonomiesController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TaxonomiesController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -650,19 +791,25 @@
     "name": "constructor",
     "memberof": "src/controllers/taxonomies/index.js~TaxonomiesController",
     "longname": "src/controllers/taxonomies/index.js~TaxonomiesController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "TaxonomiesController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -678,7 +825,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass TemplateRevisionsController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default TemplateRevisionsController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * TemplateRevisionsController Class\n *\n * @public\n * @class TemplateRevisionsController\n */\nclass TemplateRevisionsController extends RootController {\n\n  /**\n   * TemplateRevisionsController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default TemplateRevisionsController\n"
   },
   {
     "__docId__": 36,
@@ -688,13 +835,18 @@
     "name": "TemplateRevisionsController",
     "memberof": "src/controllers/template-revisions/index.js",
     "longname": "src/controllers/template-revisions/index.js~TemplateRevisionsController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/template-revisions/index.js",
     "importStyle": "TemplateRevisionsController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "TemplateRevisionsController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TemplateRevisionsController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -708,19 +860,25 @@
     "name": "constructor",
     "memberof": "src/controllers/template-revisions/index.js~TemplateRevisionsController",
     "longname": "src/controllers/template-revisions/index.js~TemplateRevisionsController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "TemplateRevisionsController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -736,7 +894,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass TemplatesController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default TemplatesController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * TemplatesController Class\n *\n * @public\n * @class TemplatesController\n */\nclass TemplatesController extends RootController {\n\n  /**\n   * TemplatesController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default TemplatesController\n"
   },
   {
     "__docId__": 39,
@@ -746,13 +904,18 @@
     "name": "TemplatesController",
     "memberof": "src/controllers/templates/index.js",
     "longname": "src/controllers/templates/index.js~TemplatesController",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/templates/index.js",
     "importStyle": "TemplatesController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "TemplatesController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TemplatesController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -766,19 +929,25 @@
     "name": "constructor",
     "memberof": "src/controllers/templates/index.js~TemplatesController",
     "longname": "src/controllers/templates/index.js~TemplatesController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "access": "public",
+    "description": "TemplatesController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -794,23 +963,28 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import RootController from '../root'\n\nclass UserController extends RootController {\n\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default UserController\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport RootController from '../root'\n\n/**\n * UsersController Class\n *\n * @public\n * @class UsersController\n */\nclass UsersController extends RootController {\n\n  /**\n   * UsersController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(options)\n  }\n\n}\n\nexport default UsersController\n"
   },
   {
     "__docId__": 42,
     "kind": "class",
     "static": true,
     "variation": null,
-    "name": "UserController",
+    "name": "UsersController",
     "memberof": "src/controllers/users/index.js",
-    "longname": "src/controllers/users/index.js~UserController",
-    "access": null,
+    "longname": "src/controllers/users/index.js~UsersController",
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/controllers/users/index.js",
-    "importStyle": "UserController",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "importStyle": "UsersController",
+    "description": "UsersController Class",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "UsersController"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/controllers/root.js~RootController"
@@ -822,21 +996,27 @@
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "src/controllers/users/index.js~UserController",
-    "longname": "src/controllers/users/index.js~UserController#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "memberof": "src/controllers/users/index.js~UsersController",
+    "longname": "src/controllers/users/index.js~UsersController#constructor",
+    "access": "public",
+    "description": "UsersController constructor",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false

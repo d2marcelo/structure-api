@@ -1,7 +1,7 @@
 {
-  "coverage": "33.85%",
+  "coverage": "48.95%",
   "expectCount": 192,
-  "actualCount": 65,
+  "actualCount": 94,
   "files": {
     "src/models/application/index.js": {
       "expectCount": 2,
@@ -22,19 +22,13 @@
     },
     "src/controllers/applications/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/controllers/auth/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/models/auth/index.js": {
       "expectCount": 4,
@@ -64,11 +58,8 @@
     },
     "src/controllers/buckets/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/models/channel/index.js": {
       "expectCount": 3,
@@ -98,12 +89,8 @@
     },
     "src/controllers/digital-assets/index.js": {
       "expectCount": 3,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5,
-        9
-      ]
+      "actualCount": 3,
+      "undocumentLines": []
     },
     "src/server/dispatcher.js": {
       "expectCount": 4,
@@ -127,19 +114,13 @@
     },
     "src/controllers/document-revisions/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/controllers/documents/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/lib/eventemitter.js": {
       "expectCount": 6,
@@ -160,11 +141,8 @@
     },
     "src/controllers/fields/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/mixins/log.js": {
       "expectCount": 2,
@@ -209,14 +187,6 @@
         1
       ]
     },
-    "src/controllers/organizations/index.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
-    },
     "src/models/organization/index.js": {
       "expectCount": 2,
       "actualCount": 2,
@@ -234,6 +204,11 @@
         70,
         76
       ]
+    },
+    "src/controllers/organizations/index.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/services/package.js": {
       "expectCount": 4,
@@ -258,11 +233,8 @@
     },
     "src/controllers/registry/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/models/registry/index.js": {
       "expectCount": 5,
@@ -276,11 +248,9 @@
     },
     "src/controllers/root.js": {
       "expectCount": 3,
-      "actualCount": 0,
+      "actualCount": 2,
       "undocumentLines": [
-        1,
-        3,
-        4
+        17
       ]
     },
     "src/models/root.js": {
@@ -318,11 +288,8 @@
     },
     "src/controllers/taxonomies/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/models/taxonomy/index.js": {
       "expectCount": 2,
@@ -341,11 +308,8 @@
     },
     "src/controllers/template-revisions/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/services/template.js": {
       "expectCount": 6,
@@ -361,11 +325,8 @@
     },
     "src/controllers/templates/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/services/token.js": {
       "expectCount": 4,
@@ -375,14 +336,6 @@
         5,
         9,
         22
-      ]
-    },
-    "src/controllers/users/index.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5
       ]
     },
     "src/models/user/index.js": {
@@ -403,6 +356,11 @@
         111,
         117
       ]
+    },
+    "src/controllers/users/index.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/lib/database/config.js": {
       "expectCount": 1,

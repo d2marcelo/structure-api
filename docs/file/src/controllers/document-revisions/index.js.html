@@ -40,12 +40,12 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/document-revisions</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html">DocumentRevisionsController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/documents</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/documents/index.js~DocumentsController.html">DocumentsController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/fields</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/fields/index.js~FieldsController.html">FieldsController</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/organizations</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/organizations/index.js~OrganizationController.html">OrganizationController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/organizations</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/organizations/index.js~OrganizationsController.html">OrganizationsController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/registry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/registry/index.js~RegistryController.html">RegistryController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/taxonomies</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/taxonomies/index.js~TaxonomiesController.html">TaxonomiesController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/template-revisions</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html">TemplateRevisionsController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/templates</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/templates/index.js~TemplatesController.html">TemplatesController</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/users</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/users/index.js~UserController.html">UserController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/users</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/users/index.js~UsersController.html">UsersController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/eventemitter.js~EventEmitter.html">EventEmitter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/mapper.js~Mapper.html">Mapper</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
@@ -92,10 +92,28 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/controllers/document-revisions/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import RootController from &apos;../root&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import RootController from &apos;../root&apos;
 
+/**
+ * DocumentRevisionsController Class
+ *
+ * @public
+ * @class DocumentRevisionsController
+ */
 class DocumentRevisionsController extends RootController {
 
+  /**
+   * DocumentRevisionsController constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(options)
   }

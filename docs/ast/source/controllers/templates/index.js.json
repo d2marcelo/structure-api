@@ -1,14 +1,14 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 182,
+  "end": 432,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 12,
+      "line": 30,
       "column": 0
     }
   },
@@ -16,112 +16,161 @@
   "body": [
     {
       "type": "ImportDeclaration",
-      "start": 0,
-      "end": 36,
+      "start": 45,
+      "end": 81,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 6,
           "column": 0
         },
         "end": {
-          "line": 1,
+          "line": 6,
           "column": 36
         }
       },
       "specifiers": [
         {
           "type": "ImportDefaultSpecifier",
-          "start": 7,
-          "end": 21,
+          "start": 52,
+          "end": 66,
           "loc": {
             "start": {
-              "line": 1,
+              "line": 6,
               "column": 7
             },
             "end": {
-              "line": 1,
+              "line": 6,
               "column": 21
             }
           },
           "local": {
             "type": "Identifier",
-            "start": 7,
-            "end": 21,
+            "start": 52,
+            "end": 66,
             "loc": {
               "start": {
-                "line": 1,
+                "line": 6,
                 "column": 7
               },
               "end": {
-                "line": 1,
+                "line": 6,
                 "column": 21
               }
             },
-            "name": "RootController"
-          }
+            "name": "RootController",
+            "leadingComments": null
+          },
+          "leadingComments": null
         }
       ],
       "importKind": "value",
       "source": {
         "type": "Literal",
-        "start": 27,
-        "end": 36,
+        "start": 72,
+        "end": 81,
         "loc": {
           "start": {
-            "line": 1,
+            "line": 6,
             "column": 27
           },
           "end": {
-            "line": 1,
+            "line": 6,
             "column": 36
           }
         },
         "value": "../root",
         "rawValue": "../root",
-        "raw": "'../root'"
-      }
+        "raw": "'../root'",
+        "leadingComments": null,
+        "trailingComments": null
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Module Dependencies\n *\n * @ignore\n ",
+          "start": 0,
+          "end": 44,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 3
+            }
+          },
+          "range": [
+            0,
+            44
+          ]
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * TemplatesController Class\n *\n * @public\n * @class TemplatesController\n ",
+          "start": 83,
+          "end": 163,
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "range": [
+            83,
+            163
+          ]
+        }
+      ]
     },
     {
       "type": "Identifier",
-      "start": 38,
-      "end": 145,
+      "start": 164,
+      "end": 395,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 27,
           "column": 1
         }
       },
       "id": {
         "type": "Identifier",
-        "start": 44,
-        "end": 63,
+        "start": 170,
+        "end": 189,
         "loc": {
           "start": {
-            "line": 3,
+            "line": 14,
             "column": 6
           },
           "end": {
-            "line": 3,
+            "line": 14,
             "column": 25
           }
         },
-        "name": "TemplatesController"
+        "name": "TemplatesController",
+        "leadingComments": null
       },
       "superClass": {
         "type": "Identifier",
-        "start": 72,
-        "end": 86,
+        "start": 198,
+        "end": 212,
         "loc": {
           "start": {
-            "line": 3,
+            "line": 14,
             "column": 34
           },
           "end": {
-            "line": 3,
+            "line": 14,
             "column": 48
           }
         },
@@ -129,63 +178,64 @@
       },
       "body": {
         "type": "ClassBody",
-        "start": 87,
-        "end": 145,
+        "start": 213,
+        "end": 395,
         "loc": {
           "start": {
-            "line": 3,
+            "line": 14,
             "column": 49
           },
           "end": {
-            "line": 9,
+            "line": 27,
             "column": 1
           }
         },
         "body": [
           {
             "type": "MethodDefinition",
-            "start": 92,
-            "end": 142,
+            "start": 342,
+            "end": 392,
             "loc": {
               "start": {
-                "line": 5,
+                "line": 23,
                 "column": 2
               },
               "end": {
-                "line": 7,
+                "line": 25,
                 "column": 3
               }
             },
             "computed": false,
             "key": {
               "type": "Identifier",
-              "start": 92,
-              "end": 103,
+              "start": 342,
+              "end": 353,
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 23,
                   "column": 2
                 },
                 "end": {
-                  "line": 5,
+                  "line": 23,
                   "column": 13
                 }
               },
-              "name": "constructor"
+              "name": "constructor",
+              "leadingComments": null
             },
             "static": false,
             "kind": "constructor",
             "value": {
               "type": "FunctionExpression",
-              "start": 103,
-              "end": 142,
+              "start": 353,
+              "end": 392,
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 23,
                   "column": 13
                 },
                 "end": {
-                  "line": 7,
+                  "line": 25,
                   "column": 3
                 }
               },
@@ -196,30 +246,30 @@
               "params": [
                 {
                   "type": "AssignmentPattern",
-                  "start": 104,
-                  "end": 116,
+                  "start": 354,
+                  "end": 366,
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 23,
                       "column": 14
                     },
                     "end": {
-                      "line": 5,
+                      "line": 23,
                       "column": 26
                     }
                   },
                   "operator": "=",
                   "left": {
                     "type": "Identifier",
-                    "start": 104,
-                    "end": 111,
+                    "start": 354,
+                    "end": 361,
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 23,
                         "column": 14
                       },
                       "end": {
-                        "line": 5,
+                        "line": 23,
                         "column": 21
                       }
                     },
@@ -227,15 +277,15 @@
                   },
                   "right": {
                     "type": "ObjectExpression",
-                    "start": 114,
-                    "end": 116,
+                    "start": 364,
+                    "end": 366,
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 23,
                         "column": 24
                       },
                       "end": {
-                        "line": 5,
+                        "line": 23,
                         "column": 26
                       }
                     },
@@ -245,58 +295,58 @@
               ],
               "body": {
                 "type": "BlockStatement",
-                "start": 118,
-                "end": 142,
+                "start": 368,
+                "end": 392,
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 23,
                     "column": 28
                   },
                   "end": {
-                    "line": 7,
+                    "line": 25,
                     "column": 3
                   }
                 },
                 "body": [
                   {
                     "type": "ExpressionStatement",
-                    "start": 124,
-                    "end": 138,
+                    "start": 374,
+                    "end": 388,
                     "loc": {
                       "start": {
-                        "line": 6,
+                        "line": 24,
                         "column": 4
                       },
                       "end": {
-                        "line": 6,
+                        "line": 24,
                         "column": 18
                       }
                     },
                     "expression": {
                       "type": "CallExpression",
-                      "start": 124,
-                      "end": 138,
+                      "start": 374,
+                      "end": 388,
                       "loc": {
                         "start": {
-                          "line": 6,
+                          "line": 24,
                           "column": 4
                         },
                         "end": {
-                          "line": 6,
+                          "line": 24,
                           "column": 18
                         }
                       },
                       "callee": {
                         "type": "Super",
-                        "start": 124,
-                        "end": 129,
+                        "start": 374,
+                        "end": 379,
                         "loc": {
                           "start": {
-                            "line": 6,
+                            "line": 24,
                             "column": 4
                           },
                           "end": {
-                            "line": 6,
+                            "line": 24,
                             "column": 9
                           }
                         }
@@ -304,15 +354,15 @@
                       "arguments": [
                         {
                           "type": "Identifier",
-                          "start": 130,
-                          "end": 137,
+                          "start": 380,
+                          "end": 387,
                           "loc": {
                             "start": {
-                              "line": 6,
+                              "line": 24,
                               "column": 10
                             },
                             "end": {
-                              "line": 6,
+                              "line": 24,
                               "column": 17
                             }
                           },
@@ -323,39 +373,61 @@
                   }
                 ]
               }
-            }
+            },
+            "leadingComments": [
+              {
+                "type": "Block",
+                "value": "*\n   * TemplatesController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   ",
+                "start": 218,
+                "end": 339,
+                "loc": {
+                  "start": {
+                    "line": 16,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 5
+                  }
+                },
+                "range": [
+                  218,
+                  339
+                ]
+              }
+            ]
           }
         ]
       },
-      "name": "_",
       "leadingComments": [],
+      "name": "_",
       "trailingComments": []
     },
     {
       "type": "Identifier",
-      "start": 147,
-      "end": 181,
+      "start": 397,
+      "end": 431,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 29,
           "column": 34
         }
       },
       "declaration": {
         "type": "Identifier",
-        "start": 162,
-        "end": 181,
+        "start": 412,
+        "end": 431,
         "loc": {
           "start": {
-            "line": 11,
+            "line": 29,
             "column": 15
           },
           "end": {
-            "line": 11,
+            "line": 29,
             "column": 34
           }
         },
@@ -367,59 +439,60 @@
     },
     {
       "type": "ExportDefaultDeclaration",
-      "start": 147,
-      "end": 181,
+      "start": 397,
+      "end": 431,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 29,
           "column": 34
         }
       },
       "declaration": {
         "type": "ClassDeclaration",
-        "start": 38,
-        "end": 145,
+        "start": 164,
+        "end": 395,
         "loc": {
           "start": {
-            "line": 3,
+            "line": 14,
             "column": 0
           },
           "end": {
-            "line": 9,
+            "line": 27,
             "column": 1
           }
         },
         "id": {
           "type": "Identifier",
-          "start": 44,
-          "end": 63,
+          "start": 170,
+          "end": 189,
           "loc": {
             "start": {
-              "line": 3,
+              "line": 14,
               "column": 6
             },
             "end": {
-              "line": 3,
+              "line": 14,
               "column": 25
             }
           },
-          "name": "TemplatesController"
+          "name": "TemplatesController",
+          "leadingComments": null
         },
         "superClass": {
           "type": "Identifier",
-          "start": 72,
-          "end": 86,
+          "start": 198,
+          "end": 212,
           "loc": {
             "start": {
-              "line": 3,
+              "line": 14,
               "column": 34
             },
             "end": {
-              "line": 3,
+              "line": 14,
               "column": 48
             }
           },
@@ -427,63 +500,64 @@
         },
         "body": {
           "type": "ClassBody",
-          "start": 87,
-          "end": 145,
+          "start": 213,
+          "end": 395,
           "loc": {
             "start": {
-              "line": 3,
+              "line": 14,
               "column": 49
             },
             "end": {
-              "line": 9,
+              "line": 27,
               "column": 1
             }
           },
           "body": [
             {
               "type": "MethodDefinition",
-              "start": 92,
-              "end": 142,
+              "start": 342,
+              "end": 392,
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 23,
                   "column": 2
                 },
                 "end": {
-                  "line": 7,
+                  "line": 25,
                   "column": 3
                 }
               },
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 92,
-                "end": 103,
+                "start": 342,
+                "end": 353,
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 23,
                     "column": 2
                   },
                   "end": {
-                    "line": 5,
+                    "line": 23,
                     "column": 13
                   }
                 },
-                "name": "constructor"
+                "name": "constructor",
+                "leadingComments": null
               },
               "static": false,
               "kind": "constructor",
               "value": {
                 "type": "FunctionExpression",
-                "start": 103,
-                "end": 142,
+                "start": 353,
+                "end": 392,
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 23,
                     "column": 13
                   },
                   "end": {
-                    "line": 7,
+                    "line": 25,
                     "column": 3
                   }
                 },
@@ -494,30 +568,30 @@
                 "params": [
                   {
                     "type": "AssignmentPattern",
-                    "start": 104,
-                    "end": 116,
+                    "start": 354,
+                    "end": 366,
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 23,
                         "column": 14
                       },
                       "end": {
-                        "line": 5,
+                        "line": 23,
                         "column": 26
                       }
                     },
                     "operator": "=",
                     "left": {
                       "type": "Identifier",
-                      "start": 104,
-                      "end": 111,
+                      "start": 354,
+                      "end": 361,
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 23,
                           "column": 14
                         },
                         "end": {
-                          "line": 5,
+                          "line": 23,
                           "column": 21
                         }
                       },
@@ -525,15 +599,15 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 114,
-                      "end": 116,
+                      "start": 364,
+                      "end": 366,
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 23,
                           "column": 24
                         },
                         "end": {
-                          "line": 5,
+                          "line": 23,
                           "column": 26
                         }
                       },
@@ -543,58 +617,58 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 118,
-                  "end": 142,
+                  "start": 368,
+                  "end": 392,
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 23,
                       "column": 28
                     },
                     "end": {
-                      "line": 7,
+                      "line": 25,
                       "column": 3
                     }
                   },
                   "body": [
                     {
                       "type": "ExpressionStatement",
-                      "start": 124,
-                      "end": 138,
+                      "start": 374,
+                      "end": 388,
                       "loc": {
                         "start": {
-                          "line": 6,
+                          "line": 24,
                           "column": 4
                         },
                         "end": {
-                          "line": 6,
+                          "line": 24,
                           "column": 18
                         }
                       },
                       "expression": {
                         "type": "CallExpression",
-                        "start": 124,
-                        "end": 138,
+                        "start": 374,
+                        "end": 388,
                         "loc": {
                           "start": {
-                            "line": 6,
+                            "line": 24,
                             "column": 4
                           },
                           "end": {
-                            "line": 6,
+                            "line": 24,
                             "column": 18
                           }
                         },
                         "callee": {
                           "type": "Super",
-                          "start": 124,
-                          "end": 129,
+                          "start": 374,
+                          "end": 379,
                           "loc": {
                             "start": {
-                              "line": 6,
+                              "line": 24,
                               "column": 4
                             },
                             "end": {
-                              "line": 6,
+                              "line": 24,
                               "column": 9
                             }
                           }
@@ -602,15 +676,15 @@
                         "arguments": [
                           {
                             "type": "Identifier",
-                            "start": 130,
-                            "end": 137,
+                            "start": 380,
+                            "end": 387,
                             "loc": {
                               "start": {
-                                "line": 6,
+                                "line": 24,
                                 "column": 10
                               },
                               "end": {
-                                "line": 6,
+                                "line": 24,
                                 "column": 17
                               }
                             },
@@ -621,12 +695,55 @@
                     }
                   ]
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * TemplatesController constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   ",
+                  "start": 218,
+                  "end": 339,
+                  "loc": {
+                    "start": {
+                      "line": 16,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 5
+                    }
+                  },
+                  "range": [
+                    218,
+                    339
+                  ]
+                }
+              ]
             }
           ]
         },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * TemplatesController Class\n *\n * @public\n * @class TemplatesController\n ",
+            "start": 83,
+            "end": 163,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 0
+              },
+              "end": {
+                "line": 13,
+                "column": 3
+              }
+            },
+            "range": [
+              83,
+              163
+            ]
+          }
+        ],
         "__esdoc__pseudo_export": false,
-        "leadingComments": [],
         "trailingComments": []
       },
       "leadingComments": null

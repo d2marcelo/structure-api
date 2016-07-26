@@ -144,12 +144,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "structure-core/src/controllers/organizations/index.js~organizationcontroller",
-    "class/src/controllers/organizations/index.js~OrganizationController.html",
-    "<span>OrganizationController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/organizations/index.js</span>",
-    "class"
-  ],
-  [
     "structure-core/src/models/organization/index.js~organizationmodel",
     "class/src/models/organization/index.js~OrganizationModel.html",
     "<span>OrganizationModel</span> <span class=\"search-result-import-path\">structure-core/src/models/organization/index.js</span>",
@@ -159,6 +153,12 @@ window.esdocSearchIndex = [
     "structure-core/src/services/organization.js~organizationservice",
     "class/src/services/organization.js~OrganizationService.html",
     "<span>OrganizationService</span> <span class=\"search-result-import-path\">structure-core/src/services/organization.js</span>",
+    "class"
+  ],
+  [
+    "structure-core/src/controllers/organizations/index.js~organizationscontroller",
+    "class/src/controllers/organizations/index.js~OrganizationsController.html",
+    "<span>OrganizationsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/organizations/index.js</span>",
     "class"
   ],
   [
@@ -276,12 +276,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "structure-core/src/controllers/users/index.js~usercontroller",
-    "class/src/controllers/users/index.js~UserController.html",
-    "<span>UserController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/users/index.js</span>",
-    "class"
-  ],
-  [
     "structure-core/src/models/user/index.js~usermodel",
     "class/src/models/user/index.js~UserModel.html",
     "<span>UserModel</span> <span class=\"search-result-import-path\">structure-core/src/models/user/index.js</span>",
@@ -291,6 +285,12 @@ window.esdocSearchIndex = [
     "structure-core/src/services/user.js~userservice",
     "class/src/services/user.js~UserService.html",
     "<span>UserService</span> <span class=\"search-result-import-path\">structure-core/src/services/user.js</span>",
+    "class"
+  ],
+  [
+    "structure-core/src/controllers/users/index.js~userscontroller",
+    "class/src/controllers/users/index.js~UsersController.html",
+    "<span>UsersController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/users/index.js</span>",
     "class"
   ],
   [
@@ -756,9 +756,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/controllers/organizations/index.js~organizationcontroller#constructor",
-    "class/src/controllers/organizations/index.js~OrganizationController.html#instance-constructor-constructor",
-    "src/controllers/organizations/index.js~OrganizationController#constructor",
+    "src/controllers/organizations/index.js~organizationscontroller#constructor",
+    "class/src/controllers/organizations/index.js~OrganizationsController.html#instance-constructor-constructor",
+    "src/controllers/organizations/index.js~OrganizationsController#constructor",
     "method"
   ],
   [
@@ -834,9 +834,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/controllers/users/index.js~usercontroller#constructor",
-    "class/src/controllers/users/index.js~UserController.html#instance-constructor-constructor",
-    "src/controllers/users/index.js~UserController#constructor",
+    "src/controllers/users/index.js~userscontroller#constructor",
+    "class/src/controllers/users/index.js~UsersController.html#instance-constructor-constructor",
+    "src/controllers/users/index.js~UsersController#constructor",
     "method"
   ],
   [
