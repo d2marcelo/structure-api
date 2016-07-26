@@ -1,14 +1,14 @@
 import {Schema, type} from 'eisley'
 import r              from '../../../src/lib/database/driver'
-import TagModel      from '../../../src/models/taxonomy'
+import TaxonomyModel      from '../../../src/models/taxonomy'
 
-/** @test {TagModel} */
+/** @test {TaxonomyModel} */
 describe('Tag', function() {
 
-  /** @test {TagModel#create} */
+  /** @test {TaxonomyModel#create} */
   it('should create a tag', async function(done) {
 
-      var tag = new TagModel()
+      var tag = new TaxonomyModel()
 
       var res = await tag.create({
         title: 'Sports',
@@ -24,10 +24,10 @@ describe('Tag', function() {
 
   })
 
-  /** @test {TagModel#update} */
+  /** @test {TaxonomyModel#update} */
   it('should update a tag', async function(done) {
 
-    var tag = new TagModel()
+    var tag = new TaxonomyModel()
 
     var res = await tag.create({
       title: 'Sports',

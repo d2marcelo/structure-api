@@ -8,9 +8,9 @@ describe('Unit', function() {
 
   describe('Models', function() {
     require('./models/root')
+    require('./models/taxonomy')
     require('./models/template')
     require('./models/user')
-    require('./models/tag')
   })
 
   describe('Documents', function() {
