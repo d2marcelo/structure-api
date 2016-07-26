@@ -3,12 +3,18 @@ import r              from '../../../src/lib/database/driver'
 
 import OrganizationModel from '../../../src/models/organization'
 
+/** @test {OrganizationModel} */
 describe('Organization', function() {
 
-  it('should create an OrganizationModel',  async (done) => {
+  /** @test {OrganizationModel#create} */
+  it('should create an organization',  async (done) => {
 
-    var organization = new OrganizationModel({})
+    var organization = new OrganizationModel()
+
     expect(organization.name).to.be.equal('organizations')
+
     done()
+
   })
+
  })
