@@ -1,8 +1,26 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 
+/**
+ * BucketModel Class
+ *
+ * @public
+ * @class BucketModel
+ */
 class BucketModel extends Model {
 
+  /**
+   * BucketModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'buckets',

@@ -92,12 +92,30 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/models/field/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {chalk, logger} from &apos;../../lib/logger&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import {chalk, logger} from &apos;../../lib/logger&apos;
 import Model           from &apos;../root&apos;
 import r               from &apos;../../lib/database/driver&apos;
 
+/**
+ * FieldModel Class
+ *
+ * @public
+ * @class FieldModel
+ */
 class FieldModel extends Model {
 
+  /**
+   * FieldModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: &apos;fields&apos;,

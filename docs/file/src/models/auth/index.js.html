@@ -92,14 +92,32 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/models/auth/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {chalk, logger} from &apos;../../lib/logger&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import {chalk, logger} from &apos;../../lib/logger&apos;
 import Model           from &apos;../root&apos;
 import PasswordService from &apos;../../services/password&apos;
 import r               from &apos;../../lib/database/driver&apos;
 import TokenService    from &apos;../../services/token&apos;
 
+/**
+ * AuthModel Class
+ *
+ * @public
+ * @class AuthModel
+ */
 class AuthModel extends Model {
 
+  /**
+   * AuthModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: &apos;auth&apos;,
@@ -129,22 +147,13 @@ class AuthModel extends Model {
     }, options))
   }
 
-  getByEmail(email) {
-    return r.db(process.env.RETHINK_DB_NAME).table(&apos;users&apos;).filter({email}).limit(1)
-  }
-
-  getByUsername(username) {
-    return new Promise( async (resolve, reject) =&gt; {
-      var user = await r.db(process.env.RETHINK_DB_NAME).table(&apos;users&apos;).filter({username}).limit(1)
-
-      if(!user) return reject(user)
-
-      resolve(user[0])
-    })
-  }
-
-  login(req) {
-    var pkg = req.body
+  /**
+   * Login user
+   *
+   * @public
+   * @param {Object} pkg - Login data
+   */
+  login(pkg = {}) {
 
     return new Promise( async (resolve, reject) =&gt; {
 
@@ -171,13 +180,11 @@ class AuthModel extends Model {
 
       if(!validated) {
         Model.prototype.create.call(this, {
-          body: {
-            authenticated: false,
-            err: &apos;BAD_PASSWORD&apos;,
-            //password: pkg.password,
-            userId: user.id,
-            username: pkg.username
-          }
+          authenticated: false,
+          err: &apos;BAD_PASSWORD&apos;,
+          //password: pkg.password,
+          userId: user.id,
+          username: pkg.username
         })
         logger.error(&apos;Auth: Bad Password&apos;)
         return reject({
@@ -190,11 +197,9 @@ class AuthModel extends Model {
       }
 
       Model.prototype.create.call(this, {
-        body: {
-          authenticated: true,
-          userId: user.id,
-          username: user.username
-        }
+        authenticated: true,
+        userId: user.id,
+        username: user.username
       })
 
       return resolve(user)

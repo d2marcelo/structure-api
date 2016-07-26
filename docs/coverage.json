@@ -1,15 +1,12 @@
 {
-  "coverage": "6.18%",
-  "expectCount": 194,
-  "actualCount": 12,
+  "coverage": "33.85%",
+  "expectCount": 192,
+  "actualCount": 65,
   "files": {
     "src/models/application/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        4,
-        6
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/services/app.js": {
       "expectCount": 6,
@@ -40,15 +37,10 @@
       ]
     },
     "src/models/auth/index.js": {
-      "expectCount": 6,
-      "actualCount": 0,
+      "expectCount": 4,
+      "actualCount": 3,
       "undocumentLines": [
-        7,
-        111,
-        9,
-        38,
-        42,
-        52
+        116
       ]
     },
     "src/services/auth.js": {
@@ -67,11 +59,8 @@
     },
     "src/models/bucket/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        4,
-        6
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/controllers/buckets/index.js": {
       "expectCount": 2,
@@ -83,12 +72,8 @@
     },
     "src/models/channel/index.js": {
       "expectCount": 3,
-      "actualCount": 0,
-      "undocumentLines": [
-        5,
-        7,
-        68
-      ]
+      "actualCount": 3,
+      "undocumentLines": []
     },
     "src/server/router.js": {
       "expectCount": 10,
@@ -108,18 +93,8 @@
     },
     "src/models/digital-asset/index.js": {
       "expectCount": 9,
-      "actualCount": 0,
-      "undocumentLines": [
-        7,
-        9,
-        49,
-        80,
-        109,
-        236,
-        252,
-        262,
-        268
-      ]
+      "actualCount": 9,
+      "undocumentLines": []
     },
     "src/controllers/digital-assets/index.js": {
       "expectCount": 3,
@@ -142,23 +117,13 @@
     },
     "src/models/document/index.js": {
       "expectCount": 6,
-      "actualCount": 0,
-      "undocumentLines": [
-        8,
-        10,
-        68,
-        167,
-        114,
-        137
-      ]
+      "actualCount": 6,
+      "undocumentLines": []
     },
     "src/models/document-revision/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        7,
-        9
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/controllers/document-revisions/index.js": {
       "expectCount": 2,
@@ -190,11 +155,8 @@
     },
     "src/models/field/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        5,
-        7
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/controllers/fields/index.js": {
       "expectCount": 2,
@@ -257,11 +219,8 @@
     },
     "src/models/organization/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        5,
-        7
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/services/organization.js": {
       "expectCount": 7,
@@ -307,28 +266,13 @@
     },
     "src/models/registry/index.js": {
       "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        6,
-        8,
-        48,
-        56,
-        89
-      ]
+      "actualCount": 5,
+      "undocumentLines": []
     },
     "src/models/revision/index.js": {
       "expectCount": 8,
-      "actualCount": 0,
-      "undocumentLines": [
-        6,
-        8,
-        40,
-        69,
-        93,
-        108,
-        165,
-        186
-      ]
+      "actualCount": 8,
+      "undocumentLines": []
     },
     "src/controllers/root.js": {
       "expectCount": 3,
@@ -382,30 +326,18 @@
     },
     "src/models/taxonomy/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        5,
-        7
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/models/template/index.js": {
       "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        6,
-        8,
-        89,
-        41,
-        64
-      ]
+      "actualCount": 5,
+      "undocumentLines": []
     },
     "src/models/template-revision/index.js": {
       "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        7,
-        9
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/controllers/template-revisions/index.js": {
       "expectCount": 2,
@@ -493,14 +425,14 @@
         4
       ]
     },
-    "src/mixins/mixin.js": {
+    "src/lib/mixin.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         1
       ]
     },
-    "src/lib/mixin.js": {
+    "src/mixins/mixin.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [

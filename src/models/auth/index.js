@@ -1,11 +1,29 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
 import TokenService    from '../../services/token'
 
+/**
+ * AuthModel Class
+ *
+ * @public
+ * @class AuthModel
+ */
 class AuthModel extends Model {
 
+  /**
+   * AuthModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'auth',
@@ -35,20 +53,12 @@ class AuthModel extends Model {
     }, options))
   }
 
-  getByEmail(email) {
-    return r.db(process.env.RETHINK_DB_NAME).table('users').filter({email}).limit(1)
-  }
-
-  getByUsername(username) {
-    return new Promise( async (resolve, reject) => {
-      var user = await r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)
-
-      if(!user) return reject(user)
-
-      resolve(user[0])
-    })
-  }
-
+  /**
+   * Login user
+   *
+   * @public
+   * @param {Object} pkg - Login data
+   */
   login(pkg = {}) {
 
     return new Promise( async (resolve, reject) => {

@@ -1,9 +1,27 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
 
+/**
+ * TaxonomyModel Class
+ *
+ * @public
+ * @class TaxonomyModel
+ */
 class TaxonomyModel extends Model {
 
+  /**
+   * TaxonomyModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'taxonomies',

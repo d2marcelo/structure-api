@@ -92,13 +92,31 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/models/registry/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {chalk, logger} from &apos;../../lib/logger&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import {chalk, logger} from &apos;../../lib/logger&apos;
 import registry        from &apos;../../lib/registry&apos;
 import Model           from &apos;../root&apos;
 import r               from &apos;../../lib/database/driver&apos;
 
+/**
+ * RegistryModel Class
+ *
+ * @public
+ * @class RegistryModel
+ */
 class RegistryModel extends Model {
 
+  /**
+   * RegistryModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: &apos;registry&apos;,
@@ -139,7 +157,14 @@ class RegistryModel extends Model {
     }, options))
   }
 
-  create(req) {
+  /**
+   * Create, or save, a registry item
+   *
+   * @public
+   * @param {Object} pkg - The data to save for the registry item
+   */
+  create(pkg = {}) {
+
     return new Promise( (resolve, reject) =&gt; {
 
 
@@ -147,6 +172,11 @@ class RegistryModel extends Model {
     })
   }
 
+  /**
+   * Get all registry items
+   *
+   * @public
+   */
   getAll() {
 
     return new Promise( async (resolve, reject) =&gt; {
@@ -180,12 +210,18 @@ class RegistryModel extends Model {
 
   }
 
-  getSettingsByName(req) {
+  /**
+   * Get registry setting by name
+   *
+   * @public
+   * @param {Object} pkg - The data holding the name
+   */
+  getSettingsByName(pkg = {}) {
 
     return new Promise( (resolve, reject) =&gt; {
 
       try {
-        var pluginSettings = require(req.params.name).default.settings
+        var pluginSettings = require(pkg.name).default.settings
         resolve(pluginSettings)
       }
       catch(e) {

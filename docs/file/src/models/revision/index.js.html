@@ -92,13 +92,31 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/models/revision/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {chalk, logger} from &apos;../../lib/logger&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
+import {chalk, logger} from &apos;../../lib/logger&apos;
 import DigitalAsset    from &apos;../digital-asset&apos;
 import Model           from &apos;../root&apos;
 import r               from &apos;../../lib/database/driver&apos;
 
+/**
+ * RevisionModel Class
+ *
+ * @public
+ * @class RevisionModel
+ */
 class RevisionModel extends Model {
 
+  /**
+   * RevisionModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: &apos;revisions&apos;,
@@ -131,7 +149,12 @@ class RevisionModel extends Model {
     }, options))
   }
 
-  getAll(req) {
+  /**
+   * Get all revisions
+   *
+   * @public
+   */
+  getAll() {
 
     return new Promise( (resolve, reject) =&gt; {
 
@@ -160,8 +183,13 @@ class RevisionModel extends Model {
 
   }
 
-  getById(req) {
-    var id = (typeof req == &apos;string&apos;) ? req : req.params.id
+  /**
+   * Get a revision by ID
+   *
+   * @public
+   * @param {String} id
+   */
+  getById(id) {
 
     return new Promise( async (resolve, reject) =&gt; {
 
@@ -184,7 +212,13 @@ class RevisionModel extends Model {
 
   }
 
-  getFieldReference(ref) {
+  /**
+   * Get a field reference
+   *
+   * @public
+   * @param {Object} ref - The field reference data
+   */
+  getFieldReference(ref = {}) {
     return new Promise( (resolve, reject) =&gt; {
 
       r.db(process.env.RETHINK_DB_NAME).table(ref.node.replace(&apos;-&apos;, &apos;_&apos;)).get(ref.id).run()
@@ -199,7 +233,13 @@ class RevisionModel extends Model {
     })
   }
 
-  getFieldReferences(field) {
+  /**
+   * Get references for a field
+   *
+   * @public
+   * @param {Object} field - The field
+   */
+  getFieldReferences(field = {}) {
     var resolvedRefs = 0
 
     return new Promise( (resolve, reject) =&gt; {
@@ -256,7 +296,13 @@ class RevisionModel extends Model {
     })
   }
 
-  resolveFieldReferences(field, i) {
+  /**
+   * Resolve field references
+   *
+   * @public
+   * @param {Object} field - The field
+   */
+  resolveFieldReferences(field) {
 
     return new Promise( (resolve, reject) =&gt; {
 
@@ -277,6 +323,12 @@ class RevisionModel extends Model {
 
   }
 
+  /**
+   * Resolve fields for revision
+   *
+   * @public
+   * @param {Object} revision - The revision
+   */
   resolveFields(revision) {
 
     return new Promise( (resolve, reject) =&gt; {

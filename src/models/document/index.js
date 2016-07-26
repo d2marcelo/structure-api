@@ -1,3 +1,8 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger}  from '../../lib/logger'
 import DocumentRevision from '../document-revision'
 import Model            from '../root'
@@ -5,8 +10,21 @@ import r                from '../../lib/database/driver'
 
 //import config from '../../config'
 
+/**
+ * DocumentModel Class
+ *
+ * @public
+ * @class DocumentModel
+ */
 class DocumentModel extends Model {
 
+  /**
+   * DocumentModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'documents',
@@ -65,6 +83,12 @@ class DocumentModel extends Model {
     }, options))
   }
 
+  /**
+   * Create, or save, a document
+   *
+   * @public
+   * @param {Object} pkg - The data to save for the document
+   */
   create(pkg = {}) {
 
     /*
@@ -104,6 +128,11 @@ class DocumentModel extends Model {
     })
   }
 
+  /**
+   * Get all documents
+   *
+   * @public
+   */
   getAll() {
     return new Promise( async (resolve, reject) => {
 
@@ -127,6 +156,12 @@ class DocumentModel extends Model {
     })
   }
 
+  /**
+   * Get document by ID
+   *
+   * @public
+   * @param {String} id
+   */
   getById(id) {
 
     return new Promise( async (resolve, reject) => {
@@ -151,11 +186,12 @@ class DocumentModel extends Model {
 
   }
 
-  /*
-  NOTE:
-  Revisions are created on save, not doc creation, which means they aren't guaranteed exist after initial creation.
-  The create method has been recently modified to add a revision if the `fields` property is passed
-  */
+  /**
+   * Get the document's active revision
+   *
+   * @public
+   * @param {Object} doc - The document
+   */
   getActiveRevision(doc) {
 
     return new Promise( async (resolve, reject) => {

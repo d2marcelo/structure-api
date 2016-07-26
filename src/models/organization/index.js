@@ -1,9 +1,27 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
 
+/**
+ * OrganziationModel Class
+ *
+ * @public
+ * @class OrganziationModel
+ */
 class OrganizationModel extends Model {
 
+  /**
+   * OrganizationModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'organizations',

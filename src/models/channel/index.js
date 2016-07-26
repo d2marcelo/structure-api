@@ -1,9 +1,27 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
 
+/**
+ * ChannelModel Class
+ *
+ * @public
+ * @class ChannelModel
+ */
 class ChannelModel extends Model {
 
+  /**
+   * ChannelModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'channels',
@@ -65,8 +83,12 @@ class ChannelModel extends Model {
     }, options))
   }
 
-  getAll(req) {
-    var query = req.query
+  /**
+   * Get all
+   *
+   * @public
+   */
+  getAll() {
 
     return new Promise( async (resolve, reject) => {
 

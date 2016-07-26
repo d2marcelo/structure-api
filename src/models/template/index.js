@@ -1,10 +1,28 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger}  from '../../lib/logger'
 import Model            from '../root'
 import r                from '../../lib/database/driver'
 import TemplateRevision from '../template-revision'
 
+/**
+ * TemplateModel Class
+ *
+ * @public
+ * @class TemplateModel
+ */
 class TemplateModel extends Model {
 
+  /**
+   * TemplateModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'templates',
@@ -38,6 +56,11 @@ class TemplateModel extends Model {
     }, options))
   }
 
+  /**
+   * Get all templates
+   *
+   * @public
+   */
   getAll() {
     return new Promise( async (resolve, reject) => {
 
@@ -61,6 +84,12 @@ class TemplateModel extends Model {
     })
   }
 
+  /**
+   * Get template by ID
+   *
+   * @public
+   * @param {String} id
+   */
   getById(id) {
 
     return new Promise( async (resolve, reject) => {
@@ -85,6 +114,12 @@ class TemplateModel extends Model {
 
   }
 
+  /**
+   * Get template's active revision
+   *
+   * @public
+   * @param {Object} doc - The item to get a revision for
+   */
   getActiveRevision(doc) {
 
     return new Promise( async (resolve, reject) => {

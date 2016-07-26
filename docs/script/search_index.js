@@ -1056,18 +1056,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/models/auth/index.js~authmodel#getbyemail",
-    "class/src/models/auth/index.js~AuthModel.html#instance-method-getByEmail",
-    "src/models/auth/index.js~AuthModel#getByEmail",
-    "method"
-  ],
-  [
-    "src/models/auth/index.js~authmodel#getbyusername",
-    "class/src/models/auth/index.js~AuthModel.html#instance-method-getByUsername",
-    "src/models/auth/index.js~AuthModel#getByUsername",
-    "method"
-  ],
-  [
     "src/models/auth/index.js~authmodel#login",
     "class/src/models/auth/index.js~AuthModel.html#instance-method-login",
     "src/models/auth/index.js~AuthModel#login",

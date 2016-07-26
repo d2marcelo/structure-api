@@ -1,10 +1,28 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import DigitalAsset    from '../digital-asset'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
 
+/**
+ * RevisionModel Class
+ *
+ * @public
+ * @class RevisionModel
+ */
 class RevisionModel extends Model {
 
+  /**
+   * RevisionModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'revisions',
@@ -37,6 +55,11 @@ class RevisionModel extends Model {
     }, options))
   }
 
+  /**
+   * Get all revisions
+   *
+   * @public
+   */
   getAll() {
 
     return new Promise( (resolve, reject) => {
@@ -66,6 +89,12 @@ class RevisionModel extends Model {
 
   }
 
+  /**
+   * Get a revision by ID
+   *
+   * @public
+   * @param {String} id
+   */
   getById(id) {
 
     return new Promise( async (resolve, reject) => {
@@ -89,7 +118,13 @@ class RevisionModel extends Model {
 
   }
 
-  getFieldReference(ref) {
+  /**
+   * Get a field reference
+   *
+   * @public
+   * @param {Object} ref - The field reference data
+   */
+  getFieldReference(ref = {}) {
     return new Promise( (resolve, reject) => {
 
       r.db(process.env.RETHINK_DB_NAME).table(ref.node.replace('-', '_')).get(ref.id).run()
@@ -104,7 +139,13 @@ class RevisionModel extends Model {
     })
   }
 
-  getFieldReferences(field) {
+  /**
+   * Get references for a field
+   *
+   * @public
+   * @param {Object} field - The field
+   */
+  getFieldReferences(field = {}) {
     var resolvedRefs = 0
 
     return new Promise( (resolve, reject) => {
@@ -161,7 +202,13 @@ class RevisionModel extends Model {
     })
   }
 
-  resolveFieldReferences(field, i) {
+  /**
+   * Resolve field references
+   *
+   * @public
+   * @param {Object} field - The field
+   */
+  resolveFieldReferences(field) {
 
     return new Promise( (resolve, reject) => {
 
@@ -182,6 +229,12 @@ class RevisionModel extends Model {
 
   }
 
+  /**
+   * Resolve fields for revision
+   *
+   * @public
+   * @param {Object} revision - The revision
+   */
   resolveFields(revision) {
 
     return new Promise( (resolve, reject) => {

@@ -1,11 +1,29 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import fs              from 'fs'
 import Model           from '../root'
 import request         from 'superagent'
 import r               from '../../lib/database/driver'
 
+/**
+ * DigitalAssetModel Class
+ *
+ * @public
+ * @class DigitalAssetModel
+ */
 class DigitalAssetModel extends Model {
 
+  /**
+   * DigitalAssetModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'digital-assets',
@@ -46,6 +64,12 @@ class DigitalAssetModel extends Model {
     }, options))
   }
 
+  /**
+   * Create, or save, a new digital asset
+   *
+   * @public
+   * @param {Object} pkg - The data to save for the digital asset
+   */
   create(pkg = {}) {
 
     return new Promise( (resolve, reject) => {
@@ -76,6 +100,12 @@ class DigitalAssetModel extends Model {
 
   }
 
+  /**
+   * Some embeds have a 3rd party JS script that needs to be appended to the page for them to load
+   *
+   * @public
+   * @param {String} type - Which site's embed
+   */
   embedScript(type) {
 
     switch(type) {
@@ -105,6 +135,12 @@ class DigitalAssetModel extends Model {
 
   }
 
+  /**
+   * Fetch the embed data
+   *
+   * @public
+   * @param {Object} pkg - The data pkg holding the information about which embed to fetch
+   */
   fetchEmbed(pkg = {}) {
     var type = pkg.type,
         url  = ''
@@ -232,7 +268,13 @@ class DigitalAssetModel extends Model {
 
   }
 
-  getAll(req) {
+  /**
+   * Get all digital assets
+   *
+   * @public
+   */
+  getAll() {
+
     return new Promise( (resolve, reject) => {
 
       Model.prototype.getAll.call(this)
@@ -248,6 +290,12 @@ class DigitalAssetModel extends Model {
     })
   }
 
+  /**
+   * Create digital asset data package for API
+   *
+   * @public
+   * @param {Object} value - The value object being passed to the API
+   */
   pkg(value) {
 
     value.src = {
@@ -258,12 +306,25 @@ class DigitalAssetModel extends Model {
 
   }
 
+  /**
+   * Package all values
+   *
+   * @public
+   * @param {String} values
+   */
   pkgAll(values) {
     values = values.map(this.pkg.bind(this))
 
     return values
   }
 
+  /**
+   * Serve digital asset from url
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
   view(req, res) {
 
     var id = req.params.id

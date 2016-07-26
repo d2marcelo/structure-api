@@ -1,10 +1,28 @@
+/**
+ * Module Dependencies
+ *
+ * @ignore
+ */
 import {chalk, logger} from '../../lib/logger'
 import registry        from '../../lib/registry'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
 
+/**
+ * RegistryModel Class
+ *
+ * @public
+ * @class RegistryModel
+ */
 class RegistryModel extends Model {
 
+  /**
+   * RegistryModel constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     super(Object.assign({}, {
       name: 'registry',
@@ -45,7 +63,14 @@ class RegistryModel extends Model {
     }, options))
   }
 
-  create(req) {
+  /**
+   * Create, or save, a registry item
+   *
+   * @public
+   * @param {Object} pkg - The data to save for the registry item
+   */
+  create(pkg = {}) {
+
     return new Promise( (resolve, reject) => {
 
 
@@ -53,6 +78,11 @@ class RegistryModel extends Model {
     })
   }
 
+  /**
+   * Get all registry items
+   *
+   * @public
+   */
   getAll() {
 
     return new Promise( async (resolve, reject) => {
@@ -86,12 +116,18 @@ class RegistryModel extends Model {
 
   }
 
-  getSettingsByName(req) {
+  /**
+   * Get registry setting by name
+   *
+   * @public
+   * @param {Object} pkg - The data holding the name
+   */
+  getSettingsByName(pkg = {}) {
 
     return new Promise( (resolve, reject) => {
 
       try {
-        var pluginSettings = require(req.params.name).default.settings
+        var pluginSettings = require(pkg.name).default.settings
         resolve(pluginSettings)
       }
       catch(e) {

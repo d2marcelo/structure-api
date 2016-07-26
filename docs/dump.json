@@ -1838,7 +1838,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\n\nclass AppModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'applications',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: {\n          Node: 'Organization',\n          foreignKey: 'id',\n          localField: 'organization',\n          localKey: 'organizationId'\n        }\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default AppModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\n\n/**\n * AppModel Class\n *\n * @public\n * @class AppModel\n */\nclass AppModel extends Model {\n\n  /**\n   * AppModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'applications',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: {\n          Node: 'Organization',\n          foreignKey: 'id',\n          localField: 'organization',\n          localKey: 'organizationId'\n        }\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default AppModel\n"
   },
   {
     "__docId__": 96,
@@ -1848,13 +1848,18 @@
     "name": "AppModel",
     "memberof": "src/models/application/index.js",
     "longname": "src/models/application/index.js~AppModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/application/index.js",
     "importStyle": "AppModel",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "AppModel Class",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "AppModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
@@ -1868,19 +1873,25 @@
     "name": "constructor",
     "memberof": "src/models/application/index.js~AppModel",
     "longname": "src/models/application/index.js~AppModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "access": "public",
+    "description": "AppModel constructor",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -1896,7 +1907,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\nimport TokenService    from '../../services/token'\n\nclass AuthModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'auth',\n\n      permissions: {\n        create:  ['user', 'admin'],\n        delete:  ['admin'],\n        read:    ['organization', 'admin'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'user',\n            localKey: 'userId'\n          }\n        ]\n      },\n      schema: {\n        authenticatedAt: {\n          type: 'date'\n        }\n      }\n    }, options))\n  }\n\n  getByEmail(email) {\n    return r.db(process.env.RETHINK_DB_NAME).table('users').filter({email}).limit(1)\n  }\n\n  getByUsername(username) {\n    return new Promise( async (resolve, reject) => {\n      var user = await r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)\n\n      if(!user) return reject(user)\n\n      resolve(user[0])\n    })\n  }\n\n  login(req) {\n    var pkg = req.body\n\n    return new Promise( async (resolve, reject) => {\n\n      var user = await this.getByUsername(pkg.username)\n\n      if(!user) {\n        Model.prototype.create.call(this, {\n          body: {\n            authenticated: false,\n            err: 'NO_USER',\n            username: pkg.username\n          }\n        })\n\n        return reject({\n          err: {\n            message: 'Could not get user: ' + pkg.username,\n            resource: 'AuthNode'\n          }\n        })\n      }\n\n      var validated = await new PasswordService().verify(pkg.password, user.hash)\n\n      if(!validated) {\n        Model.prototype.create.call(this, {\n          body: {\n            authenticated: false,\n            err: 'BAD_PASSWORD',\n            //password: pkg.password,\n            userId: user.id,\n            username: pkg.username\n          }\n        })\n        logger.error('Auth: Bad Password')\n        return reject({\n          err: {\n            message: 'Could not validate password',\n            resource: 'AuthNode'\n          }\n        })\n\n      }\n\n      Model.prototype.create.call(this, {\n        body: {\n          authenticated: true,\n          userId: user.id,\n          username: user.username\n        }\n      })\n\n      return resolve(user)\n\n    })\n  }\n\n  authByFacebook(req) {\n    console.error('handle args', req.body)\n    return new Promise( (resolve, reject) => {\n\n      r.db(process.env.RETHINK_DB_NAME)\n        .table('users')\n        .filter({\n          strategies: {\n            facebook: {\n              id: req.body.profile.id\n            }\n          }\n        })\n        .limit(1)\n        .run()\n        .then( (res) => {\n          console.log('handle res', res)\n          resolve()\n        })\n        .catch( (err) => {\n          console.error('handle err', err)\n          reject()\n        })\n\n    })\n  }\n\n}\n\nexport default AuthModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\nimport TokenService    from '../../services/token'\n\n/**\n * AuthModel Class\n *\n * @public\n * @class AuthModel\n */\nclass AuthModel extends Model {\n\n  /**\n   * AuthModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'auth',\n\n      permissions: {\n        create:  ['user', 'admin'],\n        delete:  ['admin'],\n        read:    ['organization', 'admin'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'user',\n            localKey: 'userId'\n          }\n        ]\n      },\n      schema: {\n        authenticatedAt: {\n          type: 'date'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Login user\n   *\n   * @public\n   * @param {Object} pkg - Login data\n   */\n  login(pkg = {}) {\n\n    return new Promise( async (resolve, reject) => {\n\n      var user = await this.getByUsername(pkg.username)\n\n      if(!user) {\n        Model.prototype.create.call(this, {\n          body: {\n            authenticated: false,\n            err: 'NO_USER',\n            username: pkg.username\n          }\n        })\n\n        return reject({\n          err: {\n            message: 'Could not get user: ' + pkg.username,\n            resource: 'AuthNode'\n          }\n        })\n      }\n\n      var validated = await new PasswordService().verify(pkg.password, user.hash)\n\n      if(!validated) {\n        Model.prototype.create.call(this, {\n          authenticated: false,\n          err: 'BAD_PASSWORD',\n          //password: pkg.password,\n          userId: user.id,\n          username: pkg.username\n        })\n        logger.error('Auth: Bad Password')\n        return reject({\n          err: {\n            message: 'Could not validate password',\n            resource: 'AuthNode'\n          }\n        })\n\n      }\n\n      Model.prototype.create.call(this, {\n        authenticated: true,\n        userId: user.id,\n        username: user.username\n      })\n\n      return resolve(user)\n\n    })\n  }\n\n  authByFacebook(req) {\n    console.error('handle args', req.body)\n    return new Promise( (resolve, reject) => {\n\n      r.db(process.env.RETHINK_DB_NAME)\n        .table('users')\n        .filter({\n          strategies: {\n            facebook: {\n              id: req.body.profile.id\n            }\n          }\n        })\n        .limit(1)\n        .run()\n        .then( (res) => {\n          console.log('handle res', res)\n          resolve()\n        })\n        .catch( (err) => {\n          console.error('handle err', err)\n          reject()\n        })\n\n    })\n  }\n\n}\n\nexport default AuthModel\n"
   },
   {
     "__docId__": 99,
@@ -1906,13 +1917,18 @@
     "name": "AuthModel",
     "memberof": "src/models/auth/index.js",
     "longname": "src/models/auth/index.js~AuthModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/auth/index.js",
     "importStyle": "AuthModel",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "AuthModel Class",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "AuthModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
@@ -1926,19 +1942,25 @@
     "name": "constructor",
     "memberof": "src/models/auth/index.js~AuthModel",
     "longname": "src/models/auth/index.js~AuthModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "access": "public",
+    "description": "AuthModel constructor",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
@@ -1948,19 +1970,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getByEmail",
+    "name": "login",
     "memberof": "src/models/auth/index.js~AuthModel",
-    "longname": "src/models/auth/index.js~AuthModel#getByEmail",
-    "access": null,
-    "description": null,
-    "lineNumber": 38,
-    "undocument": true,
+    "longname": "src/models/auth/index.js~AuthModel#login",
+    "access": "public",
+    "description": "Login user",
+    "lineNumber": 62,
     "params": [
       {
-        "name": "email",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "Login data"
       }
     ],
     "return": {
@@ -1975,16 +2000,16 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getByUsername",
+    "name": "authByFacebook",
     "memberof": "src/models/auth/index.js~AuthModel",
-    "longname": "src/models/auth/index.js~AuthModel#getByUsername",
+    "longname": "src/models/auth/index.js~AuthModel#authByFacebook",
     "access": null,
     "description": null,
-    "lineNumber": 42,
+    "lineNumber": 116,
     "undocument": true,
     "params": [
       {
-        "name": "username",
+        "name": "req",
         "types": [
           "*"
         ]
@@ -1999,60 +2024,6 @@
   },
   {
     "__docId__": 103,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "login",
-    "memberof": "src/models/auth/index.js~AuthModel",
-    "longname": "src/models/auth/index.js~AuthModel#login",
-    "access": null,
-    "description": null,
-    "lineNumber": 52,
-    "undocument": true,
-    "params": [
-      {
-        "name": "req",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 104,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "authByFacebook",
-    "memberof": "src/models/auth/index.js~AuthModel",
-    "longname": "src/models/auth/index.js~AuthModel#authByFacebook",
-    "access": null,
-    "description": null,
-    "lineNumber": 111,
-    "undocument": true,
-    "params": [
-      {
-        "name": "req",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 105,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2062,55 +2033,66 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\n\nclass BucketModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'buckets',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Channel',\n            foreignKey: 'id',\n            localField: 'channel',\n            localKey: 'channelId'\n          },\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n        data: {\n          type: 'object'\n        },\n        desc: {\n          type: 'string'\n        },\n        /*\n        Example of a query with some documents\n\n        query: [\n          {\n            id: 5\n          },\n          // Get one article by author with id 543; this would get their latest article\n          {\n            filter: {\n              authorId: 543\n            },\n            limit: 1\n          },\n          // Get up to 5 articles that are in the category \"trending\"\n          {\n            filter: {\n              category: 'trending'\n            },\n            limit: 5\n          },\n          // Get up to 10 documents that have \"Kardashian\" as the title\n          {\n            match: /$kardashian$/,\n            key: 'title',\n            limit: 10\n          }\n        ]\n        */\n        query: {\n          type: 'array'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default BucketModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\n\n/**\n * BucketModel Class\n *\n * @public\n * @class BucketModel\n */\nclass BucketModel extends Model {\n\n  /**\n   * BucketModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'buckets',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Channel',\n            foreignKey: 'id',\n            localField: 'channel',\n            localKey: 'channelId'\n          },\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n        data: {\n          type: 'object'\n        },\n        desc: {\n          type: 'string'\n        },\n        /*\n        Example of a query with some documents\n\n        query: [\n          {\n            id: 5\n          },\n          // Get one article by author with id 543; this would get their latest article\n          {\n            filter: {\n              authorId: 543\n            },\n            limit: 1\n          },\n          // Get up to 5 articles that are in the category \"trending\"\n          {\n            filter: {\n              category: 'trending'\n            },\n            limit: 5\n          },\n          // Get up to 10 documents that have \"Kardashian\" as the title\n          {\n            match: /$kardashian$/,\n            key: 'title',\n            limit: 10\n          }\n        ]\n        */\n        query: {\n          type: 'array'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default BucketModel\n"
   },
   {
-    "__docId__": 106,
+    "__docId__": 104,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "BucketModel",
     "memberof": "src/models/bucket/index.js",
     "longname": "src/models/bucket/index.js~BucketModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/bucket/index.js",
     "importStyle": "BucketModel",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "BucketModel Class",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "BucketModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 107,
+    "__docId__": 105,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/bucket/index.js~BucketModel",
     "longname": "src/models/bucket/index.js~BucketModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "access": "public",
+    "description": "BucketModel constructor",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 108,
+    "__docId__": 106,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2120,71 +2102,173 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\nclass ChannelModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'channels',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Channel',\n            foreignKey: 'id',\n            localField: 'channelParent',\n            localKey: 'channelParentId'\n          },\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ],\n        hasMany: [\n          {\n            Node: 'Bucket',\n            foreignKey: 'id',\n            localField: 'buckets',\n            localKey: 'bucketIds'\n          },\n          {\n            Node: 'Channel',\n            foreignKey: 'id',\n            localField: 'channelChildren',\n            localKey: 'channelChildrenIds'\n          },\n        ]\n      },\n      schema: {\n        bucketIds: {\n          type: 'array'\n        },\n        data: {\n          type: 'object'\n        },\n        desc: {\n          type: 'string'\n        },\n        slug: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  getAll(req) {\n    var query = req.query\n\n    return new Promise( async (resolve, reject) => {\n\n\n\n    })\n  }\n\n}\n\nexport default ChannelModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\n/**\n * ChannelModel Class\n *\n * @public\n * @class ChannelModel\n */\nclass ChannelModel extends Model {\n\n  /**\n   * ChannelModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'channels',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Channel',\n            foreignKey: 'id',\n            localField: 'channelParent',\n            localKey: 'channelParentId'\n          },\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ],\n        hasMany: [\n          {\n            Node: 'Bucket',\n            foreignKey: 'id',\n            localField: 'buckets',\n            localKey: 'bucketIds'\n          },\n          {\n            Node: 'Channel',\n            foreignKey: 'id',\n            localField: 'channelChildren',\n            localKey: 'channelChildrenIds'\n          },\n        ]\n      },\n      schema: {\n        bucketIds: {\n          type: 'array'\n        },\n        data: {\n          type: 'object'\n        },\n        desc: {\n          type: 'string'\n        },\n        slug: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Get all\n   *\n   * @public\n   */\n  getAll() {\n\n    return new Promise( async (resolve, reject) => {\n\n\n\n    })\n  }\n\n}\n\nexport default ChannelModel\n"
   },
   {
-    "__docId__": 109,
+    "__docId__": 107,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "ChannelModel",
     "memberof": "src/models/channel/index.js",
     "longname": "src/models/channel/index.js~ChannelModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/channel/index.js",
     "importStyle": "ChannelModel",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "ChannelModel Class",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "ChannelModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 110,
+    "__docId__": 108,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/channel/index.js~ChannelModel",
     "longname": "src/models/channel/index.js~ChannelModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "access": "public",
+    "description": "ChannelModel constructor",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 111,
+    "__docId__": 109,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "getAll",
     "memberof": "src/models/channel/index.js~ChannelModel",
     "longname": "src/models/channel/index.js~ChannelModel#getAll",
+    "access": "public",
+    "description": "Get all",
+    "lineNumber": 91,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 110,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/models/digital-asset/index.js",
+    "memberof": null,
+    "longname": "src/models/digital-asset/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 68,
-    "undocument": true,
+    "lineNumber": 1,
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport fs              from 'fs'\nimport Model           from '../root'\nimport request         from 'superagent'\nimport r               from '../../lib/database/driver'\n\n/**\n * DigitalAssetModel Class\n *\n * @public\n * @class DigitalAssetModel\n */\nclass DigitalAssetModel extends Model {\n\n  /**\n   * DigitalAssetModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'digital-assets',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ],\n        hasMany: [\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomys',\n            localKey: 'taxonomysId'\n          },\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Create, or save, a new digital asset\n   *\n   * @public\n   * @param {Object} pkg - The data to save for the digital asset\n   */\n  create(pkg = {}) {\n\n    return new Promise( (resolve, reject) => {\n\n      var createFilesPromises = []\n\n      pkg.files.forEach( (file) => {\n        var insert = {\n          diskFileName: file.diskFileName,\n          mimetype: file.mimetype,\n          originalFileName: file.originalFileName,\n          originalSize: file.size,\n          storageAdaptor: file.storageAdaptor\n        }\n\n        createFilesPromises.push(Model.prototype.create.call(this, insert))\n      })\n\n      Promise.all(createFilesPromises)\n        .then( (values) => {\n          //console.error('create values', values)\n          values = this.pkgAll(values)\n          resolve(values)\n        })\n        .catch( (err) => reject(err))\n\n    })\n\n  }\n\n  /**\n   * Some embeds have a 3rd party JS script that needs to be appended to the page for them to load\n   *\n   * @public\n   * @param {String} type - Which site's embed\n   */\n  embedScript(type) {\n\n    switch(type) {\n\n      case 'imgur':\n        return `<script async src=\"//s.imgur.com/min/embed.js\" charset=\"utf-8\"></script>`\n\n      case 'instagram':\n        return `<script async defer src=\\\"//platform.instagram.com/en_US/embeds.js\\\"></script>`\n\n      case 'pinterest':\n        return `<script async defer src=\"//assets.pinterest.com/js/pinit.js\"></script>`\n\n      case 'reddit':\n        return `<script async src=\\\"https://www.redditstatic.com/comment-embed.js\\\"></script>`\n\n      case 'twitter':\n        return `<script async src=\\\"//platform.twitter.com/widgets.js\\\" charset=\\\"utf-8\\\"></script>`\n\n      case 'tumblr':\n        return `<script async src=\\\"https://secure.assets.tumblr.com/post.js\\\"></script>`\n\n      default:\n        return ''\n\n    }\n\n  }\n\n  /**\n   * Fetch the embed data\n   *\n   * @public\n   * @param {Object} pkg - The data pkg holding the information about which embed to fetch\n   */\n  fetchEmbed(pkg = {}) {\n    var type = pkg.type,\n        url  = ''\n\n    return new Promise( (resolve, reject) => {\n\n      switch(type) {\n\n        case 'aol':\n          url = `http://api.embed.ly/1/oembed?url=${pkg.url}`\n          break\n\n        case 'dailymotion':\n          url = `http://www.dailymotion.com/services/oembed?url=${pkg.url}`\n          break\n\n        case 'deviantart':\n          url = `http://backend.deviantart.com/oembed?url=${pkg.url}`\n          break\n\n        case 'flickr':\n          url = `http://www.flickr.com/services/oembed/?url=${pkg.url}`\n          break\n\n        case 'funnyordie':\n          url = `http://www.funnyordie.com/oembed.json?url=${pkg.url}`\n          break\n\n        case 'getty':\n          url = ` http://embed.gettyimages.com/oembed?url=${pkg.url}`\n          break\n\n        case 'gfycat':\n          url = `https://api.gfycat.com/v1/oembed?url=${pkg.url}`\n          break\n\n        case 'hulu':\n          url = `http://www.hulu.com/api/oembed.xml?url=${pkg.url}`\n          break\n\n        case 'ifttt':\n          url = `https://ifttt.com/oembed?url=${pkg.url}`\n          break\n\n        case 'imgur':\n          url = `http://api.imgur.com/oembed?url=${pkg.url}`\n          break\n\n        case 'instagram':\n          url = `https://api.instagram.com/oembed?url=${pkg.url}`\n          break\n\n        case 'kickstarter':\n          url = `http://www.kickstarter.com/services/oembed?url=${pkg.url}`\n          break\n\n        case 'meetup':\n          url = `https://api.meetup.com/oembed?format=json&url=${pkg.url}`\n          break\n\n        case 'newyorktimes':\n          url = `https://www.nytimes.com/svc/oembed/html/?url=${pkg.url}`\n          break\n\n        case 'pinterest':\n          return resolve({\n            html: `<a data-pin-do=\"embedPin\" data-pin-width=\"${(pkg.size || 'small')}\" href=\"${pkg.url}\"></a>`,\n            pinSize: pkg.size || 'small',\n            script: this.embedScript(pkg.type)\n          })\n\n        case 'soundcloud':\n          url = `https://soundcloud.com/oembed?url=${pkg.url}`\n          break\n\n        case 'reddit':\n          url = `https://www.reddit.com/oembed?url=${pkg.url}`\n          break\n\n        case 'twitter':\n          url = `https://api.twitter.com/1/statuses/oembed.json?url=${pkg.url}`\n          break\n\n        case 'tumblr':\n          url = `http://www.tumblr.com/oembed/1.0?url=${pkg.url}`\n          break\n\n        case 'ustream':\n          url = `http://www.ustream.tv/oembed?url=${pkg.url}`\n          break\n\n        case 'vimeo':\n          url = `https://vimeo.com/api/oembed.json?url=${pkg.url}`\n          break\n\n        case 'vine':\n          url = `https://vine.co/oembed.json?url=${pkg.url}`\n          break\n\n        case 'youtube':\n          url = `https://www.youtube.com/oembed?url=${pkg.url}?v=${pkg.v}&format=json`\n          break\n\n        default:\n          return Promise.reject()\n      }\n\n      request\n        .get(url)\n        .end( (err, res) => {\n\n          if(err) {\n            logger.error('There was an error fetching the embed')\n            console.error(err)\n            return reject(err)\n          }\n\n          return resolve(Object.assign(res.body, {\n            script: this.embedScript(type)\n          }))\n\n        })\n\n    })\n\n  }\n\n  /**\n   * Get all digital assets\n   *\n   * @public\n   */\n  getAll() {\n\n    return new Promise( (resolve, reject) => {\n\n      Model.prototype.getAll.call(this)\n        .then( (values) => {\n          values = this.pkgAll(values)\n\n          resolve(values)\n        })\n        .catch((err) => {\n          reject(err)\n        })\n\n    })\n  }\n\n  /**\n   * Create digital asset data package for API\n   *\n   * @public\n   * @param {Object} value - The value object being passed to the API\n   */\n  pkg(value) {\n\n    value.src = {\n      url: `http://${process.env.HOST}/api/v0.1/${this.entityName}/${value.sid}/view`\n    }\n\n    return value\n\n  }\n\n  /**\n   * Package all values\n   *\n   * @public\n   * @param {String} values\n   */\n  pkgAll(values) {\n    values = values.map(this.pkg.bind(this))\n\n    return values\n  }\n\n  /**\n   * Serve digital asset from url\n   *\n   * @public\n   * @param {Object} req - Express req\n   * @param {Object} res - Express res\n   */\n  view(req, res) {\n\n    var id = req.params.id\n\n    /*\n    TODO:\n    This is the disk adapter - need to account for each adaptor\n    */\n    this.getById(id)\n      .then( (doc) => {\n        const filePath = `/tmp/uploads/${doc.diskFileName}`\n\n        res.sendFile(filePath)\n      })\n      .catch((err) => {\n        logger.error('Could not find asset', err)\n      })\n\n  }\n\n}\n\nexport default DigitalAssetModel\n"
+  },
+  {
+    "__docId__": 111,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "DigitalAssetModel",
+    "memberof": "src/models/digital-asset/index.js",
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel",
+    "access": "public",
+    "export": true,
+    "importPath": "structure-core/src/models/digital-asset/index.js",
+    "importStyle": "DigitalAssetModel",
+    "description": "DigitalAssetModel Class",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "DigitalAssetModel"
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "src/models/root.js~Model"
+    ]
+  },
+  {
+    "__docId__": 112,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#constructor",
+    "access": "public",
+    "description": "DigitalAssetModel constructor",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 113,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "create",
+    "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#create",
+    "access": "public",
+    "description": "Create, or save, a new digital asset",
+    "lineNumber": 73,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "The data to save for the digital asset"
       }
     ],
     "return": {
@@ -2195,61 +2279,33 @@
     "generator": false
   },
   {
-    "__docId__": 112,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/models/digital-asset/index.js",
-    "memberof": null,
-    "longname": "src/models/digital-asset/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport fs              from 'fs'\nimport Model           from '../root'\nimport request         from 'superagent'\nimport r               from '../../lib/database/driver'\n\nclass DigitalAssetModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'digital-assets',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ],\n        hasMany: [\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomys',\n            localKey: 'taxonomysId'\n          },\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  create(req) {\n    var pkg = req.body\n\n    return new Promise( (resolve, reject) => {\n\n      var createFilesPromises = []\n\n      pkg.files.forEach( (file) => {\n        var insert = {\n          diskFileName: file.diskFileName,\n          mimetype: file.mimetype,\n          originalFileName: file.originalFileName,\n          originalSize: file.size,\n          storageAdaptor: file.storageAdaptor\n        }\n\n        createFilesPromises.push(Model.prototype.create.call(this, {body: insert}))\n      })\n\n      Promise.all(createFilesPromises)\n        .then( (values) => {\n          //console.error('create values', values)\n          values = this.pkgAll(values)\n          resolve(values)\n        })\n        .catch( (err) => reject(err))\n\n    })\n\n  }\n\n  embedScript(type) {\n\n    switch(type) {\n\n      case 'imgur':\n        return `<script async src=\"//s.imgur.com/min/embed.js\" charset=\"utf-8\"></script>`\n\n      case 'instagram':\n        return `<script async defer src=\\\"//platform.instagram.com/en_US/embeds.js\\\"></script>`\n\n      case 'pinterest':\n        return `<script async defer src=\"//assets.pinterest.com/js/pinit.js\"></script>`\n\n      case 'reddit':\n        return `<script async src=\\\"https://www.redditstatic.com/comment-embed.js\\\"></script>`\n\n      case 'twitter':\n        return `<script async src=\\\"//platform.twitter.com/widgets.js\\\" charset=\\\"utf-8\\\"></script>`\n\n      case 'tumblr':\n        return `<script async src=\\\"https://secure.assets.tumblr.com/post.js\\\"></script>`\n\n      default:\n        return ''\n\n    }\n\n  }\n\n  fetchEmbed(req) {\n    var type = req.params.type,\n        url  = ''\n\n    return new Promise( (resolve, reject) => {\n\n      switch(type) {\n\n        case 'aol':\n          url = `http://api.embed.ly/1/oembed?url=${req.params.url}`\n          break\n\n        case 'dailymotion':\n          url = `http://www.dailymotion.com/services/oembed?url=${req.params.url}`\n          break\n\n        case 'deviantart':\n          url = `http://backend.deviantart.com/oembed?url=${req.params.url}`\n          break\n\n        case 'flickr':\n          url = `http://www.flickr.com/services/oembed/?url=${req.params.url}`\n          break\n\n        case 'funnyordie':\n          url = `http://www.funnyordie.com/oembed.json?url=${req.params.url}`\n          break\n\n        case 'getty':\n          url = ` http://embed.gettyimages.com/oembed?url=${req.params.url}`\n          break\n\n        case 'gfycat':\n          url = `https://api.gfycat.com/v1/oembed?url=${req.params.url}`\n          break\n\n        case 'hulu':\n          url = `http://www.hulu.com/api/oembed.xml?url=${req.params.url}`\n          break\n\n        case 'ifttt':\n          url = `https://ifttt.com/oembed?url=${req.params.url}`\n          break\n\n        case 'imgur':\n          url = `http://api.imgur.com/oembed?url=${req.params.url}`\n          break\n\n        case 'instagram':\n          url = `https://api.instagram.com/oembed?url=${req.params.url}`\n          break\n\n        case 'kickstarter':\n          url = `http://www.kickstarter.com/services/oembed?url=${req.params.url}`\n          break\n\n        case 'meetup':\n          url = `https://api.meetup.com/oembed?format=json&url=${req.params.url}`\n          break\n\n        case 'newyorktimes':\n          url = `https://www.nytimes.com/svc/oembed/html/?url=${req.params.url}`\n          break\n\n        case 'pinterest':\n          return resolve({\n            html: `<a data-pin-do=\"embedPin\" data-pin-width=\"${(req.body.size || 'small')}\" href=\"${req.params.url}\"></a>`,\n            pinSize: req.body.size || 'small',\n            script: this.embedScript(req.params.type)\n          })\n\n        case 'soundcloud':\n          url = `https://soundcloud.com/oembed?url=${req.params.url}`\n          break\n\n        case 'reddit':\n          url = `https://www.reddit.com/oembed?url=${req.params.url}`\n          break\n\n        case 'twitter':\n          url = `https://api.twitter.com/1/statuses/oembed.json?url=${req.params.url}`\n          break\n\n        case 'tumblr':\n          url = `http://www.tumblr.com/oembed/1.0?url=${req.params.url}`\n          break\n\n        case 'ustream':\n          url = `http://www.ustream.tv/oembed?url=${req.params.url}`\n          break\n\n        case 'vimeo':\n          url = `https://vimeo.com/api/oembed.json?url=${req.params.url}`\n          break\n\n        case 'vine':\n          url = `https://vine.co/oembed.json?url=${req.params.url}`\n          break\n\n        case 'youtube':\n          url = `https://www.youtube.com/oembed?url=${req.params.url}?v=${req.params.v}&format=json`\n          break\n\n        default:\n          return Promise.reject()\n      }\n\n      request\n        .get(url)\n        .end( (err, res) => {\n\n          if(err) {\n            logger.error('There was an error fetching the embed')\n            console.error(err)\n            return reject(err)\n          }\n\n          return resolve(Object.assign(res.body, {\n            script: this.embedScript(type)\n          }))\n\n        })\n\n    })\n\n  }\n\n  getAll(req) {\n    return new Promise( (resolve, reject) => {\n\n      Model.prototype.getAll.call(this)\n        .then( (values) => {\n          values = this.pkgAll(values)\n\n          resolve(values)\n        })\n        .catch((err) => {\n          reject(err)\n        })\n\n    })\n  }\n\n  pkg(value) {\n\n    value.src = {\n      url: `http://${process.env.HOST}/api/v0.1/${this.entityName}/${value.sid}/view`\n    }\n\n    return value\n\n  }\n\n  pkgAll(values) {\n    values = values.map(this.pkg.bind(this))\n\n    return values\n  }\n\n  view(req, res) {\n\n    var id = req.params.id\n\n    /*\n    TODO:\n    This is the disk adapter - need to account for each adaptor\n    */\n    this.getById(id)\n      .then( (doc) => {\n        const filePath = `/tmp/uploads/${doc.diskFileName}`\n\n        res.sendFile(filePath)\n      })\n      .catch((err) => {\n        logger.error('Could not find asset', err)\n      })\n\n  }\n\n}\n\nexport default DigitalAssetModel\n"
-  },
-  {
-    "__docId__": 113,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "DigitalAssetModel",
-    "memberof": "src/models/digital-asset/index.js",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "access": null,
-    "export": true,
-    "importPath": "structure-core/src/models/digital-asset/index.js",
-    "importStyle": "DigitalAssetModel",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "src/models/root.js~Model"
-    ]
-  },
-  {
     "__docId__": 114,
-    "kind": "constructor",
+    "kind": "method",
     "static": false,
     "variation": null,
-    "name": "constructor",
+    "name": "embedScript",
     "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#embedScript",
+    "access": "public",
+    "description": "Some embeds have a 3rd party JS script that needs to be appended to the page for them to load",
+    "lineNumber": 109,
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "String"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "Which site's embed"
       }
     ],
+    "return": {
+      "types": [
+        "string"
+      ]
+    },
     "generator": false
   },
   {
@@ -2257,19 +2313,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "create",
+    "name": "fetchEmbed",
     "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#create",
-    "access": null,
-    "description": null,
-    "lineNumber": 49,
-    "undocument": true,
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#fetchEmbed",
+    "access": "public",
+    "description": "Fetch the embed data",
+    "lineNumber": 144,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "The data pkg holding the information about which embed to fetch"
       }
     ],
     "return": {
@@ -2284,24 +2343,16 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "embedScript",
+    "name": "getAll",
     "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#embedScript",
-    "access": null,
-    "description": null,
-    "lineNumber": 80,
-    "undocument": true,
-    "params": [
-      {
-        "name": "type",
-        "types": [
-          "*"
-        ]
-      }
-    ],
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#getAll",
+    "access": "public",
+    "description": "Get all digital assets",
+    "lineNumber": 276,
+    "params": [],
     "return": {
       "types": [
-        "string"
+        "*"
       ]
     },
     "generator": false
@@ -2311,19 +2362,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "fetchEmbed",
+    "name": "pkg",
     "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#fetchEmbed",
-    "access": null,
-    "description": null,
-    "lineNumber": 109,
-    "undocument": true,
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#pkg",
+    "access": "public",
+    "description": "Create digital asset data package for API",
+    "lineNumber": 299,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value object being passed to the API"
       }
     ],
     "return": {
@@ -2338,19 +2392,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getAll",
+    "name": "pkgAll",
     "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#getAll",
-    "access": null,
-    "description": null,
-    "lineNumber": 236,
-    "undocument": true,
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#pkgAll",
+    "access": "public",
+    "description": "Package all values",
+    "lineNumber": 315,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "values",
+        "description": ""
       }
     ],
     "return": {
@@ -2365,85 +2422,38 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "pkg",
+    "name": "view",
     "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#pkg",
-    "access": null,
-    "description": null,
-    "lineNumber": 252,
-    "undocument": true,
+    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#view",
+    "access": "public",
+    "description": "Serve digital asset from url",
+    "lineNumber": 328,
     "params": [
       {
-        "name": "value",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req",
+        "description": "Express req"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res",
+        "description": "Express res"
       }
     ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
     "generator": false
   },
   {
     "__docId__": 120,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "pkgAll",
-    "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#pkgAll",
-    "access": null,
-    "description": null,
-    "lineNumber": 262,
-    "undocument": true,
-    "params": [
-      {
-        "name": "values",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 121,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "view",
-    "memberof": "src/models/digital-asset/index.js~DigitalAssetModel",
-    "longname": "src/models/digital-asset/index.js~DigitalAssetModel#view",
-    "access": null,
-    "description": null,
-    "lineNumber": 268,
-    "undocument": true,
-    "params": [
-      {
-        "name": "req",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "res",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 122,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2453,51 +2463,111 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger}  from '../../lib/logger'\nimport DocumentRevision from '../document-revision'\nimport Model            from '../root'\nimport r                from '../../lib/database/driver'\n\n//import config from '../../config'\n\nclass DocumentModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'documents',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          },\n          {\n            Node: 'Template',\n            foreignKey: 'id',\n            localField: 'template',\n            localKey: 'templateId'\n          },\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'user',\n            localKey: 'userId'\n          }\n        ],\n        hasMany: [\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomys',\n            localKey: 'taxonomysId'\n          },\n        ]\n      },\n      schema: {\n        activeRevisionId: {\n          type: 'string'\n        },\n        desc: {\n          type: 'string'\n        },\n        revisionIds: {\n          type: 'array'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  create(req) {\n    if(!req.body.fields) return Model.prototype.getById.apply(this, arguments)\n\n    /*\n    NOTE:\n    When a template is created with fields, we need to take those fields and place them on a revision\n    */\n\n    var fields = req.body.fields.slice(0)\n    delete req.body.fields\n\n    return new Promise( async (resolve, reject) => {\n      // Create document\n      var doc = await Model.prototype.create.call(this, req)\n\n      // Create revision\n\n      var revision = await new DocumentRevision().create({\n        body: {\n          documentId: 2,\n          fields\n        }\n      })\n\n      // Associate document with revision\n      var update = await this.update({\n        body: {\n          activeRevisionId: revision.id,\n          revisionIds: [revision.id]\n        },\n        params: {\n          id: doc.id\n        }\n      })\n\n      // Get document with first revision\n      var docFinalized = await this.getById({\n        params: {\n          id: doc.id\n        }\n      })\n\n      resolve(docFinalized)\n    })\n  }\n\n  getAll() {\n    return new Promise( async (resolve, reject) => {\n\n      var docs = await Model.prototype.getAll.call(this),\n          docsResolved = []\n\n      docs.forEach( (doc) => {\n        docsResolved.push(this.getActiveRevision(doc).then( (revision) => {\n          return Object.assign(doc, {\n            fields: revision.fields,\n            title: revision.title\n          })\n        }))\n      })\n\n      Promise.all(docsResolved)\n        .then( (docs) => {\n          resolve(docs)\n        })\n\n    })\n  }\n\n  getById(req) {\n    var id = (typeof req == 'string') ? req : req.params.id\n\n    return new Promise( async (resolve, reject) => {\n\n      var doc = await Model.prototype.getById.call(this, id)\n\n      if(!doc.id) {\n        logger.error('Could not get document', id)\n        return reject(doc)\n      }\n\n      var revision = await this.getActiveRevision(doc)\n\n      Object.assign(doc, {\n        fields: revision.fields,\n        title: revision.title\n      })\n\n      return resolve(doc)\n\n    })\n\n  }\n\n  /*\n  NOTE:\n  Revisions are created on save, not doc creation, which means they aren't guaranteed exist after initial creation.\n  The create method has been recently modified to add a revision if the `fields` property is passed\n  */\n  getActiveRevision(doc) {\n\n    return new Promise( async (resolve, reject) => {\n\n      if(!doc.activeRevisionId) return resolve({\n        fields: [],\n        title: doc.title\n      })\n\n      var revision = await new DocumentRevision().getById(doc.activeRevisionId)\n\n      if(!revision.id) {\n        logger.error('Could not get document revision for', doc.id)\n        return reject(revision)\n      }\n\n      resolve(revision)\n\n    })\n\n  }\n\n}\n\nexport default DocumentModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger}  from '../../lib/logger'\nimport DocumentRevision from '../document-revision'\nimport Model            from '../root'\nimport r                from '../../lib/database/driver'\n\n//import config from '../../config'\n\n/**\n * DocumentModel Class\n *\n * @public\n * @class DocumentModel\n */\nclass DocumentModel extends Model {\n\n  /**\n   * DocumentModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'documents',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          },\n          {\n            Node: 'Template',\n            foreignKey: 'id',\n            localField: 'template',\n            localKey: 'templateId'\n          },\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'user',\n            localKey: 'userId'\n          }\n        ],\n        hasMany: [\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomys',\n            localKey: 'taxonomysId'\n          },\n        ]\n      },\n      schema: {\n        activeRevisionId: {\n          type: 'string'\n        },\n        desc: {\n          type: 'string'\n        },\n        revisionIds: {\n          type: 'array'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Create, or save, a document\n   *\n   * @public\n   * @param {Object} pkg - The data to save for the document\n   */\n  create(pkg = {}) {\n\n    /*\n    NOTE:\n    When a template is created with fields, we need to take those fields and place them on a revision\n    */\n    var fields = []\n    if(pkg.fields) {\n      fields = pkg.fields.slice(0)\n      delete pkg.fields\n    }\n\n    return new Promise( async (resolve, reject) => {\n      // Create document\n      var doc = await Model.prototype.create.call(this, pkg)\n\n      // Create revision\n      var revision = await new DocumentRevision().create({\n        body: {\n          documentId: doc.id,\n          fields\n        }\n      })\n\n      // Associate document with revision\n      var update = await this.update(doc.id, {\n        body: {\n          activeRevisionId: revision.id,\n          revisionIds: [revision.id]\n        }\n      })\n\n      // Get document with first revision\n      var docFinalized = await this.getById(doc.id)\n\n      resolve(docFinalized)\n    })\n  }\n\n  /**\n   * Get all documents\n   *\n   * @public\n   */\n  getAll() {\n    return new Promise( async (resolve, reject) => {\n\n      var docs = await Model.prototype.getAll.call(this),\n          docsResolved = []\n\n      docs.forEach( (doc) => {\n        docsResolved.push(this.getActiveRevision(doc).then( (revision) => {\n          return Object.assign(doc, {\n            fields: revision.fields,\n            title: revision.title\n          })\n        }))\n      })\n\n      Promise.all(docsResolved)\n        .then( (docs) => {\n          resolve(docs)\n        })\n\n    })\n  }\n\n  /**\n   * Get document by ID\n   *\n   * @public\n   * @param {String} id\n   */\n  getById(id) {\n\n    return new Promise( async (resolve, reject) => {\n\n      var doc = await Model.prototype.getById.call(this, id)\n\n      if(!doc.id) {\n        logger.error('Could not get document', id)\n        return reject(doc)\n      }\n\n      var revision = await this.getActiveRevision(doc)\n\n      Object.assign(doc, {\n        fields: revision.fields,\n        title: revision.title\n      })\n\n      return resolve(doc)\n\n    })\n\n  }\n\n  /**\n   * Get the document's active revision\n   *\n   * @public\n   * @param {Object} doc - The document\n   */\n  getActiveRevision(doc) {\n\n    return new Promise( async (resolve, reject) => {\n\n      if(!doc.activeRevisionId) return resolve({\n        fields: [],\n        title: doc.title\n      })\n\n      var revision = await new DocumentRevision().getById(doc.activeRevisionId)\n\n      if(!revision.id) {\n        logger.error('Could not get document revision for', doc.id)\n        return reject(revision)\n      }\n\n      resolve(revision)\n\n    })\n\n  }\n\n}\n\nexport default DocumentModel\n"
   },
   {
-    "__docId__": 123,
+    "__docId__": 121,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "DocumentModel",
     "memberof": "src/models/document/index.js",
     "longname": "src/models/document/index.js~DocumentModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/document/index.js",
     "importStyle": "DocumentModel",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "DocumentModel Class",
+    "lineNumber": 19,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "DocumentModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 124,
+    "__docId__": 122,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/document/index.js~DocumentModel",
     "longname": "src/models/document/index.js~DocumentModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
-    "params": [
+    "access": "public",
+    "description": "DocumentModel constructor",
+    "lineNumber": 28,
+    "unknown": [
       {
-        "name": "options",
-        "optional": true,
-        "types": [
-          "{}"
-        ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "tagName": "@constructor",
+        "tagValue": ""
       }
     ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "create",
+    "memberof": "src/models/document/index.js~DocumentModel",
+    "longname": "src/models/document/index.js~DocumentModel#create",
+    "access": "public",
+    "description": "Create, or save, a document",
+    "lineNumber": 92,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "The data to save for the document"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getAll",
+    "memberof": "src/models/document/index.js~DocumentModel",
+    "longname": "src/models/document/index.js~DocumentModel#getAll",
+    "access": "public",
+    "description": "Get all documents",
+    "lineNumber": 136,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
     "generator": false
   },
   {
@@ -2505,19 +2575,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "create",
+    "name": "getById",
     "memberof": "src/models/document/index.js~DocumentModel",
-    "longname": "src/models/document/index.js~DocumentModel#create",
-    "access": null,
-    "description": null,
-    "lineNumber": 68,
-    "undocument": true,
+    "longname": "src/models/document/index.js~DocumentModel#getById",
+    "access": "public",
+    "description": "Get document by ID",
+    "lineNumber": 165,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": ""
       }
     ],
     "return": {
@@ -2532,14 +2605,24 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getAll",
+    "name": "getActiveRevision",
     "memberof": "src/models/document/index.js~DocumentModel",
-    "longname": "src/models/document/index.js~DocumentModel#getAll",
-    "access": null,
-    "description": null,
-    "lineNumber": 114,
-    "undocument": true,
-    "params": [],
+    "longname": "src/models/document/index.js~DocumentModel#getActiveRevision",
+    "access": "public",
+    "description": "Get the document's active revision",
+    "lineNumber": 195,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "doc",
+        "description": "The document"
+      }
+    ],
     "return": {
       "types": [
         "*"
@@ -2549,60 +2632,6 @@
   },
   {
     "__docId__": 127,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "getById",
-    "memberof": "src/models/document/index.js~DocumentModel",
-    "longname": "src/models/document/index.js~DocumentModel#getById",
-    "access": null,
-    "description": null,
-    "lineNumber": 137,
-    "undocument": true,
-    "params": [
-      {
-        "name": "req",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 128,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "getActiveRevision",
-    "memberof": "src/models/document/index.js~DocumentModel",
-    "longname": "src/models/document/index.js~DocumentModel#getActiveRevision",
-    "access": null,
-    "description": null,
-    "lineNumber": 167,
-    "undocument": true,
-    "params": [
-      {
-        "name": "doc",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 129,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2612,55 +2641,66 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport DigitalAsset    from '../digital-asset'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\nimport RevisionModel   from '../revision'\n\nclass DocumentRevisionModel extends RevisionModel {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'document-revisions',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Document',\n            foreignKey: 'id',\n            localField: 'document',\n            localKey: 'documentId'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default DocumentRevisionModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport DigitalAsset    from '../digital-asset'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\nimport RevisionModel   from '../revision'\n\n/**\n * DocumentRevisionModel Class\n *\n * @public\n * @class DocumentRevisionModel\n */\nclass DocumentRevisionModel extends RevisionModel {\n\n  /**\n   * DocumentRevisionModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'document-revisions',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Document',\n            foreignKey: 'id',\n            localField: 'document',\n            localKey: 'documentId'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default DocumentRevisionModel\n"
   },
   {
-    "__docId__": 130,
+    "__docId__": 128,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "DocumentRevisionModel",
     "memberof": "src/models/document-revision/index.js",
     "longname": "src/models/document-revision/index.js~DocumentRevisionModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/document-revision/index.js",
     "importStyle": "DocumentRevisionModel",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "DocumentRevisionModel Class",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "DocumentRevisionModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/revision.js~RevisionModel"
     ]
   },
   {
-    "__docId__": 131,
+    "__docId__": 129,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/document-revision/index.js~DocumentRevisionModel",
     "longname": "src/models/document-revision/index.js~DocumentRevisionModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "access": "public",
+    "description": "DocumentRevisionModel constructor",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 132,
+    "__docId__": 130,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2670,55 +2710,66 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\nclass FieldModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'fields',\n\n      permissions: {\n        create:  ['user', 'admin'],\n        delete:  ['admin'],\n        read:    ['user', 'organization', 'admin'],\n        replace: ['admin'],\n        update:  ['user', 'organization', 'admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n\n      }\n    }, options))\n  }\n\n}\n\nexport default FieldModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\n/**\n * FieldModel Class\n *\n * @public\n * @class FieldModel\n */\nclass FieldModel extends Model {\n\n  /**\n   * FieldModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'fields',\n\n      permissions: {\n        create:  ['user', 'admin'],\n        delete:  ['admin'],\n        read:    ['user', 'organization', 'admin'],\n        replace: ['admin'],\n        update:  ['user', 'organization', 'admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n\n      }\n    }, options))\n  }\n\n}\n\nexport default FieldModel\n"
   },
   {
-    "__docId__": 133,
+    "__docId__": 131,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "FieldModel",
     "memberof": "src/models/field/index.js",
     "longname": "src/models/field/index.js~FieldModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/field/index.js",
     "importStyle": "FieldModel",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "FieldModel Class",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "FieldModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 134,
+    "__docId__": 132,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/field/index.js~FieldModel",
     "longname": "src/models/field/index.js~FieldModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "access": "public",
+    "description": "FieldModel constructor",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 135,
+    "__docId__": 133,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2728,55 +2779,66 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\nclass OrganizationModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'organizations',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        hasMany: [\n          {\n            Node: 'App',\n            foreignKey: 'id',\n            localField: 'apps',\n            localKey: 'appIds'\n          },\n          {\n            Node: 'Bucket',\n            foreignKey: 'id',\n            localField: 'buckts',\n            localKey: 'bucketIds'\n          },\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'users',\n            localKey: 'userIds'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default OrganizationModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\n/**\n * OrganziationModel Class\n *\n * @public\n * @class OrganziationModel\n */\nclass OrganizationModel extends Model {\n\n  /**\n   * OrganizationModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'organizations',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        hasMany: [\n          {\n            Node: 'App',\n            foreignKey: 'id',\n            localField: 'apps',\n            localKey: 'appIds'\n          },\n          {\n            Node: 'Bucket',\n            foreignKey: 'id',\n            localField: 'buckts',\n            localKey: 'bucketIds'\n          },\n          {\n            Node: 'User',\n            foreignKey: 'id',\n            localField: 'users',\n            localKey: 'userIds'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default OrganizationModel\n"
   },
   {
-    "__docId__": 136,
+    "__docId__": 134,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "OrganizationModel",
     "memberof": "src/models/organization/index.js",
     "longname": "src/models/organization/index.js~OrganizationModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/organization/index.js",
     "importStyle": "OrganizationModel",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "OrganziationModel Class",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "OrganziationModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 137,
+    "__docId__": 135,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/organization/index.js~OrganizationModel",
     "longname": "src/models/organization/index.js~OrganizationModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "access": "public",
+    "description": "OrganizationModel constructor",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 138,
+    "__docId__": 136,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2786,51 +2848,111 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport registry        from '../../lib/registry'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\nclass RegistryModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'registry',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          },\n        ],\n        hasMany: [\n          {\n            Node: 'Plugin',\n            foreignKey: 'id',\n            localField: 'plugins',\n            localKey: 'pluginIds'\n          },\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  create(req) {\n    return new Promise( (resolve, reject) => {\n\n\n\n    })\n  }\n\n  getAll() {\n\n    return new Promise( async (resolve, reject) => {\n\n      var items = await Model.prototype.getAll.call(this)\n      items = items.concat(registry.items)\n\n      var pkg = {\n        adaptors: [],\n        fields: [],\n        plugins: []\n      }\n\n      items.forEach( (item) => {\n        switch(item.type) {\n          case 'adaptor':\n            pkg.adaptors.push(item)\n            break\n          case 'field':\n            pkg.fields.push(item)\n            break\n          case 'plugin':\n            pkg.plugins.push(item)\n            break\n        }\n      })\n\n      resolve(pkg)\n\n    })\n\n  }\n\n  getSettingsByName(req) {\n\n    return new Promise( (resolve, reject) => {\n\n      try {\n        var pluginSettings = require(req.params.name).default.settings\n        resolve(pluginSettings)\n      }\n      catch(e) {\n        reject(e)\n      }\n\n    })\n\n  }\n\n}\n\nexport default RegistryModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport registry        from '../../lib/registry'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\n/**\n * RegistryModel Class\n *\n * @public\n * @class RegistryModel\n */\nclass RegistryModel extends Model {\n\n  /**\n   * RegistryModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'registry',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          },\n        ],\n        hasMany: [\n          {\n            Node: 'Plugin',\n            foreignKey: 'id',\n            localField: 'plugins',\n            localKey: 'pluginIds'\n          },\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Create, or save, a registry item\n   *\n   * @public\n   * @param {Object} pkg - The data to save for the registry item\n   */\n  create(pkg = {}) {\n\n    return new Promise( (resolve, reject) => {\n\n\n\n    })\n  }\n\n  /**\n   * Get all registry items\n   *\n   * @public\n   */\n  getAll() {\n\n    return new Promise( async (resolve, reject) => {\n\n      var items = await Model.prototype.getAll.call(this)\n      items = items.concat(registry.items)\n\n      var pkg = {\n        adaptors: [],\n        fields: [],\n        plugins: []\n      }\n\n      items.forEach( (item) => {\n        switch(item.type) {\n          case 'adaptor':\n            pkg.adaptors.push(item)\n            break\n          case 'field':\n            pkg.fields.push(item)\n            break\n          case 'plugin':\n            pkg.plugins.push(item)\n            break\n        }\n      })\n\n      resolve(pkg)\n\n    })\n\n  }\n\n  /**\n   * Get registry setting by name\n   *\n   * @public\n   * @param {Object} pkg - The data holding the name\n   */\n  getSettingsByName(pkg = {}) {\n\n    return new Promise( (resolve, reject) => {\n\n      try {\n        var pluginSettings = require(pkg.name).default.settings\n        resolve(pluginSettings)\n      }\n      catch(e) {\n        reject(e)\n      }\n\n    })\n\n  }\n\n}\n\nexport default RegistryModel\n"
   },
   {
-    "__docId__": 139,
+    "__docId__": 137,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "RegistryModel",
     "memberof": "src/models/registry/index.js",
     "longname": "src/models/registry/index.js~RegistryModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/registry/index.js",
     "importStyle": "RegistryModel",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "RegistryModel Class",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "RegistryModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 140,
+    "__docId__": 138,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/registry/index.js~RegistryModel",
     "longname": "src/models/registry/index.js~RegistryModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
-    "params": [
+    "access": "public",
+    "description": "RegistryModel constructor",
+    "lineNumber": 26,
+    "unknown": [
       {
-        "name": "options",
-        "optional": true,
-        "types": [
-          "{}"
-        ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "tagName": "@constructor",
+        "tagValue": ""
       }
     ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 139,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "create",
+    "memberof": "src/models/registry/index.js~RegistryModel",
+    "longname": "src/models/registry/index.js~RegistryModel#create",
+    "access": "public",
+    "description": "Create, or save, a registry item",
+    "lineNumber": 72,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "The data to save for the registry item"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 140,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getAll",
+    "memberof": "src/models/registry/index.js~RegistryModel",
+    "longname": "src/models/registry/index.js~RegistryModel#getAll",
+    "access": "public",
+    "description": "Get all registry items",
+    "lineNumber": 86,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
     "generator": false
   },
   {
@@ -2838,19 +2960,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "create",
+    "name": "getSettingsByName",
     "memberof": "src/models/registry/index.js~RegistryModel",
-    "longname": "src/models/registry/index.js~RegistryModel#create",
-    "access": null,
-    "description": null,
-    "lineNumber": 48,
-    "undocument": true,
+    "longname": "src/models/registry/index.js~RegistryModel#getSettingsByName",
+    "access": "public",
+    "description": "Get registry setting by name",
+    "lineNumber": 125,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pkg",
+        "description": "The data holding the name"
       }
     ],
     "return": {
@@ -2862,53 +2987,6 @@
   },
   {
     "__docId__": 142,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "getAll",
-    "memberof": "src/models/registry/index.js~RegistryModel",
-    "longname": "src/models/registry/index.js~RegistryModel#getAll",
-    "access": null,
-    "description": null,
-    "lineNumber": 56,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 143,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "getSettingsByName",
-    "memberof": "src/models/registry/index.js~RegistryModel",
-    "longname": "src/models/registry/index.js~RegistryModel#getSettingsByName",
-    "access": null,
-    "description": null,
-    "lineNumber": 89,
-    "undocument": true,
-    "params": [
-      {
-        "name": "req",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 144,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2918,51 +2996,111 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport DigitalAsset    from '../digital-asset'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\nclass RevisionModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'revisions',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Document',\n            foreignKey: 'id',\n            localField: 'document',\n            localKey: 'documentId'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  getAll(req) {\n\n    return new Promise( (resolve, reject) => {\n\n      Model.prototype.getAll.call(this)\n        .then( (revisions) => {\n\n          var resolvedRevisions = []\n          revisions.forEach( (revision) => {\n            resolvedRevisions.push(this.resolveFields(revisions))\n          })\n\n          Promise.all(resolvedRevisions)\n            .then( (revisions) => {\n              resolve(revisions)\n            })\n            .catch( (err) => {\n              logger.error('Error resolving revisions', err)\n              reject(err)\n            })\n        })\n        .catch( (err) => {\n          logger.error('Could not get revisions', err)\n        })\n\n    })\n\n  }\n\n  getById(req) {\n    var id = (typeof req == 'string') ? req : req.params.id\n\n    return new Promise( async (resolve, reject) => {\n\n      var revision = await Model.prototype.getById.call(this, id)\n\n      if(!revision.id) {\n        logger.error('Could not get revision', id)\n        return reject(revisions)\n      }\n\n      this.resolveFields(revision)\n        .then( (revision) => {\n          resolve(revision)\n        })\n        .catch( (err) => {\n          logger.error('Could not resolve fields for revision', err)\n        })\n\n    })\n\n  }\n\n  getFieldReference(ref) {\n    return new Promise( (resolve, reject) => {\n\n      r.db(process.env.RETHINK_DB_NAME).table(ref.node.replace('-', '_')).get(ref.id).run()\n        .then( (res) => {\n          resolve(res)\n        })\n        .catch( (err) => {\n          console.error('Could not get field reference', err)\n          reject(err)\n        })\n\n    })\n  }\n\n  getFieldReferences(field) {\n    var resolvedRefs = 0\n\n    return new Promise( (resolve, reject) => {\n\n      if(!field.__refs) {\n        return resolve(field)\n      }\n\n      field.__refs.forEach( (ref) => {\n        this.getFieldReference(ref)\n          .then( (res) => {\n\n            switch(ref.node) {\n              case 'digital-asset':\n\n                var da   = new DigitalAsset(),\n                    pkgd = da.pkg(res)\n\n                Object.assign(field, {\n                  body: {\n                    mimetype: pkgd.mimetype,\n                    src: pkgd.src\n                  }\n                })\n\n                break\n\n              /*\n              TODO:\n              Not quite sure what to do here\n              */\n              default:\n                var re = Object.assign({}, res)\n                delete re.id\n\n                Object.assign(field, {\n                  body: re\n                })\n            }\n\n            resolvedRefs++\n\n            if(field.__refs.length == resolvedRefs) {\n              resolve(field)\n            }\n          })\n          .catch( (err) => {\n            logger.error('Could not handle field references', err)\n            reject(err)\n          })\n\n      })\n\n    })\n  }\n\n  resolveFieldReferences(field, i) {\n\n    return new Promise( (resolve, reject) => {\n\n      var resolvedRefs = []\n      resolvedFields.push(this.getFieldReferences(field))\n\n      Promise\n        .all(resolvedFields)\n        .then( (fields) => {\n          resolve(fields[0])\n        })\n        .catch( (err) => {\n          logger.error('Error fetching revision field references', err)\n          reject(err)\n        })\n\n    })\n\n  }\n\n  resolveFields(revision) {\n\n    return new Promise( (resolve, reject) => {\n\n      var fieldsResolved = []\n\n      if(revision.fields) {\n        revision.fields.forEach( (field, i) => {\n          fieldsResolved.push(this.resolveFieldRefences(field, i))\n        })\n\n        Promise\n          .all(fieldsResolved)\n          .then( (fields) => {\n            Object.assign(revision, {\n              fields\n            })\n\n            resolve(revision)\n          })\n          .catch( (err) => {\n            reject(err)\n          })\n      }\n      else {\n        resolve(revision)\n      }\n\n    })\n\n  }\n\n}\n\nexport default RevisionModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport DigitalAsset    from '../digital-asset'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\n/**\n * RevisionModel Class\n *\n * @public\n * @class RevisionModel\n */\nclass RevisionModel extends Model {\n\n  /**\n   * RevisionModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'revisions',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Document',\n            foreignKey: 'id',\n            localField: 'document',\n            localKey: 'documentId'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Get all revisions\n   *\n   * @public\n   */\n  getAll() {\n\n    return new Promise( (resolve, reject) => {\n\n      Model.prototype.getAll.call(this)\n        .then( (revisions) => {\n\n          var resolvedRevisions = []\n          revisions.forEach( (revision) => {\n            resolvedRevisions.push(this.resolveFields(revisions))\n          })\n\n          Promise.all(resolvedRevisions)\n            .then( (revisions) => {\n              resolve(revisions)\n            })\n            .catch( (err) => {\n              logger.error('Error resolving revisions', err)\n              reject(err)\n            })\n        })\n        .catch( (err) => {\n          logger.error('Could not get revisions', err)\n        })\n\n    })\n\n  }\n\n  /**\n   * Get a revision by ID\n   *\n   * @public\n   * @param {String} id\n   */\n  getById(id) {\n\n    return new Promise( async (resolve, reject) => {\n\n      var revision = await Model.prototype.getById.call(this, id)\n\n      if(!revision.id) {\n        logger.error('Could not get revision', id)\n        return reject(revisions)\n      }\n\n      this.resolveFields(revision)\n        .then( (revision) => {\n          resolve(revision)\n        })\n        .catch( (err) => {\n          logger.error('Could not resolve fields for revision', err)\n        })\n\n    })\n\n  }\n\n  /**\n   * Get a field reference\n   *\n   * @public\n   * @param {Object} ref - The field reference data\n   */\n  getFieldReference(ref = {}) {\n    return new Promise( (resolve, reject) => {\n\n      r.db(process.env.RETHINK_DB_NAME).table(ref.node.replace('-', '_')).get(ref.id).run()\n        .then( (res) => {\n          resolve(res)\n        })\n        .catch( (err) => {\n          console.error('Could not get field reference', err)\n          reject(err)\n        })\n\n    })\n  }\n\n  /**\n   * Get references for a field\n   *\n   * @public\n   * @param {Object} field - The field\n   */\n  getFieldReferences(field = {}) {\n    var resolvedRefs = 0\n\n    return new Promise( (resolve, reject) => {\n\n      if(!field.__refs) {\n        return resolve(field)\n      }\n\n      field.__refs.forEach( (ref) => {\n        this.getFieldReference(ref)\n          .then( (res) => {\n\n            switch(ref.node) {\n              case 'digital-asset':\n\n                var da   = new DigitalAsset(),\n                    pkgd = da.pkg(res)\n\n                Object.assign(field, {\n                  body: {\n                    mimetype: pkgd.mimetype,\n                    src: pkgd.src\n                  }\n                })\n\n                break\n\n              /*\n              TODO:\n              Not quite sure what to do here\n              */\n              default:\n                var re = Object.assign({}, res)\n                delete re.id\n\n                Object.assign(field, {\n                  body: re\n                })\n            }\n\n            resolvedRefs++\n\n            if(field.__refs.length == resolvedRefs) {\n              resolve(field)\n            }\n          })\n          .catch( (err) => {\n            logger.error('Could not handle field references', err)\n            reject(err)\n          })\n\n      })\n\n    })\n  }\n\n  /**\n   * Resolve field references\n   *\n   * @public\n   * @param {Object} field - The field\n   */\n  resolveFieldReferences(field) {\n\n    return new Promise( (resolve, reject) => {\n\n      var resolvedRefs = []\n      resolvedFields.push(this.getFieldReferences(field))\n\n      Promise\n        .all(resolvedFields)\n        .then( (fields) => {\n          resolve(fields[0])\n        })\n        .catch( (err) => {\n          logger.error('Error fetching revision field references', err)\n          reject(err)\n        })\n\n    })\n\n  }\n\n  /**\n   * Resolve fields for revision\n   *\n   * @public\n   * @param {Object} revision - The revision\n   */\n  resolveFields(revision) {\n\n    return new Promise( (resolve, reject) => {\n\n      var fieldsResolved = []\n\n      if(revision.fields) {\n        revision.fields.forEach( (field, i) => {\n          fieldsResolved.push(this.resolveFieldRefences(field, i))\n        })\n\n        Promise\n          .all(fieldsResolved)\n          .then( (fields) => {\n            Object.assign(revision, {\n              fields\n            })\n\n            resolve(revision)\n          })\n          .catch( (err) => {\n            reject(err)\n          })\n      }\n      else {\n        resolve(revision)\n      }\n\n    })\n\n  }\n\n}\n\nexport default RevisionModel\n"
   },
   {
-    "__docId__": 145,
+    "__docId__": 143,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "RevisionModel",
     "memberof": "src/models/revision/index.js",
     "longname": "src/models/revision/index.js~RevisionModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/revision/index.js",
     "importStyle": "RevisionModel",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "RevisionModel Class",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "RevisionModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 146,
+    "__docId__": 144,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/revision/index.js~RevisionModel",
     "longname": "src/models/revision/index.js~RevisionModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
-    "params": [
+    "access": "public",
+    "description": "RevisionModel constructor",
+    "lineNumber": 26,
+    "unknown": [
       {
-        "name": "options",
-        "optional": true,
-        "types": [
-          "{}"
-        ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "tagName": "@constructor",
+        "tagValue": ""
       }
     ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 145,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getAll",
+    "memberof": "src/models/revision/index.js~RevisionModel",
+    "longname": "src/models/revision/index.js~RevisionModel#getAll",
+    "access": "public",
+    "description": "Get all revisions",
+    "lineNumber": 63,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 146,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getById",
+    "memberof": "src/models/revision/index.js~RevisionModel",
+    "longname": "src/models/revision/index.js~RevisionModel#getById",
+    "access": "public",
+    "description": "Get a revision by ID",
+    "lineNumber": 98,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
     "generator": false
   },
   {
@@ -2970,19 +3108,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getAll",
+    "name": "getFieldReference",
     "memberof": "src/models/revision/index.js~RevisionModel",
-    "longname": "src/models/revision/index.js~RevisionModel#getAll",
-    "access": null,
-    "description": null,
-    "lineNumber": 40,
-    "undocument": true,
+    "longname": "src/models/revision/index.js~RevisionModel#getFieldReference",
+    "access": "public",
+    "description": "Get a field reference",
+    "lineNumber": 127,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ref",
+        "description": "The field reference data"
       }
     ],
     "return": {
@@ -2997,19 +3138,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getById",
+    "name": "getFieldReferences",
     "memberof": "src/models/revision/index.js~RevisionModel",
-    "longname": "src/models/revision/index.js~RevisionModel#getById",
-    "access": null,
-    "description": null,
-    "lineNumber": 69,
-    "undocument": true,
+    "longname": "src/models/revision/index.js~RevisionModel#getFieldReferences",
+    "access": "public",
+    "description": "Get references for a field",
+    "lineNumber": 148,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "field",
+        "description": "The field"
       }
     ],
     "return": {
@@ -3024,19 +3168,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getFieldReference",
+    "name": "resolveFieldReferences",
     "memberof": "src/models/revision/index.js~RevisionModel",
-    "longname": "src/models/revision/index.js~RevisionModel#getFieldReference",
-    "access": null,
-    "description": null,
-    "lineNumber": 93,
-    "undocument": true,
+    "longname": "src/models/revision/index.js~RevisionModel#resolveFieldReferences",
+    "access": "public",
+    "description": "Resolve field references",
+    "lineNumber": 211,
     "params": [
       {
-        "name": "ref",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "field",
+        "description": "The field"
       }
     ],
     "return": {
@@ -3051,19 +3198,22 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getFieldReferences",
+    "name": "resolveFields",
     "memberof": "src/models/revision/index.js~RevisionModel",
-    "longname": "src/models/revision/index.js~RevisionModel#getFieldReferences",
-    "access": null,
-    "description": null,
-    "lineNumber": 108,
-    "undocument": true,
+    "longname": "src/models/revision/index.js~RevisionModel#resolveFields",
+    "access": "public",
+    "description": "Resolve fields for revision",
+    "lineNumber": 238,
     "params": [
       {
-        "name": "field",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "revision",
+        "description": "The revision"
       }
     ],
     "return": {
@@ -3075,66 +3225,6 @@
   },
   {
     "__docId__": 151,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "resolveFieldReferences",
-    "memberof": "src/models/revision/index.js~RevisionModel",
-    "longname": "src/models/revision/index.js~RevisionModel#resolveFieldReferences",
-    "access": null,
-    "description": null,
-    "lineNumber": 165,
-    "undocument": true,
-    "params": [
-      {
-        "name": "field",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "i",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 152,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "resolveFields",
-    "memberof": "src/models/revision/index.js~RevisionModel",
-    "longname": "src/models/revision/index.js~RevisionModel#resolveFields",
-    "access": null,
-    "description": null,
-    "lineNumber": 186,
-    "undocument": true,
-    "params": [
-      {
-        "name": "revision",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 153,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3147,7 +3237,7 @@
     "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../lib/logger'\nimport EventEmitter    from '../lib/eventemitter'\nimport mixin           from '../lib/mixin'\nimport ShortId         from '../services/short-id'\nimport r               from '../lib/database/driver'\nimport uuid            from '../lib/utils/uuid'\n\n/**\n * RootModel Class\n *\n * @public\n * @class RootModel\n */\nclass RootModel {\n\n  /**\n   * RootModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n\n    /**\n     * Default parameters\n     *\n     * @private\n     * @type {Object}\n     */\n    this.defaults = {}\n\n    /**\n     * Default read/write permissions for model.\n     *\n     * @private\n     * @type {Object}\n     */\n    this.permissions = {\n      create:  ['admin'],\n      delete:  ['admin'],\n      read:    ['public'],\n      replace: ['admin'],\n      update:  ['admin'],\n    }\n\n    Object.assign(this, options)\n    if(!this.name) {\n      throw new Error('model.name must be defined')\n    }\n\n    /**\n     * Name of the default table the model works with.\n     *\n     * @private\n     * @type {String}\n     */\n    if(!this.table) this.table = this.name.replace(/\\-/g, '_')\n\n    /**\n     * (optional) Table schema\n     *\n     * @private\n     * @type {Object}\n     */\n    var schema = {}\n    if(this.schema) {\n\n    }\n\n  }\n\n  /**\n   * Create, or save, data for the model\n   *\n   * @public\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  create(pkg = {}, options = {}) {\n\n    var insertOptions = {\n      returnChanges: options.returnChanges || true\n    }\n\n    pkg.createdAt  = r.now()\n    pkg.id         = pkg.id || uuid()\n    pkg.sid        = new ShortId().issue(pkg.id)\n    pkg.updatedAt  = r.now()\n    pkg.__version  = process.env.npm_package_version\n\n    return new Promise( async (resolve, reject) => {\n\n      try {\n\n        var res = await r.table(options.table || this.table).insert(pkg, insertOptions)\n        if(res.errors && res.errors > 0) {\n          throw new Error(res.first_error)\n        }\n\n        var doc = res.changes[0].new_val\n\n        //logger.debug('Document created', doc)\n        if(pkg.__refs && pkg.__refs.length > 0) {\n\n          var refs = []\n          pkg.__refs.forEach( (ref) => {\n            refs.push(this.referenceTo('belongsTo', doc.id, ref))\n          })\n\n          return Promise\n            .all(refs)\n            .then( () => {\n              resolve(doc)\n            })\n            .catch(reject)\n        }\n\n        else {\n          return resolve(doc)\n        }\n      }\n      catch(err) {\n        logger.error('Could not create')\n        console.error(err)\n        throw err\n      }\n\n    })\n  }\n\n  /**\n   * Delete by id\n   *\n   * @public\n   * @param {String} id\n   */\n  delete(id) {\n    return Promise.resolve()\n  }\n\n  /**\n   * Get model by id\n   *\n   * @public\n   * @param {String} id\n   */\n  getById(id) {\n\n    // Short ID\n    if(id.length <= 10) {\n\n      return new Promise( async (resolve, reject) => {\n\n        try {\n          var doc = await r.table(this.table).filter({sid: id}).limit(1)\n          return resolve(this.getById(doc[0].id))\n        }\n        catch(err) {\n          logger.error('Could not get by id')\n          console.error(err.stack)\n          throw err\n        }\n\n      })\n    }\n\n    // Long ID\n    else {\n      return r.table(this.table).get(id)\n    }\n\n  }\n\n  /**\n   * Get all from table\n   *\n   * @public\n   * @todo Add logic to limit, paginate, etc.\n   */\n  getAll() {\n    return r.table(this.table).orderBy(r.desc('updatedAt')).limit(10)\n  }\n\n  /**\n   * Get model relationships\n   *\n   * @private\n   * @param {String} Relationship type\n   */\n  getRelations(type) {\n    var relations = []\n\n    Object.keys(this.relations).forEach( (relation) => {\n\n      if(relation == type) {\n        relations = this.relations[relation]\n      }\n\n    })\n\n    return relations\n  }\n\n  /**\n   * Create, or save, data for the model\n   *\n   * @private\n   * @param {String} Relationship type\n   * @param {String} id\n   * @param {Object} Reference object\n   */\n  referenceTo(type, id, reference) {\n\n    return new Promise( (resolve, reject) => {\n      var inserts = []\n\n      Object.keys(reference).forEach( async (key) => {\n        var referencePkg = {}\n        referencePkg[`${this.name}Id`] = id // local key\n        referencePkg[key] = reference[key]  // foreign key\n\n        switch(type) {\n          case 'belongsTo':\n            //referencePkg.name = `${key.replace('Id', '')}_has_${this.name}`\n            referencePkg.type = 'belongsTo'\n\n            break\n        }\n\n        referencePkg.node = this.name\n\n        inserts.push(this.insertReference(referencePkg))\n      })\n\n      Promise\n        .all(inserts)\n        .then(resolve)\n        .catch(reject)\n\n    })\n\n  }\n\n  /**\n   * Insert model reference to table 'refs'\n   *\n   * @private\n   * @param {Object} Reference to be saved\n   */\n  insertReference(pkg = {}) {\n    return r.table('refs').insert(pkg)\n  }\n\n  /**\n   * Update a model\n   *\n   * @public\n   * @param {String} id\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  update(id, pkg = {}, options = {}) {\n\n    pkg.__version  = process.env.npm_package_version\n\n    options.returnChanges = options.returnChanges || true\n\n    return new Promise( async (resolve, reject) => {\n\n      try {\n        var res = await r.table(this.table).get(id).update(pkg, options)\n\n        return resolve(res.changes[0].new_val)\n      }\n      catch(err) {\n        logger.error('Error updating')\n        console.error(err.stack)\n        throw err\n      }\n\n    })\n  }\n\n}\n\n/**\n * Mixin EventEmitter.prototype properties onto RootModel.prototype\n *\n * @ignore\n */\nmixin(RootModel, EventEmitter)\n\nexport default RootModel\n"
   },
   {
-    "__docId__": 154,
+    "__docId__": 152,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -3169,7 +3259,7 @@
     "interface": false
   },
   {
-    "__docId__": 155,
+    "__docId__": 153,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -3200,7 +3290,7 @@
     "generator": false
   },
   {
-    "__docId__": 156,
+    "__docId__": 154,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -3220,7 +3310,7 @@
     }
   },
   {
-    "__docId__": 157,
+    "__docId__": 155,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -3240,7 +3330,7 @@
     }
   },
   {
-    "__docId__": 158,
+    "__docId__": 156,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -3258,7 +3348,7 @@
     }
   },
   {
-    "__docId__": 159,
+    "__docId__": 157,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3298,7 +3388,7 @@
     "generator": false
   },
   {
-    "__docId__": 160,
+    "__docId__": 158,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3328,7 +3418,7 @@
     "generator": false
   },
   {
-    "__docId__": 161,
+    "__docId__": 159,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3358,7 +3448,7 @@
     "generator": false
   },
   {
-    "__docId__": 162,
+    "__docId__": 160,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3380,7 +3470,7 @@
     "generator": false
   },
   {
-    "__docId__": 163,
+    "__docId__": 161,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3410,7 +3500,7 @@
     "generator": false
   },
   {
-    "__docId__": 164,
+    "__docId__": 162,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3460,7 +3550,7 @@
     "generator": false
   },
   {
-    "__docId__": 165,
+    "__docId__": 163,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3490,7 +3580,7 @@
     "generator": false
   },
   {
-    "__docId__": 166,
+    "__docId__": 164,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3540,7 +3630,7 @@
     "generator": false
   },
   {
-    "__docId__": 167,
+    "__docId__": 165,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3550,55 +3640,66 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\nclass TaxonomyModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'taxonomies',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          },\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomy',\n            localKey: 'taxonomyId'\n          },\n        ],\n        hasMany: [\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomys',\n            localKey: 'taxonomysId'\n          },\n        ]\n      },\n      schema: {\n        data: {\n          type: 'object'\n        },\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default TaxonomyModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\n\n/**\n * TaxonomyModel Class\n *\n * @public\n * @class TaxonomyModel\n */\nclass TaxonomyModel extends Model {\n\n  /**\n   * TaxonomyModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'taxonomies',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          },\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomy',\n            localKey: 'taxonomyId'\n          },\n        ],\n        hasMany: [\n          {\n            Node: 'Taxonomy',\n            foreignKey: 'id',\n            localField: 'taxonomys',\n            localKey: 'taxonomysId'\n          },\n        ]\n      },\n      schema: {\n        data: {\n          type: 'object'\n        },\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default TaxonomyModel\n"
   },
   {
-    "__docId__": 168,
+    "__docId__": 166,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "TaxonomyModel",
     "memberof": "src/models/taxonomy/index.js",
     "longname": "src/models/taxonomy/index.js~TaxonomyModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/taxonomy/index.js",
     "importStyle": "TaxonomyModel",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "TaxonomyModel Class",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TaxonomyModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 169,
+    "__docId__": 167,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/taxonomy/index.js~TaxonomyModel",
     "longname": "src/models/taxonomy/index.js~TaxonomyModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "access": "public",
+    "description": "TaxonomyModel constructor",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 170,
+    "__docId__": 168,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3608,65 +3709,75 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger}  from '../../lib/logger'\nimport Model            from '../root'\nimport r                from '../../lib/database/driver'\nimport TemplateRevision from '../template-revision'\n\nclass TemplateModel extends Model {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'templates',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: {\n          Node: 'Organization',\n          foreignKey: 'id',\n          localField: 'organization',\n          localKey: 'organizationId'\n        }\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        fields: {\n          type: 'array'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  getAll() {\n    return new Promise( async (resolve, reject) => {\n\n      var docs = await Model.prototype.getAll.call(this),\n          docsResolved = []\n\n      docs.forEach( (doc) => {\n        docsResolved.push(this.getActiveRevision(doc).then( (revision) => {\n          return Object.assign(doc, {\n            fields: revision.fields,\n            title: revision.title\n          })\n        }))\n      })\n\n      Promise.all(docsResolved)\n        .then( (docs) => {\n          resolve(docs)\n        })\n\n    })\n  }\n\n  getById(req) {\n    var id = (typeof req == 'string') ? req : req.params.id\n\n    return new Promise( async (resolve, reject) => {\n\n      var doc = await Model.prototype.getById.call(this, id)\n\n      if(!doc.id) {\n        logger.error('Could not get template', id)\n        return reject(doc)\n      }\n\n      var revision = await this.getActiveRevision(doc)\n\n      Object.assign(doc, {\n        fields: revision.fields,\n        title: revision.title\n      })\n\n      return resolve(doc)\n\n    })\n\n  }\n\n  getActiveRevision(doc) {\n\n    return new Promise( async (resolve, reject) => {\n\n      if(!doc.activeRevisionId) return resolve({\n        fields: [],\n        title: doc.title\n      })\n\n      var revision = await new TemplateRevision().getById(doc.activeRevisionId)\n\n      if(!revision.id) {\n        logger.error('Could not get template revision for', doc.id)\n        return reject(revision)\n      }\n\n      resolve(revision)\n\n    })\n\n  }\n\n}\n\nexport default TemplateModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger}  from '../../lib/logger'\nimport Model            from '../root'\nimport r                from '../../lib/database/driver'\nimport TemplateRevision from '../template-revision'\n\n/**\n * TemplateModel Class\n *\n * @public\n * @class TemplateModel\n */\nclass TemplateModel extends Model {\n\n  /**\n   * TemplateModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'templates',\n\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['admin'],\n      },\n      relations: {\n        belongsTo: {\n          Node: 'Organization',\n          foreignKey: 'id',\n          localField: 'organization',\n          localKey: 'organizationId'\n        }\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        fields: {\n          type: 'array'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Get all templates\n   *\n   * @public\n   */\n  getAll() {\n    return new Promise( async (resolve, reject) => {\n\n      var docs = await Model.prototype.getAll.call(this),\n          docsResolved = []\n\n      docs.forEach( (doc) => {\n        docsResolved.push(this.getActiveRevision(doc).then( (revision) => {\n          return Object.assign(doc, {\n            fields: revision.fields,\n            title: revision.title\n          })\n        }))\n      })\n\n      Promise.all(docsResolved)\n        .then( (docs) => {\n          resolve(docs)\n        })\n\n    })\n  }\n\n  /**\n   * Get template by ID\n   *\n   * @public\n   * @param {String} id\n   */\n  getById(id) {\n\n    return new Promise( async (resolve, reject) => {\n\n      var doc = await Model.prototype.getById.call(this, id)\n\n      if(!doc.id) {\n        logger.error('Could not get template', id)\n        return reject(doc)\n      }\n\n      var revision = await this.getActiveRevision(doc)\n\n      Object.assign(doc, {\n        fields: revision.fields,\n        title: revision.title\n      })\n\n      return resolve(doc)\n\n    })\n\n  }\n\n  /**\n   * Get template's active revision\n   *\n   * @public\n   * @param {Object} doc - The item to get a revision for\n   */\n  getActiveRevision(doc) {\n\n    return new Promise( async (resolve, reject) => {\n\n      if(!doc.activeRevisionId) return resolve({\n        fields: [],\n        title: doc.title\n      })\n\n      var revision = await new TemplateRevision().getById(doc.activeRevisionId)\n\n      if(!revision.id) {\n        logger.error('Could not get template revision for', doc.id)\n        return reject(revision)\n      }\n\n      resolve(revision)\n\n    })\n\n  }\n\n}\n\nexport default TemplateModel\n"
   },
   {
-    "__docId__": 171,
+    "__docId__": 169,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "TemplateModel",
     "memberof": "src/models/template/index.js",
     "longname": "src/models/template/index.js~TemplateModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/template/index.js",
     "importStyle": "TemplateModel",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "TemplateModel Class",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TemplateModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/root.js~Model"
     ]
   },
   {
-    "__docId__": 172,
+    "__docId__": 170,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/template/index.js~TemplateModel",
     "longname": "src/models/template/index.js~TemplateModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "access": "public",
+    "description": "TemplateModel constructor",
+    "lineNumber": 26,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 173,
+    "__docId__": 171,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "getAll",
     "memberof": "src/models/template/index.js~TemplateModel",
     "longname": "src/models/template/index.js~TemplateModel#getAll",
-    "access": null,
-    "description": null,
-    "lineNumber": 41,
-    "undocument": true,
+    "access": "public",
+    "description": "Get all templates",
+    "lineNumber": 64,
     "params": [],
     "return": {
       "types": [
@@ -3676,23 +3787,26 @@
     "generator": false
   },
   {
-    "__docId__": 174,
+    "__docId__": 172,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "getById",
     "memberof": "src/models/template/index.js~TemplateModel",
     "longname": "src/models/template/index.js~TemplateModel#getById",
-    "access": null,
-    "description": null,
-    "lineNumber": 64,
-    "undocument": true,
+    "access": "public",
+    "description": "Get template by ID",
+    "lineNumber": 93,
     "params": [
       {
-        "name": "req",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": ""
       }
     ],
     "return": {
@@ -3703,23 +3817,26 @@
     "generator": false
   },
   {
-    "__docId__": 175,
+    "__docId__": 173,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "getActiveRevision",
     "memberof": "src/models/template/index.js~TemplateModel",
     "longname": "src/models/template/index.js~TemplateModel#getActiveRevision",
-    "access": null,
-    "description": null,
-    "lineNumber": 89,
-    "undocument": true,
+    "access": "public",
+    "description": "Get template's active revision",
+    "lineNumber": 123,
     "params": [
       {
-        "name": "doc",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "doc",
+        "description": "The item to get a revision for"
       }
     ],
     "return": {
@@ -3730,7 +3847,7 @@
     "generator": false
   },
   {
-    "__docId__": 176,
+    "__docId__": 174,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3740,55 +3857,66 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {chalk, logger} from '../../lib/logger'\nimport DigitalAsset    from '../digital-asset'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\nimport RevisionModel   from '../revision'\n\nclass TemplateRevisionModel extends RevisionModel {\n\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'template-revisions',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Template',\n            foreignKey: 'id',\n            localField: 'template',\n            localKey: 'templateId'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default TemplateRevisionModel\n"
+    "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport DigitalAsset    from '../digital-asset'\nimport Model           from '../root'\nimport r               from '../../lib/database/driver'\nimport RevisionModel   from '../revision'\n\n/**\n * TemplateRevisionModel Class\n *\n * @public\n * @class TemplateRevisionModel\n */\nclass TemplateRevisionModel extends RevisionModel {\n\n  /**\n   * TemplateRevisionModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'template-revisions',\n\n      permissions: {\n        create:  ['user'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['user'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Template',\n            foreignKey: 'id',\n            localField: 'template',\n            localKey: 'templateId'\n          }\n        ]\n      },\n      schema: {\n        desc: {\n          type: 'string'\n        },\n        title: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n}\n\nexport default TemplateRevisionModel\n"
   },
   {
-    "__docId__": 177,
+    "__docId__": 175,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "TemplateRevisionModel",
     "memberof": "src/models/template-revision/index.js",
     "longname": "src/models/template-revision/index.js~TemplateRevisionModel",
-    "access": null,
+    "access": "public",
     "export": true,
     "importPath": "structure-core/src/models/template-revision/index.js",
     "importStyle": "TemplateRevisionModel",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "TemplateRevisionModel Class",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "TemplateRevisionModel"
+      }
+    ],
     "interface": false,
     "extends": [
       "src/models/revision.js~RevisionModel"
     ]
   },
   {
-    "__docId__": 178,
+    "__docId__": 176,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
     "memberof": "src/models/template-revision/index.js~TemplateRevisionModel",
     "longname": "src/models/template-revision/index.js~TemplateRevisionModel#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "access": "public",
+    "description": "TemplateRevisionModel constructor",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
     "params": [
       {
-        "name": "options",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options"
       }
     ],
     "generator": false
   },
   {
-    "__docId__": 179,
+    "__docId__": 177,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3801,7 +3929,7 @@
     "content": "/**\n * Module Dependencies\n *\n * @ignore\n */\nimport {chalk, logger} from '../../lib/logger'\nimport Model           from '../root'\nimport PasswordService from '../../services/password'\nimport r               from '../../lib/database/driver'\n\n/**\n * UserModel Class\n *\n * @public\n * @class UserModel\n */\nclass UserModel extends Model {\n\n  /**\n   * UserModel constructor\n   *\n   * @public\n   * @constructor\n   * @param {Object} options - Options\n   */\n  constructor(options = {}) {\n    super(Object.assign({}, {\n      name: 'users',\n\n      mapping: {\n        fields: {\n\n        }\n      },\n      permissions: {\n        create:  ['admin'],\n        delete:  ['admin'],\n        read:    ['organization'],\n        replace: ['admin'],\n        update:  ['self', 'admin'],\n      },\n      relations: {\n        belongsTo: [\n          {\n            Node: 'Organization',\n            foreignKey: 'id',\n            localField: 'organization',\n            localKey: 'organizationId'\n          }\n        ]\n      },\n      schema: {\n        email: {\n          type: 'string'\n        },\n        username: {\n          type: 'string'\n        }\n      }\n    }, options))\n  }\n\n  /**\n   * Create, or save, user data for the model\n   *\n   * @public\n   * @param {Object} pkg - Data to be saved\n   * @param {Object} options - Options\n   */\n  create(pkg = {}, options = {}) {\n\n    return new Promise( async (resolve, reject) => {\n\n      pkg.hash = await new PasswordService().issue(pkg.password)\n      delete pkg.password\n\n      try {\n        var doc = await Model.prototype.create.call(this, pkg, options)\n\n        resolve(doc)\n      }\n      catch(e) {\n        throw new Error(e)\n      }\n\n    })\n\n  }\n\n  /**\n   * Get user by email\n   *\n   * @public\n   * @param {String} email\n   */\n  getByEmail(email) {\n    return r.db(process.env.RETHINK_DB_NAME).table(this.table).filter({email}).limit(1)\n  }\n\n  /**\n   * Get user by username\n   *\n   * @public\n   * @param {String} username\n   */\n  getByUsername(username) {\n    return new Promise( async (resolve, reject) => {\n      var user = await thinky.r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)\n\n      if(!user) return reject(user)\n\n      resolve(user[0])\n    })\n  }\n\n}\n\nexport default UserModel\n"
   },
   {
-    "__docId__": 180,
+    "__docId__": 178,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -3826,7 +3954,7 @@
     ]
   },
   {
-    "__docId__": 181,
+    "__docId__": 179,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -3857,7 +3985,7 @@
     "generator": false
   },
   {
-    "__docId__": 182,
+    "__docId__": 180,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3897,7 +4025,7 @@
     "generator": false
   },
   {
-    "__docId__": 183,
+    "__docId__": 181,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3927,7 +4055,7 @@
     "generator": false
   },
   {
-    "__docId__": 184,
+    "__docId__": 182,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3957,7 +4085,7 @@
     "generator": false
   },
   {
-    "__docId__": 185,
+    "__docId__": 183,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3970,7 +4098,7 @@
     "content": "import {chalk, logger} from '../lib/logger'\n\nclass Dispatcher {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  dispatch(controller, actionName) {\n\n    return async (req, res, next) => {\n\n      var action = controller[actionName]\n\n      if(req.files) {\n        console.error('files', req.files)\n        /*\n        TODO: what's a better way to handle this?\n        */\n        req.body.files = req.files.map( (file) => {\n          file.diskFileName     = file.filename\n          file.originalFileName = file.originalname.replace(/ /g, '_')\n          file.storageAdaptor   = storageAdaptors.disk.name\n\n          return file\n        })\n      }\n\n      var pkg    = {},\n          status = 200\n\n      try {\n        var result = await action.call(controller, req)\n\n        if(req.method == 'PUT') status = 201\n\n        // return collection name\n        if(actionName == 'getAll') {\n          pkg[controller.name] = result\n        }\n        // return item\n        else {\n          pkg = result\n        }\n\n        res.status(status).json({\n          pkg,\n          status\n        })\n      }\n      catch(err) {\n        logger.error(`Action ${actionName} failed`)\n        console.error(err.stack)\n\n        status = 403\n\n        res.status(status).json({\n          status\n        })\n      }\n\n    }\n\n  }\n\n}\n\nexport default Dispatcher\n"
   },
   {
-    "__docId__": 186,
+    "__docId__": 184,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -3987,7 +4115,7 @@
     "interface": false
   },
   {
-    "__docId__": 187,
+    "__docId__": 185,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4012,7 +4140,7 @@
     "generator": false
   },
   {
-    "__docId__": 188,
+    "__docId__": 186,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4030,7 +4158,7 @@
     }
   },
   {
-    "__docId__": 189,
+    "__docId__": 187,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4063,7 +4191,7 @@
     "generator": false
   },
   {
-    "__docId__": 190,
+    "__docId__": 188,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4076,7 +4204,7 @@
     "content": "import bodyParser      from 'body-parser'\nimport {chalk, logger} from '../lib/logger'\nimport Dispatcher      from './dispatcher'\nimport express         from 'express'\nimport path            from 'path'\nimport r               from '../lib/database/driver'\nimport Router          from './router'\nimport serveStatic     from 'serve-static'\n\nfunction removePoweredBy(req, res, next) {\n  res.removeHeader('X-Powered-By')\n  next()\n}\n\nclass StructureServer {\n\n  constructor(options = {}) {\n\n    this.server = express()\n\n    this.server.use(serveStatic(path.join(__dirname, '../public')))\n    this.server.use(bodyParser.urlencoded({extended: true}))\n    this.server.use(bodyParser.json({strict: false}))\n    this.server.use(removePoweredBy)\n    if(process.env.NODE_ENV != 'test') {\n      this.server.use(this.logRequestInfo)\n    }\n\n    //this.loadRoutes()\n\n  }\n\n  getRoutes() {\n    var route, routes = []\n\n    this.server._router.stack.forEach(function(middleware) {\n      if(middleware.route) {\n        routes.push(middleware.route)\n      } else if(middleware.name === 'router') { // router middleware\n        middleware.handle.stack.forEach(function(handler) {\n          route = handler.route\n          route && routes.push(route)\n        })\n      }\n    })\n\n    return routes\n  }\n\n  loadRoutes() {\n    require('./routes')(this.server)\n  }\n\n  logRequestInfo(req, res, next) {\n\n    logger.info(req.method, req.originalUrl)\n    next()\n\n  }\n\n  start() {\n    this.router = this.router || new Router({\n      dispatcher: new Dispatcher(),\n      server: this.server\n    })\n\n    this.server = this.server.listen(process.env.EXPRESS_PORT)\n\n  }\n\n  stop() {\n\n    r.getPoolMaster().drain()\n    this.server.close()\n\n  }\n\n  use() {\n\n    this.server.use.apply(this.server, arguments)\n\n  }\n\n}\n\nmodule.exports = StructureServer\n"
   },
   {
-    "__docId__": 191,
+    "__docId__": 189,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4113,7 +4241,7 @@
     "generator": false
   },
   {
-    "__docId__": 192,
+    "__docId__": 190,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4130,7 +4258,7 @@
     "interface": false
   },
   {
-    "__docId__": 193,
+    "__docId__": 191,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4155,7 +4283,7 @@
     "generator": false
   },
   {
-    "__docId__": 194,
+    "__docId__": 192,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4173,7 +4301,7 @@
     }
   },
   {
-    "__docId__": 195,
+    "__docId__": 193,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4193,7 +4321,7 @@
     "generator": false
   },
   {
-    "__docId__": 196,
+    "__docId__": 194,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4208,7 +4336,7 @@
     "generator": false
   },
   {
-    "__docId__": 197,
+    "__docId__": 195,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4242,7 +4370,7 @@
     "generator": false
   },
   {
-    "__docId__": 198,
+    "__docId__": 196,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4257,7 +4385,7 @@
     "generator": false
   },
   {
-    "__docId__": 199,
+    "__docId__": 197,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4275,7 +4403,7 @@
     }
   },
   {
-    "__docId__": 200,
+    "__docId__": 198,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4293,7 +4421,7 @@
     }
   },
   {
-    "__docId__": 201,
+    "__docId__": 199,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4308,7 +4436,7 @@
     "generator": false
   },
   {
-    "__docId__": 202,
+    "__docId__": 200,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4323,7 +4451,7 @@
     "generator": false
   },
   {
-    "__docId__": 203,
+    "__docId__": 201,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4336,7 +4464,7 @@
     "content": "import {chalk, logger}   from '../lib/logger'\nimport cors              from 'cors'\nimport multer            from 'multer'\nimport storageAdaptors   from './storageAdaptors'\n\nimport App               from '../controllers/applications'\nimport Auth              from '../controllers/auth'\nimport Bucket            from '../controllers/buckets'\nimport DigitalAsset      from '../controllers/digital-assets'\nimport Document          from '../controllers/documents'\nimport DocumentRevision  from '../controllers/document-revisions'\nimport Field             from '../controllers/fields'\nimport Org               from '../controllers/organizations'\nimport Registry          from '../controllers/registry'\nimport Taxonomy          from '../controllers/taxonomies'\nimport Template          from '../controllers/templates'\nimport TemplateRevision  from '../controllers/template-revisions'\nimport User              from '../controllers/users'\n\nconst Controllers = [App, Auth, Bucket, DigitalAsset, Document, DocumentRevision, Field, Org, Registry, Taxonomy, Template, TemplateRevision, User]\n\nvar upload = multer({storage: storageAdaptors.disk.adaptor}).any()\n\nclass Router {\n\n  constructor(options = {}) {\n    this.options     = options\n\n    this.Controllers = this.options.Controllers || Controllers\n    this.dispatcher  = this.options.dispatcher\n\n    this.routes      = options.routes\n    this.server      = options.server\n    //this.structRoute()\n    this.loadRoutes()\n    this.generateRoutesFromNodes()\n\n  }\n\n  generateRoutesFromNodes() {\n    var server  = this.server,\n        version = `v${process.env.API_VERSION}`\n\n    /*\n    TODO:\n    Make this a simple on/off flag\n    */\n    server.use(cors())\n\n    /*\n    TODO: build middleware to handle the extra routes needed per respective node(s)\n    */\n    var digitalAsset = new DigitalAsset()\n\n    server.get(`/api/${version}/digital-assets/embeds/:type/:url(*)`,  this.dispatcher.dispatch(new DigitalAsset(), 'fetchEmbed'))\n    server.get(`/api/${version}/digital-assets/:id/view`,              digitalAsset.view.bind(digitalAsset))\n    server.get(`/api/${version}/registry/settings/:name`,              this.dispatcher.dispatch(new Registry(), 'getSettingsByName'))\n\n    server.post(`/api/${version}/auth/login`,                          this.dispatcher.dispatch(new Auth(), 'login'))\n    server.post(`/api/${version}/auth/user/facebook`,                  this.dispatcher.dispatch(new Auth(), 'authByFacebook'))\n\n    server.put(`/api/${version}/digital-assets`,                       [upload, this.dispatcher.dispatch(new DigitalAsset(), 'create')])\n\n    this.Controllers.forEach( (Controller) => {\n      var controller = new Controller(),\n          routeName  = controller.name\n\n      server.get(`/api/${version}/${routeName}/:id`,                    this.dispatcher.dispatch(controller, 'getById'))\n      server.get(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'getAll'))\n\n      server.post(`/api/${version}/${routeName}/:id`,                   this.dispatcher.dispatch(controller, 'update'))\n\n      server.put(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'create'))\n\n      server.delete(`/api/${version}/${routeName}/:id`,                 this.dispatcher.dispatch(controller, 'delete'))\n    })\n\n  }\n\n  loadRoutes() {\n    this.routes.call(this, this.server)\n  }\n\n  structRoute() {\n    var server = this.server\n\n    var mapper = {\n      buckets: {\n        Node: 'bucket'\n      }\n    }\n\n    server.post(`/api/struct`, (req, res, next) => {\n\n      /* Example Query:\n      buckets: {\n        fields: ['data', 'desc', 'id', 'sid', 'title'],\n        id: 12345\n      }\n      */\n      var query = req.body.query\n\n      var fetch = {}\n\n      Object.keys(query).forEach( async (k, i) => {\n        var o = query[k]\n\n        var node = require(`../../nodes/${mapper[k].Node}`).default\n\n        /*\n        TODO: pluck the values instead of returning all the values\n        */\n        if(o.id) {\n          fetch[k] = await node.getById(o.id)\n        }\n\n        else {\n          fetch[k] = await node.getAll()\n        }\n\n      })\n\n      res.status(200).json({\n        pkg: fetch,\n        status: 200\n      })\n    })\n  }\n\n}\n\nexport default Router\n"
   },
   {
-    "__docId__": 204,
+    "__docId__": 202,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4357,7 +4485,7 @@
     }
   },
   {
-    "__docId__": 205,
+    "__docId__": 203,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4378,7 +4506,7 @@
     }
   },
   {
-    "__docId__": 206,
+    "__docId__": 204,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4395,7 +4523,7 @@
     "interface": false
   },
   {
-    "__docId__": 207,
+    "__docId__": 205,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4420,7 +4548,7 @@
     "generator": false
   },
   {
-    "__docId__": 208,
+    "__docId__": 206,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4438,7 +4566,7 @@
     }
   },
   {
-    "__docId__": 209,
+    "__docId__": 207,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4456,7 +4584,7 @@
     }
   },
   {
-    "__docId__": 210,
+    "__docId__": 208,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4474,7 +4602,7 @@
     }
   },
   {
-    "__docId__": 211,
+    "__docId__": 209,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4492,7 +4620,7 @@
     }
   },
   {
-    "__docId__": 212,
+    "__docId__": 210,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4510,7 +4638,7 @@
     }
   },
   {
-    "__docId__": 213,
+    "__docId__": 211,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4525,7 +4653,7 @@
     "generator": false
   },
   {
-    "__docId__": 214,
+    "__docId__": 212,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4540,7 +4668,7 @@
     "generator": false
   },
   {
-    "__docId__": 215,
+    "__docId__": 213,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4555,7 +4683,7 @@
     "generator": false
   },
   {
-    "__docId__": 216,
+    "__docId__": 214,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4568,7 +4696,7 @@
     "content": "import Disk from 'structure-storage-disk-adaptor'\n\nexport default {\n  disk: {\n    adaptor: new Disk.Adaptor(),\n    name: 'disk'\n  }\n}\n"
   },
   {
-    "__docId__": 217,
+    "__docId__": 215,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4581,7 +4709,7 @@
     "content": "import AppModel        from '../models/app'\nimport async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport ShortIdService  from '../services/short-id'\n\nclass AppService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService  = new ShortIdService(),\n        appModel   = new AppModel()\n\n    appModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create app',\n          resource: 'AppService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for app',\n            resource: 'AppService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var appModel = new AppModel()\n\n    appModel.get.apply(appModel, arguments)\n  }\n\n  getByShortId() {\n    var appModel = new AppModel()\n\n    appModel.getByShortId.apply(appModel, arguments)\n  }\n\n  update() {\n    var appModel = new AppModel()\n\n    appModel.update.apply(appModel, arguments)\n  }\n\n  updateByShortId() {\n    var appModel = new AppModel()\n\n    appModel.updateByShortId.apply(appModel, arguments)\n  }\n\n}\n\nexport default AppService\n"
   },
   {
-    "__docId__": 218,
+    "__docId__": 216,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4598,7 +4726,7 @@
     "interface": false
   },
   {
-    "__docId__": 219,
+    "__docId__": 217,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4629,7 +4757,7 @@
     "generator": false
   },
   {
-    "__docId__": 220,
+    "__docId__": 218,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4644,7 +4772,7 @@
     "generator": false
   },
   {
-    "__docId__": 221,
+    "__docId__": 219,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4659,7 +4787,7 @@
     "generator": false
   },
   {
-    "__docId__": 222,
+    "__docId__": 220,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4674,7 +4802,7 @@
     "generator": false
   },
   {
-    "__docId__": 223,
+    "__docId__": 221,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4689,7 +4817,7 @@
     "generator": false
   },
   {
-    "__docId__": 224,
+    "__docId__": 222,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4702,7 +4830,7 @@
     "content": "import async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport PasswordService from './password'\nimport TokenService    from './token'\nimport UserModel       from '../models/user'\n\nclass AuthService {\n\n  authenticateById(id, password, cb) {\n\n    var passwordService = new PasswordService(),\n        userModel       = new UserModel()\n\n    userModel.get(id, function AuthService_authenticateGetCallback(err, user) {\n\n      if(err) {\n        return cb({\n          message: 'Could not get user: ' + id,\n          resource: 'AuthService'\n        })\n      }\n\n      passwordService.verify(password, user.hash, function(err, verified) {\n\n        if(err) {\n          return cb({\n            message: 'Could not verify password for user: ' + id,\n            resource: 'AuthService'\n          })\n        }\n\n        cb(null, user)\n\n      })\n\n    })\n\n  }\n\n  authenticateByUsername(username, password, cb) {\n\n    var passwordService = new PasswordService(),\n        userModel       = new UserModel()\n\n    userModel.getByUsername(username, function AuthService_authenticateGetCallback(err, user) {\n\n      if(err) {\n        logger.error('Could not get user', username)\n        return cb({\n          message: 'Could not get user: ' + username,\n          resource: 'AuthService'\n        })\n      }\n\n      passwordService.verify(password, user.hash, function(err, verified) {\n\n        if(err) {\n          logger.error('Could not validate password for user', username)\n          return cb({\n            message: 'Could not verify password for user: ' + username,\n            resource: 'AuthService'\n          })\n        }\n        logger.debug('auth by user/pass its ok', user)\n        cb(null, user)\n\n      })\n\n    })\n\n  }\n\n  authorize(id, token, cb) {\n\n    var tokenService = new TokenService()\n\n    tokenService.verify(token, function(err, verified) {\n\n      if(err) {\n        return cb({\n          message: 'Could not authorize user: ' + id,\n          resource: 'AuthService'\n        })\n      }\n\n      cb(null, token)\n\n    })\n\n  }\n\n  loginById(id, pkg = {}, cb) {\n    var _this = this\n\n    if(arguments.length == 2) {\n      pkg = arguments[0]\n      id  = pkg.id\n      cb  = arguments[1]\n    }\n\n    var tokenService = new TokenService()\n\n    async.parallel([\n      this.authenticateById.bind(this, id, pkg.password),\n      tokenService.issue.bind(tokenService, pkg.hash)\n    ], function AuthService_loginByIdCallBack(err, res) {\n      logger.debug('hit parallel call')\n      if(err) {\n        logger.error('Could not log in user', id)\n        logger.error(err)\n\n        return cb({\n          message: 'Could not log in user',\n          resource: 'AuthService'\n        })\n      }\n\n      var user = res[0]\n      user.token = res[1]\n\n      cb(null, user)\n\n    })\n\n  }\n\n  loginByUsername(username, pkg = {}, cb) {\n    var _this = this\n\n    if(arguments.length == 2) {\n      pkg       = arguments[0]\n      username  = pkg.username\n      cb        = arguments[1]\n    }\n\n    var tokenService = new TokenService()\n\n    async.parallel([\n      this.authenticateByUsername.bind(this, username, pkg.password),\n      //tokenService.issue.bind(tokenService, pkg.hash)\n    ], function AuthService_loginByUsernameCallBack(err, res) {\n\n      if(err) {\n        logger.error('Could not log in user', username)\n        logger.error(err)\n\n        return cb({\n          message: 'Could not log in user',\n          resource: 'AuthService'\n        })\n      }\n\n      var user = res[0]\n      //user.token = res[1]\n\n      cb(null, user)\n\n    })\n\n  }\n\n  logout() {\n\n  }\n\n  unauthenticate() {\n\n  }\n\n}\n\nexport default AuthService\n"
   },
   {
-    "__docId__": 225,
+    "__docId__": 223,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4719,7 +4847,7 @@
     "interface": false
   },
   {
-    "__docId__": 226,
+    "__docId__": 224,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4753,7 +4881,7 @@
     "generator": false
   },
   {
-    "__docId__": 227,
+    "__docId__": 225,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4787,7 +4915,7 @@
     "generator": false
   },
   {
-    "__docId__": 228,
+    "__docId__": 226,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4821,7 +4949,7 @@
     "generator": false
   },
   {
-    "__docId__": 229,
+    "__docId__": 227,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4858,7 +4986,7 @@
     "generator": false
   },
   {
-    "__docId__": 230,
+    "__docId__": 228,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4895,7 +5023,7 @@
     "generator": false
   },
   {
-    "__docId__": 231,
+    "__docId__": 229,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4910,7 +5038,7 @@
     "generator": false
   },
   {
-    "__docId__": 232,
+    "__docId__": 230,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4925,7 +5053,7 @@
     "generator": false
   },
   {
-    "__docId__": 233,
+    "__docId__": 231,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4938,7 +5066,7 @@
     "content": "import async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport ShortIdService  from '../services/short-id'\nimport OrganizationModel   from '../models/organization'\n\nclass OrganizationService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService  = new ShortIdService(),\n        organizationModel   = new OrganizationModel()\n\n    organizationModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create organization',\n          resource: 'OrganizationService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for organization',\n            resource: 'OrganizationService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.get.apply(organizationModel, arguments)\n  }\n\n  getByShortId() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.getByShortId.apply(organizationModel, arguments)\n  }\n\n  list() {\n\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.list.apply(organizationModel, arguments)\n\n  }\n\n  update() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.update.apply(organizationModel, arguments)\n  }\n\n  updateByShortId() {\n    var organizationModel = new OrganizationModel()\n\n    organizationModel.updateByShortId.apply(organizationModel, arguments)\n  }\n\n}\n\nexport default OrganizationService\n"
   },
   {
-    "__docId__": 234,
+    "__docId__": 232,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4955,7 +5083,7 @@
     "interface": false
   },
   {
-    "__docId__": 235,
+    "__docId__": 233,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -4986,7 +5114,7 @@
     "generator": false
   },
   {
-    "__docId__": 236,
+    "__docId__": 234,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5001,7 +5129,7 @@
     "generator": false
   },
   {
-    "__docId__": 237,
+    "__docId__": 235,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5016,7 +5144,7 @@
     "generator": false
   },
   {
-    "__docId__": 238,
+    "__docId__": 236,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5031,7 +5159,7 @@
     "generator": false
   },
   {
-    "__docId__": 239,
+    "__docId__": 237,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5046,7 +5174,7 @@
     "generator": false
   },
   {
-    "__docId__": 240,
+    "__docId__": 238,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5061,7 +5189,7 @@
     "generator": false
   },
   {
-    "__docId__": 241,
+    "__docId__": 239,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5074,7 +5202,7 @@
     "content": "class PackageService {\n\n  constructor() {\n\n  }\n\n  error(o = {}, options) {\n    var status = 400\n\n    if(typeof options == 'number') status = options\n    if(typeof options == 'object') {\n      status = options.status || status\n    }\n\n    return {\n      err: {},\n      status\n    }\n\n  }\n\n  success(o = {}, options) {\n    var status = 200\n\n    if(typeof options == 'number') status = options\n    if(typeof options == 'object') {\n      status = options.status || status\n    }\n\n    return {\n      pkg: o,\n      status\n    }\n\n  }\n\n}\n\nexport default PackageService\n"
   },
   {
-    "__docId__": 242,
+    "__docId__": 240,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5091,7 +5219,7 @@
     "interface": false
   },
   {
-    "__docId__": 243,
+    "__docId__": 241,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -5106,7 +5234,7 @@
     "generator": false
   },
   {
-    "__docId__": 244,
+    "__docId__": 242,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5142,7 +5270,7 @@
     "generator": false
   },
   {
-    "__docId__": 245,
+    "__docId__": 243,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5178,7 +5306,7 @@
     "generator": false
   },
   {
-    "__docId__": 246,
+    "__docId__": 244,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5191,7 +5319,7 @@
     "content": "import bcrypt          from 'bcrypt'\nimport {chalk, logger} from '../lib/logger'\n\nclass PasswordService {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  issue(s) {\n\n    return new Promise( (resolve, reject) => {\n\n      if(typeof s != 'string') return cb({\n        message: 'Password must be a string',\n        resource: 'PasswordService'\n      })\n\n      bcrypt.genSalt(\n        parseInt(this.options.genSalt) ||\n        parseInt(process.env.SALT_FACTOR) ||\n        10,\n      function PasswordService_genSaltCallback(err, salt) {\n        if(err) {\n          logger.error('Could not generate salt', err)\n          return reject(err)\n        }\n\n        bcrypt.hash(s, salt, function PasswordService_hashCallback(err, hash) {\n          if(err) {\n            logger.error('Could not generate hash', err)\n            return reject(err)\n          }\n\n          resolve(hash)\n        })\n\n      })\n\n    })\n\n  }\n\n  verify(s, hash) {\n\n    return new Promise( (resolve, reject) => {\n\n      bcrypt.compare(s, hash, function PasswordService_compareCallback(err, match) {\n\n        if(err) {\n          logger.error('Could not verify password', err)\n          logger.debug('Password', s)\n          logger.debug('Hash', hash)\n          return reject(err)\n        }\n\n        return resolve(true)\n\n      })\n\n    })\n\n  }\n\n}\n\nexport default PasswordService\n"
   },
   {
-    "__docId__": 247,
+    "__docId__": 245,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5208,7 +5336,7 @@
     "interface": false
   },
   {
-    "__docId__": 248,
+    "__docId__": 246,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -5233,7 +5361,7 @@
     "generator": false
   },
   {
-    "__docId__": 249,
+    "__docId__": 247,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -5251,7 +5379,7 @@
     }
   },
   {
-    "__docId__": 250,
+    "__docId__": 248,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5278,7 +5406,7 @@
     "generator": false
   },
   {
-    "__docId__": 251,
+    "__docId__": 249,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5311,7 +5439,7 @@
     "generator": false
   },
   {
-    "__docId__": 252,
+    "__docId__": 250,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5324,7 +5452,7 @@
     "content": "import {chalk, logger} from '../lib/logger'\nimport shorthash       from 'shorthash'\n\nclass ShortIdService {\n\n  constructor(options = {}) {\n    this.options = options\n  }\n\n  issue(id) {\n\n    var sid = shorthash.unique(id)\n\n    return sid\n\n  }\n\n}\n\nexport default ShortIdService\n"
   },
   {
-    "__docId__": 253,
+    "__docId__": 251,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5341,7 +5469,7 @@
     "interface": false
   },
   {
-    "__docId__": 254,
+    "__docId__": 252,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -5366,7 +5494,7 @@
     "generator": false
   },
   {
-    "__docId__": 255,
+    "__docId__": 253,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -5384,7 +5512,7 @@
     }
   },
   {
-    "__docId__": 256,
+    "__docId__": 254,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5411,7 +5539,7 @@
     "generator": false
   },
   {
-    "__docId__": 257,
+    "__docId__": 255,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5424,7 +5552,7 @@
     "content": "import async             from 'async'\nimport {chalk, logger}   from '../lib/logger'\nimport OrganizationModel from '../models/organization'\nimport ShortIdService    from '../services/short-id'\nimport TemplateModel     from '../models/template'\n\nclass TemplateService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var shortidService    = new ShortIdService(),\n        templateModel     = new TemplateModel()\n\n    templateModel.create(pkg, function(err, res) {\n\n      if(err) {\n        logger.error(err)\n\n        return cb({\n          message: 'Could not create template',\n          resource: 'TemplateService'\n        })\n      }\n\n      var sid = shortidService.issue(res.id)\n\n      _this.update(res.id, {sid}, function(err2, res2) {\n\n        if(err) {\n          logger.error(err)\n\n          return cb({\n            message: 'Could not create short id for template',\n            resource: 'TemplateService'\n          })\n        }\n\n        return cb(null, res2)\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var templateModel = new TemplateModel()\n\n    templateModel.get.apply(templateModel, arguments)\n  }\n\n  getByShortId() {\n    var templateModel = new TemplateModel()\n\n    templateModel.getByShortId.apply(templateModel, arguments)\n  }\n\n  update() {\n    var templateModel = new TemplateModel()\n\n    templateModel.update.apply(templateModel, arguments)\n  }\n\n  updateByShortId() {\n    var templateModel = new TemplateModel()\n\n    templateModel.updateByShortId.apply(templateModel, arguments)\n  }\n\n}\n\nexport default TemplateService\n"
   },
   {
-    "__docId__": 258,
+    "__docId__": 256,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5441,7 +5569,7 @@
     "interface": false
   },
   {
-    "__docId__": 259,
+    "__docId__": 257,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5472,7 +5600,7 @@
     "generator": false
   },
   {
-    "__docId__": 260,
+    "__docId__": 258,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5487,7 +5615,7 @@
     "generator": false
   },
   {
-    "__docId__": 261,
+    "__docId__": 259,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5502,7 +5630,7 @@
     "generator": false
   },
   {
-    "__docId__": 262,
+    "__docId__": 260,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5517,7 +5645,7 @@
     "generator": false
   },
   {
-    "__docId__": 263,
+    "__docId__": 261,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5532,7 +5660,7 @@
     "generator": false
   },
   {
-    "__docId__": 264,
+    "__docId__": 262,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5545,7 +5673,7 @@
     "content": "import jwt from 'jsonwebtoken'\n\nclass TokenService {\n\n  constructor() {\n\n  }\n\n  issue(s) {\n\n    if(typeof s == 'number') s = s.toString()\n    if(typeof s != 'string') return false\n\n    var token = jwt.sign(s, cert, {\n      //expiresInMinutes: 1440 // 24 hours\n    })\n\n    return token\n\n  }\n\n  verify(token) {\n\n    return jwt.verify(token, process.env.JWT_SECRET)\n\n  }\n\n}\n\nexport default TokenService\n"
   },
   {
-    "__docId__": 265,
+    "__docId__": 263,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5562,7 +5690,7 @@
     "interface": false
   },
   {
-    "__docId__": 266,
+    "__docId__": 264,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -5577,7 +5705,7 @@
     "generator": false
   },
   {
-    "__docId__": 267,
+    "__docId__": 265,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5604,7 +5732,7 @@
     "generator": false
   },
   {
-    "__docId__": 268,
+    "__docId__": 266,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5631,7 +5759,7 @@
     "generator": false
   },
   {
-    "__docId__": 269,
+    "__docId__": 267,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5644,7 +5772,7 @@
     "content": "import async           from 'async'\nimport {chalk, logger} from '../lib/logger'\nimport PasswordService from './password'\nimport ShortIdService  from '../services/short-id'\nimport TokenService    from './token'\nimport UserModel       from '../models/user'\n\nclass UserService {\n\n  create(o = {}, cb) {\n    var _this = this\n\n    var pkg = Object.assign({}, o)\n\n    // validation\n\n    var passwordService = new PasswordService(),\n        shortidService  = new ShortIdService(),\n        tokenService    = new TokenService(),\n        userModel       = new UserModel()\n\n    /*\n    TODO: clean up this query, it could be optimized\n    */\n    passwordService.issue(pkg.password, function UserService_createIssueCallback(err, hash) {\n\n      if(err) {\n        logger.error(err)\n        logger.debug('cb', typeof cb)\n        return cb({\n          message: 'Could not create password hash',\n          resource: 'UserModel'\n        })\n      }\n\n      if(pkg.password) delete pkg.password // dont want to store actual password\n      if(pkg.organizationId) delete pkg.organizationId\n\n      pkg.hash = hash\n      pkg.organizations = pkg.organizations || []\n\n      async.parallel([\n        userModel.create.bind(userModel, pkg)\n      ], function UserService_createParallelCallback(err, res) {\n\n        if(err) {\n          logger.error(err)\n          return cb({\n            raw: err,\n            resource: 'UserModel'\n          })\n        }\n\n        var user = res[0]\n        var sid  = shortidService.issue(user.id)\n\n        async.parallel([\n          tokenService.issue.bind(tokenService, user.id),\n          userModel.addToOrganizationTable.bind(userModel, user.id, o.organizations[0]),\n          _this.update.bind(_this, user.id, {sid})\n        ], function UserService_createParallelCallback2(err2, res2) {\n\n          if(err2) {\n            logger.error(err2)\n            return cb({\n              raw: err2,\n              resource: 'UserModel'\n            })\n          }\n\n          user               = res2[2]\n          user.organizations = res2[1].organizations\n          user.token         = res2[0]\n\n          cb(null, user)\n\n        })\n\n      })\n\n    })\n\n  }\n\n  get() {\n    var userModel = new UserModel()\n\n    userModel.get.apply(userModel, arguments)\n  }\n\n  getByShortId() {\n    var userModel = new UserModel()\n\n    userModel.getByShortId.apply(userModel, arguments)\n  }\n\n  getByUsername() {\n    var userModel = new UserModel()\n\n    userModel.getByUsername.apply(userModel, arguments)\n  }\n\n  list() {\n\n    var userModel = new UserModel()\n\n    userModel.list.apply(userModel, arguments)\n\n  }\n\n  update() {\n    var userModel = new UserModel()\n\n    userModel.update.apply(userModel, arguments)\n  }\n\n  updateByShortId() {\n    var userModel = new UserModel()\n\n    userModel.updateByShortId.apply(userModel, arguments)\n  }\n\n}\n\nexport default UserService\n"
   },
   {
-    "__docId__": 270,
+    "__docId__": 268,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5661,7 +5789,7 @@
     "interface": false
   },
   {
-    "__docId__": 271,
+    "__docId__": 269,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5692,7 +5820,7 @@
     "generator": false
   },
   {
-    "__docId__": 272,
+    "__docId__": 270,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5707,7 +5835,7 @@
     "generator": false
   },
   {
-    "__docId__": 273,
+    "__docId__": 271,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5722,7 +5850,7 @@
     "generator": false
   },
   {
-    "__docId__": 274,
+    "__docId__": 272,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5737,7 +5865,7 @@
     "generator": false
   },
   {
-    "__docId__": 275,
+    "__docId__": 273,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5752,7 +5880,7 @@
     "generator": false
   },
   {
-    "__docId__": 276,
+    "__docId__": 274,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5767,7 +5895,7 @@
     "generator": false
   },
   {
-    "__docId__": 277,
+    "__docId__": 275,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -5782,7 +5910,7 @@
     "generator": false
   },
   {
-    "__docId__": 278,
+    "__docId__": 276,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5795,7 +5923,7 @@
     "content": "process.env.npm_package_version = process.env.npm_package_version || require('../package.json').version\n\nvar path = require('path')\nrequire('dotenv').config({path: path.join(__dirname, '../.env')})\n\n/*require('babel-core/register')\nrequire('babel-polyfill')*/\n\nvar Server = require('./lib/server')\n\nvar server = new Server()\n\nserver.start()\n"
   },
   {
-    "__docId__": 279,
+    "__docId__": 277,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5816,7 +5944,7 @@
     }
   },
   {
-    "__docId__": 280,
+    "__docId__": 278,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5837,7 +5965,7 @@
     }
   },
   {
-    "__docId__": 281,
+    "__docId__": 279,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5858,7 +5986,7 @@
     }
   },
   {
-    "__docId__": 283,
+    "__docId__": 281,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5871,7 +5999,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 284,
+    "__docId__": 282,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5884,7 +6012,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 285,
+    "__docId__": 283,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5897,7 +6025,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 286,
+    "__docId__": 284,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5910,7 +6038,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 287,
+    "__docId__": 285,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5923,7 +6051,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 288,
+    "__docId__": 286,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5936,7 +6064,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 289,
+    "__docId__": 287,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5949,7 +6077,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 290,
+    "__docId__": 288,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5962,7 +6090,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 291,
+    "__docId__": 289,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5975,7 +6103,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 292,
+    "__docId__": 290,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -5988,7 +6116,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 293,
+    "__docId__": 291,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6001,7 +6129,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 294,
+    "__docId__": 292,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6014,7 +6142,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 295,
+    "__docId__": 293,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6027,7 +6155,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 296,
+    "__docId__": 294,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6040,7 +6168,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 297,
+    "__docId__": 295,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6053,7 +6181,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 298,
+    "__docId__": 296,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6066,7 +6194,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 299,
+    "__docId__": 297,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6079,7 +6207,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 300,
+    "__docId__": 298,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6092,7 +6220,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 301,
+    "__docId__": 299,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6105,7 +6233,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 302,
+    "__docId__": 300,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6118,7 +6246,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 303,
+    "__docId__": 301,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6131,7 +6259,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 304,
+    "__docId__": 302,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6144,7 +6272,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 305,
+    "__docId__": 303,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6157,7 +6285,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 306,
+    "__docId__": 304,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6170,7 +6298,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 307,
+    "__docId__": 305,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6183,7 +6311,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 308,
+    "__docId__": 306,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6196,7 +6324,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 309,
+    "__docId__": 307,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6209,7 +6337,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 310,
+    "__docId__": 308,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6222,7 +6350,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 311,
+    "__docId__": 309,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6235,7 +6363,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 312,
+    "__docId__": 310,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6248,7 +6376,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 313,
+    "__docId__": 311,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6261,7 +6389,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 314,
+    "__docId__": 312,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6274,7 +6402,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 315,
+    "__docId__": 313,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6287,7 +6415,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 316,
+    "__docId__": 314,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6300,7 +6428,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 317,
+    "__docId__": 315,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6313,7 +6441,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 318,
+    "__docId__": 316,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6326,7 +6454,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 319,
+    "__docId__": 317,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6339,7 +6467,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 320,
+    "__docId__": 318,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6352,7 +6480,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 321,
+    "__docId__": 319,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6365,7 +6493,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 322,
+    "__docId__": 320,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6378,7 +6506,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 323,
+    "__docId__": 321,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6391,7 +6519,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 324,
+    "__docId__": 322,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6404,7 +6532,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 325,
+    "__docId__": 323,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6417,7 +6545,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 326,
+    "__docId__": 324,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6430,7 +6558,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 327,
+    "__docId__": 325,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6443,7 +6571,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 328,
+    "__docId__": 326,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6456,7 +6584,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 329,
+    "__docId__": 327,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6469,7 +6597,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 331,
+    "__docId__": 329,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6482,7 +6610,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 332,
+    "__docId__": 330,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6495,7 +6623,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 333,
+    "__docId__": 331,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6508,7 +6636,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 334,
+    "__docId__": 332,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6521,7 +6649,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 335,
+    "__docId__": 333,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6534,7 +6662,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 336,
+    "__docId__": 334,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6547,7 +6675,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 337,
+    "__docId__": 335,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -6560,7 +6688,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 338,
+    "__docId__": 336,
     "kind": "external",
     "static": true,
     "variation": null,
