@@ -1,0 +1,1194 @@
+{
+  "type": "Program",
+  "start": 0,
+  "end": 886,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "start": 0,
+      "end": 56,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 56
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 7,
+          "end": 10,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 10
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 7,
+            "end": 10,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 7
+              },
+              "end": {
+                "line": 1,
+                "column": 10
+              }
+            },
+            "name": "App"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 30,
+        "end": 56,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 30
+          },
+          "end": {
+            "line": 1,
+            "column": 56
+          }
+        },
+        "value": "../../models/application",
+        "rawValue": "../../models/application",
+        "raw": "'../../models/application'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 57,
+      "end": 106,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 49
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 64,
+          "end": 68,
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 7
+            },
+            "end": {
+              "line": 2,
+              "column": 11
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 64,
+            "end": 68,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 7
+              },
+              "end": {
+                "line": 2,
+                "column": 11
+              }
+            },
+            "name": "Auth"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 87,
+        "end": 106,
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 30
+          },
+          "end": {
+            "line": 2,
+            "column": 49
+          }
+        },
+        "value": "../../models/auth",
+        "rawValue": "../../models/auth",
+        "raw": "'../../models/auth'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 107,
+      "end": 158,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 51
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 114,
+          "end": 120,
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 7
+            },
+            "end": {
+              "line": 3,
+              "column": 13
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 114,
+            "end": 120,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 7
+              },
+              "end": {
+                "line": 3,
+                "column": 13
+              }
+            },
+            "name": "Bucket"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 137,
+        "end": 158,
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 30
+          },
+          "end": {
+            "line": 3,
+            "column": 51
+          }
+        },
+        "value": "../../models/bucket",
+        "rawValue": "../../models/bucket",
+        "raw": "'../../models/bucket'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 159,
+      "end": 217,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 58
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 166,
+          "end": 178,
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 7
+            },
+            "end": {
+              "line": 4,
+              "column": 19
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 166,
+            "end": 178,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 7
+              },
+              "end": {
+                "line": 4,
+                "column": 19
+              }
+            },
+            "name": "DigitalAsset"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 189,
+        "end": 217,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 30
+          },
+          "end": {
+            "line": 4,
+            "column": 58
+          }
+        },
+        "value": "../../models/digital-asset",
+        "rawValue": "../../models/digital-asset",
+        "raw": "'../../models/digital-asset'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 218,
+      "end": 271,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 53
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 225,
+          "end": 233,
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 7
+            },
+            "end": {
+              "line": 5,
+              "column": 15
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 225,
+            "end": 233,
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 7
+              },
+              "end": {
+                "line": 5,
+                "column": 15
+              }
+            },
+            "name": "Document"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 248,
+        "end": 271,
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 30
+          },
+          "end": {
+            "line": 5,
+            "column": 53
+          }
+        },
+        "value": "../../models/document",
+        "rawValue": "../../models/document",
+        "raw": "'../../models/document'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 272,
+      "end": 334,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 62
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 279,
+          "end": 295,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 7
+            },
+            "end": {
+              "line": 6,
+              "column": 23
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 279,
+            "end": 295,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 7
+              },
+              "end": {
+                "line": 6,
+                "column": 23
+              }
+            },
+            "name": "DocumentRevision"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 302,
+        "end": 334,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 30
+          },
+          "end": {
+            "line": 6,
+            "column": 62
+          }
+        },
+        "value": "../../models/document-revision",
+        "rawValue": "../../models/document-revision",
+        "raw": "'../../models/document-revision'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 335,
+      "end": 385,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 50
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 342,
+          "end": 347,
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 7
+            },
+            "end": {
+              "line": 7,
+              "column": 12
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 342,
+            "end": 347,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 7
+              },
+              "end": {
+                "line": 7,
+                "column": 12
+              }
+            },
+            "name": "Field"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 365,
+        "end": 385,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 30
+          },
+          "end": {
+            "line": 7,
+            "column": 50
+          }
+        },
+        "value": "../../models/field",
+        "rawValue": "../../models/field",
+        "raw": "'../../models/field'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 386,
+      "end": 443,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 57
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 393,
+          "end": 396,
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 7
+            },
+            "end": {
+              "line": 8,
+              "column": 10
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 393,
+            "end": 396,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 7
+              },
+              "end": {
+                "line": 8,
+                "column": 10
+              }
+            },
+            "name": "Org"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 416,
+        "end": 443,
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 30
+          },
+          "end": {
+            "line": 8,
+            "column": 57
+          }
+        },
+        "value": "../../models/organization",
+        "rawValue": "../../models/organization",
+        "raw": "'../../models/organization'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 444,
+      "end": 497,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 53
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 451,
+          "end": 459,
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 7
+            },
+            "end": {
+              "line": 9,
+              "column": 15
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 451,
+            "end": 459,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 7
+              },
+              "end": {
+                "line": 9,
+                "column": 15
+              }
+            },
+            "name": "Registry"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 474,
+        "end": 497,
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 30
+          },
+          "end": {
+            "line": 9,
+            "column": 53
+          }
+        },
+        "value": "../../models/registry",
+        "rawValue": "../../models/registry",
+        "raw": "'../../models/registry'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 498,
+      "end": 551,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 53
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 505,
+          "end": 513,
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 7
+            },
+            "end": {
+              "line": 10,
+              "column": 15
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 505,
+            "end": 513,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 7
+              },
+              "end": {
+                "line": 10,
+                "column": 15
+              }
+            },
+            "name": "Taxonomy"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 528,
+        "end": 551,
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 30
+          },
+          "end": {
+            "line": 10,
+            "column": 53
+          }
+        },
+        "value": "../../models/taxonomy",
+        "rawValue": "../../models/taxonomy",
+        "raw": "'../../models/taxonomy'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 552,
+      "end": 605,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 53
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 559,
+          "end": 567,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 7
+            },
+            "end": {
+              "line": 11,
+              "column": 15
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 559,
+            "end": 567,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 7
+              },
+              "end": {
+                "line": 11,
+                "column": 15
+              }
+            },
+            "name": "Template"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 582,
+        "end": 605,
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 30
+          },
+          "end": {
+            "line": 11,
+            "column": 53
+          }
+        },
+        "value": "../../models/template",
+        "rawValue": "../../models/template",
+        "raw": "'../../models/template'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 606,
+      "end": 668,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 62
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 613,
+          "end": 629,
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 7
+            },
+            "end": {
+              "line": 12,
+              "column": 23
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 613,
+            "end": 629,
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 7
+              },
+              "end": {
+                "line": 12,
+                "column": 23
+              }
+            },
+            "name": "TemplateRevision"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 636,
+        "end": 668,
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 30
+          },
+          "end": {
+            "line": 12,
+            "column": 62
+          }
+        },
+        "value": "../../models/template-revision",
+        "rawValue": "../../models/template-revision",
+        "raw": "'../../models/template-revision'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 669,
+      "end": 718,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 49
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 676,
+          "end": 680,
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 7
+            },
+            "end": {
+              "line": 13,
+              "column": 11
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 676,
+            "end": 680,
+            "loc": {
+              "start": {
+                "line": 13,
+                "column": 7
+              },
+              "end": {
+                "line": 13,
+                "column": 11
+              }
+            },
+            "name": "User"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 699,
+        "end": 718,
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 30
+          },
+          "end": {
+            "line": 13,
+            "column": 49
+          }
+        },
+        "value": "../../models/user",
+        "rawValue": "../../models/user",
+        "raw": "'../../models/user'"
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 720,
+      "end": 862,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 142
+        }
+      },
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 726,
+          "end": 862,
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 6
+            },
+            "end": {
+              "line": 15,
+              "column": 142
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "start": 726,
+            "end": 732,
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 6
+              },
+              "end": {
+                "line": 15,
+                "column": 12
+              }
+            },
+            "name": "Models"
+          },
+          "init": {
+            "type": "ArrayExpression",
+            "start": 735,
+            "end": 862,
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 15
+              },
+              "end": {
+                "line": 15,
+                "column": 142
+              }
+            },
+            "elements": [
+              {
+                "type": "Identifier",
+                "start": 736,
+                "end": 739,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 19
+                  }
+                },
+                "name": "App"
+              },
+              {
+                "type": "Identifier",
+                "start": 741,
+                "end": 745,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 25
+                  }
+                },
+                "name": "Auth"
+              },
+              {
+                "type": "Identifier",
+                "start": 747,
+                "end": 753,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 27
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 33
+                  }
+                },
+                "name": "Bucket"
+              },
+              {
+                "type": "Identifier",
+                "start": 755,
+                "end": 767,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 35
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 47
+                  }
+                },
+                "name": "DigitalAsset"
+              },
+              {
+                "type": "Identifier",
+                "start": 769,
+                "end": 777,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 49
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 57
+                  }
+                },
+                "name": "Document"
+              },
+              {
+                "type": "Identifier",
+                "start": 779,
+                "end": 795,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 59
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 75
+                  }
+                },
+                "name": "DocumentRevision"
+              },
+              {
+                "type": "Identifier",
+                "start": 797,
+                "end": 802,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 77
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 82
+                  }
+                },
+                "name": "Field"
+              },
+              {
+                "type": "Identifier",
+                "start": 804,
+                "end": 807,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 84
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 87
+                  }
+                },
+                "name": "Org"
+              },
+              {
+                "type": "Identifier",
+                "start": 809,
+                "end": 817,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 89
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 97
+                  }
+                },
+                "name": "Registry"
+              },
+              {
+                "type": "Identifier",
+                "start": 819,
+                "end": 827,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 99
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 107
+                  }
+                },
+                "name": "Taxonomy"
+              },
+              {
+                "type": "Identifier",
+                "start": 829,
+                "end": 837,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 109
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 117
+                  }
+                },
+                "name": "Template"
+              },
+              {
+                "type": "Identifier",
+                "start": 839,
+                "end": 855,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 119
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 135
+                  }
+                },
+                "name": "TemplateRevision"
+              },
+              {
+                "type": "Identifier",
+                "start": 857,
+                "end": 861,
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 137
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 141
+                  }
+                },
+                "name": "User"
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "const"
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "start": 864,
+      "end": 885,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 21
+        }
+      },
+      "declaration": {
+        "type": "Identifier",
+        "start": 879,
+        "end": 885,
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 15
+          },
+          "end": {
+            "line": 17,
+            "column": 21
+          }
+        },
+        "name": "Models"
+      }
+    }
+  ]
+}

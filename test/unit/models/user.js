@@ -46,8 +46,7 @@ describe('User', function() {
       firstName: 'Theodore',
       lastName: 'Talkington',
       username: 'tedtalks200',
-      email: 'ted2000@email.com',
-      password: 'foo888'
+      email: 'ted2000@email.com'
     })
 
 

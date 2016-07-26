@@ -24,6 +24,9 @@
 
   "test": {
     "type": "mocha",
-    "source": "./test"
+    "source": "./test",
+    "includes": [
+      "\\.js$"
+    ]
   }
 }

@@ -1,14 +1,15 @@
 import {Schema, type} from 'eisley'
 import r              from '../../../src/lib/database/driver'
 
-import Document from '../../../src/models/document'
-import Revision from '../../../src/models/document-revision'
+import DocumentModel         from '../../../src/models/document'
+import DocumentRevisionModel from '../../../src/models/document-revision'
 
+/** @test {DocumentModel} */
 describe('Document', function() {
 
   it('should create a document',  async (done) => {
 
-    var document = new Document({
+    var document = new DocumentModel({
       name: 'documents'
     })
 
@@ -24,7 +25,7 @@ describe('Document', function() {
 
   it('should create a document revision',  async (done) => {
 
-    var document = new Document({
+    var document = new DocumentModel({
       name: 'documents'
     })
 
@@ -32,7 +33,7 @@ describe('Document', function() {
       title: 'Fun Document'
     })
 
-    var revision = new Revision({
+    var revision = new DocumentRevisionModel({
 
     })
 
@@ -56,7 +57,7 @@ describe('Document', function() {
 
   it('should update a document revision', async function(done) {
 
-    var document = new Document({
+    var document = new DocumentModel({
       name: 'documents'
     })
 
@@ -64,7 +65,7 @@ describe('Document', function() {
       title: 'Fun Document'
     })
 
-    var revision = new Revision({
+    var revision = new DocumentRevisionModel({
     })
 
     var revisionRes = await revision.create({

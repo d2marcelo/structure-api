@@ -1,5 +1,173 @@
 window.esdocSearchIndex = [
   [
+    "",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber47",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber8",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber36",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber62",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber89",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber77",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber93",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber112",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber131",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber9",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber25",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber44",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber63",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber26",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber11",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber68",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber55",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber71",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber90",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber109",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber127",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber146",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber165",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber189",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/routes/index.js.html#lineNumber53",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/routes/index.js.html#lineNumber72",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/routes/index.js.html#lineNumber91",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/routes/index.js.html#lineNumber115",
+    "",
+    "test"
+  ],
+  [
     "structure-core/src/models/application/index.js~appmodel",
     "class/src/models/application/index.js~AppModel.html",
     "<span>AppModel</span> <span class=\"search-result-import-path\">structure-core/src/models/application/index.js</span>",
@@ -658,6 +826,792 @@ window.esdocSearchIndex = [
     "external/index.html",
     "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "external"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/document.js.html#lineNumber7",
+    "Document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/document.js.html#lineNumber9",
+    "Document should create a document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/document.js.html#lineNumber25",
+    "Document should create a document revision",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/document.js.html#lineNumber57",
+    "Document should update a document revision",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/lib/database/driver.js.html#lineNumber3",
+    "Driver",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/lib/database/driver.js.html#lineNumber9",
+    "Driver should use r.now()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber5",
+    "Integration: Controllers: App",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber7",
+    "Integration: Controllers: App should create a app",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber31",
+    "Integration: Controllers: App should get a app by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber69",
+    "Integration: Controllers: App should update a app by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/auth.js.html#lineNumber6",
+    "Integration: Controllers: Auth",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/auth.js.html#lineNumber8",
+    "Integration: Controllers: Auth should login a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber5",
+    "Integration: Controllers: Organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber7",
+    "Integration: Controllers: Organization should create a organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber31",
+    "Integration: Controllers: Organization should get a organization by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber69",
+    "Integration: Controllers: Organization should update a organization by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber5",
+    "Integration: Controllers: Template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber7",
+    "Integration: Controllers: Template should create a template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber31",
+    "Integration: Controllers: Template should get a template by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber69",
+    "Integration: Controllers: Template should update a template by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber5",
+    "Integration: Controllers: User",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber7",
+    "Integration: Controllers: User should create a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber29",
+    "Integration: Controllers: User should get user by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber67",
+    "Integration: Controllers: User should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/app.js.html#lineNumber4",
+    "Integration: Models: App",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/app.js.html#lineNumber6",
+    "Integration: Models: App should create a app",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/app.js.html#lineNumber22",
+    "Integration: Models: App should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/app.js.html#lineNumber43",
+    "Integration: Models: App should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/base.js.html#lineNumber3",
+    "Integration: Models: Base",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/base.js.html#lineNumber5",
+    "Integration: Models: Base should connect to the database",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/base.js.html#lineNumber43",
+    "Integration: Models: Base should create",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/base.js.html#lineNumber21",
+    "Integration: Models: Base should create a table (if non-existant)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/base.js.html#lineNumber57",
+    "Integration: Models: Base should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/base.js.html#lineNumber76",
+    "Integration: Models: Base should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber4",
+    "Integration: Models: Flow",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber63",
+    "Integration: Models: Flow should convert a stream to string",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber21",
+    "Integration: Models: Flow should get by id",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber6",
+    "Integration: Models: Flow should save",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber80",
+    "Integration: Models: Flow should scrape a string of HTML",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber39",
+    "Integration: Models: Flow should update by id",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber4",
+    "Integration: Models: Organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber6",
+    "Integration: Models: Organization should create a organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber22",
+    "Integration: Models: Organization should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber43",
+    "Integration: Models: Organization should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/template.js.html#lineNumber4",
+    "Integration: Models: Template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/template.js.html#lineNumber6",
+    "Integration: Models: Template should create a template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/template.js.html#lineNumber22",
+    "Integration: Models: Template should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/template.js.html#lineNumber43",
+    "Integration: Models: Template should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/user.js.html#lineNumber4",
+    "Integration: Models: User",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/user.js.html#lineNumber6",
+    "Integration: Models: User should create a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/user.js.html#lineNumber23",
+    "Integration: Models: User should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/user.js.html#lineNumber65",
+    "Integration: Models: User should get by username",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models.old/user.js.html#lineNumber44",
+    "Integration: Models: User should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/app.js.html#lineNumber4",
+    "Integration: Services: App",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/app.js.html#lineNumber6",
+    "Integration: Services: App should create a app",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/app.js.html#lineNumber23",
+    "Integration: Services: App should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/app.js.html#lineNumber44",
+    "Integration: Services: App should get by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/app.js.html#lineNumber65",
+    "Integration: Services: App should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/app.js.html#lineNumber90",
+    "Integration: Services: App should update by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/auth.js.html#lineNumber5",
+    "Integration: Services: Auth",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/auth.js.html#lineNumber7",
+    "Integration: Services: Auth should authenticate a user ID + password",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/auth.js.html#lineNumber29",
+    "Integration: Services: Auth should authenticate a username + password",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/auth.js.html#lineNumber99",
+    "Integration: Services: Auth should authorize a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/auth.js.html#lineNumber51",
+    "Integration: Services: Auth should log in a user ID + pass",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/auth.js.html#lineNumber75",
+    "Integration: Services: Auth should log in a username + pass",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/organization.js.html#lineNumber4",
+    "Integration: Services: Organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/organization.js.html#lineNumber6",
+    "Integration: Services: Organization should create a organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/organization.js.html#lineNumber23",
+    "Integration: Services: Organization should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/organization.js.html#lineNumber44",
+    "Integration: Services: Organization should get by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/organization.js.html#lineNumber65",
+    "Integration: Services: Organization should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/organization.js.html#lineNumber90",
+    "Integration: Services: Organization should update by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/package.js.html#lineNumber3",
+    "Integration: Services: Package",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/package.js.html#lineNumber5",
+    "Integration: Services: Package should package an object for response (200), using defaults",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/package.js.html#lineNumber18",
+    "Integration: Services: Package should package an object for response (201), using number argument",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/package.js.html#lineNumber31",
+    "Integration: Services: Package should package an object for response (400), using object argument",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/password.js.html#lineNumber3",
+    "Integration: Services: Password",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/password.js.html#lineNumber5",
+    "Integration: Services: Password should issue a password",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/password.js.html#lineNumber19",
+    "Integration: Services: Password should verify a password",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/template.js.html#lineNumber4",
+    "Integration: Services: Template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/template.js.html#lineNumber6",
+    "Integration: Services: Template should create a template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/template.js.html#lineNumber23",
+    "Integration: Services: Template should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/template.js.html#lineNumber44",
+    "Integration: Services: Template should get by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/template.js.html#lineNumber65",
+    "Integration: Services: Template should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/template.js.html#lineNumber99",
+    "Integration: Services: Template should update by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/token.js.html#lineNumber3",
+    "Integration: Services: Token",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/token.js.html#lineNumber5",
+    "Integration: Services: Token should issue a token",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/token.js.html#lineNumber17",
+    "Integration: Services: Token should verify a token",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber5",
+    "Integration: Services: User",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber7",
+    "Integration: Services: User should create a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber26",
+    "Integration: Services: User should get by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber48",
+    "Integration: Services: User should get by Short ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber69",
+    "Integration: Services: User should get by username",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber91",
+    "Integration: Services: User should update by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/services/user.js.html#lineNumber112",
+    "Integration: Services: User should update by Short ID",
+    "test"
+  ],
+  [
+    "rootmodel src/models/root.js~rootmodel,rootmodel",
+    "test-file/test/unit/models/root.js.html#lineNumber6",
+    "Root",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/root.js.html#lineNumber8",
+    "Root should initialize",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/template.js.html#lineNumber7",
+    "Template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration/models/template.js.html#lineNumber7",
+    "Template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/template.js.html#lineNumber29",
+    "Template should create a template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration/models/template.js.html#lineNumber9",
+    "Template should create a template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration/models/template.js.html#lineNumber17",
+    "Template should create a template revision",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/template.js.html#lineNumber45",
+    "Template should create a template revision",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/template.js.html#lineNumber82",
+    "Template should update a template revision",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration/suite.js.html#lineNumber1",
+    "Unit",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/suite.js.html#lineNumber1",
+    "Unit",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/suite.js.html#lineNumber15",
+    "Unit Documents",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/suite.js.html#lineNumber3",
+    "Unit Lib",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/suite.js.html#lineNumber4",
+    "Unit Lib Database",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/suite.js.html#lineNumber9",
+    "Unit Models",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration/suite.js.html#lineNumber3",
+    "Unit Models",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit.ava/models/base.js.html#lineNumber5",
+    "Unit: Models: Base",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit.ava/models/base.js.html#lineNumber7",
+    "Unit: Models: Base should initialize",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit.ava/models/base.js.html#lineNumber28",
+    "Unit: Models: Base should validate successfully",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit.ava/models/base.js.html#lineNumber44",
+    "Unit: Models: Base should validate unsuccessfully",
+    "test"
+  ],
+  [
+    "usermodel src/models/user/index.js~usermodel,usermodel",
+    "test-file/test/unit/models/user.js.html#lineNumber6",
+    "User",
+    "test"
+  ],
+  [
+    "usermodel#create src/models/user/index.js~usermodel#create,usermodel#create",
+    "test-file/test/unit/models/user.js.html#lineNumber9",
+    "User should create a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/user.js.html#lineNumber33",
+    "User should update a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber103",
+    "should add a user to an organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit.ava/lib/database/driver.js.html#lineNumber4",
+    "should be able to r.now()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/bucket.js.html#lineNumber8",
+    "should create a bucket",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/user.js.html#lineNumber8",
+    "should create a user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/app.js.html#lineNumber8",
+    "should create an app",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber11",
+    "should create an organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/bucket.js.html#lineNumber35",
+    "should get a bucket by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/app.js.html#lineNumber69",
+    "should get all apps",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/bucket.js.html#lineNumber69",
+    "should get all buckets",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber72",
+    "should get all orgs",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/user.js.html#lineNumber71",
+    "should get all users",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/app.js.html#lineNumber35",
+    "should get an app by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber38",
+    "should get an org by ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/nodes.older/user.js.html#lineNumber36",
+    "should get user by ID",
+    "test"
   ],
   [
     "src/controllers/applications/index.js",
@@ -1834,5 +2788,281 @@ window.esdocSearchIndex = [
     "file/src/start.js.html",
     "src/start.js",
     "file"
+  ],
+  [
+    "test/helpers/db.babel.js",
+    "test-file/test/helpers/db.babel.js.html",
+    "test/helpers/db.babel.js",
+    "testFile"
+  ],
+  [
+    "test/helpers/db.js",
+    "test-file/test/helpers/db.js.html",
+    "test/helpers/db.js",
+    "testFile"
+  ],
+  [
+    "test/helpers/expressobjects.js",
+    "test-file/test/helpers/expressObjects.js.html",
+    "test/helpers/expressObjects.js",
+    "testFile"
+  ],
+  [
+    "test/helpers/mock-http-server.js",
+    "test-file/test/helpers/mock-http-server.js.html",
+    "test/helpers/mock-http-server.js",
+    "testFile"
+  ],
+  [
+    "test/helpers/models.js",
+    "test-file/test/helpers/models.js.html",
+    "test/helpers/models.js",
+    "testFile"
+  ],
+  [
+    "test/helpers/start.js",
+    "test-file/test/helpers/start.js.html",
+    "test/helpers/start.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/controllers.old/app.js",
+    "test-file/test/integration.ava/controllers.old/app.js.html",
+    "test/integration.ava/controllers.old/app.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/controllers.old/auth.js",
+    "test-file/test/integration.ava/controllers.old/auth.js.html",
+    "test/integration.ava/controllers.old/auth.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/controllers.old/organization.js",
+    "test-file/test/integration.ava/controllers.old/organization.js.html",
+    "test/integration.ava/controllers.old/organization.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/controllers.old/template.js",
+    "test-file/test/integration.ava/controllers.old/template.js.html",
+    "test/integration.ava/controllers.old/template.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/controllers.old/user.js",
+    "test-file/test/integration.ava/controllers.old/user.js.html",
+    "test/integration.ava/controllers.old/user.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models.old/app.js",
+    "test-file/test/integration.ava/models.old/app.js.html",
+    "test/integration.ava/models.old/app.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models.old/base.js",
+    "test-file/test/integration.ava/models.old/base.js.html",
+    "test/integration.ava/models.old/base.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models.old/flow.js",
+    "test-file/test/integration.ava/models.old/flow.js.html",
+    "test/integration.ava/models.old/flow.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models.old/organization.js",
+    "test-file/test/integration.ava/models.old/organization.js.html",
+    "test/integration.ava/models.old/organization.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models.old/template.js",
+    "test-file/test/integration.ava/models.old/template.js.html",
+    "test/integration.ava/models.old/template.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models.old/user.js",
+    "test-file/test/integration.ava/models.old/user.js.html",
+    "test/integration.ava/models.old/user.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models/application.js",
+    "test-file/test/integration.ava/models/application.js.html",
+    "test/integration.ava/models/application.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models/core.js",
+    "test-file/test/integration.ava/models/core.js.html",
+    "test/integration.ava/models/core.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models/organization.js",
+    "test-file/test/integration.ava/models/organization.js.html",
+    "test/integration.ava/models/organization.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/models/root.js",
+    "test-file/test/integration.ava/models/root.js.html",
+    "test/integration.ava/models/root.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/nodes.old/core.js",
+    "test-file/test/integration.ava/nodes.old/core.js.html",
+    "test/integration.ava/nodes.old/core.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/nodes.older/app.js",
+    "test-file/test/integration.ava/nodes.older/app.js.html",
+    "test/integration.ava/nodes.older/app.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/nodes.older/bucket.js",
+    "test-file/test/integration.ava/nodes.older/bucket.js.html",
+    "test/integration.ava/nodes.older/bucket.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/nodes.older/organization.js",
+    "test-file/test/integration.ava/nodes.older/organization.js.html",
+    "test/integration.ava/nodes.older/organization.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/nodes.older/user.js",
+    "test-file/test/integration.ava/nodes.older/user.js.html",
+    "test/integration.ava/nodes.older/user.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/routes/index.js",
+    "test-file/test/integration.ava/routes/index.js.html",
+    "test/integration.ava/routes/index.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/app.js",
+    "test-file/test/integration.ava/services/app.js.html",
+    "test/integration.ava/services/app.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/auth.js",
+    "test-file/test/integration.ava/services/auth.js.html",
+    "test/integration.ava/services/auth.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/organization.js",
+    "test-file/test/integration.ava/services/organization.js.html",
+    "test/integration.ava/services/organization.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/package.js",
+    "test-file/test/integration.ava/services/package.js.html",
+    "test/integration.ava/services/package.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/password.js",
+    "test-file/test/integration.ava/services/password.js.html",
+    "test/integration.ava/services/password.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/template.js",
+    "test-file/test/integration.ava/services/template.js.html",
+    "test/integration.ava/services/template.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/token.js",
+    "test-file/test/integration.ava/services/token.js.html",
+    "test/integration.ava/services/token.js",
+    "testFile"
+  ],
+  [
+    "test/integration.ava/services/user.js",
+    "test-file/test/integration.ava/services/user.js.html",
+    "test/integration.ava/services/user.js",
+    "testFile"
+  ],
+  [
+    "test/integration/models/template.js",
+    "test-file/test/integration/models/template.js.html",
+    "test/integration/models/template.js",
+    "testFile"
+  ],
+  [
+    "test/integration/suite.js",
+    "test-file/test/integration/suite.js.html",
+    "test/integration/suite.js",
+    "testFile"
+  ],
+  [
+    "test/unit.ava/lib/database/driver.js",
+    "test-file/test/unit.ava/lib/database/driver.js.html",
+    "test/unit.ava/lib/database/driver.js",
+    "testFile"
+  ],
+  [
+    "test/unit.ava/lib/utils/object.js",
+    "test-file/test/unit.ava/lib/utils/object.js.html",
+    "test/unit.ava/lib/utils/object.js",
+    "testFile"
+  ],
+  [
+    "test/unit.ava/models/base.js",
+    "test-file/test/unit.ava/models/base.js.html",
+    "test/unit.ava/models/base.js",
+    "testFile"
+  ],
+  [
+    "test/unit/lib/database/driver.js",
+    "test-file/test/unit/lib/database/driver.js.html",
+    "test/unit/lib/database/driver.js",
+    "testFile"
+  ],
+  [
+    "test/unit/models/document.js",
+    "test-file/test/unit/models/document.js.html",
+    "test/unit/models/document.js",
+    "testFile"
+  ],
+  [
+    "test/unit/models/root.js",
+    "test-file/test/unit/models/root.js.html",
+    "test/unit/models/root.js",
+    "testFile"
+  ],
+  [
+    "test/unit/models/template.js",
+    "test-file/test/unit/models/template.js.html",
+    "test/unit/models/template.js",
+    "testFile"
+  ],
+  [
+    "test/unit/models/user.js",
+    "test-file/test/unit/models/user.js.html",
+    "test/unit/models/user.js",
+    "testFile"
+  ],
+  [
+    "test/unit/suite.js",
+    "test-file/test/unit/suite.js.html",
+    "test/unit/suite.js",
+    "testFile"
   ]
 ]

@@ -1,34 +1,14 @@
 import {Schema, type} from 'eisley'
 import r              from '../../../src/lib/database/driver'
 
-import Template from '../../../src/models/template'
-import Revision from '../../../src/models/template-revision'
+import TemplateModel         from '../../../src/models/template'
+import TemplateRevisionModel from '../../../src/models/template-revision'
 
 describe('Template', function() {
 
-  /*beforeEach(function(done) {
-    this.stubInsert = sinon.stub(r, 'insert', function(pkg, options) {
-      return new Promise( (resolve, reject) => {
-
-        resolve({
-          changes: [
-            {
-              new_val: pkg
-            }
-          ]
-        })
-
-      })
-    })
-  })
-
-  afterEach(function(done) {
-    r.insert.restore()
-  })*/
-
   it('should create a template',  async (done) => {
 
-    var template = new Template({
+    var template = new TemplateModel({
       name: 'templates'
     })
 
@@ -44,7 +24,7 @@ describe('Template', function() {
 
   it('should create a template revision',  async function(done) {
 
-    var template = new Template({
+    var template = new TemplateModel({
       name: 'templates'
     })
 
@@ -52,7 +32,7 @@ describe('Template', function() {
       title: 'Fun Template'
     })
 
-    var revision = new Revision({
+    var revision = new TemplateRevisionModel({
       templateId: res.id
     })
 
@@ -81,7 +61,7 @@ describe('Template', function() {
 
   it('should update a template revision',  async function(done) {
 
-    var template = new Template({
+    var template = new TemplateModel({
       name: 'templates'
     })
 
@@ -89,7 +69,7 @@ describe('Template', function() {
       title: 'Fun Template'
     })
 
-    var revision = new Revision({
+    var revision = new TemplateRevisionModel({
       templateId: res.id
     })
 

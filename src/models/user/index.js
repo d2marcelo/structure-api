@@ -113,6 +113,17 @@ class UserModel extends Model {
     })
   }
 
+  update(id, pkg = {}) {
+
+    if(pkg.password) {
+      console.error('User.update does not support property password; deleted.')
+      delete pkg.password
+    }
+
+    return Model.prototype.update.call(this, id, pkg)
+
+  }
+
 }
 
 export default UserModel
