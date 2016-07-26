@@ -55,7 +55,8 @@ describe('User', function() {
     expect(res2.lastName).to.equal('Talkington')
     expect(res2.username).to.equal('tedtalks200')
     expect(res2.email).to.equal('ted2000@email.com')
-
+    expect(res2.password).to.be.undefined
+    expect(res2.hash).to.be.a('string')
 
     done()
 
