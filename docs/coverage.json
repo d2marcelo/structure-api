@@ -1,7 +1,7 @@
 {
-  "coverage": "55.49%",
-  "expectCount": 191,
-  "actualCount": 106,
+  "coverage": "56.85%",
+  "expectCount": 197,
+  "actualCount": 112,
   "files": {
     "src/models/application/index.js": {
       "expectCount": 2,
@@ -275,8 +275,8 @@
       ]
     },
     "src/controllers/taxonomies/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/models/taxonomy/index.js": {
@@ -325,9 +325,11 @@
       ]
     },
     "src/models/user/index.js": {
-      "expectCount": 5,
+      "expectCount": 6,
       "actualCount": 5,
-      "undocumentLines": []
+      "undocumentLines": [
+        124
+      ]
     },
     "src/services/user.js": {
       "expectCount": 8,
@@ -343,8 +345,8 @@
       ]
     },
     "src/controllers/users/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     },
     "src/lib/database/config.js": {
@@ -368,13 +370,6 @@
         9
       ]
     },
-    "src/mixins/mixin.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
     "src/lib/mixin.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -382,11 +377,11 @@
         1
       ]
     },
-    "src/lib/database/driver.js": {
+    "src/mixins/mixin.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        14
+        1
       ]
     }
   }

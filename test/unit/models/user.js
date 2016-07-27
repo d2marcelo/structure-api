@@ -28,7 +28,6 @@ describe('User', function() {
         password: 'foo88'
       })
 
-
       expect(res.firstName).to.equal('Ted')
       expect(res.lastName).to.equal('Talks')
       expect(res.username).to.equal('tedtalks2000')
@@ -40,6 +39,7 @@ describe('User', function() {
 
   })
 
+  /** @test {UserModel#update} */
   it('should update a user', async function(done) {
 
     var user = new UserModel()
@@ -58,7 +58,6 @@ describe('User', function() {
       username: 'tedtalks200',
       email: 'ted2000@email.com'
     })
-
 
     expect(res2.firstName).to.equal('Theodore')
     expect(res2.lastName).to.equal('Talkington')

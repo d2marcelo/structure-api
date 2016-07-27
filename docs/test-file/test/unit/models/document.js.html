@@ -51,7 +51,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-r">r</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
@@ -95,16 +94,26 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Schema, type} from &apos;eisley&apos;
 import r              from &apos;../../../src/lib/database/driver&apos;
 
-import Document from &apos;../../../src/models/document&apos;
-import Revision from &apos;../../../src/models/document-revision&apos;
+import DocumentModel         from &apos;../../../src/models/document&apos;
+import DocumentRevisionModel from &apos;../../../src/models/document-revision&apos;
 
+/** @test {DocumentModel} */
 describe(&apos;Document&apos;, function() {
 
+  it(&apos;should initialize&apos;, function(done) {
+
+    var document = new DocumentModel()
+
+    expect(document.name).to.be.equal(&apos;documents&apos;)
+
+    done()
+
+  })
+
+  /** @test {DocumentModel#create} */
   it(&apos;should create a document&apos;,  async (done) =&gt; {
 
-    var document = new Document({
-      name: &apos;documents&apos;
-    })
+    var document = new DocumentModel()
 
     var res = await document.create({
       title: &apos;Fun Document&apos;
@@ -116,19 +125,16 @@ describe(&apos;Document&apos;, function() {
 
   })
 
+  /** @test {DocumentRevisionModel#create} */
   it(&apos;should create a document revision&apos;,  async (done) =&gt; {
 
-    var document = new Document({
-      name: &apos;documents&apos;
-    })
+    var document = new DocumentModel()
 
     var documentRes = await document.create({
       title: &apos;Fun Document&apos;
     })
 
-    var revision = new Revision({
-
-    })
+    var revision = new DocumentRevisionModel()
 
     var revisionRes = await revision.create({
       documentId: documentRes.id,
@@ -148,18 +154,16 @@ describe(&apos;Document&apos;, function() {
 
   })
 
+  /** @test {DocumentRevisionModel#update} */
   it(&apos;should update a document revision&apos;, async function(done) {
 
-    var document = new Document({
-      name: &apos;documents&apos;
-    })
+    var document = new DocumentModel()
 
     var documentRes = await document.create({
       title: &apos;Fun Document&apos;
     })
 
-    var revision = new Revision({
-    })
+    var revision = new DocumentRevisionModel()
 
     var revisionRes = await revision.create({
       documentId:documentRes.id,

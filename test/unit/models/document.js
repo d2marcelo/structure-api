@@ -17,6 +17,7 @@ describe('Document', function() {
 
   })
 
+  /** @test {DocumentModel#create} */
   it('should create a document',  async (done) => {
 
     var document = new DocumentModel()
@@ -31,6 +32,7 @@ describe('Document', function() {
 
   })
 
+  /** @test {DocumentRevisionModel#create} */
   it('should create a document revision',  async (done) => {
 
     var document = new DocumentModel()
@@ -59,6 +61,7 @@ describe('Document', function() {
 
   })
 
+  /** @test {DocumentRevisionModel#update} */
   it('should update a document revision', async function(done) {
 
     var document = new DocumentModel()

@@ -1,97 +1,13 @@
 window.esdocSearchIndex = [
   [
     "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber47",
-    "",
-    "test"
-  ],
-  [
-    "",
     "test-file/test/integration.ava/models/root.js.html#lineNumber8",
     "",
     "test"
   ],
   [
     "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber36",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber62",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber89",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber77",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber93",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber112",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber131",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber9",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber25",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber44",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber63",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber26",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber11",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber68",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber47",
     "",
     "test"
   ],
@@ -139,6 +55,12 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber26",
+    "",
+    "test"
+  ],
+  [
+    "",
     "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber189",
     "",
     "test"
@@ -163,7 +85,85 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/test/integration.ava/models/root.js.html#lineNumber68",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber63",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber44",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber25",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/organization.js.html#lineNumber9",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber131",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber112",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber93",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/core.js.html#lineNumber77",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber89",
+    "",
+    "test"
+  ],
+  [
+    "",
     "test-file/test/integration.ava/routes/index.js.html#lineNumber115",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber11",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber62",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/integration.ava/models/application.js.html#lineNumber36",
     "",
     "test"
   ],
@@ -490,12 +490,6 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-mixin",
     "<span>mixin</span> <span class=\"search-result-import-path\">structure-core/src/mixins/mixin.js</span>",
     "function"
-  ],
-  [
-    "structure-core/src/lib/database/driver.js~r",
-    "variable/index.html#static-variable-r",
-    "<span>r</span> <span class=\"search-result-import-path\">structure-core/src/lib/database/driver.js</span>",
-    "variable"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~array",
@@ -828,26 +822,32 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "",
-    "test-file/test/unit/models/document.js.html#lineNumber7",
+    "documentmodel src/models/document/index.js~documentmodel,documentmodel",
+    "test-file/test/unit/models/document.js.html#lineNumber8",
     "Document",
     "test"
   ],
   [
-    "",
-    "test-file/test/unit/models/document.js.html#lineNumber9",
+    "documentmodel#create src/models/document/index.js~documentmodel#create,documentmodel#create",
+    "test-file/test/unit/models/document.js.html#lineNumber21",
     "Document should create a document",
     "test"
   ],
   [
-    "",
-    "test-file/test/unit/models/document.js.html#lineNumber25",
+    "documentrevisionmodel#create documentrevisionmodel#create,documentrevisionmodel#create",
+    "test-file/test/unit/models/document.js.html#lineNumber36",
     "Document should create a document revision",
     "test"
   ],
   [
     "",
-    "test-file/test/unit/models/document.js.html#lineNumber57",
+    "test-file/test/unit/models/document.js.html#lineNumber10",
+    "Document should initialize",
+    "test"
+  ],
+  [
+    "documentrevisionmodel#update documentrevisionmodel#update,documentrevisionmodel#update",
+    "test-file/test/unit/models/document.js.html#lineNumber65",
     "Document should update a document revision",
     "test"
   ],
@@ -1392,9 +1392,39 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "organizationmodel src/models/organization/index.js~organizationmodel,organizationmodel",
+    "test-file/test/unit/models/organization.js.html#lineNumber7",
+    "Organization",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/unit/models/organization.js.html#lineNumber9",
+    "Organization should initialize",
+    "test"
+  ],
+  [
     "rootmodel src/models/root.js~rootmodel,rootmodel",
     "test-file/test/unit/models/root.js.html#lineNumber6",
     "Root",
+    "test"
+  ],
+  [
+    "rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create",
+    "test-file/test/unit/models/root.js.html#lineNumber39",
+    "Root should create",
+    "test"
+  ],
+  [
+    "rootmodel#getall src/models/root.js~rootmodel#getall,rootmodel#getall",
+    "test-file/test/unit/models/root.js.html#lineNumber75",
+    "Root should get all",
+    "test"
+  ],
+  [
+    "rootmodel#getbyid src/models/root.js~rootmodel#getbyid,rootmodel#getbyid",
+    "test-file/test/unit/models/root.js.html#lineNumber56",
+    "Root should get by ID",
     "test"
   ],
   [
@@ -1404,9 +1434,51 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "rootmodel#update src/models/root.js~rootmodel#update,rootmodel#update",
+    "test-file/test/unit/models/root.js.html#lineNumber94",
+    "Root should update",
+    "test"
+  ],
+  [
+    "taxonomiescontroller src/controllers/taxonomies/index.js~taxonomiescontroller,taxonomiescontroller",
+    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber6",
+    "Taxonomies",
+    "test"
+  ],
+  [
+    "taxonomiescontroller#create src/controllers/taxonomies/index.js~taxonomiescontroller#create,taxonomiescontroller#create",
+    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber9",
+    "Taxonomies should create an taxonomy",
+    "test"
+  ],
+  [
+    "taxonomiescontroller#update src/controllers/taxonomies/index.js~taxonomiescontroller#update,taxonomiescontroller#update",
+    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber32",
+    "Taxonomies should update a taxonomy",
+    "test"
+  ],
+  [
+    "taxonomymodel src/models/taxonomy/index.js~taxonomymodel,taxonomymodel",
+    "test-file/test/unit/models/taxonomy.js.html#lineNumber6",
+    "Taxonomy",
+    "test"
+  ],
+  [
+    "taxonomymodel#create taxonomymodel#create,taxonomymodel#create",
+    "test-file/test/unit/models/taxonomy.js.html#lineNumber19",
+    "Taxonomy should create a taxonomy",
+    "test"
+  ],
+  [
     "",
-    "test-file/test/unit/models/template.js.html#lineNumber7",
-    "Template",
+    "test-file/test/unit/models/taxonomy.js.html#lineNumber8",
+    "Taxonomy should initialize",
+    "test"
+  ],
+  [
+    "taxonomymodel#update taxonomymodel#update,taxonomymodel#update",
+    "test-file/test/unit/models/taxonomy.js.html#lineNumber38",
+    "Taxonomy should update a taxonomy",
     "test"
   ],
   [
@@ -1417,13 +1489,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/unit/models/template.js.html#lineNumber29",
-    "Template should create a template",
+    "test-file/test/unit/models/template.js.html#lineNumber7",
+    "Template",
     "test"
   ],
   [
     "",
     "test-file/test/integration/models/template.js.html#lineNumber9",
+    "Template should create a template",
+    "test"
+  ],
+  [
+    "templatemodel#create templatemodel#create,templatemodel#create",
+    "test-file/test/unit/models/template.js.html#lineNumber20",
     "Template should create a template",
     "test"
   ],
@@ -1434,14 +1512,20 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "",
-    "test-file/test/unit/models/template.js.html#lineNumber45",
+    "templaterevisionmodel#create templaterevisionmodel#create,templaterevisionmodel#create",
+    "test-file/test/unit/models/template.js.html#lineNumber35",
     "Template should create a template revision",
     "test"
   ],
   [
     "",
-    "test-file/test/unit/models/template.js.html#lineNumber82",
+    "test-file/test/unit/models/template.js.html#lineNumber9",
+    "Template should initialize",
+    "test"
+  ],
+  [
+    "templaterevisionmodel#update templaterevisionmodel#update,templaterevisionmodel#update",
+    "test-file/test/unit/models/template.js.html#lineNumber71",
     "Template should update a template revision",
     "test"
   ],
@@ -1459,8 +1543,8 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/unit/suite.js.html#lineNumber15",
-    "Unit Documents",
+    "test-file/test/unit/suite.js.html#lineNumber18",
+    "Unit Controllers",
     "test"
   ],
   [
@@ -1519,13 +1603,19 @@ window.esdocSearchIndex = [
   ],
   [
     "usermodel#create src/models/user/index.js~usermodel#create,usermodel#create",
-    "test-file/test/unit/models/user.js.html#lineNumber9",
+    "test-file/test/unit/models/user.js.html#lineNumber19",
     "User should create a user",
     "test"
   ],
   [
     "",
-    "test-file/test/unit/models/user.js.html#lineNumber33",
+    "test-file/test/unit/models/user.js.html#lineNumber8",
+    "User should initialize",
+    "test"
+  ],
+  [
+    "usermodel#update src/models/user/index.js~usermodel#update,usermodel#update",
+    "test-file/test/unit/models/user.js.html#lineNumber43",
     "User should update a user",
     "test"
   ],
@@ -1752,6 +1842,30 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controllers/taxonomies/index.js~taxonomiescontroller#create",
+    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-create",
+    "src/controllers/taxonomies/index.js~TaxonomiesController#create",
+    "method"
+  ],
+  [
+    "src/controllers/taxonomies/index.js~taxonomiescontroller#getall",
+    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-getAll",
+    "src/controllers/taxonomies/index.js~TaxonomiesController#getAll",
+    "method"
+  ],
+  [
+    "src/controllers/taxonomies/index.js~taxonomiescontroller#getbyid",
+    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-getById",
+    "src/controllers/taxonomies/index.js~TaxonomiesController#getById",
+    "method"
+  ],
+  [
+    "src/controllers/taxonomies/index.js~taxonomiescontroller#update",
+    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-update",
+    "src/controllers/taxonomies/index.js~TaxonomiesController#update",
+    "method"
+  ],
+  [
     "src/controllers/template-revisions/index.js",
     "file/src/controllers/template-revisions/index.js.html",
     "src/controllers/template-revisions/index.js",
@@ -1785,6 +1899,18 @@ window.esdocSearchIndex = [
     "src/controllers/users/index.js~userscontroller#constructor",
     "class/src/controllers/users/index.js~UsersController.html#instance-constructor-constructor",
     "src/controllers/users/index.js~UsersController#constructor",
+    "method"
+  ],
+  [
+    "src/controllers/users/index.js~userscontroller#create",
+    "class/src/controllers/users/index.js~UsersController.html#instance-method-create",
+    "src/controllers/users/index.js~UsersController#create",
+    "method"
+  ],
+  [
+    "src/controllers/users/index.js~userscontroller#update",
+    "class/src/controllers/users/index.js~UsersController.html#instance-method-update",
+    "src/controllers/users/index.js~UsersController#update",
     "method"
   ],
   [
@@ -2373,6 +2499,12 @@ window.esdocSearchIndex = [
     "src/models/user/index.js~usermodel#getbyusername",
     "class/src/models/user/index.js~UserModel.html#instance-method-getByUsername",
     "src/models/user/index.js~UserModel#getByUsername",
+    "method"
+  ],
+  [
+    "src/models/user/index.js~usermodel#update",
+    "class/src/models/user/index.js~UserModel.html#instance-method-update",
+    "src/models/user/index.js~UserModel#update",
     "method"
   ],
   [
@@ -3030,6 +3162,12 @@ window.esdocSearchIndex = [
     "testFile"
   ],
   [
+    "test/unit/controllers/taxonomies.js",
+    "test-file/test/unit/controllers/taxonomies.js.html",
+    "test/unit/controllers/taxonomies.js",
+    "testFile"
+  ],
+  [
     "test/unit/lib/database/driver.js",
     "test-file/test/unit/lib/database/driver.js.html",
     "test/unit/lib/database/driver.js",
@@ -3042,9 +3180,21 @@ window.esdocSearchIndex = [
     "testFile"
   ],
   [
+    "test/unit/models/organization.js",
+    "test-file/test/unit/models/organization.js.html",
+    "test/unit/models/organization.js",
+    "testFile"
+  ],
+  [
     "test/unit/models/root.js",
     "test-file/test/unit/models/root.js.html",
     "test/unit/models/root.js",
+    "testFile"
+  ],
+  [
+    "test/unit/models/taxonomy.js",
+    "test-file/test/unit/models/taxonomy.js.html",
+    "test/unit/models/taxonomy.js",
     "testFile"
   ],
   [

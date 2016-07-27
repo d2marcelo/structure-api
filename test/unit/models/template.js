@@ -16,6 +16,7 @@ describe('Template', function() {
 
   })
 
+  /** @test {TemplateModel#create} */
   it('should create a template',  async (done) => {
 
     var template = new TemplateModel()
@@ -30,6 +31,7 @@ describe('Template', function() {
 
   })
 
+  /** @test {TemplateRevisionModel#create} */
   it('should create a template revision',  async function(done) {
 
     var template = new TemplateModel()
@@ -65,6 +67,7 @@ describe('Template', function() {
 
   })
 
+  /** @test {TemplateRevisionModel#update} */
   it('should update a template revision',  async function(done) {
 
     var template = new TemplateModel()

@@ -51,7 +51,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-r">r</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
@@ -95,36 +94,25 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Schema, type} from &apos;eisley&apos;
 import r              from &apos;../../../src/lib/database/driver&apos;
 
-import Template from &apos;../../../src/models/template&apos;
-import Revision from &apos;../../../src/models/template-revision&apos;
+import TemplateModel         from &apos;../../../src/models/template&apos;
+import TemplateRevisionModel from &apos;../../../src/models/template-revision&apos;
 
 describe(&apos;Template&apos;, function() {
 
-  /*beforeEach(function(done) {
-    this.stubInsert = sinon.stub(r, &apos;insert&apos;, function(pkg, options) {
-      return new Promise( (resolve, reject) =&gt; {
+  it(&apos;should initialize&apos;, function(done) {
 
-        resolve({
-          changes: [
-            {
-              new_val: pkg
-            }
-          ]
-        })
+    var template = new TemplateModel()
 
-      })
-    })
+    expect(template.name).to.be.equal(&apos;templates&apos;)
+
+    done()
+
   })
 
-  afterEach(function(done) {
-    r.insert.restore()
-  })*/
-
+  /** @test {TemplateModel#create} */
   it(&apos;should create a template&apos;,  async (done) =&gt; {
 
-    var template = new Template({
-      name: &apos;templates&apos;
-    })
+    var template = new TemplateModel()
 
     var res = await template.create({
       title: &apos;Fun Template&apos;
@@ -136,17 +124,16 @@ describe(&apos;Template&apos;, function() {
 
   })
 
+  /** @test {TemplateRevisionModel#create} */
   it(&apos;should create a template revision&apos;,  async function(done) {
 
-    var template = new Template({
-      name: &apos;templates&apos;
-    })
+    var template = new TemplateModel()
 
     var res = await template.create({
       title: &apos;Fun Template&apos;
     })
 
-    var revision = new Revision({
+    var revision = new TemplateRevisionModel({
       templateId: res.id
     })
 
@@ -173,17 +160,16 @@ describe(&apos;Template&apos;, function() {
 
   })
 
+  /** @test {TemplateRevisionModel#update} */
   it(&apos;should update a template revision&apos;,  async function(done) {
 
-    var template = new Template({
-      name: &apos;templates&apos;
-    })
+    var template = new TemplateModel()
 
     var res = await template.create({
       title: &apos;Fun Template&apos;
     })
 
-    var revision = new Revision({
+    var revision = new TemplateRevisionModel({
       templateId: res.id
     })
 

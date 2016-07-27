@@ -51,7 +51,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-r">r</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
@@ -101,7 +100,6 @@ import {chalk, logger} from &apos;../../lib/logger&apos;
 import Model           from &apos;../root&apos;
 import PasswordService from &apos;../../services/password&apos;
 import r               from &apos;../../lib/database/driver&apos;
-
 /**
  * UserModel Class
  *
@@ -144,10 +142,19 @@ class UserModel extends Model {
         ]
       },
       schema: {
+        firstName: {
+          type: &apos;string&apos;
+        },
+        lastName: {
+          type: &apos;string&apos;
+        },
         email: {
           type: &apos;string&apos;
         },
         username: {
+          type: &apos;string&apos;
+        },
+        password: {
           type: &apos;string&apos;
         }
       }
@@ -205,6 +212,17 @@ class UserModel extends Model {
 
       resolve(user[0])
     })
+  }
+
+  update(id, pkg = {}) {
+
+    if(pkg.password) {
+      console.error(&apos;User.update does not support property password; deleted.&apos;)
+      delete pkg.password
+    }
+
+    return Model.prototype.update.call(this, id, pkg)
+
   }
 
 }

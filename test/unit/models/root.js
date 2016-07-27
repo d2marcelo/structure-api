@@ -35,6 +35,7 @@ describe('Root', function() {
 
   })
 
+  /** @test {RootModel#create} */
   it('should create', async function(done) {
 
     var model = new RootModel({
@@ -51,6 +52,7 @@ describe('Root', function() {
 
   })
 
+  /** @test {RootModel#getById} */
   it('should get by ID', async function(done) {
 
     var model = new RootModel({
@@ -69,6 +71,7 @@ describe('Root', function() {
 
   })
 
+  /** @test {RootModel#getAll} */
   it('should get all', async function(done) {
 
     var model = new RootModel({
@@ -87,6 +90,7 @@ describe('Root', function() {
 
   })
 
+  /** @test {RootModel#update} */
   it('should update', async function(done) {
 
     var model = new RootModel({

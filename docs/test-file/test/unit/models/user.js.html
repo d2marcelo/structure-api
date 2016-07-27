@@ -51,7 +51,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-r">r</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
@@ -99,6 +98,16 @@ import UserModel      from &apos;../../../src/models/user&apos;
 /** @test {UserModel} */
 describe(&apos;User&apos;, function() {
 
+  it(&apos;should initialize&apos;, function(done) {
+
+    var user = new UserModel()
+
+    expect(user.name).to.be.equal(&apos;users&apos;)
+
+    done()
+
+  })
+
   /** @test {UserModel#create} */
   it(&apos;should create a user&apos;, async function(done) {
 
@@ -112,7 +121,6 @@ describe(&apos;User&apos;, function() {
         password: &apos;foo88&apos;
       })
 
-
       expect(res.firstName).to.equal(&apos;Ted&apos;)
       expect(res.lastName).to.equal(&apos;Talks&apos;)
       expect(res.username).to.equal(&apos;tedtalks2000&apos;)
@@ -124,6 +132,7 @@ describe(&apos;User&apos;, function() {
 
   })
 
+  /** @test {UserModel#update} */
   it(&apos;should update a user&apos;, async function(done) {
 
     var user = new UserModel()
@@ -140,10 +149,8 @@ describe(&apos;User&apos;, function() {
       firstName: &apos;Theodore&apos;,
       lastName: &apos;Talkington&apos;,
       username: &apos;tedtalks200&apos;,
-      email: &apos;ted2000@email.com&apos;,
-      password: &apos;foo888&apos;
+      email: &apos;ted2000@email.com&apos;
     })
-
 
     expect(res2.firstName).to.equal(&apos;Theodore&apos;)
     expect(res2.lastName).to.equal(&apos;Talkington&apos;)

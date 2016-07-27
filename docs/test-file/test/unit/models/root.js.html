@@ -51,7 +51,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-r">r</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
@@ -109,12 +108,97 @@ describe(&apos;Root&apos;, function() {
     })
 
     expect(model).to.be.an(&apos;object&apos;)
+    expect(model.create).to.be.a(&apos;function&apos;)
+    expect(model.delete).to.be.a(&apos;function&apos;)
     expect(model.emit).to.be.a(&apos;function&apos;)
+    expect(model.getAll).to.be.a(&apos;function&apos;)
+    expect(model.getById).to.be.a(&apos;function&apos;)
+    expect(model.getRelations).to.be.a(&apos;function&apos;)
+    expect(model.insertReference).to.be.a(&apos;function&apos;)
+    expect(model.name).to.equal(&apos;root&apos;)
     expect(model.off).to.be.a(&apos;function&apos;)
     expect(model.on).to.be.a(&apos;function&apos;)
     expect(model.once).to.be.a(&apos;function&apos;)
+    expect(model.referenceTo).to.be.a(&apos;function&apos;)
     expect(model.schema).to.be.an(&apos;object&apos;)
     expect(model.table).to.equal(&apos;root&apos;)
+    expect(model.update).to.be.a(&apos;function&apos;)
+
+    done()
+
+  })
+
+  /** @test {RootModel#create} */
+  it(&apos;should create&apos;, async function(done) {
+
+    var model = new RootModel({
+      name: &apos;root&apos;
+    })
+
+    var res = await model.create({
+      foo: &apos;bar&apos;
+    })
+
+    expect(res.foo).to.equal(&apos;bar&apos;)
+
+    done()
+
+  })
+
+  /** @test {RootModel#getById} */
+  it(&apos;should get by ID&apos;, async function(done) {
+
+    var model = new RootModel({
+      name: &apos;root&apos;
+    })
+
+    var res = await model.create({
+      foo: &apos;bar&apos;
+    })
+
+    var res2 = await model.getById(res.id)
+
+    expect(res2.foo).to.equal(&apos;bar&apos;)
+
+    done()
+
+  })
+
+  /** @test {RootModel#getAll} */
+  it(&apos;should get all&apos;, async function(done) {
+
+    var model = new RootModel({
+      name: &apos;root&apos;
+    })
+
+    var res = await model.create({
+      foo: &apos;bar&apos;
+    })
+
+    var res2 = await model.getAll()
+
+    expect(res2.length &gt; 0).to.be.true
+
+    done()
+
+  })
+
+  /** @test {RootModel#update} */
+  it(&apos;should update&apos;, async function(done) {
+
+    var model = new RootModel({
+      name: &apos;root&apos;
+    })
+
+    var res = await model.create({
+      foo: &apos;bar&apos;
+    })
+
+    var res2 = await model.update(res.id, {
+      foo: &apos;baz&apos;
+    })
+
+    expect(res2.foo).to.equal(&apos;baz&apos;)
 
     done()
 
