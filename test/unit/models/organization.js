@@ -6,12 +6,18 @@ import OrganizationModel from '../../../src/models/organization'
 /** @test {OrganizationModel} */
 describe('Organization', function() {
 
-  /** @test {OrganizationModel#create} */
-  it('should create an organization',  async (done) => {
+  it('should initialize', function(done) {
 
     var organization = new OrganizationModel()
 
     expect(organization.name).to.be.equal('organizations')
+
+    done()
+
+  })
+
+  /** @test {OrganizationModel#create} */
+  it.skip('should create an organization',  async function(done) {
 
     done()
 

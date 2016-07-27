@@ -7,11 +7,19 @@ import DocumentRevisionModel from '../../../src/models/document-revision'
 /** @test {DocumentModel} */
 describe('Document', function() {
 
+  it('should initialize', function(done) {
+
+    var document = new DocumentModel()
+
+    expect(document.name).to.be.equal('documents')
+
+    done()
+
+  })
+
   it('should create a document',  async (done) => {
 
-    var document = new DocumentModel({
-      name: 'documents'
-    })
+    var document = new DocumentModel()
 
     var res = await document.create({
       title: 'Fun Document'
@@ -25,17 +33,13 @@ describe('Document', function() {
 
   it('should create a document revision',  async (done) => {
 
-    var document = new DocumentModel({
-      name: 'documents'
-    })
+    var document = new DocumentModel()
 
     var documentRes = await document.create({
       title: 'Fun Document'
     })
 
-    var revision = new DocumentRevisionModel({
-
-    })
+    var revision = new DocumentRevisionModel()
 
     var revisionRes = await revision.create({
       documentId: documentRes.id,
@@ -57,16 +61,13 @@ describe('Document', function() {
 
   it('should update a document revision', async function(done) {
 
-    var document = new DocumentModel({
-      name: 'documents'
-    })
+    var document = new DocumentModel()
 
     var documentRes = await document.create({
       title: 'Fun Document'
     })
 
-    var revision = new DocumentRevisionModel({
-    })
+    var revision = new DocumentRevisionModel()
 
     var revisionRes = await revision.create({
       documentId:documentRes.id,

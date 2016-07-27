@@ -5,6 +5,16 @@ import UserModel      from '../../../src/models/user'
 /** @test {UserModel} */
 describe('User', function() {
 
+  it('should initialize', function(done) {
+
+    var user = new UserModel()
+
+    expect(user.name).to.be.equal('users')
+
+    done()
+
+  })
+
   /** @test {UserModel#create} */
   it('should create a user', async function(done) {
 

@@ -6,6 +6,16 @@ import TemplateRevisionModel from '../../../src/models/template-revision'
 
 describe('Template', function() {
 
+  it('should initialize', function(done) {
+
+    var template = new TemplateModel()
+
+    expect(template.name).to.be.equal('templates')
+
+    done()
+
+  })
+
   it('should create a template',  async (done) => {
 
     var template = new TemplateModel({

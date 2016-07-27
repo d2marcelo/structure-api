@@ -5,6 +5,16 @@ import TaxonomyModel      from '../../../src/models/taxonomy'
 /** @test {TaxonomyModel} */
 describe('Taxonomy', function() {
 
+  it('should initialize', function(done) {
+
+    var taxonomy = new TaxonomyModel()
+
+    expect(taxonomy.name).to.be.equal('taxonomies')
+
+    done()
+
+  })
+
   /** @test {TaxonomyModel#create} */
   it('should create a taxonomy', async function(done) {
 
