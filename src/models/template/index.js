@@ -7,6 +7,8 @@ import {chalk, logger}  from '../../lib/logger'
 import Model            from '../root'
 import r                from '../../lib/database/driver'
 import TemplateRevision from '../template-revision'
+import templateSchema      from './schemas/template'
+
 
 /**
  * TemplateModel Class
@@ -42,17 +44,7 @@ class TemplateModel extends Model {
           localKey: 'organizationId'
         }
       },
-      schema: {
-        desc: {
-          type: 'string'
-        },
-        fields: {
-          type: 'array'
-        },
-        title: {
-          type: 'string'
-        }
-      }
+      schema: templateSchema
     }, options))
   }
 
