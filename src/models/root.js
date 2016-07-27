@@ -90,13 +90,19 @@ class RootModel {
     return new Promise( async (resolve, reject) => {
 
       //If the model has a schema, validate it
-      if(this.schema) {
+      var schema = options.schema || this.schema
 
-        var validation = this.validate(pkg)
+      if(schema) {
+
+        var validation = this.validate(pkg, schema)
 
         if(validation.err) {
+          logger.debug('Create validation error')
+          logger.debug(validation.err)
           return reject(validation.err)
         }
+
+        delete options.schema
 
       }
 
@@ -286,13 +292,19 @@ class RootModel {
     return new Promise( async (resolve, reject) => {
 
       //If the model has a schema, validate it
-      if(this.schema) {
+      var schema = options.schema || this.schema
 
-        var validation = this.validate(pkg)
+      if(schema) {
+
+        var validation = this.validate(pkg, schema)
 
         if(validation.err) {
+          logger.debug('Update validation error')
+          logger.debug(validation.err)
           return reject(validation.err)
         }
+
+        delete options.schema
 
       }
 
@@ -317,12 +329,15 @@ class RootModel {
    *
    * @public
    * @param {Object} pkg - What is being validated
+   * @param {Object} schema - The schema to validate against pkg
    * @param {Object} options - Options
    */
-  validate(pkg, options = {}) {
-    if(!this.schema) throw new Error('Validate requires a schema')
+  validate(pkg, schema, options = {}) {
+    schema = schema || this.schema
 
-    return this.schema.validate(pkg)
+    if(!schema) throw new Error('Validate requires a schema')
+
+    return schema.validate(pkg)
 
   }
 

@@ -4,10 +4,12 @@
  * @ignore
  */
 import {chalk, logger} from '../../lib/logger'
+import createSchema    from './schemas/create'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
-import userSchema      from './schemas/user'
+import updateSchema    from './schemas/update'
+
 /**
  * UserModel Class
  *
@@ -48,8 +50,7 @@ class UserModel extends Model {
             localKey: 'organizationId'
           }
         ]
-      },
-      schema: userSchema
+      }
     }, options))
   }
 
@@ -66,6 +67,8 @@ class UserModel extends Model {
 
       pkg.hash = await new PasswordService().issue(pkg.password)
       delete pkg.password
+
+      options.schema = createSchema
 
       try {
         var doc = await Model.prototype.create.call(this, pkg, options)
@@ -112,15 +115,18 @@ class UserModel extends Model {
    * @public
    * @param {String} id
    * @param {Object} pkg - Data to update user
+   * @param {Object} options - Options
    */
-  update(id, pkg = {}) {
+  update(id, pkg = {}, options = {}) {
 
     if(pkg.password) {
       logger.warn('User.update does not support property password; deleted.')
       delete pkg.password
     }
 
-    return Model.prototype.update.call(this, id, pkg)
+    options.schema = updateSchema
+
+    return Model.prototype.update.call(this, id, pkg, options)
 
   }
 

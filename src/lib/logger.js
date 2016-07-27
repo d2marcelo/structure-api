@@ -6,12 +6,14 @@
 import chalk   from 'chalk'
 import winston from 'winston'
 
+var argv = require('minimist')(process.argv.slice(2))
+
 var logger = new winston.Logger({
 
   transports:[
     new winston.transports.Console({
       colorize: true,
-      level: process.env.LOG_LEVEL
+      level: (argv.debug) ? 'debug' : process.env.LOG_LEVEL
     })
   ]
 
