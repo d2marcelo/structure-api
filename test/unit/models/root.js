@@ -111,7 +111,7 @@ describe('Root', function() {
 
   })
 
-  it.skip('should validate successfully', function(done) {
+  it('should validate successfully', function(done) {
 
     var model = new RootModel({
       name: 'root',
@@ -128,7 +128,7 @@ describe('Root', function() {
 
   })
 
-  it.skip('should validate unsuccessfully', function(done) {
+  it('should validate unsuccessfully', function(done) {
 
     var model = new RootModel({
       name: 'root',

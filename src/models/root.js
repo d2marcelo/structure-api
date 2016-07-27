@@ -290,6 +290,20 @@ class RootModel {
     })
   }
 
+  /**
+   * Validate data
+   *
+   * @public
+   * @param {Object} pkg - What is being validated
+   * @param {Object} options - Options
+   */
+  validate(pkg, options = {}) {
+    if(!this.schema) throw new Error('Validate requires a schema')
+
+    return this.schema.validate(pkg)
+
+  }
+
 }
 
 /**
