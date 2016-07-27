@@ -18,9 +18,7 @@ describe('Template', function() {
 
   it('should create a template',  async (done) => {
 
-    var template = new TemplateModel({
-      name: 'templates'
-    })
+    var template = new TemplateModel()
 
     var res = await template.create({
       title: 'Fun Template'
@@ -34,9 +32,7 @@ describe('Template', function() {
 
   it('should create a template revision',  async function(done) {
 
-    var template = new TemplateModel({
-      name: 'templates'
-    })
+    var template = new TemplateModel()
 
     var res = await template.create({
       title: 'Fun Template'
@@ -71,9 +67,7 @@ describe('Template', function() {
 
   it('should update a template revision',  async function(done) {
 
-    var template = new TemplateModel({
-      name: 'templates'
-    })
+    var template = new TemplateModel()
 
     var res = await template.create({
       title: 'Fun Template'
