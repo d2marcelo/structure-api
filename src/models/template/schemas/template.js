@@ -1,7 +1,8 @@
 import {Schema, type} from 'eisley'
 
 export default new Schema({
-  desc: type('string'),
-  fields: type('string'),
-  title: type('string')
+  activeRevisionId : type('string'),
+  desc             : type('string'),
+  revisionIds      : type('array'),
+  title            : type('string')
 })
