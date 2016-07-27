@@ -10,6 +10,7 @@ var config = {
     {host: '127.0.0.1', port: 28015}
   ],
   tables:  [
+    'actions',
     'auth',
     'applications',
     'buckets',

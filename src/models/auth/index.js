@@ -44,11 +44,6 @@ class AuthModel extends Model {
             localKey: 'userId'
           }
         ]
-      },
-      schema: {
-        authenticatedAt: {
-          type: 'date'
-        }
       }
     }, options))
   }
@@ -72,7 +67,7 @@ class AuthModel extends Model {
             err: 'NO_USER',
             username: pkg.username
           }
-        })
+        }, {table: 'actions'})
 
         return reject({
           err: {
@@ -91,8 +86,10 @@ class AuthModel extends Model {
           //password: pkg.password,
           userId: user.id,
           username: pkg.username
-        })
+        }, {table: 'actions'})
+
         logger.error('Auth: Bad Password')
+
         return reject({
           err: {
             message: 'Could not validate password',
@@ -106,11 +103,27 @@ class AuthModel extends Model {
         authenticated: true,
         userId: user.id,
         username: user.username
-      })
+      }, {table: 'actions'})
 
       return resolve(user)
 
     })
+  }
+
+  /**
+   * Logout user
+   *
+   * @public
+   * @param {Object} pkg - Logout data
+   */
+  logout(pkg = {}) {
+
+    return Model.prototype.create.call(this, {
+      unauthenticated: true,
+      userId: pkg.id,
+      username: pkg.username
+    }, {table: 'actions'})
+
   }
 
   /**
