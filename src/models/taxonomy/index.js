@@ -6,6 +6,7 @@
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
+import taxonomySchema      from './schemas/taxonomy'
 
 /**
  * TaxonomyModel Class
@@ -57,17 +58,7 @@ class TaxonomyModel extends Model {
           },
         ]
       },
-      schema: {
-        data: {
-          type: 'object'
-        },
-        desc: {
-          type: 'string'
-        },
-        title: {
-          type: 'string'
-        }
-      }
+      schema: taxonomySchema
     }, options))
   }
 

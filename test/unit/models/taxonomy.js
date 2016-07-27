@@ -34,6 +34,48 @@ describe('Taxonomy', function() {
 
   })
 
+  /** @test {TaxonomyModel#getById} */
+  it('should get by ID', async function(done) {
+
+    var tag = new TaxonomyModel({
+    })
+
+    var res = await tag.create({
+      title: 'Sports',
+      slug: 'sports',
+      description: 'All of our sports content'
+    })
+
+    var res2 = await tag.getById(res.id)
+
+    expect(res.title).to.equal('Sports')
+    expect(res.slug).to.equal('sports')
+    expect(res.description).to.equal('All of our sports content')
+
+    done()
+
+  })
+
+  /** @test {TaxonomyModel#getAll} */
+  it('should get all', async function(done) {
+
+    var tag = new TaxonomyModel({
+    })
+
+    var res = await tag.create({
+      title: 'Sports',
+      slug: 'sports',
+      description: 'All of our sports content'
+    })
+
+    var res2 = await tag.getAll()
+
+    expect(res2.length > 0).to.be.true
+
+    done()
+
+  })
+
   /** @test {TaxonomyModel#update} */
   it('should update a taxonomy', async function(done) {
 
