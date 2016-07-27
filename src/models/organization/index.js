@@ -3,10 +3,10 @@
  *
  * @ignore
  */
-import {chalk, logger} from '../../lib/logger'
-import Model           from '../root'
-import r               from '../../lib/database/driver'
-import organizationSchema      from './schemas/organization'
+import {chalk, logger}    from '../../lib/logger'
+import Model              from '../root'
+import organizationSchema from './schemas/organization'
+import r                  from '../../lib/database/driver'
 
 /**
  * OrganziationModel Class
