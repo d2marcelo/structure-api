@@ -7,6 +7,7 @@ import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
+import userSchema      from './schemas/user'
 /**
  * UserModel Class
  *
@@ -48,23 +49,7 @@ class UserModel extends Model {
           }
         ]
       },
-      schema: {
-        firstName: {
-          type: 'string'
-        },
-        lastName: {
-          type: 'string'
-        },
-        email: {
-          type: 'string'
-        },
-        username: {
-          type: 'string'
-        },
-        password: {
-          type: 'string'
-        }
-      }
+      schema: userSchema
     }, options))
   }
 
@@ -121,10 +106,17 @@ class UserModel extends Model {
     })
   }
 
+  /**
+   * Update user
+   *
+   * @public
+   * @param {String} id
+   * @param {Object} pkg - Data to update user
+   */
   update(id, pkg = {}) {
 
     if(pkg.password) {
-      console.error('User.update does not support property password; deleted.')
+      logger.warn('User.update does not support property password; deleted.')
       delete pkg.password
     }
 
