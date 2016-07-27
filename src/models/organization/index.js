@@ -6,6 +6,7 @@
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
+import organizationSchema      from './schemas/organization'
 
 /**
  * OrganziationModel Class
@@ -55,14 +56,7 @@ class OrganizationModel extends Model {
           }
         ]
       },
-      schema: {
-        desc: {
-          type: 'string'
-        },
-        title: {
-          type: 'string'
-        }
-      }
+      schema: organizationSchema
     }, options))
   }
 
