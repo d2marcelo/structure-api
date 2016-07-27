@@ -22,6 +22,7 @@ var config = {
     'refs', // References
     'registry',
     //'revisions',
+    'root',
     'taxonomies',
     'templates',
     'template_revisions',
