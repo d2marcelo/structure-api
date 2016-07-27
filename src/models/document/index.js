@@ -7,6 +7,7 @@ import {chalk, logger}  from '../../lib/logger'
 import DocumentRevision from '../document-revision'
 import Model            from '../root'
 import r                from '../../lib/database/driver'
+import documentSchema      from './schemas/document'
 
 //import config from '../../config'
 
@@ -66,20 +67,7 @@ class DocumentModel extends Model {
           },
         ]
       },
-      schema: {
-        activeRevisionId: {
-          type: 'string'
-        },
-        desc: {
-          type: 'string'
-        },
-        revisionIds: {
-          type: 'array'
-        },
-        title: {
-          type: 'string'
-        }
-      }
+      schema: documentSchema
     }, options))
   }
 
