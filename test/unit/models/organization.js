@@ -19,7 +19,7 @@ describe('Organization', function() {
 
   /** @test {OrganizationModel#create} */
   it('should create an organization',  async function(done) {
-    
+
     var organization = new OrganizationModel()
 
     var res = await organization.create({
@@ -34,7 +34,7 @@ describe('Organization', function() {
 
   /** @test {OrganizationModel#getById} */
   it('should get an organization by id',  async function(done) {
-    
+
     var organization = new OrganizationModel()
 
     var responseOrganization = await organization.create({
@@ -42,7 +42,6 @@ describe('Organization', function() {
     })
 
     var responseGetById = await organization.getById(responseOrganization.id)
-
 
     expect(responseGetById.title).to.equal('My organization')
 
@@ -58,8 +57,8 @@ describe('Organization', function() {
     var responseOrganization = await organization.create({
       title:'My organization', description:'cool organization'
     })
-    
-    var responseAll = await responseOrganization.getAll()
+
+    var responseAll = await organization.getAll()
 
     expect(responseAll.length > 0).to.be.true
 
