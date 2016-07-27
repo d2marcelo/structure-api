@@ -50,7 +50,7 @@ describe('Organization', function() {
   })
 
   /** @test {OrganizationModel#getAll}**/
-  it('should get all Organizations', async function(done) {
+  it('should get all organizations', async function(done) {
 
     var organization = new OrganizationModel()
 

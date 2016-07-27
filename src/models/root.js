@@ -87,23 +87,34 @@ class RootModel {
    */
   create(pkg = {}, options = {}) {
 
-    var insertOptions = {
-      returnChanges: options.returnChanges || true
-    }
-
-    pkg.createdAt  = r.now()
-    pkg.id         = pkg.id || uuid()
-    pkg.sid        = new ShortId().issue(pkg.id)
-    pkg.updatedAt  = r.now()
-    pkg.__version  = process.env.npm_package_version
-
     return new Promise( async (resolve, reject) => {
+
+      //If the model has a schema, validate it
+      if(this.schema) {
+
+        var validation = this.validate(pkg)
+
+        if(validation.err) {
+          return reject(validation.err)
+        }
+
+      }
+
+      var insertOptions = {
+        returnChanges: options.returnChanges || true
+      }
+
+      pkg.createdAt  = r.now()
+      pkg.id         = pkg.id || uuid()
+      pkg.sid        = new ShortId().issue(pkg.id)
+      pkg.updatedAt  = r.now()
+      pkg.__version  = process.env.npm_package_version
 
       try {
 
         var res = await r.table(options.table || this.table).insert(pkg, insertOptions)
         if(res.errors && res.errors > 0) {
-          throw new Error(res.first_error)
+          return reject(res.first_error)
         }
 
         var doc = res.changes[0].new_val
@@ -131,7 +142,7 @@ class RootModel {
       catch(err) {
         logger.error('Could not create')
         console.error(err)
-        throw err
+        reject(err)
       }
 
     })
@@ -270,11 +281,22 @@ class RootModel {
    */
   update(id, pkg = {}, options = {}) {
 
-    pkg.__version  = process.env.npm_package_version
-
     options.returnChanges = options.returnChanges || true
 
     return new Promise( async (resolve, reject) => {
+
+      //If the model has a schema, validate it
+      if(this.schema) {
+
+        var validation = this.validate(pkg)
+
+        if(validation.err) {
+          return reject(validation.err)
+        }
+
+      }
+
+      pkg.__version  = process.env.npm_package_version
 
       try {
         var res = await r.table(this.table).get(id).update(pkg, options)
@@ -284,7 +306,7 @@ class RootModel {
       catch(err) {
         logger.error('Error updating')
         console.error(err.stack)
-        throw err
+        reject(err)
       }
 
     })

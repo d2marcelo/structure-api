@@ -39,7 +39,10 @@ describe('Root', function() {
   it('should create', async function(done) {
 
     var model = new RootModel({
-      name: 'root'
+      name: 'root',
+      schema: new Schema({
+        foo: type('string')
+      })
     })
 
     var res = await model.create({
@@ -52,11 +55,40 @@ describe('Root', function() {
 
   })
 
+  /** @test {RootModel#create} */
+  it('should not create; failed validation', async function(done) {
+
+    var model = new RootModel({
+      name: 'root',
+      schema: new Schema({
+        foo: type('string')
+      })
+    })
+
+    try {
+      var res = await model.create({
+        foo: 2
+      })
+    }
+    catch(err) {
+
+      expect(err).to.be.an('array')
+      expect(err[0].schemaKey).to.equal('foo')
+
+    }
+
+    done()
+
+  })
+
   /** @test {RootModel#getById} */
   it('should get by ID', async function(done) {
 
     var model = new RootModel({
-      name: 'root'
+      name: 'root',
+      schema: new Schema({
+        foo: type('string')
+      })
     })
 
     var res = await model.create({
@@ -75,7 +107,10 @@ describe('Root', function() {
   it('should get all', async function(done) {
 
     var model = new RootModel({
-      name: 'root'
+      name: 'root',
+      schema: new Schema({
+        foo: type('string')
+      })
     })
 
     var res = await model.create({
@@ -94,7 +129,10 @@ describe('Root', function() {
   it('should update', async function(done) {
 
     var model = new RootModel({
-      name: 'root'
+      name: 'root',
+      schema: new Schema({
+        foo: type('string')
+      })
     })
 
     var res = await model.create({
@@ -108,6 +146,35 @@ describe('Root', function() {
     expect(res2.foo).to.equal('baz')
 
     done()
+
+  })
+
+  /** @test {RootModel#create} */
+  it('should not update; failed validation', async function(done) {
+
+    var model = new RootModel({
+      name: 'root',
+      schema: new Schema({
+        foo: type('string')
+      })
+    })
+
+    var res = await model.create({
+      foo: 'bar'
+    })
+
+    try {
+      var res2 = await model.update(res.id, {
+        foo: 2
+      })
+    }
+    catch(err) {
+
+      expect(err).to.be.an('array')
+      expect(err[0].schemaKey).to.equal('foo')
+
+      done()
+    }
 
   })
 
