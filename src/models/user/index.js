@@ -87,7 +87,7 @@ class UserModel extends Model {
    * @param {String} email
    */
   getByEmail(email) {
-    return r.db(process.env.RETHINK_DB_NAME).table(this.table).filter({email}).limit(1)
+    return r.table(this.table).filter({email}).limit(1)
   }
 
   /**
@@ -98,7 +98,7 @@ class UserModel extends Model {
    */
   getByUsername(username) {
     return new Promise( async (resolve, reject) => {
-      var user = await thinky.r.db(process.env.RETHINK_DB_NAME).table('users').filter({username}).limit(1)
+      var user = await r.table(this.table).filter({username}).limit(1)
 
       if(!user) return reject(user)
 
