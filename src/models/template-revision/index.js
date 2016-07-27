@@ -8,6 +8,8 @@ import DigitalAsset    from '../digital-asset'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
 import RevisionModel   from '../revision'
+import templaterevisionSchema      from './schemas/template-revision'
+
 
 /**
  * TemplateRevisionModel Class
@@ -45,14 +47,7 @@ class TemplateRevisionModel extends RevisionModel {
           }
         ]
       },
-      schema: {
-        desc: {
-          type: 'string'
-        },
-        title: {
-          type: 'string'
-        }
-      }
+      schema: templaterevisionSchema
     }, options))
   }
 
