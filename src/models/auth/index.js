@@ -4,10 +4,12 @@
  * @ignore
  */
 import {chalk, logger} from '../../lib/logger'
+import loginSchema     from './schemas/login'
 import Model           from '../root'
 import PasswordService from '../../services/password'
 import r               from '../../lib/database/driver'
 import TokenService    from '../../services/token'
+import UserModel       from '../user'
 
 /**
  * AuthModel Class
@@ -58,7 +60,26 @@ class AuthModel extends Model {
 
     return new Promise( async (resolve, reject) => {
 
-      var user = await this.getByUsername(pkg.username)
+      var isValidPkg = loginSchema.validate(pkg)
+
+      if(isValidPkg.err) {
+        Model.prototype.create.call(this, {
+          body: {
+            authenticated: false,
+            err: 'BAD_USER_PKG',
+            username: pkg.username
+          }
+        }, {table: 'actions'})
+
+        return reject({
+          err: {
+            message: 'Could not validate user pkg: ' + pkg.username,
+            resource: 'AuthModel'
+          }
+        })
+      }
+
+      var user = await UserModel.prototype.getByUsername(pkg.username)
 
       if(!user) {
         Model.prototype.create.call(this, {
@@ -72,14 +93,15 @@ class AuthModel extends Model {
         return reject({
           err: {
             message: 'Could not get user: ' + pkg.username,
-            resource: 'AuthNode'
+            resource: 'AuthModel'
           }
         })
       }
 
-      var validated = await new PasswordService().verify(pkg.password, user.hash)
-
-      if(!validated) {
+      try {
+        var validated = await new PasswordService().verify(pkg.password, user.hash)
+      }
+      catch(e) {
         Model.prototype.create.call(this, {
           authenticated: false,
           err: 'BAD_PASSWORD',
@@ -88,15 +110,14 @@ class AuthModel extends Model {
           username: pkg.username
         }, {table: 'actions'})
 
-        logger.error('Auth: Bad Password')
+        logger.info('Auth: Bad Password')
 
         return reject({
           err: {
             message: 'Could not validate password',
-            resource: 'AuthNode'
+            resource: 'AuthModel'
           }
         })
-
       }
 
       Model.prototype.create.call(this, {

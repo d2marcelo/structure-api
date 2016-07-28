@@ -5,4 +5,4 @@ export default new Schema({
   firstName : type('string'),
   lastName  : type('string'),
   username  : type('string')
-})
+}, {strict: false})

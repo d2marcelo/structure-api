@@ -22,7 +22,7 @@ class PasswordService {
 
     return new Promise( (resolve, reject) => {
 
-      if(typeof s != 'string') return cb({
+      if(typeof s != 'string') return reject({
         message: 'Password must be a string',
         resource: 'PasswordService'
       })
@@ -62,8 +62,10 @@ class PasswordService {
           logger.error('Could not verify password', err)
           logger.debug('Password', s)
           logger.debug('Hash', hash)
-          return reject(err)
+          return reject(false)
         }
+
+        if(!match) return reject(false)
 
         return resolve(true)
 

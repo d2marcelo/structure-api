@@ -8,11 +8,16 @@ describe('Unit', function() {
 
   describe('Models', function() {
     require('./models/root')
+    require('./models/auth')
     require('./models/document')
     require('./models/organization')
     require('./models/taxonomy')
     require('./models/template')
     require('./models/user')
+  })
+
+  describe('Services', function() {
+    require('./services/password')
   })
 
   describe('Controllers', function() {
