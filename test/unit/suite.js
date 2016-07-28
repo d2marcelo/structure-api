@@ -22,5 +22,6 @@ describe('Unit', function() {
 
   describe('Controllers', function() {
     require('./controllers/taxonomies')
+    require('./controllers/users')
   })
 })

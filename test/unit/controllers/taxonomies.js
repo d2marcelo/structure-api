@@ -28,6 +28,56 @@ describe('Taxonomies', function() {
 
   })
 
+
+  /** @test {TaxonomiesController#getById} */
+  it('should get by ID', async function(done) {
+
+    var taxonomy = new TaxonomiesController()
+
+    var req = {
+      body: {
+        title: 'Sports',
+        slug: 'sports',
+        desc: 'All of our sports content'
+      }
+    }
+
+    var res = await taxonomy.create(req)
+
+    var res2 = await taxonomy.getById(res.id)
+
+    expect(res.title).to.equal('Sports')
+    expect(res.slug).to.equal('sports')
+    expect(res.desc).to.equal('All of our sports content')
+
+    done()
+
+  })
+
+  /** @test {TaxonomiesController#getAll} */
+  it('should get all', async function(done) {
+
+    var taxonomy = new TaxonomiesController({
+    })
+
+    var req = {
+      body: {
+        title: 'Sports',
+        slug: 'sports',
+        desc: 'All of our sports content'
+      }
+    }
+
+    var res = await taxonomy.create(req)
+
+    var res2 = await taxonomy.getAll()
+
+    expect(res2.length > 0).to.be.true
+
+    done()
+
+  })
+
   /** @test {TaxonomiesController#update} */
   it('should update a taxonomy', async function(done) {
 
