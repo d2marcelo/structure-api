@@ -32,6 +32,58 @@ describe('Document', function() {
 
   })
 
+  it('should update a document', async function(done){
+  
+    var document = new DocumentModel()
+
+    var documentRes = await document.create({
+      title: 'Fun Document'
+    })
+
+    var documentUpdateRes = await document.update(documentRes.id, {
+      title: 'Fun Document 3'
+    })
+
+    expect(documentUpdateRes.title).to.equal('Fun Document 3')
+
+    done()
+
+  })
+
+  /** @test {RootModel#getById} */
+  it('should get Document by ID', async function(done) {
+
+    var document = new DocumentModel()
+
+    var documentResponse = await document.create({
+      title: 'Document',
+    })
+
+    var  getByIdResponse = await document.getById(documentResponse.id)
+
+    expect(getByIdResponse.title).to.equal('Document')
+
+    done()
+
+  })
+
+  /** @test {RootModel#getById} */
+  it('should get All Documents', async function(done) {
+
+    var document = new DocumentModel()
+
+    var documentResponse = await document.create({
+      title: 'Document',
+    })
+
+    var  getAllResponse = await document.getAll()
+
+    expect(getAllResponse.length > 0).to.be.true
+
+    done()
+
+  })
+
   /** @test {DocumentRevisionModel#create} */
   it('should create a document revision',  async (done) => {
 
@@ -79,8 +131,7 @@ describe('Document', function() {
         fieldType: 'text-input',
         title: 'Document Title'
       }
-      ],
-      title: 'Fun Document 2'
+      ]
     })
 
     var documentUpdateRes = await document.update(documentRes.id, {
@@ -111,4 +162,62 @@ describe('Document', function() {
 
   })
 
+  /** @test {DocumentRevisionModel#update} */
+  it('should  get  a  revision by ID', async function(done) {
+
+    var document = new DocumentModel()
+
+    var documentRes = await document.create({
+      title: 'Fun Document'
+    })
+
+    var revision = new DocumentRevisionModel()
+
+    var revisionRes = await revision.create({
+      documentId:documentRes.id,
+      fields: [
+      {
+        fieldType: 'text-input',
+        title: 'Document Title'
+      }
+      ]
+    })
+
+    var responsegetById = await  revision.getById(revisionRes.id) 
+    
+    expect(responsegetById.fields.length).to.equal(1)
+    expect(responsegetById.fields[0].title).to.equal('Document Title')
+
+    done()
+
+  })
+
+  /** @test {DocumentRevisionModel#update} */
+  it('should  get All revision', async function(done) {
+
+    var document = new DocumentModel()
+
+    var documentRes = await document.create({
+      title: 'Fun Document'
+    })
+
+    var revision = new DocumentRevisionModel()
+
+    var revisionRes = await revision.create({
+      documentId:documentRes.id,
+      fields: [
+      {
+        fieldType: 'text-input',
+        title: 'Document Title'
+      }
+      ]
+    })
+
+    var getAllRes = await  revision.getAll() 
+    
+    expect(getAllRes.fields.length > 0).to.be.true
+
+    done()
+
+  })
 })
