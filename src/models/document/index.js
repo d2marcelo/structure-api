@@ -156,10 +156,9 @@ class DocumentModel extends Model {
       }
 
       var revision = await this.getActiveRevision(doc)
-      
+
       Object.assign(doc, {
-        fields: revision.fields,
-        title: doc.title
+        fields: revision.fields
       })
 
       return resolve(doc)

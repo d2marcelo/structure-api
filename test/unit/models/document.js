@@ -165,7 +165,7 @@ describe('Document', function() {
       ]
     })
 
-    var getAllRes = await  revision.getAll()
+    var getAllRes = await revision.getAll()
 
     expect(getAllRes.fields.length > 0).to.be.true
 
