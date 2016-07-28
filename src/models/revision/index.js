@@ -213,10 +213,10 @@ class RevisionModel extends Model {
     return new Promise( (resolve, reject) => {
 
       var resolvedRefs = []
-      resolvedFields.push(this.getFieldReferences(field))
+      resolvedRefs.push(this.getFieldReferences(field))
 
       Promise
-        .all(resolvedFields)
+        .all(resolvedRefs)
         .then( (fields) => {
           resolve(fields[0])
         })
@@ -243,7 +243,7 @@ class RevisionModel extends Model {
 
       if(revision.fields) {
         revision.fields.forEach( (field, i) => {
-          fieldsResolved.push(this.resolveFieldRefences(field, i))
+          fieldsResolved.push(this.resolveFieldReferences(field, i))
         })
 
         Promise
