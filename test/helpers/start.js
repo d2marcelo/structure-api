@@ -4,7 +4,11 @@ process.on('uncaughtException', function(err) {
 
 process.on('unhandledRejection', function(err) {
   console.error('Unhandled Rejection')
-  console.error(err.stack)
+  if(err.stack) {
+    console.error(err.stack)
+  } else {
+    console.error(err)
+  }
 })
 
 require('babel-core/register')

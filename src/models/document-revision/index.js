@@ -3,13 +3,12 @@
  *
  * @ignore
  */
-import {chalk, logger} from '../../lib/logger'
-import DigitalAsset    from '../digital-asset'
-import Model           from '../root'
-import r               from '../../lib/database/driver'
-import RevisionModel   from '../revision'
-import documentrevisionSchema      from './schemas/document-revision'
-
+import {chalk, logger}        from '../../lib/logger'
+import DigitalAsset           from '../digital-asset'
+import documentrevisionSchema from './schemas/document-revision'
+import Model                  from '../root'
+import r                      from '../../lib/database/driver'
+import RevisionModel          from '../revision'
 
 /**
  * DocumentRevisionModel Class

@@ -50,18 +50,19 @@ describe('Template', function() {
           fieldType: 'text-input',
           title: 'Document Title'
         }
-      ],
-      title: 'Fun Template 2'
+      ]
     })
 
     var res3 = await template.update(res.id, {
       activeRevisionId: res2.id,
-      revisionIds: [res2.id]
+      revisionIds: [res2.id],
+      title: 'Fun Template 2'
     })
 
     expect(res2.fields.length).to.equal(1)
     expect(res2.fields[0].title).to.equal('Document Title')
     expect(res3.activeRevisionId).to.equal(res2.id)
+    expect(res3.title).to.equal('Fun Template 2')
 
     done()
 
@@ -86,13 +87,13 @@ describe('Template', function() {
           fieldType: 'text-input',
           title: 'Document Title'
         }
-      ],
-      title: 'Fun Template 2'
+      ]
     })
 
     var res3 = await template.update(res.id, {
       activeRevisionId: res2.id,
-      revisionIds: [res2.id]
+      revisionIds: [res2.id],
+      title: 'Fun Template 2'
     })
 
     var res4 = await revision.update(res2.id, {
@@ -105,17 +106,15 @@ describe('Template', function() {
           fieldType: 'text-input',
           title: 'Description'
         }
-      ],
-      title: 'Fun Template 3'
+      ]
     })
 
+    expect(res3.title).to.equal('Fun Template 2')
     expect(res4.fields.length).to.equal(2)
     expect(res4.fields[0].title).to.equal('Revision Title')
     expect(res4.fields[1].title).to.equal('Description')
 
     done()
-
-
 
   })
 

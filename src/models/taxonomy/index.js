@@ -6,7 +6,7 @@
 import {chalk, logger} from '../../lib/logger'
 import Model           from '../root'
 import r               from '../../lib/database/driver'
-import taxonomySchema      from './schemas/taxonomy'
+import taxonomySchema  from './schemas/taxonomy'
 
 /**
  * TaxonomyModel Class

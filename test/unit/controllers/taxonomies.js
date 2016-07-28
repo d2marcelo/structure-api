@@ -14,7 +14,7 @@ describe('Taxonomies', function() {
         body: {
           title: 'Sports',
           slug: 'sports',
-          description: 'All of our sports content'
+          desc: 'All of our sports content'
         }
       }
 
@@ -22,7 +22,7 @@ describe('Taxonomies', function() {
 
       expect(res.title).to.equal('Sports')
       expect(res.slug).to.equal('sports')
-      expect(res.description).to.equal('All of our sports content')
+      expect(res.desc).to.equal('All of our sports content')
 
     done()
 
@@ -33,17 +33,21 @@ describe('Taxonomies', function() {
 
     var taxonomy = new TaxonomiesController()
 
-    var res = await taxonomy.create({
-      title: 'Sports',
-      slug: 'sports',
-      description: 'All of our sports content'
-    })
+    var req = {
+      body: {
+        title: 'Sports',
+        slug: 'sports',
+        desc: 'All of our sports content'
+      }
+    }
+
+    var res = await taxonomy.create(req)
 
     var req = {
       body: {
         title: 'Sports & Scores',
         slug: 'sports_and_scores',
-        description: 'All of our sports content and the scores'
+        desc: 'All of our sports content and the scores'
       },
       params: {
         id: res.id
@@ -54,7 +58,7 @@ describe('Taxonomies', function() {
 
     expect(res2.title).to.equal('Sports & Scores')
     expect(res2.slug).to.equal('sports_and_scores')
-    expect(res2.description).to.equal('All of our sports content and the scores')
+    expect(res2.desc).to.equal('All of our sports content and the scores')
 
     done()
 

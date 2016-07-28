@@ -7,7 +7,7 @@ import {chalk, logger}  from '../../lib/logger'
 import Model            from '../root'
 import r                from '../../lib/database/driver'
 import TemplateRevision from '../template-revision'
-import templateSchema      from './schemas/template'
+import templateSchema   from './schemas/template'
 
 
 /**
@@ -46,6 +46,45 @@ class TemplateModel extends Model {
       },
       schema: templateSchema
     }, options))
+  }
+
+  /**
+   * Create, or save, a template
+   *
+   * @public
+   * @param {Object} pkg - The data to save for the template
+   */
+  create(pkg = {}) {
+
+    /*
+    NOTE:
+    When a template is created with fields, we need to take those fields and place them on a revision
+    */
+    var fields = []
+    if(pkg.fields) {
+      fields = pkg.fields.slice(0)
+      delete pkg.fields
+    }
+
+    return new Promise( async (resolve, reject) => {
+      // Create template
+      var doc = await Model.prototype.create.call(this, pkg)
+
+      // Create revision
+      var revision = await new TemplateRevision().create({
+        templateId: doc.id,
+        fields
+      })
+
+      // Associate template with revision
+      var update = await this.update(doc.id, {
+        activeRevisionId: revision.id,
+        revisionIds: [revision.id],
+        title: doc.title // To satisfy the schema
+      })
+
+      resolve(update)
+    })
   }
 
   /**

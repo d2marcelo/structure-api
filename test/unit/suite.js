@@ -9,10 +9,10 @@ describe('Unit', function() {
   describe('Models', function() {
     require('./models/root')
     require('./models/document')
+    require('./models/organization')
     require('./models/taxonomy')
     require('./models/template')
     require('./models/user')
-    require('./models/organization')
   })
 
   describe('Controllers', function() {

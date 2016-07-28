@@ -85,23 +85,24 @@ describe('Document', function() {
 
     var documentUpdateRes = await document.update(documentRes.id, {
       activeRevisionId: revisionRes.id,
-      revisionIds: [revisionRes.id]
+      revisionIds: [revisionRes.id],
+      title: 'Fun Document 3'
     })
 
     var revisionUpdatedRes = await revision.update(revisionRes.id, {
       fields: [
-      {
-        fieldType: 'text-input',
-        title: 'Revision Title'
-      },
-      {
-        fieldType: 'text-input',
-        title: 'Description'
-      }
-      ],
-      title: 'Fun Document 3'
+        {
+          fieldType: 'text-input',
+          title: 'Revision Title'
+        },
+        {
+          fieldType: 'text-input',
+          title: 'Description'
+        }
+      ]
     })
 
+    expect(documentUpdateRes.title).to.equal('Fun Document 3')
     expect(revisionUpdatedRes.fields.length).to.equal(2)
     expect(revisionUpdatedRes.fields[0].title).to.equal('Revision Title')
     expect(revisionUpdatedRes.fields[1].title).to.equal('Description')

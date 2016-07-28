@@ -5,9 +5,9 @@
  */
 import {chalk, logger}  from '../../lib/logger'
 import DocumentRevision from '../document-revision'
+import documentSchema   from './schemas/document'
 import Model            from '../root'
 import r                from '../../lib/database/driver'
-import documentSchema      from './schemas/document'
 
 //import config from '../../config'
 
@@ -81,7 +81,7 @@ class DocumentModel extends Model {
 
     /*
     NOTE:
-    When a template is created with fields, we need to take those fields and place them on a revision
+    When a document is created with fields, we need to take those fields and place them on a revision
     */
     var fields = []
     if(pkg.fields) {
@@ -95,24 +95,18 @@ class DocumentModel extends Model {
 
       // Create revision
       var revision = await new DocumentRevision().create({
-        body: {
-          documentId: doc.id,
-          fields
-        }
+        documentId: doc.id,
+        fields
       })
 
       // Associate document with revision
       var update = await this.update(doc.id, {
-        body: {
-          activeRevisionId: revision.id,
-          revisionIds: [revision.id]
-        }
+        activeRevisionId: revision.id,
+        revisionIds: [revision.id],
+        title: doc.title // To satisfy the schema
       })
 
-      // Get document with first revision
-      var docFinalized = await this.getById(doc.id)
-
-      resolve(docFinalized)
+      resolve(update)
     })
   }
 

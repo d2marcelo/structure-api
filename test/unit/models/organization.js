@@ -23,7 +23,8 @@ describe('Organization', function() {
     var organization = new OrganizationModel()
 
     var res = await organization.create({
-      title:'My organization', description:'cool organization'
+      desc:'cool organization',
+      title:'My organization'
     })
 
     expect(res.title).to.equal('My organization')
@@ -38,7 +39,8 @@ describe('Organization', function() {
     var organization = new OrganizationModel()
 
     var responseOrganization = await organization.create({
-      title:'My organization', description:'cool organization'
+      desc:'cool organization',
+      title:'My organization'
     })
 
     var responseGetById = await organization.getById(responseOrganization.id)
@@ -55,7 +57,8 @@ describe('Organization', function() {
     var organization = new OrganizationModel()
 
     var responseOrganization = await organization.create({
-      title:'My organization', description:'cool organization'
+      desc:'cool organization',
+      title:'My organization'
     })
 
     var responseAll = await organization.getAll()
@@ -72,13 +75,16 @@ describe('Organization', function() {
     var organization = new OrganizationModel()
 
     var responseOrganization = await organization.create({
-      title:'My organization', description:'cool organization'
+      desc: 'cool organization',
+      title: 'My organization'
     })
 
     var responseUpdated = await organization.update(responseOrganization.id, {
+      desc: 'cooler organization',
       title: 'My updated organization'
     })
 
+    expect(responseUpdated.desc).to.equal('cooler organization')
     expect(responseUpdated.title).to.equal('My updated organization')
 
     done()
