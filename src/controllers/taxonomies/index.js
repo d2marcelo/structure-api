@@ -49,6 +49,10 @@ class TaxonomiesController extends RootController {
    */
   getById(req, res) {
 
+    var taxonomy = new TaxonomyModel()
+
+    return taxonomy.getById(req.params.id)
+
   }
 
   /**
@@ -59,6 +63,10 @@ class TaxonomiesController extends RootController {
    * @param {Object} res - Express res
    */
   getAll(req, res) {
+
+    var taxonomy = new TaxonomyModel()
+
+    return taxonomy.getAll()
 
   }
 

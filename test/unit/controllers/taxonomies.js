@@ -30,7 +30,7 @@ describe('Taxonomies', function() {
 
 
   /** @test {TaxonomiesController#getById} */
-  it('should get by ID', async function(done) {
+  it.skip('should get by ID', async function(done) {
 
     var taxonomy = new TaxonomiesController()
 
