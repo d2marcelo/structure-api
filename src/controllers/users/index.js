@@ -41,6 +41,36 @@ class UsersController extends RootController {
   }
 
   /**
+   * Get user by id
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
+  getById(req, res) {
+
+    var user = new UserModel()
+
+    return user.getById(req.params.id)
+
+  }
+
+  /**
+   * Get all users
+   *
+   * @public
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   */
+  getAll(req, res) {
+
+    var user = new UserModel()
+
+    return user.getAll()
+
+  }
+
+  /**
    * Update a user
    *
    * @public
