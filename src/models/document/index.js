@@ -156,10 +156,10 @@ class DocumentModel extends Model {
       }
 
       var revision = await this.getActiveRevision(doc)
-
+      
       Object.assign(doc, {
         fields: revision.fields,
-        title: revision.title
+        title: doc.title
       })
 
       return resolve(doc)
@@ -177,7 +177,6 @@ class DocumentModel extends Model {
   getActiveRevision(doc) {
 
     return new Promise( async (resolve, reject) => {
-
       if(!doc.activeRevisionId) return resolve({
         fields: [],
         title: doc.title
