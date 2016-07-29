@@ -9,7 +9,8 @@ if(process.env.TEST_TYPE == 'unit') {
   config = {
     max: 1,
     port: 28016,
-    timeout: 5
+    timeout: 5,
+    timeoutGb: 1000
   }
 }
 
