@@ -5,7 +5,7 @@ import TemplatesController from '../../../src/controllers/templates'
 describe('Templates', function() {
 
   /** @test {TemplatesController#create} */
-  it.skip('should create an template', async function(done) {
+  it('should create an template', async function(done) {
 
       var template = new TemplatesController()
 
@@ -24,10 +24,10 @@ describe('Templates', function() {
   })
 
 
-  /** @test {TaxonomiesController#getById} */
-  it.skip('should get by ID', async function(done) {
+  /** @test {TemplatesController#getById} */
+  it('should get by ID', async function(done) {
 
-    var taxonomy = new TaxonomiesController()
+    var template = new TemplatesController()
 
     var req = {
       body: {
@@ -37,7 +37,7 @@ describe('Templates', function() {
       }
     }
 
-    var res = await taxonomy.create(req)
+    var res = await template.create(req)
 
     var req2 = {
       params: {
@@ -45,7 +45,7 @@ describe('Templates', function() {
       }
     }
 
-    var res2 = await taxonomy.getById(req2)
+    var res2 = await template.getById(req2)
 
     expect(res.title).to.equal('Sports')
     expect(res.slug).to.equal('sports')
@@ -55,10 +55,10 @@ describe('Templates', function() {
 
   })
 
-  /** @test {TaxonomiesController#getAll} */
-  it.skip('should get all', async function(done) {
+  /** @test {TemplatesController#getAll} */
+  it('should get all', async function(done) {
 
-    var taxonomy = new TaxonomiesController({
+    var template = new TemplatesController({
     })
 
     var req = {
@@ -69,9 +69,9 @@ describe('Templates', function() {
       }
     }
 
-    var res = await taxonomy.create(req)
+    var res = await template.create(req)
 
-    var res2 = await taxonomy.getAll()
+    var res2 = await template.getAll()
 
     expect(res2.length > 0).to.be.true
 
@@ -79,10 +79,10 @@ describe('Templates', function() {
 
   })
 
-  /** @test {TaxonomiesController#update} */
-  it.skip('should update a taxonomy', async function(done) {
+  /** @test {TemplatesController#update} */
+  it('should update a template', async function(done) {
 
-    var taxonomy = new TaxonomiesController()
+    var template = new TemplatesController()
 
     var req = {
       body: {
@@ -92,7 +92,7 @@ describe('Templates', function() {
       }
     }
 
-    var res = await taxonomy.create(req)
+    var res = await template.create(req)
 
     var req = {
       body: {
@@ -105,7 +105,7 @@ describe('Templates', function() {
       }
     }
 
-    var res2 = await taxonomy.update(req)
+    var res2 = await template.update(req)
 
     expect(res2.title).to.equal('Sports & Scores')
     expect(res2.slug).to.equal('sports_and_scores')
