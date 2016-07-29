@@ -1,4 +1,4 @@
-import r    from '../../../../src/lib/database/driver'
+import r from '../../../../src/lib/database/driver'
 
 describe('Driver', function() {
 

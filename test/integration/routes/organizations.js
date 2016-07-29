@@ -1,6 +1,5 @@
 import MockHTTPServer from '../../helpers/mock-http-server'
 import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
 
 import OrganizationModel from '../../../src/models/organization'
 
