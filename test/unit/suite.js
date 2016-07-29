@@ -20,6 +20,7 @@ describe('Unit', function() {
     require('./controllers/taxonomies')
     require('./controllers/templates')
     require('./controllers/users')
+    require('./controllers/documents')
   })
 
   describe('Services', function() {
