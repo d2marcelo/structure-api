@@ -8,7 +8,6 @@ import {chalk, logger} from '../lib/logger'
 import Dispatcher      from './dispatcher'
 import express         from 'express'
 import path            from 'path'
-import r               from '../lib/database/driver'
 import Router          from './router'
 import serveStatic     from 'serve-static'
 
@@ -38,10 +37,16 @@ class Server {
     }
 
     //this.loadRoutes()
+    this.router = options.router || new Router({
+      dispatcher: options.dispatcher || new Dispatcher(),
+      server: this.server
+    })
+
+    //console.log('DEBUG: routes', this.debugRoutes())
 
   }
 
-  getRoutes() {
+  debugRoutes() {
     var route, routes = []
 
     this.server._router.stack.forEach(function(middleware) {
@@ -58,10 +63,6 @@ class Server {
     return routes
   }
 
-  loadRoutes() {
-    require('./routes')(this.server)
-  }
-
   logRequestInfo(req, res, next) {
 
     logger.info(req.method, req.originalUrl)
@@ -70,10 +71,6 @@ class Server {
   }
 
   start() {
-    this.router = this.router || new Router({
-      dispatcher: new Dispatcher(),
-      server: this.server
-    })
 
     this.server = this.server.listen(process.env.EXPRESS_PORT)
 
@@ -81,7 +78,9 @@ class Server {
 
   stop() {
 
+    var r = require('../lib/database/driver')
     r.getPoolMaster().drain()
+
     this.server.close()
 
   }

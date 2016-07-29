@@ -9,6 +9,8 @@ process.on('unhandledRejection', function(err) {
   } else {
     console.error(err)
   }
+  //var r = require('../../src/lib/database/driver')
+  //r.getPoolMaster().drain()
 })
 
 require('babel-core/register')

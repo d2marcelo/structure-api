@@ -157,7 +157,7 @@ gulp.task('mocha', function(done) {
         await drain()
       }
 
-      done()
+      process.exit()
 
     })
     .on('error', function (e) {

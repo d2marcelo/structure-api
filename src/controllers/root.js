@@ -22,6 +22,14 @@ class RootController {
      * @type {Object}
      */
     this.options = options
+
+    /**
+     * The route name
+     *
+     * @private
+     * @type {String}
+     */
+    this.name = options.name
   }
 
 }

@@ -20,15 +20,13 @@ class Dispatcher {
   dispatch(controller, actionName) {
 
     return async (req, res, next) => {
-
+      logger.debug(`Dispatching controller: ${controller.name} & action: ${actionName}`)
       var action = controller[actionName]
 
       if(req.files) {
-        console.error('files', req.files)
-        /*
-        TODO: what's a better way to handle this?
-        */
-        req.body.files = req.files.map( (file) => {
+        logger.debug('files', req.files)
+
+        req.files = req.files.map( (file) => {
           file.diskFileName     = file.filename
           file.originalFileName = file.originalname.replace(/ /g, '_')
           file.storageAdaptor   = storageAdaptors.disk.name
@@ -53,7 +51,7 @@ class Dispatcher {
         else {
           pkg = result
         }
-
+        logger.debug(`${actionName}`, pkg)
         res.status(status).json({
           pkg,
           status

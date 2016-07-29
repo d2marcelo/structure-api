@@ -1,8 +1,7 @@
-describe('Unit', function() {
+describe('Integration', function() {
 
-  describe('Models', function() {
-    //require('./models/root')
-    require('./models/template')
+  describe('Routes', function() {
+    require('./routes/organizations')
   })
 
 })

@@ -38,17 +38,16 @@ class Router {
     this.options     = options
 
     this.Controllers = this.options.Controllers || Controllers
-    this.dispatcher  = this.options.dispatcher
-
+    this.dispatcher  = options.dispatcher
     this.routes      = options.routes
     this.server      = options.server
     //this.structRoute()
-    this.loadRoutes()
-    this.generateRoutesFromNodes()
+    if(typeof this.routes == 'function') this.loadRoutes()
+    this.generateRoutes()
 
   }
 
-  generateRoutesFromNodes() {
+  generateRoutes() {
     var server  = this.server,
         version = `v${process.env.API_VERSION}`
 
@@ -75,6 +74,9 @@ class Router {
     this.Controllers.forEach( (Controller) => {
       var controller = new Controller(),
           routeName  = controller.name
+
+      // If the controller doesn't have a route name, don't make any routes for it
+      if(!controller.name) return
 
       server.get(`/api/${version}/${routeName}/:id`,                    this.dispatcher.dispatch(controller, 'getById'))
       server.get(`/api/${version}/${routeName}`,                        this.dispatcher.dispatch(controller, 'getAll'))
