@@ -16,13 +16,17 @@ describe('Unit', function() {
     require('./models/user')
   })
 
-  describe('Services', function() {
-    require('./services/password')
-  })
-
   describe('Controllers', function() {
     require('./controllers/taxonomies')
     require('./controllers/templates')
     require('./controllers/users')
+  })
+
+  describe('Services', function() {
+    require('./services/password')
+  })
+
+  describe('Server', function() {
+    require('./server/index')
   })
 })

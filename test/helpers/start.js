@@ -5,6 +5,7 @@ process.on('uncaughtException', function(err) {
 process.on('unhandledRejection', function(err) {
   console.error('Unhandled Rejection')
   if(err.stack) {
+    console.error(err.message)
     console.error(err.stack)
   } else {
     console.error(err)
