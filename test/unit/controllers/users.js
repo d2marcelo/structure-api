@@ -31,18 +31,28 @@ describe('Users', function() {
 
 
   /** @test {UsersController#getById} */
-  it.skip('should get by ID', async function(done) {
+  it('should get by ID', async function(done) {
 
     var user = new UsersController({
     })
 
-    var res = await user.create({
-      username: 'tedtalks2000',
-      email: 'ted@email.com',
-      password: 'foo88'
-    })
+    var req = {
+      body: {
+        username: 'tedtalks2000',
+        email: 'ted@email.com',
+        password: 'foo88'
+      }
+    }
 
-    var res2 = await user.getById(res.id)
+    var res = await user.create(req)
+
+    var req2 = {
+      params: {
+        id: res.id
+      }
+    }
+
+    var res2 = await user.getById(req2)
 
     expect(res2.username).to.equal('tedtalks2000')
     expect(res2.email).to.equal('ted@email.com')
@@ -54,17 +64,20 @@ describe('Users', function() {
   })
 
   /** @test {UserModel#getAll} */
-  it.skip('should get all', async function(done) {
+  it('should get all', async function(done) {
 
     var user = new UsersController({
-      name: 'root'
     })
 
-    var res = await user.create({
-      username: 'tedtalks2000',
-      email: 'ted@email.com',
-      password: 'foo88'
-    })
+    var req = {
+      body: {
+        username: 'tedtalks2000',
+        email: 'ted@email.com',
+        password: 'foo88'
+      }
+    }
+
+    var res = await user.create(req)
 
     var res2 = await user.getAll()
 
