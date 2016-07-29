@@ -30,7 +30,7 @@ describe('Taxonomies', function() {
 
 
   /** @test {TaxonomiesController#getById} */
-  it.skip('should get by ID', async function(done) {
+  it('should get by ID', async function(done) {
 
     var taxonomy = new TaxonomiesController()
 
@@ -44,7 +44,13 @@ describe('Taxonomies', function() {
 
     var res = await taxonomy.create(req)
 
-    var res2 = await taxonomy.getById(res.id)
+    var req2 = {
+      params: {
+        id: res.id
+      }
+    }
+
+    var res2 = await taxonomy.getById(req2)
 
     expect(res.title).to.equal('Sports')
     expect(res.slug).to.equal('sports')
