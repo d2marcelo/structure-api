@@ -6,7 +6,6 @@ import OrganizationModel from '../../../src/models/organization'
 /** @test {OrganizationModel} */
 describe('Organization', function() {
 
-  /** @test {OrganizationModel#initialize} */
   it('should initialize', function(done) {
 
     var organization = new OrganizationModel()

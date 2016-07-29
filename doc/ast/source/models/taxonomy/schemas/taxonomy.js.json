@@ -1,0 +1,473 @@
+{
+  "type": "Program",
+  "start": 0,
+  "end": 140,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 8,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "start": 0,
+      "end": 35,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 35
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportSpecifier",
+          "start": 8,
+          "end": 14,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 8
+            },
+            "end": {
+              "line": 1,
+              "column": 14
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "start": 8,
+            "end": 14,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 8
+              },
+              "end": {
+                "line": 1,
+                "column": 14
+              }
+            },
+            "name": "Schema"
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 8,
+            "end": 14,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 8
+              },
+              "end": {
+                "line": 1,
+                "column": 14
+              }
+            },
+            "name": "Schema"
+          }
+        },
+        {
+          "type": "ImportSpecifier",
+          "start": 16,
+          "end": 20,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 16
+            },
+            "end": {
+              "line": 1,
+              "column": 20
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "start": 16,
+            "end": 20,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 16
+              },
+              "end": {
+                "line": 1,
+                "column": 20
+              }
+            },
+            "name": "type"
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 16,
+            "end": 20,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 16
+              },
+              "end": {
+                "line": 1,
+                "column": 20
+              }
+            },
+            "name": "type"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 27,
+        "end": 35,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 27
+          },
+          "end": {
+            "line": 1,
+            "column": 35
+          }
+        },
+        "value": "eisley",
+        "rawValue": "eisley",
+        "raw": "'eisley'"
+      }
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "start": 37,
+      "end": 139,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 2
+        }
+      },
+      "declaration": {
+        "type": "NewExpression",
+        "start": 52,
+        "end": 139,
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 15
+          },
+          "end": {
+            "line": 7,
+            "column": 2
+          }
+        },
+        "callee": {
+          "type": "Identifier",
+          "start": 56,
+          "end": 62,
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 25
+            }
+          },
+          "name": "Schema"
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "start": 63,
+            "end": 138,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 26
+              },
+              "end": {
+                "line": 7,
+                "column": 1
+              }
+            },
+            "properties": [
+              {
+                "type": "Property",
+                "start": 67,
+                "end": 87,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 22
+                  }
+                },
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 67,
+                  "end": 71,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 6
+                    }
+                  },
+                  "name": "desc"
+                },
+                "value": {
+                  "type": "CallExpression",
+                  "start": 73,
+                  "end": 87,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 8
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 22
+                    }
+                  },
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 73,
+                    "end": 77,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 8
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 12
+                      }
+                    },
+                    "name": "type"
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "start": 78,
+                      "end": 86,
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 13
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 21
+                        }
+                      },
+                      "value": "string",
+                      "rawValue": "string",
+                      "raw": "'string'"
+                    }
+                  ]
+                },
+                "kind": "init"
+              },
+              {
+                "type": "Property",
+                "start": 91,
+                "end": 111,
+                "loc": {
+                  "start": {
+                    "line": 5,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 22
+                  }
+                },
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 91,
+                  "end": 95,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 6
+                    }
+                  },
+                  "name": "slug"
+                },
+                "value": {
+                  "type": "CallExpression",
+                  "start": 97,
+                  "end": 111,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 8
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 22
+                    }
+                  },
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 97,
+                    "end": 101,
+                    "loc": {
+                      "start": {
+                        "line": 5,
+                        "column": 8
+                      },
+                      "end": {
+                        "line": 5,
+                        "column": 12
+                      }
+                    },
+                    "name": "type"
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "start": 102,
+                      "end": 110,
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 13
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 21
+                        }
+                      },
+                      "value": "string",
+                      "rawValue": "string",
+                      "raw": "'string'"
+                    }
+                  ]
+                },
+                "kind": "init"
+              },
+              {
+                "type": "Property",
+                "start": 115,
+                "end": 136,
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 23
+                  }
+                },
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 115,
+                  "end": 120,
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 7
+                    }
+                  },
+                  "name": "title"
+                },
+                "value": {
+                  "type": "CallExpression",
+                  "start": 122,
+                  "end": 136,
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 23
+                    }
+                  },
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 122,
+                    "end": 126,
+                    "loc": {
+                      "start": {
+                        "line": 6,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 6,
+                        "column": 13
+                      }
+                    },
+                    "name": "type"
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "start": 127,
+                      "end": 135,
+                      "loc": {
+                        "start": {
+                          "line": 6,
+                          "column": 14
+                        },
+                        "end": {
+                          "line": 6,
+                          "column": 22
+                        }
+                      },
+                      "value": "string",
+                      "rawValue": "string",
+                      "raw": "'string'"
+                    }
+                  ]
+                },
+                "kind": "init"
+              }
+            ]
+          }
+        ],
+        "leadingComments": [],
+        "trailingComments": []
+      }
+    }
+  ]
+}

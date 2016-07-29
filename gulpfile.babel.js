@@ -6,11 +6,20 @@ var chalk                  = require('chalk'),
     gulp                   = require('gulp'),
     gutil                  = require('gulp-util'),
     mocha                  = require('gulp-mocha'),
+    nano                   = require('gulp-cssnano'),
     nodemon                = require('nodemon'),
     path                   = require('path'),
-    r                      = require('./src/lib/database/driver'),
+    postcss                = require('gulp-postcss'),
+    postcssAutoprefixer    = require('autoprefixer'),
+    postcssColor           = require('postcss-color-function'),
+    postcssDiscardComments = require('postcss-discard-comments'),
+    postcssFontMagician    = require('postcss-font-magician'),
+    postcssMixins          = require('postcss-mixins'),
+    postcssNested          = require('postcss-nested'),
+    postcssSimpleVars      = require('postcss-simple-vars'),
     sequence               = require('run-sequence'),
     size                   = require('gulp-size'),
+    sourcemaps             = require('gulp-sourcemaps'),
     spawn                  = require('child_process').spawn
 
 function exec(cmd) {
@@ -30,6 +39,42 @@ function wait(m) {
   })
 
 }
+
+gulp.task('doc-styles', function() {
+
+  //flush cache of the global vars js
+  try {
+    delete require.cache[require.resolve('./src/manual/styles/base/variables')]
+  } catch (e) {}
+
+  var styles = [
+    './src/manual/styles/base/xs.css',
+    './src/manual/styles/blocks/**/xs.css',
+    './src/manual/styles/blocks/**/sm.css',
+    './src/manual/styles/blocks/**/md.css',
+    './src/manual/styles/blocks/**/lg.css',
+  ]
+
+  return gulp
+    .src(styles)
+    .pipe(sourcemaps.init())
+    .pipe(postcss([
+      postcssMixins({mixinsDir: path.join(__dirname, './src/manual/styles/mixins/')}),
+      postcssSimpleVars({variables: require('./src/manual/styles/base/variables')}),
+      postcssColor(),
+      postcssFontMagician({
+        hosted: './src/manual/assets/fonts'
+      }),
+      postcssNested,
+      postcssAutoprefixer({browsers: ['last 2 versions', '> 2%']}),
+      postcssDiscardComments
+    ]))
+    .pipe(concat('app.css'))
+    .pipe(nano())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./doc/css'))
+
+})
 
 gulp.task('lint', function () {
 
@@ -96,6 +141,8 @@ gulp.task('mocha-integration', async function(done) {
 })
 
 gulp.task('mocha-unit', async function(done) {
+
+  var r = require('./src/lib/database/driver')
 
   return gulp
     .src([

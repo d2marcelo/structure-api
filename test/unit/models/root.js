@@ -2,7 +2,7 @@ import {Schema, type} from 'eisley'
 
 import RootModel from '../../../src/models/root'
 
-/** @test {RootModel#initialize} */
+/** @test {RootModel} */
 describe('Root', function() {
 
   it('should initialize', function(done) {

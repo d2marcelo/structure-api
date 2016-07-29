@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">OrganizationService | Structure Core API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-app.css">
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="https://github.com/structurejs/core.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/root.js~RootController.html">RootController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/applications</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/applications/index.js~ApplicationController.html">ApplicationController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/auth/index.js~AuthController.html">AuthController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/buckets</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/buckets/index.js~BucketsController.html">BucketsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/digital-assets</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/digital-assets/index.js~DigitalAssetsController.html">DigitalAssetsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/document-revisions</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html">DocumentRevisionsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/documents</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/documents/index.js~DocumentsController.html">DocumentsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/fields</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/fields/index.js~FieldsController.html">FieldsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/organizations</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/organizations/index.js~OrganizationsController.html">OrganizationsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/registry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/registry/index.js~RegistryController.html">RegistryController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/taxonomies</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/taxonomies/index.js~TaxonomiesController.html">TaxonomiesController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/template-revisions</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html">TemplateRevisionsController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/templates</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/templates/index.js~TemplatesController.html">TemplatesController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers/users</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/users/index.js~UsersController.html">UsersController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/eventemitter.js~EventEmitter.html">EventEmitter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/mapper.js~Mapper.html">Mapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/database</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUUID">generateUUID</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/utils/object</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectEach">ObjectEach</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ObjectMap">ObjectMap</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">mixins</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/log.js~Log.html">Log</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/middleware.js~Middleware.html">Middleware</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/scrape.js~Scrape.html">Scrape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mixins/stream-extras.js~StreamExtras.html">StreamExtras</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/root.js~RootModel.html">RootModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/application</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/application/index.js~AppModel.html">AppModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/auth/index.js~AuthModel.html">AuthModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/bucket</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/bucket/index.js~BucketModel.html">BucketModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/channel</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/channel/index.js~ChannelModel.html">ChannelModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/digital-asset</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/digital-asset/index.js~DigitalAssetModel.html">DigitalAssetModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/document</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/document/index.js~DocumentModel.html">DocumentModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/document-revision</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/document-revision/index.js~DocumentRevisionModel.html">DocumentRevisionModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/field</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/field/index.js~FieldModel.html">FieldModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/organization</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/organization/index.js~OrganizationModel.html">OrganizationModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/registry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/registry/index.js~RegistryModel.html">RegistryModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/revision</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/revision/index.js~RevisionModel.html">RevisionModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/taxonomy</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/taxonomy/index.js~TaxonomyModel.html">TaxonomyModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/template</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/template/index.js~TemplateModel.html">TemplateModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/template-revision</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/template-revision/index.js~TemplateRevisionModel.html">TemplateRevisionModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models/user</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/user/index.js~UserModel.html">UserModel</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/server/dispatcher.js~Dispatcher.html">Dispatcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/server/router.js~Router.html">Router</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/app.js~AppService.html">AppService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/auth.js~AuthService.html">AuthService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html">OrganizationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/package.js~PackageService.html">PackageService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/password.js~PasswordService.html">PasswordService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/short-id.js~ShortIdService.html">ShortIdService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/template.js~TemplateService.html">TemplateService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/token.js~TokenService.html">TokenService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/user.js~UserService.html">UserService</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import OrganizationService from &apos;<span><a href="file/src/services/organization.js.html#lineNumber16">structure-core/src/services/organization.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/services/organization.js.html#lineNumber16">source</a></span></span>
+</div>
+
+<div class="self-detail detail">
+  <h1 data-ice="name">OrganizationService</h1>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <div class="description" data-ice="description"><p>OrganizationService Class</p>
+</div>
+
+  
+
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html#instance-method-create">create</a></span></span><span data-ice="signature">(o: {}, cb: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html#instance-method-get">get</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html#instance-method-getByShortId">getByShortId</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html#instance-method-list">list</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html#instance-method-update">update</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/services/organization.js~OrganizationService.html#instance-method-updateByShortId">updateByShortId</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-create">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">create</span><span data-ice="signature">(o: {}, cb: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/organization.js.html#lineNumber18">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">o</td>
+      <td data-ice="type">{}</td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: {}</li></ul></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">cb</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-get">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">get</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/organization.js.html#lineNumber60">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-getByShortId">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">getByShortId</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/organization.js.html#lineNumber66">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-list">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">list</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/organization.js.html#lineNumber72">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-update">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">update</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/organization.js.html#lineNumber80">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-updateByShortId">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">updateByShortId</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/organization.js.html#lineNumber86">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

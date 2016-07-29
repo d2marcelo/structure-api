@@ -1,0 +1,21 @@
+body {
+  background-color: #f5f6f7;
+}
+
+.navigation {
+
+  li {
+
+    .nav-dir-path {
+      //display: none;
+    }
+
+    &:first-child {
+      .nav-dir-path {
+        display: block;
+      }
+    }
+
+  }
+
+}

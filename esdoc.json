@@ -3,7 +3,7 @@
   "package": "./package.json",
   "index": "./src/manual/overview.md",
   "source": "./src",
-  "destination": "./docs",
+  "destination": "./doc",
 
   "manual": {
     "overview": ["./src/manual/overview.md"],
@@ -21,6 +21,8 @@
       "name": "esdoc-es7-plugin"
     }
   ],
+
+  "styles": ["./doc/css/app.css"],
 
   "test": {
     "type": "mocha",
