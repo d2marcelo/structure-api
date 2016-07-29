@@ -136,7 +136,7 @@ class TemplateModel extends Model {
 
       Object.assign(doc, {
         fields: revision.fields,
-        title: revision.title
+        title: doc.title
       })
 
       return resolve(doc)
@@ -161,6 +161,7 @@ class TemplateModel extends Model {
       })
 
       var revision = await new TemplateRevision().getById(doc.activeRevisionId)
+
 
       if(!revision.id) {
         logger.error('Could not get template revision for', doc.id)
