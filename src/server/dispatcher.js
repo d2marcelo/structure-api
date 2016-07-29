@@ -13,10 +13,24 @@ import {chalk, logger} from '../lib/logger'
  */
 class Dispatcher {
 
+  /**
+   * Server constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     this.options = options
   }
 
+  /**
+   * Dispatch a route to controller action
+   *
+   * @public
+   * @param {Object} controller - Controller
+   * @param {String} actionName - The name of the controller method, or action, to call
+   */
   dispatch(controller, actionName) {
 
     return async (req, res, next) => {
@@ -24,7 +38,7 @@ class Dispatcher {
       var action = controller[actionName]
 
       if(req.files) {
-        logger.debug('files', req.files)
+        logger.debug('File upload detected:', req.files)
 
         req.files = req.files.map( (file) => {
           file.diskFileName     = file.filename
@@ -59,7 +73,13 @@ class Dispatcher {
       }
       catch(err) {
         logger.error(`Action ${actionName} failed`)
-        console.error(err.stack)
+        if(err.stack) {
+          console.error(err.message)
+          console.error(err.stack)
+        }
+        else {
+          console.error(err)
+        }
 
         status = 403
 

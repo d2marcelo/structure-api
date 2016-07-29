@@ -1,11 +1,10 @@
-var req = {
-  body: {},
-  params: {}
-}
-
 class Res {
 
   end() {
+    return this
+  }
+
+  json() {
     return this
   }
 
@@ -13,7 +12,9 @@ class Res {
     return this
   }
 
-  status() {
+  status(code) {
+    this.statusCode = code
+
     return this
   }
 
@@ -21,6 +22,15 @@ class Res {
 
 function next() {return this}
 
-export {req}
-export {Res}
-export {next}
+export default function expressObjects() {
+
+  return {
+    req: {
+      body: {},
+      params: {}
+    },
+    res: new Res(),
+    next
+  }
+
+}

@@ -34,6 +34,13 @@ var upload = multer({storage: storageAdaptors.disk.adaptor}).any()
  */
 class Router {
 
+  /**
+   * Router constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
     this.options     = options
 
@@ -42,11 +49,17 @@ class Router {
     this.routes      = options.routes
     this.server      = options.server
     //this.structRoute()
-    if(typeof this.routes == 'function') this.loadRoutes()
+
     this.generateRoutes()
+    if(typeof this.routes == 'function') this.loadRoutes()
 
   }
 
+  /**
+   * Auto generate routes for controller actions
+   *
+   * @private
+   */
   generateRoutes() {
     var server  = this.server,
         version = `v${process.env.API_VERSION}`
@@ -90,10 +103,20 @@ class Router {
 
   }
 
+  /**
+   * Load custom defined routes
+   *
+   * @private
+   */
   loadRoutes() {
     this.routes.call(this, this.server)
   }
 
+  /**
+   * TBD...
+   *
+   * @private
+   */
   structRoute() {
     var server = this.server
 

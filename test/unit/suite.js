@@ -28,5 +28,8 @@ describe('Unit', function() {
 
   describe('Server', function() {
     require('./server/index')
+    require('./server/dispatcher')
+    require('./server/router')
   })
+
 })
