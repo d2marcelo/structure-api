@@ -1,13 +1,13 @@
 import MockHTTPServer from '../../helpers/mock-http-server'
 import {Schema, type} from 'eisley'
 
-import OrganizationModel from '../../../src/models/organization'
+import OrganizationController from '../../../src/controllers/organizations'
 
 describe('Organization', function() {
 
   it('should create an organization via PUT', async function(done) {
 
-    var organization = new OrganizationModel()
+    var organization = new OrganizationController()
 
     var pkg = {
       desc: '',
@@ -19,6 +19,7 @@ describe('Organization', function() {
       .send(pkg)
 
     expect(res.body.pkg.title).to.equal('Org 45')
+    expect(res.body.status).to.equal(201)
 
     done()
 
@@ -26,7 +27,7 @@ describe('Organization', function() {
 
   it('should get an organization by ID via GET', async function(done) {
 
-    var organization = new OrganizationModel()
+    var organization = new OrganizationController()
 
     var pkg = {
       desc: '',
@@ -43,14 +44,15 @@ describe('Organization', function() {
       .get(`/api/v${process.env.API_VERSION}/${organization.name}/${orgId}`)
 
     expect(res.body.pkg.title).to.equal('Org 45')
+    expect(res.body.status).to.equal(200)
 
     done()
 
   })
 
-  it('should get all organizatins via GET', async function(done) {
+  it('should get all organizations via GET', async function(done) {
 
-    var organization = new OrganizationModel()
+    var organization = new OrganizationController()
 
     var pkg = {
       desc: '',
@@ -65,6 +67,7 @@ describe('Organization', function() {
       .get(`/api/v${process.env.API_VERSION}/${organization.name}`)
 
     expect(res.body.pkg.organizations.length).to.be.above(0)
+    expect(res.body.status).to.equal(200)
 
     done()
 
@@ -72,7 +75,7 @@ describe('Organization', function() {
 
   it('should update an organization by ID via POST', async function(done) {
 
-    var organization = new OrganizationModel()
+    var organization = new OrganizationController()
 
     var pkg = {
       desc: '',
@@ -96,6 +99,7 @@ describe('Organization', function() {
       .get(`/api/v${process.env.API_VERSION}/${organization.name}/${orgId}`)
 
     expect(res2.body.pkg.title).to.equal('Org 46')
+    expect(res.body.status).to.equal(200)
 
     done()
 

@@ -32,4 +32,8 @@ describe('Unit', function() {
     require('./server/router')
   })
 
+  describe('Routes', function() {
+    require('./routes/organizations')
+  })
+
 })

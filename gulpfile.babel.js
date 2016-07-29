@@ -92,6 +92,52 @@ gulp.task('mocha', function(done) {
 
   var r = require('./src/lib/database/driver')
 
+  // Modified the rethinkdbdash drain function to be awaitable
+  function drain() {
+
+    var _this = r.getPoolMaster()
+
+    return new Promise( (resolve, reject) => {
+
+      _this.emit('draining')
+
+      if (_this._discovery === true) {
+        _this._discovery = false;
+        if (_this._feed != null) {
+          _this._feed.close()
+        }
+      }
+      _this._draining = true
+      var promises = []
+      var pools = _this.getPools()
+      for(var i=0; i<pools.length; i++) {
+        promises.push(pools[i].drain())
+      }
+      _this._healthyPools = []
+
+      Promise
+        .all(promises)
+        .then(function() {
+          for(var i=0; i<pools.length; i++) {
+            pools[i].removeAllListeners()
+          }
+          setTimeout(function() {
+            resolve()
+          }, 1000)
+        })
+        .catch(function(error) {
+          if (_this._options.silent !== true) {
+            _this._log('Failed to drain all the pools:')
+            _this._log(error.message)
+            _this._log(error.stack)
+          }
+          reject()
+        })
+
+    })
+
+  }
+
   gulp
     .src([
       './test/helpers/start.js',
@@ -100,52 +146,6 @@ gulp.task('mocha', function(done) {
     ], {read: false})
     .pipe(mocha({reporter: 'spec'}))
     .on('end', async function () {
-
-      // Modified the rethinkdbdash drain function to be awaitable
-      function drain() {
-
-        var _this = r.getPoolMaster()
-
-        return new Promise( (resolve, reject) => {
-
-          _this.emit('draining')
-
-          if (_this._discovery === true) {
-            _this._discovery = false;
-            if (_this._feed != null) {
-              _this._feed.close()
-            }
-          }
-          _this._draining = true
-          var promises = []
-          var pools = _this.getPools()
-          for(var i=0; i<pools.length; i++) {
-            promises.push(pools[i].drain())
-          }
-          _this._healthyPools = []
-
-          Promise
-            .all(promises)
-            .then(function() {
-              for(var i=0; i<pools.length; i++) {
-                pools[i].removeAllListeners()
-              }
-              setTimeout(function() {
-                resolve()
-              }, 1000)
-            })
-            .catch(function(error) {
-              if (_this._options.silent !== true) {
-                _this._log('Failed to drain all the pools:')
-                _this._log(error.message)
-                _this._log(error.stack)
-              }
-              reject()
-            })
-
-        })
-
-      }
 
       do {
         await drain()
@@ -160,8 +160,20 @@ gulp.task('mocha', function(done) {
       process.exit()
 
     })
-    .on('error', function (e) {
+    .on('error', async function (e) {
       console.error(e)
+
+      do {
+        await drain()
+      }
+      while(r.getPoolMaster().getLength() > 0) {
+
+        console.log('DEBUG: pool length', r.getPoolMaster().getLength())
+
+        await drain()
+      }
+
+      process.exit(1)
     })
 
 })
