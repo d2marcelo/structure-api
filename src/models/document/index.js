@@ -124,8 +124,7 @@ class DocumentModel extends Model {
       docs.forEach( (doc) => {
         docsResolved.push(this.getActiveRevision(doc).then( (revision) => {
           return Object.assign(doc, {
-            fields: revision.fields,
-            title: revision.title
+            fields: revision.fields
           })
         }))
       })
