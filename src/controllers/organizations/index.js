@@ -52,7 +52,7 @@ class OrganizationsController extends RootController {
   getById(req, res) {
 
     var organization = new OrganizationModel()
-    console.log('&&&& req.params', req.params)
+
     return organization.getById(req.params.id)
 
   }
@@ -82,7 +82,7 @@ class OrganizationsController extends RootController {
   update(req, res) {
 
     var organization = new OrganizationModel()
-    console.log('&&&& req.body', req.body)
+
     return organization.update(req.params.id, req.body)
 
   }
