@@ -1,5 +1,4 @@
 import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
 
 import AuthModel from '../../../src/models/auth'
 import UserModel from '../../../src/models/user'

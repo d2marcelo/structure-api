@@ -1,5 +1,4 @@
 import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
 
 import PasswordService from '../../../src/services/password'
 

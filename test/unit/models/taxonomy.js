@@ -1,6 +1,5 @@
 import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
-import TaxonomyModel      from '../../../src/models/taxonomy'
+import TaxonomyModel  from '../../../src/models/taxonomy'
 
 /** @test {TaxonomyModel} */
 describe('Taxonomy', function() {

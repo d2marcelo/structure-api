@@ -3,10 +3,9 @@
  *
  * @ignore
  */
- import {chalk, logger} from '../../lib/logger'
- import Model           from '../root'
- import r               from '../../lib/database/driver'
- import TemplateSchema  from './schemas/template'
+import {chalk, logger} from '../../lib/logger'
+import RootController  from '../root'
+import TemplateModel   from '../../models/template'
 
 /**
  * TemplatesController Class

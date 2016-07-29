@@ -161,7 +161,7 @@ gulp.task('mocha', function(done) {
 
     })
     .on('error', function (e) {
-
+      console.error(e)
     })
 
 })

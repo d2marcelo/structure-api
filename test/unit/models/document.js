@@ -1,5 +1,4 @@
 import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
 
 import DocumentModel         from '../../../src/models/document'
 import DocumentRevisionModel from '../../../src/models/document-revision'

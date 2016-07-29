@@ -1,5 +1,4 @@
 import {Schema, type} from 'eisley'
-import r              from '../../../src/lib/database/driver'
 
 import TemplateModel         from '../../../src/models/template'
 import TemplateRevisionModel from '../../../src/models/template-revision'
@@ -48,7 +47,7 @@ describe('Template', function() {
 
   })
 
-  /** @test {TemplateModel#getAll} **/ 
+  /** @test {TemplateModel#getAll} **/
   it('should get all templates', async function(done){
 
     var template = new  TemplateModel()
@@ -64,7 +63,7 @@ describe('Template', function() {
 
   })
 
-  /** @test {TemplateModel#update} */ 
+  /** @test {TemplateModel#update} */
   it('should update a template ', async function(done) {
 
     var  template = new TemplateModel()
@@ -73,7 +72,7 @@ describe('Template', function() {
       title: 'Fun Template'
     })
 
-    var templateUpdateRes= await template.update(templateRes.id, { 
+    var templateUpdateRes= await template.update(templateRes.id, {
       title: 'Fun Template 3'
     })
 
@@ -152,7 +151,7 @@ describe('Template', function() {
 
   })
 
-  /** @test {TemplateModel#getAll} **/ 
+  /** @test {TemplateModel#getAll} **/
   it('should get all templates revisions', async function(done){
 
     var template = new TemplateModel()

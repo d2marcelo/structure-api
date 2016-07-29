@@ -1,5 +1,4 @@
-import {Schema, type}     from 'eisley'
-import r                  from '../../../src/lib/database/driver'
+import {Schema, type}  from 'eisley'
 import UsersController from '../../../src/controllers/users'
 
 /** @test {UsersController} */
