@@ -21,6 +21,7 @@ describe('Unit', function() {
     require('./controllers/templates')
     require('./controllers/users')
     require('./controllers/documents')
+    require('./controllers/organizations')
   })
 
   describe('Services', function() {
