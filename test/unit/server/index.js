@@ -1,5 +1,6 @@
 import Server from '../../../src/server'
 
+/** @test {Server} */
 describe('HTTP Server', function() {
 
   it('should initialize', function(done) {
@@ -19,6 +20,7 @@ describe('HTTP Server', function() {
 
   })
 
+  /** @test {Server#start} */
   it('should start', function(done) {
 
     var api = new Server()
@@ -32,6 +34,7 @@ describe('HTTP Server', function() {
 
   })
 
+  /** @test {Server#stop} */
   it('should stop', function(done) {
 
     var api = new Server()

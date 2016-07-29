@@ -24,6 +24,13 @@ function removePoweredBy(req, res, next) {
  */
 class Server {
 
+  /**
+   * Server constructor
+   *
+   * @public
+   * @constructor
+   * @param {Object} options - Options
+   */
   constructor(options = {}) {
 
     this.server = express()
@@ -36,7 +43,6 @@ class Server {
       this.server.use(this.logRequestInfo)
     }
 
-    //this.loadRoutes()
     this.router = options.router || new Router({
       dispatcher: options.dispatcher || new Dispatcher(),
       server: this.server
@@ -46,6 +52,11 @@ class Server {
 
   }
 
+  /**
+   * List of routes registered with Express including middleware routes
+   *
+   * @private
+   */
   debugRoutes() {
     var route, routes = []
 
@@ -63,6 +74,14 @@ class Server {
     return routes
   }
 
+  /**
+   * Log each HTTP request's method and url
+   *
+   * @private
+   * @param {Object} req - Express req
+   * @param {Object} res - Express res
+   * @param {Function} next - Express next
+   */
   logRequestInfo(req, res, next) {
 
     logger.info(req.method, req.originalUrl)
@@ -70,12 +89,22 @@ class Server {
 
   }
 
+  /**
+   * Start the HTTP Server
+   *
+   * @public
+   */
   start() {
 
     this.server = this.server.listen(process.env.EXPRESS_PORT)
 
   }
 
+  /**
+   * Stop the HTTP Server
+   *
+   * @public
+   */
   stop() {
 
     var r = require('../lib/database/driver')
@@ -85,6 +114,11 @@ class Server {
 
   }
 
+  /**
+   * Add Express middleware to the Express server object
+   *
+   * @public
+   */
   use() {
 
     this.server.use.apply(this.server, arguments)
