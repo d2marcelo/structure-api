@@ -1,10 +1,13 @@
+import {chalk, logger} from '../../src/lib/logger'
+
 class Res {
 
   end() {
     return this
   }
 
-  json() {
+  json(pkg = {}) {
+    logger.debug('pkg', pkg)
     return this
   }
 
@@ -13,6 +16,7 @@ class Res {
   }
 
   status(code) {
+    logger.debug('status', code)
     this.statusCode = code
 
     return this
