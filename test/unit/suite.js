@@ -17,11 +17,12 @@ describe('Unit', function() {
   })
 
   describe('Controllers', function() {
+    require('./controllers/auth')
+    require('./controllers/documents')
+    require('./controllers/organizations')
     require('./controllers/taxonomies')
     require('./controllers/templates')
     require('./controllers/users')
-    require('./controllers/documents')
-    require('./controllers/organizations')
   })
 
   describe('Services', function() {

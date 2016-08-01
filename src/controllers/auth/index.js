@@ -3,6 +3,7 @@
  *
  * @ignore
  */
+import AuthModel      from '../../models/auth'
 import RootController from '../root'
 
 /**
@@ -22,6 +23,14 @@ class AuthController extends RootController {
    */
   constructor(options = {}) {
     super(options)
+  }
+
+  login(req, res) {
+
+    var auth = new AuthModel()
+
+    return auth.login(req.body)
+
   }
 
 }
