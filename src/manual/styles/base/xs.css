@@ -36,3 +36,11 @@ a {
   }
 
 }
+
+.kind-class, .kind-function, .kind-variable {
+  display: none;
+
+  & + span {
+    margin-left: 10px;
+  }
+}
