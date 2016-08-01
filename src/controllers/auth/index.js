@@ -14,17 +14,26 @@ import RootController from '../root'
  */
 class AuthController extends RootController {
 
-  /**
-   * AuthController constructor
-   *
-   * @public
-   * @constructor
-   * @param {Object} options - Options
-   */
+ /**
+  * AuthController constructor
+  *
+  * @public
+  * @constructor
+  * @param {Object} options - Options
+  */
   constructor(options = {}) {
-    super(options)
+   super(Object.assign({}, {
+     name: 'auth'
+   }, options))
   }
 
+ /**
+  * Login a user
+  *
+  * @public
+  * @param {Object} req - Express req
+  * @param {Object} res - Express res
+  */
   login(req, res) {
 
     var auth = new AuthModel()

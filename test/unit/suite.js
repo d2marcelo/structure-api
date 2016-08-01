@@ -36,6 +36,7 @@ describe('Unit', function() {
   })
 
   describe('Routes', function() {
+    require('./routes/auth')
     require('./routes/organizations')
   })
 
