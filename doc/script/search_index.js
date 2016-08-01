@@ -1,3542 +1,3014 @@
 window.esdocSearchIndex = [
   [
-    "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber47",
-    "",
-    "test"
+    &quot;structure-core/src/models/application/index.js~appmodel&quot;,
+    &quot;class/src/models/application/index.js~AppModel.html&quot;,
+    &quot;<span>AppModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/application/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber77",
-    "",
-    "test"
+    &quot;structure-core/src/services/app.js~appservice&quot;,
+    &quot;class/src/services/app.js~AppService.html&quot;,
+    &quot;<span>AppService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/app.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber36",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/applications/index.js~applicationcontroller&quot;,
+    &quot;class/src/controllers/applications/index.js~ApplicationController.html&quot;,
+    &quot;<span>ApplicationController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/applications/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber62",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/auth/index.js~authcontroller&quot;,
+    &quot;class/src/controllers/auth/index.js~AuthController.html&quot;,
+    &quot;<span>AuthController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/auth/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber89",
-    "",
-    "test"
+    &quot;structure-core/src/models/auth/index.js~authmodel&quot;,
+    &quot;class/src/models/auth/index.js~AuthModel.html&quot;,
+    &quot;<span>AuthModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/auth/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber93",
-    "",
-    "test"
+    &quot;structure-core/src/services/auth.js~authservice&quot;,
+    &quot;class/src/services/auth.js~AuthService.html&quot;,
+    &quot;<span>AuthService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/auth.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber112",
-    "",
-    "test"
+    &quot;structure-core/src/models/bucket/index.js~bucketmodel&quot;,
+    &quot;class/src/models/bucket/index.js~BucketModel.html&quot;,
+    &quot;<span>BucketModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/bucket/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/core.js.html#lineNumber131",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/buckets/index.js~bucketscontroller&quot;,
+    &quot;class/src/controllers/buckets/index.js~BucketsController.html&quot;,
+    &quot;<span>BucketsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/buckets/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber9",
-    "",
-    "test"
+    &quot;structure-core/src/models/channel/index.js~channelmodel&quot;,
+    &quot;class/src/models/channel/index.js~ChannelModel.html&quot;,
+    &quot;<span>ChannelModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/channel/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber25",
-    "",
-    "test"
+    &quot;structure-core/src/models/digital-asset/index.js~digitalassetmodel&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html&quot;,
+    &quot;<span>DigitalAssetModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/digital-asset/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber44",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/digital-assets/index.js~digitalassetscontroller&quot;,
+    &quot;class/src/controllers/digital-assets/index.js~DigitalAssetsController.html&quot;,
+    &quot;<span>DigitalAssetsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/digital-assets/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/organization.js.html#lineNumber63",
-    "",
-    "test"
+    &quot;structure-core/src/server/dispatcher.js~dispatcher&quot;,
+    &quot;class/src/server/dispatcher.js~Dispatcher.html&quot;,
+    &quot;<span>Dispatcher</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/server/dispatcher.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber8",
-    "",
-    "test"
+    &quot;structure-core/src/models/document/index.js~documentmodel&quot;,
+    &quot;class/src/models/document/index.js~DocumentModel.html&quot;,
+    &quot;<span>DocumentModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/document/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber26",
-    "",
-    "test"
+    &quot;structure-core/src/models/document-revision/index.js~documentrevisionmodel&quot;,
+    &quot;class/src/models/document-revision/index.js~DocumentRevisionModel.html&quot;,
+    &quot;<span>DocumentRevisionModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/document-revision/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/application.js.html#lineNumber11",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/document-revisions/index.js~documentrevisionscontroller&quot;,
+    &quot;class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html&quot;,
+    &quot;<span>DocumentRevisionsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/document-revisions/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models/root.js.html#lineNumber68",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/documents/index.js~documentscontroller&quot;,
+    &quot;class/src/controllers/documents/index.js~DocumentsController.html&quot;,
+    &quot;<span>DocumentsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/documents/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber55",
-    "",
-    "test"
+    &quot;structure-core/src/lib/eventemitter.js~eventemitter&quot;,
+    &quot;class/src/lib/eventemitter.js~EventEmitter.html&quot;,
+    &quot;<span>EventEmitter</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/eventemitter.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber71",
-    "",
-    "test"
+    &quot;structure-core/src/models/field/index.js~fieldmodel&quot;,
+    &quot;class/src/models/field/index.js~FieldModel.html&quot;,
+    &quot;<span>FieldModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/field/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber90",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/fields/index.js~fieldscontroller&quot;,
+    &quot;class/src/controllers/fields/index.js~FieldsController.html&quot;,
+    &quot;<span>FieldsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/fields/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber109",
-    "",
-    "test"
+    &quot;structure-core/src/mixins/log.js~log&quot;,
+    &quot;class/src/mixins/log.js~Log.html&quot;,
+    &quot;<span>Log</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/mixins/log.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber127",
-    "",
-    "test"
+    &quot;structure-core/src/lib/mapper.js~mapper&quot;,
+    &quot;class/src/lib/mapper.js~Mapper.html&quot;,
+    &quot;<span>Mapper</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/mapper.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber146",
-    "",
-    "test"
+    &quot;structure-core/src/mixins/middleware.js~middleware&quot;,
+    &quot;class/src/mixins/middleware.js~Middleware.html&quot;,
+    &quot;<span>Middleware</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/mixins/middleware.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber165",
-    "",
-    "test"
+    &quot;structure-core/src/lib/utils/object/each.js~objecteach&quot;,
+    &quot;function/index.html#static-function-ObjectEach&quot;,
+    &quot;<span>ObjectEach</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/utils/object/each.js</span>&quot;,
+    &quot;function&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.old/core.js.html#lineNumber189",
-    "",
-    "test"
+    &quot;structure-core/src/lib/utils/object/map.js~objectmap&quot;,
+    &quot;function/index.html#static-function-ObjectMap&quot;,
+    &quot;<span>ObjectMap</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/utils/object/map.js</span>&quot;,
+    &quot;function&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/routes/index.js.html#lineNumber53",
-    "",
-    "test"
+    &quot;structure-core/src/models/organization/index.js~organizationmodel&quot;,
+    &quot;class/src/models/organization/index.js~OrganizationModel.html&quot;,
+    &quot;<span>OrganizationModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/organization/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/routes/index.js.html#lineNumber72",
-    "",
-    "test"
+    &quot;structure-core/src/services/organization.js~organizationservice&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html&quot;,
+    &quot;<span>OrganizationService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/organization.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/routes/index.js.html#lineNumber91",
-    "",
-    "test"
+    &quot;structure-core/src/controllers/organizations/index.js~organizationscontroller&quot;,
+    &quot;class/src/controllers/organizations/index.js~OrganizationsController.html&quot;,
+    &quot;<span>OrganizationsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/organizations/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/routes/index.js.html#lineNumber115",
-    "",
-    "test"
+    &quot;structure-core/src/services/package.js~packageservice&quot;,
+    &quot;class/src/services/package.js~PackageService.html&quot;,
+    &quot;<span>PackageService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/package.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/application/index.js~appmodel",
-    "class/src/models/application/index.js~AppModel.html",
-    "<span>AppModel</span> <span class=\"search-result-import-path\">structure-core/src/models/application/index.js</span>",
-    "class"
+    &quot;structure-core/src/services/password.js~passwordservice&quot;,
+    &quot;class/src/services/password.js~PasswordService.html&quot;,
+    &quot;<span>PasswordService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/password.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/services/app.js~appservice",
-    "class/src/services/app.js~AppService.html",
-    "<span>AppService</span> <span class=\"search-result-import-path\">structure-core/src/services/app.js</span>",
-    "class"
+    &quot;structure-core/src/controllers/registry/index.js~registrycontroller&quot;,
+    &quot;class/src/controllers/registry/index.js~RegistryController.html&quot;,
+    &quot;<span>RegistryController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/registry/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/applications/index.js~applicationcontroller",
-    "class/src/controllers/applications/index.js~ApplicationController.html",
-    "<span>ApplicationController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/applications/index.js</span>",
-    "class"
+    &quot;structure-core/src/models/registry/index.js~registrymodel&quot;,
+    &quot;class/src/models/registry/index.js~RegistryModel.html&quot;,
+    &quot;<span>RegistryModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/registry/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/auth/index.js~authcontroller",
-    "class/src/controllers/auth/index.js~AuthController.html",
-    "<span>AuthController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/auth/index.js</span>",
-    "class"
+    &quot;structure-core/src/models/revision/index.js~revisionmodel&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html&quot;,
+    &quot;<span>RevisionModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/revision/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/auth/index.js~authmodel",
-    "class/src/models/auth/index.js~AuthModel.html",
-    "<span>AuthModel</span> <span class=\"search-result-import-path\">structure-core/src/models/auth/index.js</span>",
-    "class"
+    &quot;structure-core/src/controllers/root.js~rootcontroller&quot;,
+    &quot;class/src/controllers/root.js~RootController.html&quot;,
+    &quot;<span>RootController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/root.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/services/auth.js~authservice",
-    "class/src/services/auth.js~AuthService.html",
-    "<span>AuthService</span> <span class=\"search-result-import-path\">structure-core/src/services/auth.js</span>",
-    "class"
+    &quot;structure-core/src/models/root.js~rootmodel&quot;,
+    &quot;class/src/models/root.js~RootModel.html&quot;,
+    &quot;<span>RootModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/root.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/bucket/index.js~bucketmodel",
-    "class/src/models/bucket/index.js~BucketModel.html",
-    "<span>BucketModel</span> <span class=\"search-result-import-path\">structure-core/src/models/bucket/index.js</span>",
-    "class"
+    &quot;structure-core/src/server/router.js~router&quot;,
+    &quot;class/src/server/router.js~Router.html&quot;,
+    &quot;<span>Router</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/server/router.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/buckets/index.js~bucketscontroller",
-    "class/src/controllers/buckets/index.js~BucketsController.html",
-    "<span>BucketsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/buckets/index.js</span>",
-    "class"
+    &quot;structure-core/src/mixins/scrape.js~scrape&quot;,
+    &quot;class/src/mixins/scrape.js~Scrape.html&quot;,
+    &quot;<span>Scrape</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/mixins/scrape.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/channel/index.js~channelmodel",
-    "class/src/models/channel/index.js~ChannelModel.html",
-    "<span>ChannelModel</span> <span class=\"search-result-import-path\">structure-core/src/models/channel/index.js</span>",
-    "class"
+    &quot;structure-core/src/services/short-id.js~shortidservice&quot;,
+    &quot;class/src/services/short-id.js~ShortIdService.html&quot;,
+    &quot;<span>ShortIdService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/short-id.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/digital-asset/index.js~digitalassetmodel",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html",
-    "<span>DigitalAssetModel</span> <span class=\"search-result-import-path\">structure-core/src/models/digital-asset/index.js</span>",
-    "class"
+    &quot;structure-core/src/mixins/stream-extras.js~streamextras&quot;,
+    &quot;class/src/mixins/stream-extras.js~StreamExtras.html&quot;,
+    &quot;<span>StreamExtras</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/mixins/stream-extras.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/digital-assets/index.js~digitalassetscontroller",
-    "class/src/controllers/digital-assets/index.js~DigitalAssetsController.html",
-    "<span>DigitalAssetsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/digital-assets/index.js</span>",
-    "class"
+    &quot;structure-core/src/controllers/taxonomies/index.js~taxonomiescontroller&quot;,
+    &quot;class/src/controllers/taxonomies/index.js~TaxonomiesController.html&quot;,
+    &quot;<span>TaxonomiesController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/taxonomies/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/server/dispatcher.js~dispatcher",
-    "class/src/server/dispatcher.js~Dispatcher.html",
-    "<span>Dispatcher</span> <span class=\"search-result-import-path\">structure-core/src/server/dispatcher.js</span>",
-    "class"
+    &quot;structure-core/src/models/taxonomy/index.js~taxonomymodel&quot;,
+    &quot;class/src/models/taxonomy/index.js~TaxonomyModel.html&quot;,
+    &quot;<span>TaxonomyModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/taxonomy/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/document/index.js~documentmodel",
-    "class/src/models/document/index.js~DocumentModel.html",
-    "<span>DocumentModel</span> <span class=\"search-result-import-path\">structure-core/src/models/document/index.js</span>",
-    "class"
+    &quot;structure-core/src/models/template/index.js~templatemodel&quot;,
+    &quot;class/src/models/template/index.js~TemplateModel.html&quot;,
+    &quot;<span>TemplateModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/template/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/document-revision/index.js~documentrevisionmodel",
-    "class/src/models/document-revision/index.js~DocumentRevisionModel.html",
-    "<span>DocumentRevisionModel</span> <span class=\"search-result-import-path\">structure-core/src/models/document-revision/index.js</span>",
-    "class"
+    &quot;structure-core/src/models/template-revision/index.js~templaterevisionmodel&quot;,
+    &quot;class/src/models/template-revision/index.js~TemplateRevisionModel.html&quot;,
+    &quot;<span>TemplateRevisionModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/template-revision/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/document-revisions/index.js~documentrevisionscontroller",
-    "class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html",
-    "<span>DocumentRevisionsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/document-revisions/index.js</span>",
-    "class"
+    &quot;structure-core/src/controllers/template-revisions/index.js~templaterevisionscontroller&quot;,
+    &quot;class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html&quot;,
+    &quot;<span>TemplateRevisionsController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/template-revisions/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/documents/index.js~documentscontroller",
-    "class/src/controllers/documents/index.js~DocumentsController.html",
-    "<span>DocumentsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/documents/index.js</span>",
-    "class"
+    &quot;structure-core/src/services/template.js~templateservice&quot;,
+    &quot;class/src/services/template.js~TemplateService.html&quot;,
+    &quot;<span>TemplateService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/template.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/lib/eventemitter.js~eventemitter",
-    "class/src/lib/eventemitter.js~EventEmitter.html",
-    "<span>EventEmitter</span> <span class=\"search-result-import-path\">structure-core/src/lib/eventemitter.js</span>",
-    "class"
+    &quot;structure-core/src/controllers/templates/index.js~templatescontroller&quot;,
+    &quot;class/src/controllers/templates/index.js~TemplatesController.html&quot;,
+    &quot;<span>TemplatesController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/templates/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/models/field/index.js~fieldmodel",
-    "class/src/models/field/index.js~FieldModel.html",
-    "<span>FieldModel</span> <span class=\"search-result-import-path\">structure-core/src/models/field/index.js</span>",
-    "class"
+    &quot;structure-core/src/services/token.js~tokenservice&quot;,
+    &quot;class/src/services/token.js~TokenService.html&quot;,
+    &quot;<span>TokenService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/token.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/controllers/fields/index.js~fieldscontroller",
-    "class/src/controllers/fields/index.js~FieldsController.html",
-    "<span>FieldsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/fields/index.js</span>",
-    "class"
+    &quot;structure-core/src/models/user/index.js~usermodel&quot;,
+    &quot;class/src/models/user/index.js~UserModel.html&quot;,
+    &quot;<span>UserModel</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/models/user/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/mixins/log.js~log",
-    "class/src/mixins/log.js~Log.html",
-    "<span>Log</span> <span class=\"search-result-import-path\">structure-core/src/mixins/log.js</span>",
-    "class"
+    &quot;structure-core/src/services/user.js~userservice&quot;,
+    &quot;class/src/services/user.js~UserService.html&quot;,
+    &quot;<span>UserService</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/services/user.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/lib/mapper.js~mapper",
-    "class/src/lib/mapper.js~Mapper.html",
-    "<span>Mapper</span> <span class=\"search-result-import-path\">structure-core/src/lib/mapper.js</span>",
-    "class"
+    &quot;structure-core/src/controllers/users/index.js~userscontroller&quot;,
+    &quot;class/src/controllers/users/index.js~UsersController.html&quot;,
+    &quot;<span>UsersController</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/controllers/users/index.js</span>&quot;,
+    &quot;class&quot;
   ],
   [
-    "structure-core/src/mixins/middleware.js~middleware",
-    "class/src/mixins/middleware.js~Middleware.html",
-    "<span>Middleware</span> <span class=\"search-result-import-path\">structure-core/src/mixins/middleware.js</span>",
-    "class"
+    &quot;structure-core/src/lib/database/config.js~config&quot;,
+    &quot;variable/index.html#static-variable-config&quot;,
+    &quot;<span>config</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/database/config.js</span>&quot;,
+    &quot;variable&quot;
   ],
   [
-    "structure-core/src/lib/utils/object/each.js~objecteach",
-    "function/index.html#static-function-ObjectEach",
-    "<span>ObjectEach</span> <span class=\"search-result-import-path\">structure-core/src/lib/utils/object/each.js</span>",
-    "function"
+    &quot;structure-core/src/lib/utils/uuid.js~generateuuid&quot;,
+    &quot;function/index.html#static-function-generateUUID&quot;,
+    &quot;<span>generateUUID</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/utils/uuid.js</span>&quot;,
+    &quot;function&quot;
   ],
   [
-    "structure-core/src/lib/utils/object/map.js~objectmap",
-    "function/index.html#static-function-ObjectMap",
-    "<span>ObjectMap</span> <span class=\"search-result-import-path\">structure-core/src/lib/utils/object/map.js</span>",
-    "function"
+    &quot;structure-core/src/lib/logger.js~logger&quot;,
+    &quot;variable/index.html#static-variable-logger&quot;,
+    &quot;<span>logger</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/logger.js</span>&quot;,
+    &quot;variable&quot;
   ],
   [
-    "structure-core/src/models/organization/index.js~organizationmodel",
-    "class/src/models/organization/index.js~OrganizationModel.html",
-    "<span>OrganizationModel</span> <span class=\"search-result-import-path\">structure-core/src/models/organization/index.js</span>",
-    "class"
+    &quot;structure-core/src/lib/mixin.js~mixin&quot;,
+    &quot;function/index.html#static-function-mixin&quot;,
+    &quot;<span>mixin</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/lib/mixin.js</span>&quot;,
+    &quot;function&quot;
   ],
   [
-    "structure-core/src/services/organization.js~organizationservice",
-    "class/src/services/organization.js~OrganizationService.html",
-    "<span>OrganizationService</span> <span class=\"search-result-import-path\">structure-core/src/services/organization.js</span>",
-    "class"
+    &quot;structure-core/src/mixins/mixin.js~mixin&quot;,
+    &quot;function/index.html#static-function-mixin&quot;,
+    &quot;<span>mixin</span> <span class="\&quot;search-result-import-path\&quot;">structure-core/src/mixins/mixin.js</span>&quot;,
+    &quot;function&quot;
   ],
   [
-    "structure-core/src/controllers/organizations/index.js~organizationscontroller",
-    "class/src/controllers/organizations/index.js~OrganizationsController.html",
-    "<span>OrganizationsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/organizations/index.js</span>",
-    "class"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/auth.js.html#lineNumber6&quot;,
+    &quot;Auth&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/services/package.js~packageservice",
-    "class/src/services/package.js~PackageService.html",
-    "<span>PackageService</span> <span class=\"search-result-import-path\">structure-core/src/services/package.js</span>",
-    "class"
+    &quot;authcontroller src/controllers/auth/index.js~authcontroller,authcontroller&quot;,
+    &quot;test-file/test/unit/controllers/auth.js.html#lineNumber6&quot;,
+    &quot;Auth&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/services/password.js~passwordservice",
-    "class/src/services/password.js~PasswordService.html",
-    "<span>PasswordService</span> <span class=\"search-result-import-path\">structure-core/src/services/password.js</span>",
-    "class"
+    &quot;authmodel src/models/auth/index.js~authmodel,authmodel&quot;,
+    &quot;test-file/test/unit/models/auth.js.html#lineNumber7&quot;,
+    &quot;Auth&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/controllers/registry/index.js~registrycontroller",
-    "class/src/controllers/registry/index.js~RegistryController.html",
-    "<span>RegistryController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/registry/index.js</span>",
-    "class"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/auth.js.html#lineNumber9&quot;,
+    &quot;Auth should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/models/registry/index.js~registrymodel",
-    "class/src/models/registry/index.js~RegistryModel.html",
-    "<span>RegistryModel</span> <span class=\"search-result-import-path\">structure-core/src/models/registry/index.js</span>",
-    "class"
+    &quot;authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login&quot;,
+    &quot;test-file/test/unit/models/auth.js.html#lineNumber83&quot;,
+    &quot;Auth should login&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/models/revision/index.js~revisionmodel",
-    "class/src/models/revision/index.js~RevisionModel.html",
-    "<span>RevisionModel</span> <span class=\"search-result-import-path\">structure-core/src/models/revision/index.js</span>",
-    "class"
+    &quot;authcontroller#login src/controllers/auth/index.js~authcontroller#login,authcontroller#login&quot;,
+    &quot;test-file/test/unit/controllers/auth.js.html#lineNumber84&quot;,
+    &quot;Auth should login&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/controllers/root.js~rootcontroller",
-    "class/src/controllers/root.js~RootController.html",
-    "<span>RootController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/root.js</span>",
-    "class"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/auth.js.html#lineNumber65&quot;,
+    &quot;Auth should login a user via POST&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/models/root.js~rootmodel",
-    "class/src/models/root.js~RootModel.html",
-    "<span>RootModel</span> <span class=\"search-result-import-path\">structure-core/src/models/root.js</span>",
-    "class"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/auth.js.html#lineNumber42&quot;,
+    &quot;Auth should not login a user via POST; bad password&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/server/router.js~router",
-    "class/src/server/router.js~Router.html",
-    "<span>Router</span> <span class=\"search-result-import-path\">structure-core/src/server/router.js</span>",
-    "class"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/auth.js.html#lineNumber8&quot;,
+    &quot;Auth should not login a user via POST; missing login data&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/mixins/scrape.js~scrape",
-    "class/src/mixins/scrape.js~Scrape.html",
-    "<span>Scrape</span> <span class=\"search-result-import-path\">structure-core/src/mixins/scrape.js</span>",
-    "class"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/auth.js.html#lineNumber25&quot;,
+    &quot;Auth should not login a user via POST; no user&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/services/short-id.js~shortidservice",
-    "class/src/services/short-id.js~ShortIdService.html",
-    "<span>ShortIdService</span> <span class=\"search-result-import-path\">structure-core/src/services/short-id.js</span>",
-    "class"
+    &quot;authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login&quot;,
+    &quot;test-file/test/unit/models/auth.js.html#lineNumber57&quot;,
+    &quot;Auth should not login; bad password&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/mixins/stream-extras.js~streamextras",
-    "class/src/mixins/stream-extras.js~StreamExtras.html",
-    "<span>StreamExtras</span> <span class=\"search-result-import-path\">structure-core/src/mixins/stream-extras.js</span>",
-    "class"
+    &quot;authcontroller#login src/controllers/auth/index.js~authcontroller#login,authcontroller#login&quot;,
+    &quot;test-file/test/unit/controllers/auth.js.html#lineNumber54&quot;,
+    &quot;Auth should not login; bad password&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/controllers/taxonomies/index.js~taxonomiescontroller",
-    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html",
-    "<span>TaxonomiesController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/taxonomies/index.js</span>",
-    "class"
+    &quot;authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login&quot;,
+    &quot;test-file/test/unit/models/auth.js.html#lineNumber20&quot;,
+    &quot;Auth should not login; missing login data&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/models/taxonomy/index.js~taxonomymodel",
-    "class/src/models/taxonomy/index.js~TaxonomyModel.html",
-    "<span>TaxonomyModel</span> <span class=\"search-result-import-path\">structure-core/src/models/taxonomy/index.js</span>",
-    "class"
+    &quot;authcontroller#login src/controllers/auth/index.js~authcontroller#login,authcontroller#login&quot;,
+    &quot;test-file/test/unit/controllers/auth.js.html#lineNumber9&quot;,
+    &quot;Auth should not login; missing login data&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/models/template/index.js~templatemodel",
-    "class/src/models/template/index.js~TemplateModel.html",
-    "<span>TemplateModel</span> <span class=\"search-result-import-path\">structure-core/src/models/template/index.js</span>",
-    "class"
+    &quot;authcontroller#login src/controllers/auth/index.js~authcontroller#login,authcontroller#login&quot;,
+    &quot;test-file/test/unit/controllers/auth.js.html#lineNumber31&quot;,
+    &quot;Auth should not login; no user&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/models/template-revision/index.js~templaterevisionmodel",
-    "class/src/models/template-revision/index.js~TemplateRevisionModel.html",
-    "<span>TemplateRevisionModel</span> <span class=\"search-result-import-path\">structure-core/src/models/template-revision/index.js</span>",
-    "class"
+    &quot;authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login&quot;,
+    &quot;test-file/test/unit/models/auth.js.html#lineNumber38&quot;,
+    &quot;Auth should not login; no user&quot;,
+    &quot;test&quot;
   ],
   [
-    "structure-core/src/controllers/template-revisions/index.js~templaterevisionscontroller",
-    "class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html",
-    "<span>TemplateRevisionsController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/template-revisions/index.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/services/template.js~templateservice",
-    "class/src/services/template.js~TemplateService.html",
-    "<span>TemplateService</span> <span class=\"search-result-import-path\">structure-core/src/services/template.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~arraybuffer&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/controllers/templates/index.js~templatescontroller",
-    "class/src/controllers/templates/index.js~TemplatesController.html",
-    "<span>TemplatesController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/templates/index.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~boolean&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Boolean&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/services/token.js~tokenservice",
-    "class/src/services/token.js~TokenService.html",
-    "<span>TokenService</span> <span class=\"search-result-import-path\">structure-core/src/services/token.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~dataview&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~DataView&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/models/user/index.js~usermodel",
-    "class/src/models/user/index.js~UserModel.html",
-    "<span>UserModel</span> <span class=\"search-result-import-path\">structure-core/src/models/user/index.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~date&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Date&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/services/user.js~userservice",
-    "class/src/services/user.js~UserService.html",
-    "<span>UserService</span> <span class=\"search-result-import-path\">structure-core/src/services/user.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~error&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Error&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/controllers/users/index.js~userscontroller",
-    "class/src/controllers/users/index.js~UsersController.html",
-    "<span>UsersController</span> <span class=\"search-result-import-path\">structure-core/src/controllers/users/index.js</span>",
-    "class"
+    &quot;builtinexternal/ecmascriptexternal.js~evalerror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~EvalError&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/lib/database/config.js~config",
-    "variable/index.html#static-variable-config",
-    "<span>config</span> <span class=\"search-result-import-path\">structure-core/src/lib/database/config.js</span>",
-    "variable"
+    &quot;builtinexternal/ecmascriptexternal.js~float32array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Float32Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/lib/utils/uuid.js~generateuuid",
-    "function/index.html#static-function-generateUUID",
-    "<span>generateUUID</span> <span class=\"search-result-import-path\">structure-core/src/lib/utils/uuid.js</span>",
-    "function"
+    &quot;builtinexternal/ecmascriptexternal.js~float64array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Float64Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/lib/logger.js~logger",
-    "variable/index.html#static-variable-logger",
-    "<span>logger</span> <span class=\"search-result-import-path\">structure-core/src/lib/logger.js</span>",
-    "variable"
+    &quot;builtinexternal/ecmascriptexternal.js~function&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Function&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/lib/mixin.js~mixin",
-    "function/index.html#static-function-mixin",
-    "<span>mixin</span> <span class=\"search-result-import-path\">structure-core/src/lib/mixin.js</span>",
-    "function"
+    &quot;builtinexternal/ecmascriptexternal.js~generator&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Generator&quot;,
+    &quot;external&quot;
   ],
   [
-    "structure-core/src/mixins/mixin.js~mixin",
-    "function/index.html#static-function-mixin",
-    "<span>mixin</span> <span class=\"search-result-import-path\">structure-core/src/mixins/mixin.js</span>",
-    "function"
+    &quot;builtinexternal/ecmascriptexternal.js~generatorfunction&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction&quot;,
+    &quot;external&quot;
   ],
   [
-    "authmodel src/models/auth/index.js~authmodel,authmodel",
-    "test-file/test/unit/models/auth.js.html#lineNumber8",
-    "Auth",
-    "test"
+    &quot;builtinexternal/ecmascriptexternal.js~infinity&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Infinity&quot;,
+    &quot;external&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/auth.js.html#lineNumber10",
-    "Auth should initialize",
-    "test"
+    &quot;builtinexternal/ecmascriptexternal.js~int16array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Int16Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login",
-    "test-file/test/unit/models/auth.js.html#lineNumber84",
-    "Auth should login",
-    "test"
+    &quot;builtinexternal/ecmascriptexternal.js~int32array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Int32Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login",
-    "test-file/test/unit/models/auth.js.html#lineNumber58",
-    "Auth should not login; bad password",
-    "test"
+    &quot;builtinexternal/ecmascriptexternal.js~int8array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Int8Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login",
-    "test-file/test/unit/models/auth.js.html#lineNumber21",
-    "Auth should not login; missing login data",
-    "test"
+    &quot;builtinexternal/ecmascriptexternal.js~internalerror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~InternalError&quot;,
+    &quot;external&quot;
   ],
   [
-    "authmodel#login src/models/auth/index.js~authmodel#login,authmodel#login",
-    "test-file/test/unit/models/auth.js.html#lineNumber39",
-    "Auth should not login; no user",
-    "test"
+    &quot;builtinexternal/ecmascriptexternal.js~json&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~JSON&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Array",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~map&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Map&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~arraybuffer",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~nan&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~NaN&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~boolean",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Boolean",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~number&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Number&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~dataview",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~DataView",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~object&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Object&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~date",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Date",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~promise&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Promise&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~error",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Error",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~proxy&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Proxy&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~evalerror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~EvalError",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~rangeerror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~RangeError&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~float32array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~referenceerror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~ReferenceError&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~float64array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~reflect&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Reflect&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~function",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Function",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~regexp&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~RegExp&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~generator",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Generator",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~set&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Set&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~generatorfunction",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~string&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~String&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~infinity",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Infinity",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~symbol&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Symbol&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int16array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~syntaxerror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~SyntaxError&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int32array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~typeerror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~TypeError&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int8array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~urierror&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~URIError&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~internalerror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~InternalError",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~uint16array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Uint16Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~json",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~JSON",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~uint32array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Uint32Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~map",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Map",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~uint8array&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Uint8Array&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~nan",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~NaN",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~uint8clampedarray&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~number",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Number",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~weakmap&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~WeakMap&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~object",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Object",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~weakset&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~WeakSet&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~promise",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Promise",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~boolean&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~boolean&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~proxy",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Proxy",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~function&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~function&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~rangeerror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~RangeError",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~null&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~null&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~referenceerror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~number&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~number&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~reflect",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Reflect",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~object&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~object&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~regexp",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~RegExp",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~string&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~string&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~set",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Set",
-    "external"
+    &quot;builtinexternal/ecmascriptexternal.js~undefined&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/ECMAScriptExternal.js~undefined&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~string",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~String",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~audiocontext&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~AudioContext&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~symbol",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Symbol",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~canvasrenderingcontext2d&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~syntaxerror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~documentfragment&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~DocumentFragment&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~typeerror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~TypeError",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~element&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~Element&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~urierror",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~URIError",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~event&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~Event&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint16array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~node&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~Node&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint32array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~nodelist&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~NodeList&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint8array",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
-    "external"
+    &quot;builtinexternal/webapiexternal.js~xmlhttprequest&quot;,
+    &quot;external/index.html&quot;,
+    &quot;BuiltinExternal/WebAPIExternal.js~XMLHttpRequest&quot;,
+    &quot;external&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint8clampedarray",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
-    "external"
+    &quot;dispatcher src/server/dispatcher.js~dispatcher,dispatcher&quot;,
+    &quot;test-file/test/unit/server/dispatcher.js.html#lineNumber37&quot;,
+    &quot;Dispatcher&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~weakmap",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
-    "external"
+    &quot;dispatcher#dispatch src/server/dispatcher.js~dispatcher#dispatch,dispatcher#dispatch&quot;,
+    &quot;test-file/test/unit/server/dispatcher.js.html#lineNumber51&quot;,
+    &quot;Dispatcher should dispatch a 200&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~weakset",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
-    "external"
+    &quot;dispatcher#dispatch src/server/dispatcher.js~dispatcher#dispatch,dispatcher#dispatch&quot;,
+    &quot;test-file/test/unit/server/dispatcher.js.html#lineNumber86&quot;,
+    &quot;Dispatcher should dispatch a 201&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~boolean",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~boolean",
-    "external"
+    &quot;dispatcher#dispatch src/server/dispatcher.js~dispatcher#dispatch,dispatcher#dispatch&quot;,
+    &quot;test-file/test/unit/server/dispatcher.js.html#lineNumber118&quot;,
+    &quot;Dispatcher should dispatch a 403&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~function",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~function",
-    "external"
+    &quot;&quot;,
+    &quot;test-file/test/unit/server/dispatcher.js.html#lineNumber39&quot;,
+    &quot;Dispatcher should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~null",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~null",
-    "external"
+    &quot;documentmodel src/models/document/index.js~documentmodel,documentmodel&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber7&quot;,
+    &quot;Document&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~number",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~number",
-    "external"
+    &quot;documentmodel#create src/models/document/index.js~documentmodel#create,documentmodel#create&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber20&quot;,
+    &quot;Document should create a document&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~object",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~object",
-    "external"
+    &quot;documentrevisionmodel#create documentrevisionmodel#create,documentrevisionmodel#create&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber88&quot;,
+    &quot;Document should create a document revision&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~string",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~string",
-    "external"
+    &quot;documentrevisionmodel#getall documentrevisionmodel#getall,documentrevisionmodel#getall&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber147&quot;,
+    &quot;Document should get All revision&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~undefined",
-    "external/index.html",
-    "BuiltinExternal/ECMAScriptExternal.js~undefined",
-    "external"
+    &quot;rootmodel#getbyid src/models/root.js~rootmodel#getbyid,rootmodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber35&quot;,
+    &quot;Document should get a document by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~audiocontext",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~AudioContext",
-    "external"
+    &quot;documentrevisionmodel#getbyid documentrevisionmodel#getbyid,documentrevisionmodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber117&quot;,
+    &quot;Document should get a revision by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
-    "external"
+    &quot;rootmodel#getal rootmodel#getal,rootmodel#getal&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber52&quot;,
+    &quot;Document should get all documents&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~documentfragment",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
-    "external"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber9&quot;,
+    &quot;Document should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~element",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~Element",
-    "external"
+    &quot;documentmodel#update documentmodel#update,documentmodel#update&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber69&quot;,
+    &quot;Document should update a document&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~event",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~Event",
-    "external"
+    &quot;documentrevisionmodel#update documentrevisionmodel#update,documentrevisionmodel#update&quot;,
+    &quot;test-file/test/unit/models/document.js.html#lineNumber176&quot;,
+    &quot;Document should update a document revision&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~node",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~Node",
-    "external"
+    &quot;documentscontroller src/controllers/documents/index.js~documentscontroller,documentscontroller&quot;,
+    &quot;test-file/test/unit/controllers/documents.js.html#lineNumber5&quot;,
+    &quot;Documents&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~nodelist",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~NodeList",
-    "external"
+    &quot;documentscontroller#create src/controllers/documents/index.js~documentscontroller#create,documentscontroller#create&quot;,
+    &quot;test-file/test/unit/controllers/documents.js.html#lineNumber8&quot;,
+    &quot;Documents should create an taxonomy&quot;,
+    &quot;test&quot;
   ],
   [
-    "builtinexternal/webapiexternal.js~xmlhttprequest",
-    "external/index.html",
-    "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
-    "external"
+    &quot;documentscontroller#getall src/controllers/documents/index.js~documentscontroller#getall,documentscontroller#getall&quot;,
+    &quot;test-file/test/unit/controllers/documents.js.html#lineNumber55&quot;,
+    &quot;Documents should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentmodel src/models/document/index.js~documentmodel,documentmodel",
-    "test-file/test/unit/models/document.js.html#lineNumber8",
-    "Document",
-    "test"
+    &quot;documentscontroller#getbyid src/controllers/documents/index.js~documentscontroller#getbyid,documentscontroller#getbyid&quot;,
+    &quot;test-file/test/unit/controllers/documents.js.html#lineNumber28&quot;,
+    &quot;Documents should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentmodel#create src/models/document/index.js~documentmodel#create,documentmodel#create",
-    "test-file/test/unit/models/document.js.html#lineNumber21",
-    "Document should create a document",
-    "test"
+    &quot;documentscontroller#update src/controllers/documents/index.js~documentscontroller#update,documentscontroller#update&quot;,
+    &quot;test-file/test/unit/controllers/documents.js.html#lineNumber77&quot;,
+    &quot;Documents should update a document&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentrevisionmodel#create documentrevisionmodel#create,documentrevisionmodel#create",
-    "test-file/test/unit/models/document.js.html#lineNumber89",
-    "Document should create a document revision",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/lib/database/driver.js.html#lineNumber3&quot;,
+    &quot;Driver&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentrevisionmodel#getall documentrevisionmodel#getall,documentrevisionmodel#getall",
-    "test-file/test/unit/models/document.js.html#lineNumber148",
-    "Document should get All revision",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/lib/database/driver.js.html#lineNumber9&quot;,
+    &quot;Driver should use r.now()&quot;,
+    &quot;test&quot;
   ],
   [
-    "rootmodel#getbyid src/models/root.js~rootmodel#getbyid,rootmodel#getbyid",
-    "test-file/test/unit/models/document.js.html#lineNumber36",
-    "Document should get a document by ID",
-    "test"
+    &quot;server server,server&quot;,
+    &quot;test-file/test/unit/server/index.js.html#lineNumber4&quot;,
+    &quot;HTTP Server&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentrevisionmodel#getbyid documentrevisionmodel#getbyid,documentrevisionmodel#getbyid",
-    "test-file/test/unit/models/document.js.html#lineNumber118",
-    "Document should get a revision by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/server/index.js.html#lineNumber6&quot;,
+    &quot;HTTP Server should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "rootmodel#getal rootmodel#getal,rootmodel#getal",
-    "test-file/test/unit/models/document.js.html#lineNumber53",
-    "Document should get all documents",
-    "test"
+    &quot;server#start server#start,server#start&quot;,
+    &quot;test-file/test/unit/server/index.js.html#lineNumber24&quot;,
+    &quot;HTTP Server should start&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/document.js.html#lineNumber10",
-    "Document should initialize",
-    "test"
+    &quot;server#stop server#stop,server#stop&quot;,
+    &quot;test-file/test/unit/server/index.js.html#lineNumber38&quot;,
+    &quot;HTTP Server should stop&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentmodel#update documentmodel#update,documentmodel#update",
-    "test-file/test/unit/models/document.js.html#lineNumber70",
-    "Document should update a document",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/integration/suite.js.html#lineNumber1&quot;,
+    &quot;Integration&quot;,
+    &quot;test&quot;
   ],
   [
-    "documentrevisionmodel#update documentrevisionmodel#update,documentrevisionmodel#update",
-    "test-file/test/unit/models/document.js.html#lineNumber177",
-    "Document should update a document revision",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html#lineNumber4&quot;,
+    &quot;Integration: Models: Flow&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/unit/lib/database/driver.js.html#lineNumber3",
-    "Driver",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html#lineNumber63&quot;,
+    &quot;Integration: Models: Flow should convert a stream to string&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/unit/lib/database/driver.js.html#lineNumber9",
-    "Driver should use r.now()",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html#lineNumber21&quot;,
+    &quot;Integration: Models: Flow should get by id&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber5",
-    "Integration: Controllers: App",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html#lineNumber6&quot;,
+    &quot;Integration: Models: Flow should save&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber7",
-    "Integration: Controllers: App should create a app",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html#lineNumber80&quot;,
+    &quot;Integration: Models: Flow should scrape a string of HTML&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber31",
-    "Integration: Controllers: App should get a app by Short ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html#lineNumber39&quot;,
+    &quot;Integration: Models: Flow should update by id&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/app.js.html#lineNumber69",
-    "Integration: Controllers: App should update a app by Short ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/package.js.html#lineNumber3&quot;,
+    &quot;Integration: Services: Package&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/auth.js.html#lineNumber6",
-    "Integration: Controllers: Auth",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/package.js.html#lineNumber5&quot;,
+    &quot;Integration: Services: Package should package an object for response (200), using defaults&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/auth.js.html#lineNumber8",
-    "Integration: Controllers: Auth should login a user",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/package.js.html#lineNumber18&quot;,
+    &quot;Integration: Services: Package should package an object for response (201), using number argument&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber5",
-    "Integration: Controllers: Organization",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/package.js.html#lineNumber31&quot;,
+    &quot;Integration: Services: Package should package an object for response (400), using object argument&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber7",
-    "Integration: Controllers: Organization should create a organization",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/token.js.html#lineNumber3&quot;,
+    &quot;Integration: Services: Token&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber31",
-    "Integration: Controllers: Organization should get a organization by Short ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/token.js.html#lineNumber5&quot;,
+    &quot;Integration: Services: Token should issue a token&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/organization.js.html#lineNumber69",
-    "Integration: Controllers: Organization should update a organization by Short ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/token.js.html#lineNumber17&quot;,
+    &quot;Integration: Services: Token should verify a token&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber5",
-    "Integration: Controllers: Template",
-    "test"
+    &quot;organizationmodel src/models/organization/index.js~organizationmodel,organizationmodel&quot;,
+    &quot;test-file/test/unit/models/organization.js.html#lineNumber6&quot;,
+    &quot;Organization&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber7",
-    "Integration: Controllers: Template should create a template",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/organizations.js.html#lineNumber6&quot;,
+    &quot;Organization&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber31",
-    "Integration: Controllers: Template should get a template by Short ID",
-    "test"
+    &quot;organizationmodel#create organizationmodel#create,organizationmodel#create&quot;,
+    &quot;test-file/test/unit/models/organization.js.html#lineNumber19&quot;,
+    &quot;Organization should create an organization&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/template.js.html#lineNumber69",
-    "Integration: Controllers: Template should update a template by Short ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/organizations.js.html#lineNumber8&quot;,
+    &quot;Organization should create an organization via PUT&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber5",
-    "Integration: Controllers: User",
-    "test"
+    &quot;* *,*&quot;,
+    &quot;test-file/test/unit/models/organization.js.html#lineNumber53&quot;,
+    &quot;Organization should get all organizations&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber7",
-    "Integration: Controllers: User should create a user",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/organizations.js.html#lineNumber53&quot;,
+    &quot;Organization should get all organizations via GET&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber29",
-    "Integration: Controllers: User should get user by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/organizations.js.html#lineNumber28&quot;,
+    &quot;Organization should get an organization by ID via GET&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/controllers.old/user.js.html#lineNumber67",
-    "Integration: Controllers: User should update by ID",
-    "test"
+    &quot;organizationmodel#getbyid organizationmodel#getbyid,organizationmodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/organization.js.html#lineNumber35&quot;,
+    &quot;Organization should get an organization by id&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/app.js.html#lineNumber4",
-    "Integration: Models: App",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/organization.js.html#lineNumber8&quot;,
+    &quot;Organization should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/app.js.html#lineNumber6",
-    "Integration: Models: App should create a app",
-    "test"
+    &quot;rootmodel#update src/models/root.js~rootmodel#update,rootmodel#update&quot;,
+    &quot;test-file/test/unit/models/organization.js.html#lineNumber71&quot;,
+    &quot;Organization should update an organization&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/app.js.html#lineNumber22",
-    "Integration: Models: App should get by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/routes/organizations.js.html#lineNumber76&quot;,
+    &quot;Organization should update an organization by ID via POST&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/app.js.html#lineNumber43",
-    "Integration: Models: App should update by ID",
-    "test"
+    &quot;organizationscontroller src/controllers/organizations/index.js~organizationscontroller,organizationscontroller&quot;,
+    &quot;test-file/test/unit/controllers/organizations.js.html#lineNumber5&quot;,
+    &quot;Organizations&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/base.js.html#lineNumber3",
-    "Integration: Models: Base",
-    "test"
+    &quot;organizationscontroller#create src/controllers/organizations/index.js~organizationscontroller#create,organizationscontroller#create&quot;,
+    &quot;test-file/test/unit/controllers/organizations.js.html#lineNumber8&quot;,
+    &quot;Organizations should create an organization&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/base.js.html#lineNumber5",
-    "Integration: Models: Base should connect to the database",
-    "test"
+    &quot;organizationscontroller#getall src/controllers/organizations/index.js~organizationscontroller#getall,organizationscontroller#getall&quot;,
+    &quot;test-file/test/unit/controllers/organizations.js.html#lineNumber59&quot;,
+    &quot;Organizations should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/base.js.html#lineNumber43",
-    "Integration: Models: Base should create",
-    "test"
+    &quot;organizationscontroller#getbyid src/controllers/organizations/index.js~organizationscontroller#getbyid,organizationscontroller#getbyid&quot;,
+    &quot;test-file/test/unit/controllers/organizations.js.html#lineNumber30&quot;,
+    &quot;Organizations should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/base.js.html#lineNumber21",
-    "Integration: Models: Base should create a table (if non-existant)",
-    "test"
+    &quot;organizationscontroller#update src/controllers/organizations/index.js~organizationscontroller#update,organizationscontroller#update&quot;,
+    &quot;test-file/test/unit/controllers/organizations.js.html#lineNumber82&quot;,
+    &quot;Organizations should update a organizations&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/base.js.html#lineNumber57",
-    "Integration: Models: Base should get by ID",
-    "test"
+    &quot;passwordservice src/services/password.js~passwordservice,passwordservice&quot;,
+    &quot;test-file/test/unit/services/password.js.html#lineNumber6&quot;,
+    &quot;Password&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/base.js.html#lineNumber76",
-    "Integration: Models: Base should update by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/services/password.js.html#lineNumber8&quot;,
+    &quot;Password should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber4",
-    "Integration: Models: Flow",
-    "test"
+    &quot;passwordservice#hash passwordservice#hash,passwordservice#hash&quot;,
+    &quot;test-file/test/unit/services/password.js.html#lineNumber19&quot;,
+    &quot;Password should issue a hash&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber63",
-    "Integration: Models: Flow should convert a stream to string",
-    "test"
+    &quot;passwordservice#verify src/services/password.js~passwordservice#verify,passwordservice#verify&quot;,
+    &quot;test-file/test/unit/services/password.js.html#lineNumber47&quot;,
+    &quot;Password should not verify a password/hash&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber21",
-    "Integration: Models: Flow should get by id",
-    "test"
+    &quot;passwordservice#verify src/services/password.js~passwordservice#verify,passwordservice#verify&quot;,
+    &quot;test-file/test/unit/services/password.js.html#lineNumber32&quot;,
+    &quot;Password should verify a password/hash&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber6",
-    "Integration: Models: Flow should save",
-    "test"
+    &quot;rootmodel src/models/root.js~rootmodel,rootmodel&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber6&quot;,
+    &quot;Root&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber80",
-    "Integration: Models: Flow should scrape a string of HTML",
-    "test"
+    &quot;rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber39&quot;,
+    &quot;Root should create&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/flow.js.html#lineNumber39",
-    "Integration: Models: Flow should update by id",
-    "test"
+    &quot;rootmodel#getall src/models/root.js~rootmodel#getall,rootmodel#getall&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber107&quot;,
+    &quot;Root should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber4",
-    "Integration: Models: Organization",
-    "test"
+    &quot;rootmodel#getbyid src/models/root.js~rootmodel#getbyid,rootmodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber85&quot;,
+    &quot;Root should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber6",
-    "Integration: Models: Organization should create a organization",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber8&quot;,
+    &quot;Root should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber22",
-    "Integration: Models: Organization should get by ID",
-    "test"
+    &quot;rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber59&quot;,
+    &quot;Root should not create; failed validation&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/organization.js.html#lineNumber43",
-    "Integration: Models: Organization should update by ID",
-    "test"
+    &quot;rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber153&quot;,
+    &quot;Root should not update; failed validation&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/template.js.html#lineNumber4",
-    "Integration: Models: Template",
-    "test"
+    &quot;rootmodel#update src/models/root.js~rootmodel#update,rootmodel#update&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber129&quot;,
+    &quot;Root should update&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/template.js.html#lineNumber6",
-    "Integration: Models: Template should create a template",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber181&quot;,
+    &quot;Root should validate successfully&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/template.js.html#lineNumber22",
-    "Integration: Models: Template should get by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/root.js.html#lineNumber198&quot;,
+    &quot;Root should validate unsuccessfully&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/template.js.html#lineNumber43",
-    "Integration: Models: Template should update by ID",
-    "test"
+    &quot;router src/server/router.js~router,router&quot;,
+    &quot;test-file/test/unit/server/router.js.html#lineNumber5&quot;,
+    &quot;Router&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/user.js.html#lineNumber4",
-    "Integration: Models: User",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/server/router.js.html#lineNumber7&quot;,
+    &quot;Router should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/user.js.html#lineNumber6",
-    "Integration: Models: User should create a user",
-    "test"
+    &quot;taxonomiescontroller src/controllers/taxonomies/index.js~taxonomiescontroller,taxonomiescontroller&quot;,
+    &quot;test-file/test/unit/controllers/taxonomies.js.html#lineNumber5&quot;,
+    &quot;Taxonomies&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/user.js.html#lineNumber23",
-    "Integration: Models: User should get by ID",
-    "test"
+    &quot;taxonomiescontroller#create src/controllers/taxonomies/index.js~taxonomiescontroller#create,taxonomiescontroller#create&quot;,
+    &quot;test-file/test/unit/controllers/taxonomies.js.html#lineNumber8&quot;,
+    &quot;Taxonomies should create an taxonomy&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/user.js.html#lineNumber65",
-    "Integration: Models: User should get by username",
-    "test"
+    &quot;taxonomiescontroller#getall src/controllers/taxonomies/index.js~taxonomiescontroller#getall,taxonomiescontroller#getall&quot;,
+    &quot;test-file/test/unit/controllers/taxonomies.js.html#lineNumber63&quot;,
+    &quot;Taxonomies should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/models.old/user.js.html#lineNumber44",
-    "Integration: Models: User should update by ID",
-    "test"
+    &quot;taxonomiescontroller#getbyid src/controllers/taxonomies/index.js~taxonomiescontroller#getbyid,taxonomiescontroller#getbyid&quot;,
+    &quot;test-file/test/unit/controllers/taxonomies.js.html#lineNumber32&quot;,
+    &quot;Taxonomies should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/app.js.html#lineNumber4",
-    "Integration: Services: App",
-    "test"
+    &quot;taxonomiescontroller#update src/controllers/taxonomies/index.js~taxonomiescontroller#update,taxonomiescontroller#update&quot;,
+    &quot;test-file/test/unit/controllers/taxonomies.js.html#lineNumber87&quot;,
+    &quot;Taxonomies should update a taxonomy&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/app.js.html#lineNumber6",
-    "Integration: Services: App should create a app",
-    "test"
+    &quot;taxonomymodel src/models/taxonomy/index.js~taxonomymodel,taxonomymodel&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html#lineNumber5&quot;,
+    &quot;Taxonomy&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/app.js.html#lineNumber23",
-    "Integration: Services: App should get by ID",
-    "test"
+    &quot;taxonomymodel#create taxonomymodel#create,taxonomymodel#create&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html#lineNumber18&quot;,
+    &quot;Taxonomy should create a taxonomy&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/app.js.html#lineNumber44",
-    "Integration: Services: App should get by Short ID",
-    "test"
+    &quot;taxonomymodel#getall taxonomymodel#getall,taxonomymodel#getall&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html#lineNumber58&quot;,
+    &quot;Taxonomy should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/app.js.html#lineNumber65",
-    "Integration: Services: App should update by ID",
-    "test"
+    &quot;taxonomymodel#getbyid taxonomymodel#getbyid,taxonomymodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html#lineNumber37&quot;,
+    &quot;Taxonomy should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/app.js.html#lineNumber90",
-    "Integration: Services: App should update by Short ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html#lineNumber7&quot;,
+    &quot;Taxonomy should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/auth.js.html#lineNumber5",
-    "Integration: Services: Auth",
-    "test"
+    &quot;taxonomymodel#update taxonomymodel#update,taxonomymodel#update&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html#lineNumber78&quot;,
+    &quot;Taxonomy should update a taxonomy&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/auth.js.html#lineNumber7",
-    "Integration: Services: Auth should authenticate a user ID + password",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber6&quot;,
+    &quot;Template&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/auth.js.html#lineNumber29",
-    "Integration: Services: Auth should authenticate a username + password",
-    "test"
+    &quot;templatemodel#create src/models/template/index.js~templatemodel#create,templatemodel#create&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber19&quot;,
+    &quot;Template should create a template&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/auth.js.html#lineNumber99",
-    "Integration: Services: Auth should authorize a user",
-    "test"
+    &quot;templaterevisionmodel#create templaterevisionmodel#create,templaterevisionmodel#create&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber86&quot;,
+    &quot;Template should create a template revision&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/auth.js.html#lineNumber51",
-    "Integration: Services: Auth should log in a user ID + pass",
-    "test"
+    &quot;templatemodel#getbyid templatemodel#getbyid,templatemodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber123&quot;,
+    &quot;Template should get a template by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/auth.js.html#lineNumber75",
-    "Integration: Services: Auth should log in a username + pass",
-    "test"
+    &quot;templatemodel#getbyid templatemodel#getbyid,templatemodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber34&quot;,
+    &quot;Template should get a template by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/organization.js.html#lineNumber4",
-    "Integration: Services: Organization",
-    "test"
+    &quot;templatemodel#getall src/models/template/index.js~templatemodel#getall,templatemodel#getall&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber51&quot;,
+    &quot;Template should get all templates&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/organization.js.html#lineNumber6",
-    "Integration: Services: Organization should create a organization",
-    "test"
+    &quot;templatemodel#getall src/models/template/index.js~templatemodel#getall,templatemodel#getall&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber155&quot;,
+    &quot;Template should get all templates revisions&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/organization.js.html#lineNumber23",
-    "Integration: Services: Organization should get by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber8&quot;,
+    &quot;Template should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/organization.js.html#lineNumber44",
-    "Integration: Services: Organization should get by Short ID",
-    "test"
+    &quot;templatemodel#update templatemodel#update,templatemodel#update&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber67&quot;,
+    &quot;Template should update a template &quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/organization.js.html#lineNumber65",
-    "Integration: Services: Organization should update by ID",
-    "test"
+    &quot;templaterevisionmodel#update templaterevisionmodel#update,templaterevisionmodel#update&quot;,
+    &quot;test-file/test/unit/models/template.js.html#lineNumber185&quot;,
+    &quot;Template should update a template revision&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/organization.js.html#lineNumber90",
-    "Integration: Services: Organization should update by Short ID",
-    "test"
+    &quot;templatescontroller src/controllers/templates/index.js~templatescontroller,templatescontroller&quot;,
+    &quot;test-file/test/unit/controllers/templates.js.html#lineNumber5&quot;,
+    &quot;Templates&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/package.js.html#lineNumber3",
-    "Integration: Services: Package",
-    "test"
+    &quot;templatescontroller#create src/controllers/templates/index.js~templatescontroller#create,templatescontroller#create&quot;,
+    &quot;test-file/test/unit/controllers/templates.js.html#lineNumber8&quot;,
+    &quot;Templates should create an template&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/package.js.html#lineNumber5",
-    "Integration: Services: Package should package an object for response (200), using defaults",
-    "test"
+    &quot;templatescontroller#getall src/controllers/templates/index.js~templatescontroller#getall,templatescontroller#getall&quot;,
+    &quot;test-file/test/unit/controllers/templates.js.html#lineNumber59&quot;,
+    &quot;Templates should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/package.js.html#lineNumber18",
-    "Integration: Services: Package should package an object for response (201), using number argument",
-    "test"
+    &quot;templatescontroller#getbyid src/controllers/templates/index.js~templatescontroller#getbyid,templatescontroller#getbyid&quot;,
+    &quot;test-file/test/unit/controllers/templates.js.html#lineNumber28&quot;,
+    &quot;Templates should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/package.js.html#lineNumber31",
-    "Integration: Services: Package should package an object for response (400), using object argument",
-    "test"
+    &quot;templatescontroller#update src/controllers/templates/index.js~templatescontroller#update,templatescontroller#update&quot;,
+    &quot;test-file/test/unit/controllers/templates.js.html#lineNumber83&quot;,
+    &quot;Templates should update a template&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/password.js.html#lineNumber3",
-    "Integration: Services: Password",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/suite.js.html#lineNumber1&quot;,
+    &quot;Unit&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/password.js.html#lineNumber5",
-    "Integration: Services: Password should issue a password",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/suite.js.html#lineNumber19&quot;,
+    &quot;Unit Controllers&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/password.js.html#lineNumber19",
-    "Integration: Services: Password should verify a password",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/suite.js.html#lineNumber9&quot;,
+    &quot;Unit Models&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/template.js.html#lineNumber4",
-    "Integration: Services: Template",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/suite.js.html#lineNumber38&quot;,
+    &quot;Unit Routes&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/template.js.html#lineNumber6",
-    "Integration: Services: Template should create a template",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/suite.js.html#lineNumber32&quot;,
+    &quot;Unit Server&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/template.js.html#lineNumber23",
-    "Integration: Services: Template should get by ID",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/suite.js.html#lineNumber28&quot;,
+    &quot;Unit Services&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/template.js.html#lineNumber44",
-    "Integration: Services: Template should get by Short ID",
-    "test"
+    &quot;usermodel src/models/user/index.js~usermodel,usermodel&quot;,
+    &quot;test-file/test/unit/models/user.js.html#lineNumber5&quot;,
+    &quot;User&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/template.js.html#lineNumber65",
-    "Integration: Services: Template should update by ID",
-    "test"
+    &quot;usermodel#create src/models/user/index.js~usermodel#create,usermodel#create&quot;,
+    &quot;test-file/test/unit/models/user.js.html#lineNumber18&quot;,
+    &quot;User should create a user&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/template.js.html#lineNumber99",
-    "Integration: Services: Template should update by Short ID",
-    "test"
+    &quot;usermodel#getall usermodel#getall,usermodel#getall&quot;,
+    &quot;test-file/test/unit/models/user.js.html#lineNumber61&quot;,
+    &quot;User should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/token.js.html#lineNumber3",
-    "Integration: Services: Token",
-    "test"
+    &quot;usermodel#getbyid usermodel#getbyid,usermodel#getbyid&quot;,
+    &quot;test-file/test/unit/models/user.js.html#lineNumber38&quot;,
+    &quot;User should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/token.js.html#lineNumber5",
-    "Integration: Services: Token should issue a token",
-    "test"
+    &quot;&quot;,
+    &quot;test-file/test/unit/models/user.js.html#lineNumber7&quot;,
+    &quot;User should initialize&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/token.js.html#lineNumber17",
-    "Integration: Services: Token should verify a token",
-    "test"
+    &quot;usermodel#update src/models/user/index.js~usermodel#update,usermodel#update&quot;,
+    &quot;test-file/test/unit/models/user.js.html#lineNumber82&quot;,
+    &quot;User should update a user&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber5",
-    "Integration: Services: User",
-    "test"
+    &quot;userscontroller src/controllers/users/index.js~userscontroller,userscontroller&quot;,
+    &quot;test-file/test/unit/controllers/users.js.html#lineNumber5&quot;,
+    &quot;Users&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber7",
-    "Integration: Services: User should create a user",
-    "test"
+    &quot;userscontroller#create src/controllers/users/index.js~userscontroller#create,userscontroller#create&quot;,
+    &quot;test-file/test/unit/controllers/users.js.html#lineNumber8&quot;,
+    &quot;Users should create an user&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber26",
-    "Integration: Services: User should get by ID",
-    "test"
+    &quot;usermodel#getall usermodel#getall,usermodel#getall&quot;,
+    &quot;test-file/test/unit/controllers/users.js.html#lineNumber66&quot;,
+    &quot;Users should get all&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber48",
-    "Integration: Services: User should get by Short ID",
-    "test"
+    &quot;userscontroller#getbyid src/controllers/users/index.js~userscontroller#getbyid,userscontroller#getbyid&quot;,
+    &quot;test-file/test/unit/controllers/users.js.html#lineNumber33&quot;,
+    &quot;Users should get by ID&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber69",
-    "Integration: Services: User should get by username",
-    "test"
+    &quot;userscontroller#update src/controllers/users/index.js~userscontroller#update,userscontroller#update&quot;,
+    &quot;test-file/test/unit/controllers/users.js.html#lineNumber90&quot;,
+    &quot;Users should update a user&quot;,
+    &quot;test&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber91",
-    "Integration: Services: User should update by ID",
-    "test"
+    &quot;src/controllers/applications/index.js&quot;,
+    &quot;file/src/controllers/applications/index.js.html&quot;,
+    &quot;src/controllers/applications/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/services/user.js.html#lineNumber112",
-    "Integration: Services: User should update by Short ID",
-    "test"
+    &quot;src/controllers/applications/index.js~applicationcontroller#constructor&quot;,
+    &quot;class/src/controllers/applications/index.js~ApplicationController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/applications/index.js~ApplicationController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "organizationmodel src/models/organization/index.js~organizationmodel,organizationmodel",
-    "test-file/test/unit/models/organization.js.html#lineNumber7",
-    "Organization",
-    "test"
+    &quot;src/controllers/auth/index.js&quot;,
+    &quot;file/src/controllers/auth/index.js.html&quot;,
+    &quot;src/controllers/auth/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "organizationmodel#create organizationmodel#create,organizationmodel#create",
-    "test-file/test/unit/models/organization.js.html#lineNumber20",
-    "Organization should create an organization",
-    "test"
+    &quot;src/controllers/auth/index.js~authcontroller#constructor&quot;,
+    &quot;class/src/controllers/auth/index.js~AuthController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/auth/index.js~AuthController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "* *,*",
-    "test-file/test/unit/models/organization.js.html#lineNumber54",
-    "Organization should get all organizations",
-    "test"
+    &quot;src/controllers/auth/index.js~authcontroller#login&quot;,
+    &quot;class/src/controllers/auth/index.js~AuthController.html#instance-method-login&quot;,
+    &quot;src/controllers/auth/index.js~AuthController#login&quot;,
+    &quot;method&quot;
   ],
   [
-    "organizationmodel#getbyid organizationmodel#getbyid,organizationmodel#getbyid",
-    "test-file/test/unit/models/organization.js.html#lineNumber36",
-    "Organization should get an organization by id",
-    "test"
+    &quot;src/controllers/buckets/index.js&quot;,
+    &quot;file/src/controllers/buckets/index.js.html&quot;,
+    &quot;src/controllers/buckets/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/organization.js.html#lineNumber9",
-    "Organization should initialize",
-    "test"
+    &quot;src/controllers/buckets/index.js~bucketscontroller#constructor&quot;,
+    &quot;class/src/controllers/buckets/index.js~BucketsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/buckets/index.js~BucketsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "rootmodel#update src/models/root.js~rootmodel#update,rootmodel#update",
-    "test-file/test/unit/models/organization.js.html#lineNumber72",
-    "Organization should update an organization",
-    "test"
+    &quot;src/controllers/digital-assets/index.js&quot;,
+    &quot;file/src/controllers/digital-assets/index.js.html&quot;,
+    &quot;src/controllers/digital-assets/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "passwordservice src/services/password.js~passwordservice,passwordservice",
-    "test-file/test/unit/services/password.js.html#lineNumber7",
-    "Password",
-    "test"
+    &quot;src/controllers/digital-assets/index.js~digitalassetscontroller#constructor&quot;,
+    &quot;class/src/controllers/digital-assets/index.js~DigitalAssetsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/digital-assets/index.js~DigitalAssetsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/services/password.js.html#lineNumber9",
-    "Password should initialize",
-    "test"
+    &quot;src/controllers/digital-assets/index.js~digitalassetscontroller#view&quot;,
+    &quot;class/src/controllers/digital-assets/index.js~DigitalAssetsController.html#instance-method-view&quot;,
+    &quot;src/controllers/digital-assets/index.js~DigitalAssetsController#view&quot;,
+    &quot;method&quot;
   ],
   [
-    "passwordservice#hash passwordservice#hash,passwordservice#hash",
-    "test-file/test/unit/services/password.js.html#lineNumber20",
-    "Password should issue a hash",
-    "test"
+    &quot;src/controllers/document-revisions/index.js&quot;,
+    &quot;file/src/controllers/document-revisions/index.js.html&quot;,
+    &quot;src/controllers/document-revisions/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "passwordservice#verify src/services/password.js~passwordservice#verify,passwordservice#verify",
-    "test-file/test/unit/services/password.js.html#lineNumber48",
-    "Password should not verify a password/hash",
-    "test"
+    &quot;src/controllers/document-revisions/index.js~documentrevisionscontroller#constructor&quot;,
+    &quot;class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/document-revisions/index.js~DocumentRevisionsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "passwordservice#verify src/services/password.js~passwordservice#verify,passwordservice#verify",
-    "test-file/test/unit/services/password.js.html#lineNumber33",
-    "Password should verify a password/hash",
-    "test"
+    &quot;src/controllers/documents/index.js&quot;,
+    &quot;file/src/controllers/documents/index.js.html&quot;,
+    &quot;src/controllers/documents/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "rootmodel src/models/root.js~rootmodel,rootmodel",
-    "test-file/test/unit/models/root.js.html#lineNumber6",
-    "Root",
-    "test"
+    &quot;src/controllers/documents/index.js~documentscontroller#constructor&quot;,
+    &quot;class/src/controllers/documents/index.js~DocumentsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/documents/index.js~DocumentsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create",
-    "test-file/test/unit/models/root.js.html#lineNumber39",
-    "Root should create",
-    "test"
+    &quot;src/controllers/documents/index.js~documentscontroller#create&quot;,
+    &quot;class/src/controllers/documents/index.js~DocumentsController.html#instance-method-create&quot;,
+    &quot;src/controllers/documents/index.js~DocumentsController#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "rootmodel#getall src/models/root.js~rootmodel#getall,rootmodel#getall",
-    "test-file/test/unit/models/root.js.html#lineNumber107",
-    "Root should get all",
-    "test"
+    &quot;src/controllers/documents/index.js~documentscontroller#getall&quot;,
+    &quot;class/src/controllers/documents/index.js~DocumentsController.html#instance-method-getAll&quot;,
+    &quot;src/controllers/documents/index.js~DocumentsController#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "rootmodel#getbyid src/models/root.js~rootmodel#getbyid,rootmodel#getbyid",
-    "test-file/test/unit/models/root.js.html#lineNumber85",
-    "Root should get by ID",
-    "test"
+    &quot;src/controllers/documents/index.js~documentscontroller#getbyid&quot;,
+    &quot;class/src/controllers/documents/index.js~DocumentsController.html#instance-method-getById&quot;,
+    &quot;src/controllers/documents/index.js~DocumentsController#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/root.js.html#lineNumber8",
-    "Root should initialize",
-    "test"
+    &quot;src/controllers/documents/index.js~documentscontroller#update&quot;,
+    &quot;class/src/controllers/documents/index.js~DocumentsController.html#instance-method-update&quot;,
+    &quot;src/controllers/documents/index.js~DocumentsController#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create",
-    "test-file/test/unit/models/root.js.html#lineNumber59",
-    "Root should not create; failed validation",
-    "test"
+    &quot;src/controllers/fields/index.js&quot;,
+    &quot;file/src/controllers/fields/index.js.html&quot;,
+    &quot;src/controllers/fields/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "rootmodel#create src/models/root.js~rootmodel#create,rootmodel#create",
-    "test-file/test/unit/models/root.js.html#lineNumber153",
-    "Root should not update; failed validation",
-    "test"
+    &quot;src/controllers/fields/index.js~fieldscontroller#constructor&quot;,
+    &quot;class/src/controllers/fields/index.js~FieldsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/fields/index.js~FieldsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "rootmodel#update src/models/root.js~rootmodel#update,rootmodel#update",
-    "test-file/test/unit/models/root.js.html#lineNumber129",
-    "Root should update",
-    "test"
+    &quot;src/controllers/organizations/index.js&quot;,
+    &quot;file/src/controllers/organizations/index.js.html&quot;,
+    &quot;src/controllers/organizations/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/root.js.html#lineNumber181",
-    "Root should validate successfully",
-    "test"
+    &quot;src/controllers/organizations/index.js~organizationscontroller#constructor&quot;,
+    &quot;class/src/controllers/organizations/index.js~OrganizationsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/organizations/index.js~OrganizationsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/root.js.html#lineNumber198",
-    "Root should validate unsuccessfully",
-    "test"
+    &quot;src/controllers/organizations/index.js~organizationscontroller#create&quot;,
+    &quot;class/src/controllers/organizations/index.js~OrganizationsController.html#instance-method-create&quot;,
+    &quot;src/controllers/organizations/index.js~OrganizationsController#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomiescontroller src/controllers/taxonomies/index.js~taxonomiescontroller,taxonomiescontroller",
-    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber6",
-    "Taxonomies",
-    "test"
+    &quot;src/controllers/organizations/index.js~organizationscontroller#getall&quot;,
+    &quot;class/src/controllers/organizations/index.js~OrganizationsController.html#instance-method-getAll&quot;,
+    &quot;src/controllers/organizations/index.js~OrganizationsController#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomiescontroller#create src/controllers/taxonomies/index.js~taxonomiescontroller#create,taxonomiescontroller#create",
-    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber9",
-    "Taxonomies should create an taxonomy",
-    "test"
+    &quot;src/controllers/organizations/index.js~organizationscontroller#getbyid&quot;,
+    &quot;class/src/controllers/organizations/index.js~OrganizationsController.html#instance-method-getById&quot;,
+    &quot;src/controllers/organizations/index.js~OrganizationsController#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomiescontroller#getall src/controllers/taxonomies/index.js~taxonomiescontroller#getall,taxonomiescontroller#getall",
-    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber58",
-    "Taxonomies should get all",
-    "test"
+    &quot;src/controllers/organizations/index.js~organizationscontroller#update&quot;,
+    &quot;class/src/controllers/organizations/index.js~OrganizationsController.html#instance-method-update&quot;,
+    &quot;src/controllers/organizations/index.js~OrganizationsController#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomiescontroller#update src/controllers/taxonomies/index.js~taxonomiescontroller#update,taxonomiescontroller#update",
-    "test-file/test/unit/controllers/taxonomies.js.html#lineNumber82",
-    "Taxonomies should update a taxonomy",
-    "test"
+    &quot;src/controllers/registry/index.js&quot;,
+    &quot;file/src/controllers/registry/index.js.html&quot;,
+    &quot;src/controllers/registry/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "taxonomymodel src/models/taxonomy/index.js~taxonomymodel,taxonomymodel",
-    "test-file/test/unit/models/taxonomy.js.html#lineNumber6",
-    "Taxonomy",
-    "test"
+    &quot;src/controllers/registry/index.js~registrycontroller#constructor&quot;,
+    &quot;class/src/controllers/registry/index.js~RegistryController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/registry/index.js~RegistryController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomymodel#create taxonomymodel#create,taxonomymodel#create",
-    "test-file/test/unit/models/taxonomy.js.html#lineNumber19",
-    "Taxonomy should create a taxonomy",
-    "test"
+    &quot;src/controllers/root.js&quot;,
+    &quot;file/src/controllers/root.js.html&quot;,
+    &quot;src/controllers/root.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "taxonomymodel#getall taxonomymodel#getall,taxonomymodel#getall",
-    "test-file/test/unit/models/taxonomy.js.html#lineNumber59",
-    "Taxonomy should get all",
-    "test"
+    &quot;src/controllers/root.js~rootcontroller#constructor&quot;,
+    &quot;class/src/controllers/root.js~RootController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/root.js~RootController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomymodel#getbyid taxonomymodel#getbyid,taxonomymodel#getbyid",
-    "test-file/test/unit/models/taxonomy.js.html#lineNumber38",
-    "Taxonomy should get by ID",
-    "test"
+    &quot;src/controllers/taxonomies/index.js&quot;,
+    &quot;file/src/controllers/taxonomies/index.js.html&quot;,
+    &quot;src/controllers/taxonomies/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/taxonomy.js.html#lineNumber8",
-    "Taxonomy should initialize",
-    "test"
+    &quot;src/controllers/taxonomies/index.js~taxonomiescontroller#constructor&quot;,
+    &quot;class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/taxonomies/index.js~TaxonomiesController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "taxonomymodel#update taxonomymodel#update,taxonomymodel#update",
-    "test-file/test/unit/models/taxonomy.js.html#lineNumber79",
-    "Taxonomy should update a taxonomy",
-    "test"
+    &quot;src/controllers/taxonomies/index.js~taxonomiescontroller#create&quot;,
+    &quot;class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-create&quot;,
+    &quot;src/controllers/taxonomies/index.js~TaxonomiesController#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/template.js.html#lineNumber7",
-    "Template",
-    "test"
+    &quot;src/controllers/taxonomies/index.js~taxonomiescontroller#getall&quot;,
+    &quot;class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-getAll&quot;,
+    &quot;src/controllers/taxonomies/index.js~TaxonomiesController#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration/models/template.js.html#lineNumber7",
-    "Template",
-    "test"
+    &quot;src/controllers/taxonomies/index.js~taxonomiescontroller#getbyid&quot;,
+    &quot;class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-getById&quot;,
+    &quot;src/controllers/taxonomies/index.js~TaxonomiesController#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration/models/template.js.html#lineNumber9",
-    "Template should create a template",
-    "test"
+    &quot;src/controllers/taxonomies/index.js~taxonomiescontroller#update&quot;,
+    &quot;class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-update&quot;,
+    &quot;src/controllers/taxonomies/index.js~TaxonomiesController#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "templatemodel#create src/models/template/index.js~templatemodel#create,templatemodel#create",
-    "test-file/test/unit/models/template.js.html#lineNumber20",
-    "Template should create a template",
-    "test"
+    &quot;src/controllers/template-revisions/index.js&quot;,
+    &quot;file/src/controllers/template-revisions/index.js.html&quot;,
+    &quot;src/controllers/template-revisions/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "templaterevisionmodel#create templaterevisionmodel#create,templaterevisionmodel#create",
-    "test-file/test/unit/models/template.js.html#lineNumber35",
-    "Template should create a template revision",
-    "test"
+    &quot;src/controllers/template-revisions/index.js~templaterevisionscontroller#constructor&quot;,
+    &quot;class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/template-revisions/index.js~TemplateRevisionsController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration/models/template.js.html#lineNumber17",
-    "Template should create a template revision",
-    "test"
+    &quot;src/controllers/templates/index.js&quot;,
+    &quot;file/src/controllers/templates/index.js.html&quot;,
+    &quot;src/controllers/templates/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/template.js.html#lineNumber9",
-    "Template should initialize",
-    "test"
+    &quot;src/controllers/templates/index.js~templatescontroller#constructor&quot;,
+    &quot;class/src/controllers/templates/index.js~TemplatesController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/templates/index.js~TemplatesController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "templaterevisionmodel#update templaterevisionmodel#update,templaterevisionmodel#update",
-    "test-file/test/unit/models/template.js.html#lineNumber72",
-    "Template should update a template revision",
-    "test"
+    &quot;src/controllers/templates/index.js~templatescontroller#create&quot;,
+    &quot;class/src/controllers/templates/index.js~TemplatesController.html#instance-method-create&quot;,
+    &quot;src/controllers/templates/index.js~TemplatesController#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration/suite.js.html#lineNumber1",
-    "Unit",
-    "test"
+    &quot;src/controllers/templates/index.js~templatescontroller#getall&quot;,
+    &quot;class/src/controllers/templates/index.js~TemplatesController.html#instance-method-getAll&quot;,
+    &quot;src/controllers/templates/index.js~TemplatesController#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/suite.js.html#lineNumber1",
-    "Unit",
-    "test"
+    &quot;src/controllers/templates/index.js~templatescontroller#getbyid&quot;,
+    &quot;class/src/controllers/templates/index.js~TemplatesController.html#instance-method-getById&quot;,
+    &quot;src/controllers/templates/index.js~TemplatesController#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/suite.js.html#lineNumber23",
-    "Unit Controllers",
-    "test"
+    &quot;src/controllers/templates/index.js~templatescontroller#update&quot;,
+    &quot;class/src/controllers/templates/index.js~TemplatesController.html#instance-method-update&quot;,
+    &quot;src/controllers/templates/index.js~TemplatesController#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/suite.js.html#lineNumber3",
-    "Unit Lib",
-    "test"
+    &quot;src/controllers/users/index.js&quot;,
+    &quot;file/src/controllers/users/index.js.html&quot;,
+    &quot;src/controllers/users/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit/suite.js.html#lineNumber4",
-    "Unit Lib Database",
-    "test"
+    &quot;src/controllers/users/index.js~userscontroller#constructor&quot;,
+    &quot;class/src/controllers/users/index.js~UsersController.html#instance-constructor-constructor&quot;,
+    &quot;src/controllers/users/index.js~UsersController#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/suite.js.html#lineNumber9",
-    "Unit Models",
-    "test"
+    &quot;src/controllers/users/index.js~userscontroller#create&quot;,
+    &quot;class/src/controllers/users/index.js~UsersController.html#instance-method-create&quot;,
+    &quot;src/controllers/users/index.js~UsersController#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration/suite.js.html#lineNumber3",
-    "Unit Models",
-    "test"
+    &quot;src/controllers/users/index.js~userscontroller#getall&quot;,
+    &quot;class/src/controllers/users/index.js~UsersController.html#instance-method-getAll&quot;,
+    &quot;src/controllers/users/index.js~UsersController#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/suite.js.html#lineNumber19",
-    "Unit Services",
-    "test"
+    &quot;src/controllers/users/index.js~userscontroller#getbyid&quot;,
+    &quot;class/src/controllers/users/index.js~UsersController.html#instance-method-getById&quot;,
+    &quot;src/controllers/users/index.js~UsersController#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit.ava/models/base.js.html#lineNumber5",
-    "Unit: Models: Base",
-    "test"
+    &quot;src/controllers/users/index.js~userscontroller#update&quot;,
+    &quot;class/src/controllers/users/index.js~UsersController.html#instance-method-update&quot;,
+    &quot;src/controllers/users/index.js~UsersController#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit.ava/models/base.js.html#lineNumber7",
-    "Unit: Models: Base should initialize",
-    "test"
+    &quot;src/index.js&quot;,
+    &quot;file/src/index.js.html&quot;,
+    &quot;src/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit.ava/models/base.js.html#lineNumber28",
-    "Unit: Models: Base should validate successfully",
-    "test"
+    &quot;src/lib/database/config.js&quot;,
+    &quot;file/src/lib/database/config.js.html&quot;,
+    &quot;src/lib/database/config.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/unit.ava/models/base.js.html#lineNumber44",
-    "Unit: Models: Base should validate unsuccessfully",
-    "test"
+    &quot;src/lib/database/driver.js&quot;,
+    &quot;file/src/lib/database/driver.js.html&quot;,
+    &quot;src/lib/database/driver.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "usermodel src/models/user/index.js~usermodel,usermodel",
-    "test-file/test/unit/models/user.js.html#lineNumber6",
-    "User",
-    "test"
+    &quot;src/lib/eventemitter.js&quot;,
+    &quot;file/src/lib/eventemitter.js.html&quot;,
+    &quot;src/lib/eventemitter.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "usermodel#create src/models/user/index.js~usermodel#create,usermodel#create",
-    "test-file/test/unit/models/user.js.html#lineNumber19",
-    "User should create a user",
-    "test"
+    &quot;src/lib/eventemitter.js~eventemitter#constructor&quot;,
+    &quot;class/src/lib/eventemitter.js~EventEmitter.html#instance-constructor-constructor&quot;,
+    &quot;src/lib/eventemitter.js~EventEmitter#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "usermodel#getall usermodel#getall,usermodel#getall",
-    "test-file/test/unit/models/user.js.html#lineNumber62",
-    "User should get all",
-    "test"
+    &quot;src/lib/eventemitter.js~eventemitter#emit&quot;,
+    &quot;class/src/lib/eventemitter.js~EventEmitter.html#instance-method-emit&quot;,
+    &quot;src/lib/eventemitter.js~EventEmitter#emit&quot;,
+    &quot;method&quot;
   ],
   [
-    "usermodel#getbyid usermodel#getbyid,usermodel#getbyid",
-    "test-file/test/unit/models/user.js.html#lineNumber39",
-    "User should get by ID",
-    "test"
+    &quot;src/lib/eventemitter.js~eventemitter#off&quot;,
+    &quot;class/src/lib/eventemitter.js~EventEmitter.html#instance-method-off&quot;,
+    &quot;src/lib/eventemitter.js~EventEmitter#off&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit/models/user.js.html#lineNumber8",
-    "User should initialize",
-    "test"
+    &quot;src/lib/eventemitter.js~eventemitter#on&quot;,
+    &quot;class/src/lib/eventemitter.js~EventEmitter.html#instance-method-on&quot;,
+    &quot;src/lib/eventemitter.js~EventEmitter#on&quot;,
+    &quot;method&quot;
   ],
   [
-    "usermodel#update src/models/user/index.js~usermodel#update,usermodel#update",
-    "test-file/test/unit/models/user.js.html#lineNumber83",
-    "User should update a user",
-    "test"
+    &quot;src/lib/eventemitter.js~eventemitter#once&quot;,
+    &quot;class/src/lib/eventemitter.js~EventEmitter.html#instance-method-once&quot;,
+    &quot;src/lib/eventemitter.js~EventEmitter#once&quot;,
+    &quot;method&quot;
   ],
   [
-    "userscontroller src/controllers/users/index.js~userscontroller,userscontroller",
-    "test-file/test/unit/controllers/users.js.html#lineNumber6",
-    "Users",
-    "test"
+    &quot;src/lib/logger.js&quot;,
+    &quot;file/src/lib/logger.js.html&quot;,
+    &quot;src/lib/logger.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "userscontroller#create src/controllers/users/index.js~userscontroller#create,userscontroller#create",
-    "test-file/test/unit/controllers/users.js.html#lineNumber9",
-    "Users should create an user",
-    "test"
+    &quot;src/lib/mapper.js&quot;,
+    &quot;file/src/lib/mapper.js.html&quot;,
+    &quot;src/lib/mapper.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "userscontroller#update src/controllers/users/index.js~userscontroller#update,userscontroller#update",
-    "test-file/test/unit/controllers/users.js.html#lineNumber78",
-    "Users should update a user",
-    "test"
+    &quot;src/lib/mapper.js~mapper#nodes&quot;,
+    &quot;class/src/lib/mapper.js~Mapper.html#instance-member-Nodes&quot;,
+    &quot;src/lib/mapper.js~Mapper#Nodes&quot;,
+    &quot;member&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber103",
-    "should add a user to an organization",
-    "test"
+    &quot;src/lib/mapper.js~mapper#constructor&quot;,
+    &quot;class/src/lib/mapper.js~Mapper.html#instance-constructor-constructor&quot;,
+    &quot;src/lib/mapper.js~Mapper#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/unit.ava/lib/database/driver.js.html#lineNumber4",
-    "should be able to r.now()",
-    "test"
+    &quot;src/lib/mapper.js~mapper#relations&quot;,
+    &quot;class/src/lib/mapper.js~Mapper.html#instance-method-relations&quot;,
+    &quot;src/lib/mapper.js~Mapper#relations&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/bucket.js.html#lineNumber8",
-    "should create a bucket",
-    "test"
+    &quot;src/lib/mixin.js&quot;,
+    &quot;file/src/lib/mixin.js.html&quot;,
+    &quot;src/lib/mixin.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/user.js.html#lineNumber8",
-    "should create a user",
-    "test"
+    &quot;src/lib/registry.js&quot;,
+    &quot;file/src/lib/registry.js.html&quot;,
+    &quot;src/lib/registry.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/app.js.html#lineNumber8",
-    "should create an app",
-    "test"
+    &quot;src/lib/utils/object/each.js&quot;,
+    &quot;file/src/lib/utils/object/each.js.html&quot;,
+    &quot;src/lib/utils/object/each.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber11",
-    "should create an organization",
-    "test"
+    &quot;src/lib/utils/object/map.js&quot;,
+    &quot;file/src/lib/utils/object/map.js.html&quot;,
+    &quot;src/lib/utils/object/map.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/bucket.js.html#lineNumber35",
-    "should get a bucket by ID",
-    "test"
+    &quot;src/lib/utils/uuid.js&quot;,
+    &quot;file/src/lib/utils/uuid.js.html&quot;,
+    &quot;src/lib/utils/uuid.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/app.js.html#lineNumber69",
-    "should get all apps",
-    "test"
+    &quot;src/manual/styles/base/variables.js&quot;,
+    &quot;file/src/manual/styles/base/variables.js.html&quot;,
+    &quot;src/manual/styles/base/variables.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/bucket.js.html#lineNumber69",
-    "should get all buckets",
-    "test"
+    &quot;src/mixins/log.js&quot;,
+    &quot;file/src/mixins/log.js.html&quot;,
+    &quot;src/mixins/log.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber72",
-    "should get all orgs",
-    "test"
+    &quot;src/mixins/log.js~log#log&quot;,
+    &quot;class/src/mixins/log.js~Log.html#instance-method-log&quot;,
+    &quot;src/mixins/log.js~Log#log&quot;,
+    &quot;method&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/user.js.html#lineNumber71",
-    "should get all users",
-    "test"
+    &quot;src/mixins/middleware.js&quot;,
+    &quot;file/src/mixins/middleware.js.html&quot;,
+    &quot;src/mixins/middleware.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/app.js.html#lineNumber35",
-    "should get an app by ID",
-    "test"
+    &quot;src/mixins/middleware.js~middleware#currentmiddlewarelayer&quot;,
+    &quot;class/src/mixins/middleware.js~Middleware.html#instance-member-currentMiddlewareLayer&quot;,
+    &quot;src/mixins/middleware.js~Middleware#currentMiddlewareLayer&quot;,
+    &quot;member&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/organization.js.html#lineNumber38",
-    "should get an org by ID",
-    "test"
+    &quot;src/mixins/middleware.js~middleware#middlewarelayers&quot;,
+    &quot;class/src/mixins/middleware.js~Middleware.html#instance-member-middlewareLayers&quot;,
+    &quot;src/mixins/middleware.js~Middleware#middlewareLayers&quot;,
+    &quot;member&quot;
   ],
   [
-    "",
-    "test-file/test/integration.ava/nodes.older/user.js.html#lineNumber36",
-    "should get user by ID",
-    "test"
+    &quot;src/mixins/middleware.js~middleware#next&quot;,
+    &quot;class/src/mixins/middleware.js~Middleware.html#instance-method-next&quot;,
+    &quot;src/mixins/middleware.js~Middleware#next&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/applications/index.js",
-    "file/src/controllers/applications/index.js.html",
-    "src/controllers/applications/index.js",
-    "file"
+    &quot;src/mixins/middleware.js~middleware#use&quot;,
+    &quot;class/src/mixins/middleware.js~Middleware.html#instance-method-use&quot;,
+    &quot;src/mixins/middleware.js~Middleware#use&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/applications/index.js~applicationcontroller#constructor",
-    "class/src/controllers/applications/index.js~ApplicationController.html#instance-constructor-constructor",
-    "src/controllers/applications/index.js~ApplicationController#constructor",
-    "method"
+    &quot;src/mixins/mixin.js&quot;,
+    &quot;file/src/mixins/mixin.js.html&quot;,
+    &quot;src/mixins/mixin.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/auth/index.js",
-    "file/src/controllers/auth/index.js.html",
-    "src/controllers/auth/index.js",
-    "file"
+    &quot;src/mixins/scrape.js&quot;,
+    &quot;file/src/mixins/scrape.js.html&quot;,
+    &quot;src/mixins/scrape.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/auth/index.js~authcontroller#constructor",
-    "class/src/controllers/auth/index.js~AuthController.html#instance-constructor-constructor",
-    "src/controllers/auth/index.js~AuthController#constructor",
-    "method"
+    &quot;src/mixins/scrape.js~scrape#scrape&quot;,
+    &quot;class/src/mixins/scrape.js~Scrape.html#instance-method-scrape&quot;,
+    &quot;src/mixins/scrape.js~Scrape#scrape&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/buckets/index.js",
-    "file/src/controllers/buckets/index.js.html",
-    "src/controllers/buckets/index.js",
-    "file"
+    &quot;src/mixins/stream-extras.js&quot;,
+    &quot;file/src/mixins/stream-extras.js.html&quot;,
+    &quot;src/mixins/stream-extras.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/buckets/index.js~bucketscontroller#constructor",
-    "class/src/controllers/buckets/index.js~BucketsController.html#instance-constructor-constructor",
-    "src/controllers/buckets/index.js~BucketsController#constructor",
-    "method"
+    &quot;src/mixins/stream-extras.js~streamextras#streamtostring&quot;,
+    &quot;class/src/mixins/stream-extras.js~StreamExtras.html#instance-method-streamToString&quot;,
+    &quot;src/mixins/stream-extras.js~StreamExtras#streamToString&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/digital-assets/index.js",
-    "file/src/controllers/digital-assets/index.js.html",
-    "src/controllers/digital-assets/index.js",
-    "file"
+    &quot;src/models/application/index.js&quot;,
+    &quot;file/src/models/application/index.js.html&quot;,
+    &quot;src/models/application/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/digital-assets/index.js~digitalassetscontroller#constructor",
-    "class/src/controllers/digital-assets/index.js~DigitalAssetsController.html#instance-constructor-constructor",
-    "src/controllers/digital-assets/index.js~DigitalAssetsController#constructor",
-    "method"
+    &quot;src/models/application/index.js~appmodel#constructor&quot;,
+    &quot;class/src/models/application/index.js~AppModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/application/index.js~AppModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/digital-assets/index.js~digitalassetscontroller#view",
-    "class/src/controllers/digital-assets/index.js~DigitalAssetsController.html#instance-method-view",
-    "src/controllers/digital-assets/index.js~DigitalAssetsController#view",
-    "method"
+    &quot;src/models/auth/index.js&quot;,
+    &quot;file/src/models/auth/index.js.html&quot;,
+    &quot;src/models/auth/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/document-revisions/index.js",
-    "file/src/controllers/document-revisions/index.js.html",
-    "src/controllers/document-revisions/index.js",
-    "file"
+    &quot;src/models/auth/index.js~authmodel#authbyfacebook&quot;,
+    &quot;class/src/models/auth/index.js~AuthModel.html#instance-method-authByFacebook&quot;,
+    &quot;src/models/auth/index.js~AuthModel#authByFacebook&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/document-revisions/index.js~documentrevisionscontroller#constructor",
-    "class/src/controllers/document-revisions/index.js~DocumentRevisionsController.html#instance-constructor-constructor",
-    "src/controllers/document-revisions/index.js~DocumentRevisionsController#constructor",
-    "method"
+    &quot;src/models/auth/index.js~authmodel#constructor&quot;,
+    &quot;class/src/models/auth/index.js~AuthModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/auth/index.js~AuthModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/documents/index.js",
-    "file/src/controllers/documents/index.js.html",
-    "src/controllers/documents/index.js",
-    "file"
+    &quot;src/models/auth/index.js~authmodel#login&quot;,
+    &quot;class/src/models/auth/index.js~AuthModel.html#instance-method-login&quot;,
+    &quot;src/models/auth/index.js~AuthModel#login&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/documents/index.js~documentscontroller#constructor",
-    "class/src/controllers/documents/index.js~DocumentsController.html#instance-constructor-constructor",
-    "src/controllers/documents/index.js~DocumentsController#constructor",
-    "method"
+    &quot;src/models/auth/index.js~authmodel#logout&quot;,
+    &quot;class/src/models/auth/index.js~AuthModel.html#instance-method-logout&quot;,
+    &quot;src/models/auth/index.js~AuthModel#logout&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/fields/index.js",
-    "file/src/controllers/fields/index.js.html",
-    "src/controllers/fields/index.js",
-    "file"
+    &quot;src/models/auth/schemas/create.js&quot;,
+    &quot;file/src/models/auth/schemas/create.js.html&quot;,
+    &quot;src/models/auth/schemas/create.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/fields/index.js~fieldscontroller#constructor",
-    "class/src/controllers/fields/index.js~FieldsController.html#instance-constructor-constructor",
-    "src/controllers/fields/index.js~FieldsController#constructor",
-    "method"
+    &quot;src/models/auth/schemas/forgot-password.js&quot;,
+    &quot;file/src/models/auth/schemas/forgot-password.js.html&quot;,
+    &quot;src/models/auth/schemas/forgot-password.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/organizations/index.js",
-    "file/src/controllers/organizations/index.js.html",
-    "src/controllers/organizations/index.js",
-    "file"
+    &quot;src/models/auth/schemas/forgot-username.js&quot;,
+    &quot;file/src/models/auth/schemas/forgot-username.js.html&quot;,
+    &quot;src/models/auth/schemas/forgot-username.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/organizations/index.js~organizationscontroller#constructor",
-    "class/src/controllers/organizations/index.js~OrganizationsController.html#instance-constructor-constructor",
-    "src/controllers/organizations/index.js~OrganizationsController#constructor",
-    "method"
+    &quot;src/models/auth/schemas/login.js&quot;,
+    &quot;file/src/models/auth/schemas/login.js.html&quot;,
+    &quot;src/models/auth/schemas/login.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/registry/index.js",
-    "file/src/controllers/registry/index.js.html",
-    "src/controllers/registry/index.js",
-    "file"
+    &quot;src/models/bucket/index.js&quot;,
+    &quot;file/src/models/bucket/index.js.html&quot;,
+    &quot;src/models/bucket/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/registry/index.js~registrycontroller#constructor",
-    "class/src/controllers/registry/index.js~RegistryController.html#instance-constructor-constructor",
-    "src/controllers/registry/index.js~RegistryController#constructor",
-    "method"
+    &quot;src/models/bucket/index.js~bucketmodel#constructor&quot;,
+    &quot;class/src/models/bucket/index.js~BucketModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/bucket/index.js~BucketModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/root.js",
-    "file/src/controllers/root.js.html",
-    "src/controllers/root.js",
-    "file"
+    &quot;src/models/channel/index.js&quot;,
+    &quot;file/src/models/channel/index.js.html&quot;,
+    &quot;src/models/channel/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/root.js~rootcontroller#constructor",
-    "class/src/controllers/root.js~RootController.html#instance-constructor-constructor",
-    "src/controllers/root.js~RootController#constructor",
-    "method"
+    &quot;src/models/channel/index.js~channelmodel#constructor&quot;,
+    &quot;class/src/models/channel/index.js~ChannelModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/channel/index.js~ChannelModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/taxonomies/index.js",
-    "file/src/controllers/taxonomies/index.js.html",
-    "src/controllers/taxonomies/index.js",
-    "file"
+    &quot;src/models/channel/index.js~channelmodel#getall&quot;,
+    &quot;class/src/models/channel/index.js~ChannelModel.html#instance-method-getAll&quot;,
+    &quot;src/models/channel/index.js~ChannelModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/taxonomies/index.js~taxonomiescontroller#constructor",
-    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-constructor-constructor",
-    "src/controllers/taxonomies/index.js~TaxonomiesController#constructor",
-    "method"
+    &quot;src/models/digital-asset/index.js&quot;,
+    &quot;file/src/models/digital-asset/index.js.html&quot;,
+    &quot;src/models/digital-asset/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/taxonomies/index.js~taxonomiescontroller#create",
-    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-create",
-    "src/controllers/taxonomies/index.js~TaxonomiesController#create",
-    "method"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#constructor&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/taxonomies/index.js~taxonomiescontroller#getall",
-    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-getAll",
-    "src/controllers/taxonomies/index.js~TaxonomiesController#getAll",
-    "method"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#create&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-create&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/taxonomies/index.js~taxonomiescontroller#getbyid",
-    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-getById",
-    "src/controllers/taxonomies/index.js~TaxonomiesController#getById",
-    "method"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#embedscript&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-embedScript&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#embedScript&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/taxonomies/index.js~taxonomiescontroller#update",
-    "class/src/controllers/taxonomies/index.js~TaxonomiesController.html#instance-method-update",
-    "src/controllers/taxonomies/index.js~TaxonomiesController#update",
-    "method"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#fetchembed&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-fetchEmbed&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#fetchEmbed&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/template-revisions/index.js",
-    "file/src/controllers/template-revisions/index.js.html",
-    "src/controllers/template-revisions/index.js",
-    "file"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#getall&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-getAll&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/template-revisions/index.js~templaterevisionscontroller#constructor",
-    "class/src/controllers/template-revisions/index.js~TemplateRevisionsController.html#instance-constructor-constructor",
-    "src/controllers/template-revisions/index.js~TemplateRevisionsController#constructor",
-    "method"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#pkg&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-pkg&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#pkg&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/templates/index.js",
-    "file/src/controllers/templates/index.js.html",
-    "src/controllers/templates/index.js",
-    "file"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#pkgall&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-pkgAll&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#pkgAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/templates/index.js~templatescontroller#constructor",
-    "class/src/controllers/templates/index.js~TemplatesController.html#instance-constructor-constructor",
-    "src/controllers/templates/index.js~TemplatesController#constructor",
-    "method"
+    &quot;src/models/digital-asset/index.js~digitalassetmodel#view&quot;,
+    &quot;class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-view&quot;,
+    &quot;src/models/digital-asset/index.js~DigitalAssetModel#view&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/users/index.js",
-    "file/src/controllers/users/index.js.html",
-    "src/controllers/users/index.js",
-    "file"
+    &quot;src/models/document-revision/index.js&quot;,
+    &quot;file/src/models/document-revision/index.js.html&quot;,
+    &quot;src/models/document-revision/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/users/index.js~userscontroller#constructor",
-    "class/src/controllers/users/index.js~UsersController.html#instance-constructor-constructor",
-    "src/controllers/users/index.js~UsersController#constructor",
-    "method"
+    &quot;src/models/document-revision/index.js~documentrevisionmodel#constructor&quot;,
+    &quot;class/src/models/document-revision/index.js~DocumentRevisionModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/document-revision/index.js~DocumentRevisionModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/users/index.js~userscontroller#create",
-    "class/src/controllers/users/index.js~UsersController.html#instance-method-create",
-    "src/controllers/users/index.js~UsersController#create",
-    "method"
+    &quot;src/models/document-revision/schemas/document-revision.js&quot;,
+    &quot;file/src/models/document-revision/schemas/document-revision.js.html&quot;,
+    &quot;src/models/document-revision/schemas/document-revision.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/users/index.js~userscontroller#getall",
-    "class/src/controllers/users/index.js~UsersController.html#instance-method-getAll",
-    "src/controllers/users/index.js~UsersController#getAll",
-    "method"
+    &quot;src/models/document/index.js&quot;,
+    &quot;file/src/models/document/index.js.html&quot;,
+    &quot;src/models/document/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/controllers/users/index.js~userscontroller#getbyid",
-    "class/src/controllers/users/index.js~UsersController.html#instance-method-getById",
-    "src/controllers/users/index.js~UsersController#getById",
-    "method"
+    &quot;src/models/document/index.js~documentmodel#constructor&quot;,
+    &quot;class/src/models/document/index.js~DocumentModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/document/index.js~DocumentModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/controllers/users/index.js~userscontroller#update",
-    "class/src/controllers/users/index.js~UsersController.html#instance-method-update",
-    "src/controllers/users/index.js~UsersController#update",
-    "method"
+    &quot;src/models/document/index.js~documentmodel#create&quot;,
+    &quot;class/src/models/document/index.js~DocumentModel.html#instance-method-create&quot;,
+    &quot;src/models/document/index.js~DocumentModel#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/index.js",
-    "file/src/index.js.html",
-    "src/index.js",
-    "file"
+    &quot;src/models/document/index.js~documentmodel#getactiverevision&quot;,
+    &quot;class/src/models/document/index.js~DocumentModel.html#instance-method-getActiveRevision&quot;,
+    &quot;src/models/document/index.js~DocumentModel#getActiveRevision&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/database/config.js",
-    "file/src/lib/database/config.js.html",
-    "src/lib/database/config.js",
-    "file"
+    &quot;src/models/document/index.js~documentmodel#getall&quot;,
+    &quot;class/src/models/document/index.js~DocumentModel.html#instance-method-getAll&quot;,
+    &quot;src/models/document/index.js~DocumentModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/database/driver.js",
-    "file/src/lib/database/driver.js.html",
-    "src/lib/database/driver.js",
-    "file"
+    &quot;src/models/document/index.js~documentmodel#getbyid&quot;,
+    &quot;class/src/models/document/index.js~DocumentModel.html#instance-method-getById&quot;,
+    &quot;src/models/document/index.js~DocumentModel#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/eventemitter.js",
-    "file/src/lib/eventemitter.js.html",
-    "src/lib/eventemitter.js",
-    "file"
+    &quot;src/models/document/schemas/document.js&quot;,
+    &quot;file/src/models/document/schemas/document.js.html&quot;,
+    &quot;src/models/document/schemas/document.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/lib/eventemitter.js~eventemitter#constructor",
-    "class/src/lib/eventemitter.js~EventEmitter.html#instance-constructor-constructor",
-    "src/lib/eventemitter.js~EventEmitter#constructor",
-    "method"
+    &quot;src/models/field/index.js&quot;,
+    &quot;file/src/models/field/index.js.html&quot;,
+    &quot;src/models/field/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/lib/eventemitter.js~eventemitter#emit",
-    "class/src/lib/eventemitter.js~EventEmitter.html#instance-method-emit",
-    "src/lib/eventemitter.js~EventEmitter#emit",
-    "method"
+    &quot;src/models/field/index.js~fieldmodel#constructor&quot;,
+    &quot;class/src/models/field/index.js~FieldModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/field/index.js~FieldModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/eventemitter.js~eventemitter#off",
-    "class/src/lib/eventemitter.js~EventEmitter.html#instance-method-off",
-    "src/lib/eventemitter.js~EventEmitter#off",
-    "method"
+    &quot;src/models/organization/index.js&quot;,
+    &quot;file/src/models/organization/index.js.html&quot;,
+    &quot;src/models/organization/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/lib/eventemitter.js~eventemitter#on",
-    "class/src/lib/eventemitter.js~EventEmitter.html#instance-method-on",
-    "src/lib/eventemitter.js~EventEmitter#on",
-    "method"
+    &quot;src/models/organization/index.js~organizationmodel#constructor&quot;,
+    &quot;class/src/models/organization/index.js~OrganizationModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/organization/index.js~OrganizationModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/eventemitter.js~eventemitter#once",
-    "class/src/lib/eventemitter.js~EventEmitter.html#instance-method-once",
-    "src/lib/eventemitter.js~EventEmitter#once",
-    "method"
+    &quot;src/models/organization/schemas/organization.js&quot;,
+    &quot;file/src/models/organization/schemas/organization.js.html&quot;,
+    &quot;src/models/organization/schemas/organization.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/lib/logger.js",
-    "file/src/lib/logger.js.html",
-    "src/lib/logger.js",
-    "file"
+    &quot;src/models/registry/index.js&quot;,
+    &quot;file/src/models/registry/index.js.html&quot;,
+    &quot;src/models/registry/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/lib/mapper.js",
-    "file/src/lib/mapper.js.html",
-    "src/lib/mapper.js",
-    "file"
+    &quot;src/models/registry/index.js~registrymodel#constructor&quot;,
+    &quot;class/src/models/registry/index.js~RegistryModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/registry/index.js~RegistryModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/mapper.js~mapper#nodes",
-    "class/src/lib/mapper.js~Mapper.html#instance-member-Nodes",
-    "src/lib/mapper.js~Mapper#Nodes",
-    "member"
+    &quot;src/models/registry/index.js~registrymodel#create&quot;,
+    &quot;class/src/models/registry/index.js~RegistryModel.html#instance-method-create&quot;,
+    &quot;src/models/registry/index.js~RegistryModel#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/mapper.js~mapper#constructor",
-    "class/src/lib/mapper.js~Mapper.html#instance-constructor-constructor",
-    "src/lib/mapper.js~Mapper#constructor",
-    "method"
+    &quot;src/models/registry/index.js~registrymodel#getall&quot;,
+    &quot;class/src/models/registry/index.js~RegistryModel.html#instance-method-getAll&quot;,
+    &quot;src/models/registry/index.js~RegistryModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/mapper.js~mapper#relations",
-    "class/src/lib/mapper.js~Mapper.html#instance-method-relations",
-    "src/lib/mapper.js~Mapper#relations",
-    "method"
+    &quot;src/models/registry/index.js~registrymodel#getsettingsbyname&quot;,
+    &quot;class/src/models/registry/index.js~RegistryModel.html#instance-method-getSettingsByName&quot;,
+    &quot;src/models/registry/index.js~RegistryModel#getSettingsByName&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/mixin.js",
-    "file/src/lib/mixin.js.html",
-    "src/lib/mixin.js",
-    "file"
+    &quot;src/models/revision/index.js&quot;,
+    &quot;file/src/models/revision/index.js.html&quot;,
+    &quot;src/models/revision/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/lib/registry.js",
-    "file/src/lib/registry.js.html",
-    "src/lib/registry.js",
-    "file"
+    &quot;src/models/revision/index.js~revisionmodel#constructor&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/utils/object/each.js",
-    "file/src/lib/utils/object/each.js.html",
-    "src/lib/utils/object/each.js",
-    "file"
+    &quot;src/models/revision/index.js~revisionmodel#getall&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-method-getAll&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/utils/object/map.js",
-    "file/src/lib/utils/object/map.js.html",
-    "src/lib/utils/object/map.js",
-    "file"
+    &quot;src/models/revision/index.js~revisionmodel#getbyid&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-method-getById&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/lib/utils/uuid.js",
-    "file/src/lib/utils/uuid.js.html",
-    "src/lib/utils/uuid.js",
-    "file"
+    &quot;src/models/revision/index.js~revisionmodel#getfieldreference&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-method-getFieldReference&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#getFieldReference&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/manual/styles/base/variables.js",
-    "file/src/manual/styles/base/variables.js.html",
-    "src/manual/styles/base/variables.js",
-    "file"
+    &quot;src/models/revision/index.js~revisionmodel#getfieldreferences&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-method-getFieldReferences&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#getFieldReferences&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/log.js",
-    "file/src/mixins/log.js.html",
-    "src/mixins/log.js",
-    "file"
+    &quot;src/models/revision/index.js~revisionmodel#resolvefieldreferences&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-method-resolveFieldReferences&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#resolveFieldReferences&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/log.js~log#log",
-    "class/src/mixins/log.js~Log.html#instance-method-log",
-    "src/mixins/log.js~Log#log",
-    "method"
+    &quot;src/models/revision/index.js~revisionmodel#resolvefields&quot;,
+    &quot;class/src/models/revision/index.js~RevisionModel.html#instance-method-resolveFields&quot;,
+    &quot;src/models/revision/index.js~RevisionModel#resolveFields&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/middleware.js",
-    "file/src/mixins/middleware.js.html",
-    "src/mixins/middleware.js",
-    "file"
+    &quot;src/models/root.js&quot;,
+    &quot;file/src/models/root.js.html&quot;,
+    &quot;src/models/root.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/mixins/middleware.js~middleware#currentmiddlewarelayer",
-    "class/src/mixins/middleware.js~Middleware.html#instance-member-currentMiddlewareLayer",
-    "src/mixins/middleware.js~Middleware#currentMiddlewareLayer",
-    "member"
+    &quot;src/models/root.js~rootmodel#constructor&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/root.js~RootModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/middleware.js~middleware#middlewarelayers",
-    "class/src/mixins/middleware.js~Middleware.html#instance-member-middlewareLayers",
-    "src/mixins/middleware.js~Middleware#middlewareLayers",
-    "member"
+    &quot;src/models/root.js~rootmodel#create&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-method-create&quot;,
+    &quot;src/models/root.js~RootModel#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/middleware.js~middleware#next",
-    "class/src/mixins/middleware.js~Middleware.html#instance-method-next",
-    "src/mixins/middleware.js~Middleware#next",
-    "method"
+    &quot;src/models/root.js~rootmodel#delete&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-method-delete&quot;,
+    &quot;src/models/root.js~RootModel#delete&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/middleware.js~middleware#use",
-    "class/src/mixins/middleware.js~Middleware.html#instance-method-use",
-    "src/mixins/middleware.js~Middleware#use",
-    "method"
+    &quot;src/models/root.js~rootmodel#getall&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-method-getAll&quot;,
+    &quot;src/models/root.js~RootModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/mixin.js",
-    "file/src/mixins/mixin.js.html",
-    "src/mixins/mixin.js",
-    "file"
+    &quot;src/models/root.js~rootmodel#getbyid&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-method-getById&quot;,
+    &quot;src/models/root.js~RootModel#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/scrape.js",
-    "file/src/mixins/scrape.js.html",
-    "src/mixins/scrape.js",
-    "file"
+    &quot;src/models/root.js~rootmodel#table&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-member-table&quot;,
+    &quot;src/models/root.js~RootModel#table&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/mixins/scrape.js~scrape#scrape",
-    "class/src/mixins/scrape.js~Scrape.html#instance-method-scrape",
-    "src/mixins/scrape.js~Scrape#scrape",
-    "method"
+    &quot;src/models/root.js~rootmodel#update&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-method-update&quot;,
+    &quot;src/models/root.js~RootModel#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/stream-extras.js",
-    "file/src/mixins/stream-extras.js.html",
-    "src/mixins/stream-extras.js",
-    "file"
+    &quot;src/models/root.js~rootmodel#validate&quot;,
+    &quot;class/src/models/root.js~RootModel.html#instance-method-validate&quot;,
+    &quot;src/models/root.js~RootModel#validate&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/mixins/stream-extras.js~streamextras#streamtostring",
-    "class/src/mixins/stream-extras.js~StreamExtras.html#instance-method-streamToString",
-    "src/mixins/stream-extras.js~StreamExtras#streamToString",
-    "method"
+    &quot;src/models/taxonomy/index.js&quot;,
+    &quot;file/src/models/taxonomy/index.js.html&quot;,
+    &quot;src/models/taxonomy/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/application/index.js",
-    "file/src/models/application/index.js.html",
-    "src/models/application/index.js",
-    "file"
+    &quot;src/models/taxonomy/index.js~taxonomymodel#constructor&quot;,
+    &quot;class/src/models/taxonomy/index.js~TaxonomyModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/taxonomy/index.js~TaxonomyModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/application/index.js~appmodel#constructor",
-    "class/src/models/application/index.js~AppModel.html#instance-constructor-constructor",
-    "src/models/application/index.js~AppModel#constructor",
-    "method"
+    &quot;src/models/taxonomy/schemas/taxonomy.js&quot;,
+    &quot;file/src/models/taxonomy/schemas/taxonomy.js.html&quot;,
+    &quot;src/models/taxonomy/schemas/taxonomy.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/auth/index.js",
-    "file/src/models/auth/index.js.html",
-    "src/models/auth/index.js",
-    "file"
+    &quot;src/models/template-revision/index.js&quot;,
+    &quot;file/src/models/template-revision/index.js.html&quot;,
+    &quot;src/models/template-revision/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/auth/index.js~authmodel#authbyfacebook",
-    "class/src/models/auth/index.js~AuthModel.html#instance-method-authByFacebook",
-    "src/models/auth/index.js~AuthModel#authByFacebook",
-    "method"
+    &quot;src/models/template-revision/index.js~templaterevisionmodel#constructor&quot;,
+    &quot;class/src/models/template-revision/index.js~TemplateRevisionModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/template-revision/index.js~TemplateRevisionModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/auth/index.js~authmodel#constructor",
-    "class/src/models/auth/index.js~AuthModel.html#instance-constructor-constructor",
-    "src/models/auth/index.js~AuthModel#constructor",
-    "method"
+    &quot;src/models/template-revision/schemas/template-revision.js&quot;,
+    &quot;file/src/models/template-revision/schemas/template-revision.js.html&quot;,
+    &quot;src/models/template-revision/schemas/template-revision.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/auth/index.js~authmodel#login",
-    "class/src/models/auth/index.js~AuthModel.html#instance-method-login",
-    "src/models/auth/index.js~AuthModel#login",
-    "method"
+    &quot;src/models/template/index.js&quot;,
+    &quot;file/src/models/template/index.js.html&quot;,
+    &quot;src/models/template/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/auth/index.js~authmodel#logout",
-    "class/src/models/auth/index.js~AuthModel.html#instance-method-logout",
-    "src/models/auth/index.js~AuthModel#logout",
-    "method"
+    &quot;src/models/template/index.js~templatemodel#constructor&quot;,
+    &quot;class/src/models/template/index.js~TemplateModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/template/index.js~TemplateModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/auth/schemas/create.js",
-    "file/src/models/auth/schemas/create.js.html",
-    "src/models/auth/schemas/create.js",
-    "file"
+    &quot;src/models/template/index.js~templatemodel#create&quot;,
+    &quot;class/src/models/template/index.js~TemplateModel.html#instance-method-create&quot;,
+    &quot;src/models/template/index.js~TemplateModel#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/auth/schemas/forgot-password.js",
-    "file/src/models/auth/schemas/forgot-password.js.html",
-    "src/models/auth/schemas/forgot-password.js",
-    "file"
+    &quot;src/models/template/index.js~templatemodel#getactiverevision&quot;,
+    &quot;class/src/models/template/index.js~TemplateModel.html#instance-method-getActiveRevision&quot;,
+    &quot;src/models/template/index.js~TemplateModel#getActiveRevision&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/auth/schemas/forgot-username.js",
-    "file/src/models/auth/schemas/forgot-username.js.html",
-    "src/models/auth/schemas/forgot-username.js",
-    "file"
+    &quot;src/models/template/index.js~templatemodel#getall&quot;,
+    &quot;class/src/models/template/index.js~TemplateModel.html#instance-method-getAll&quot;,
+    &quot;src/models/template/index.js~TemplateModel#getAll&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/auth/schemas/login.js",
-    "file/src/models/auth/schemas/login.js.html",
-    "src/models/auth/schemas/login.js",
-    "file"
+    &quot;src/models/template/index.js~templatemodel#getbyid&quot;,
+    &quot;class/src/models/template/index.js~TemplateModel.html#instance-method-getById&quot;,
+    &quot;src/models/template/index.js~TemplateModel#getById&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/bucket/index.js",
-    "file/src/models/bucket/index.js.html",
-    "src/models/bucket/index.js",
-    "file"
+    &quot;src/models/template/schemas/template.js&quot;,
+    &quot;file/src/models/template/schemas/template.js.html&quot;,
+    &quot;src/models/template/schemas/template.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/bucket/index.js~bucketmodel#constructor",
-    "class/src/models/bucket/index.js~BucketModel.html#instance-constructor-constructor",
-    "src/models/bucket/index.js~BucketModel#constructor",
-    "method"
+    &quot;src/models/user/index.js&quot;,
+    &quot;file/src/models/user/index.js.html&quot;,
+    &quot;src/models/user/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/channel/index.js",
-    "file/src/models/channel/index.js.html",
-    "src/models/channel/index.js",
-    "file"
+    &quot;src/models/user/index.js~usermodel#constructor&quot;,
+    &quot;class/src/models/user/index.js~UserModel.html#instance-constructor-constructor&quot;,
+    &quot;src/models/user/index.js~UserModel#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/channel/index.js~channelmodel#constructor",
-    "class/src/models/channel/index.js~ChannelModel.html#instance-constructor-constructor",
-    "src/models/channel/index.js~ChannelModel#constructor",
-    "method"
+    &quot;src/models/user/index.js~usermodel#create&quot;,
+    &quot;class/src/models/user/index.js~UserModel.html#instance-method-create&quot;,
+    &quot;src/models/user/index.js~UserModel#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/channel/index.js~channelmodel#getall",
-    "class/src/models/channel/index.js~ChannelModel.html#instance-method-getAll",
-    "src/models/channel/index.js~ChannelModel#getAll",
-    "method"
+    &quot;src/models/user/index.js~usermodel#getbyemail&quot;,
+    &quot;class/src/models/user/index.js~UserModel.html#instance-method-getByEmail&quot;,
+    &quot;src/models/user/index.js~UserModel#getByEmail&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/digital-asset/index.js",
-    "file/src/models/digital-asset/index.js.html",
-    "src/models/digital-asset/index.js",
-    "file"
+    &quot;src/models/user/index.js~usermodel#getbyusername&quot;,
+    &quot;class/src/models/user/index.js~UserModel.html#instance-method-getByUsername&quot;,
+    &quot;src/models/user/index.js~UserModel#getByUsername&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#constructor",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-constructor-constructor",
-    "src/models/digital-asset/index.js~DigitalAssetModel#constructor",
-    "method"
+    &quot;src/models/user/index.js~usermodel#update&quot;,
+    &quot;class/src/models/user/index.js~UserModel.html#instance-method-update&quot;,
+    &quot;src/models/user/index.js~UserModel#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#create",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-create",
-    "src/models/digital-asset/index.js~DigitalAssetModel#create",
-    "method"
+    &quot;src/models/user/schemas/create.js&quot;,
+    &quot;file/src/models/user/schemas/create.js.html&quot;,
+    &quot;src/models/user/schemas/create.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#embedscript",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-embedScript",
-    "src/models/digital-asset/index.js~DigitalAssetModel#embedScript",
-    "method"
+    &quot;src/models/user/schemas/update.js&quot;,
+    &quot;file/src/models/user/schemas/update.js.html&quot;,
+    &quot;src/models/user/schemas/update.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#fetchembed",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-fetchEmbed",
-    "src/models/digital-asset/index.js~DigitalAssetModel#fetchEmbed",
-    "method"
+    &quot;src/server/dispatcher.js&quot;,
+    &quot;file/src/server/dispatcher.js.html&quot;,
+    &quot;src/server/dispatcher.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#getall",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-getAll",
-    "src/models/digital-asset/index.js~DigitalAssetModel#getAll",
-    "method"
+    &quot;src/server/dispatcher.js~dispatcher#constructor&quot;,
+    &quot;class/src/server/dispatcher.js~Dispatcher.html#instance-constructor-constructor&quot;,
+    &quot;src/server/dispatcher.js~Dispatcher#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#pkg",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-pkg",
-    "src/models/digital-asset/index.js~DigitalAssetModel#pkg",
-    "method"
+    &quot;src/server/dispatcher.js~dispatcher#dispatch&quot;,
+    &quot;class/src/server/dispatcher.js~Dispatcher.html#instance-method-dispatch&quot;,
+    &quot;src/server/dispatcher.js~Dispatcher#dispatch&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#pkgall",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-pkgAll",
-    "src/models/digital-asset/index.js~DigitalAssetModel#pkgAll",
-    "method"
+    &quot;src/server/dispatcher.js~dispatcher#options&quot;,
+    &quot;class/src/server/dispatcher.js~Dispatcher.html#instance-member-options&quot;,
+    &quot;src/server/dispatcher.js~Dispatcher#options&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/digital-asset/index.js~digitalassetmodel#view",
-    "class/src/models/digital-asset/index.js~DigitalAssetModel.html#instance-method-view",
-    "src/models/digital-asset/index.js~DigitalAssetModel#view",
-    "method"
+    &quot;src/server/index.js&quot;,
+    &quot;file/src/server/index.js.html&quot;,
+    &quot;src/server/index.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/document-revision/index.js",
-    "file/src/models/document-revision/index.js.html",
-    "src/models/document-revision/index.js",
-    "file"
+    &quot;src/server/router.js&quot;,
+    &quot;file/src/server/router.js.html&quot;,
+    &quot;src/server/router.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/document-revision/index.js~documentrevisionmodel#constructor",
-    "class/src/models/document-revision/index.js~DocumentRevisionModel.html#instance-constructor-constructor",
-    "src/models/document-revision/index.js~DocumentRevisionModel#constructor",
-    "method"
+    &quot;src/server/router.js~router#controllers&quot;,
+    &quot;class/src/server/router.js~Router.html#instance-member-Controllers&quot;,
+    &quot;src/server/router.js~Router#Controllers&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/document-revision/schemas/document-revision.js",
-    "file/src/models/document-revision/schemas/document-revision.js.html",
-    "src/models/document-revision/schemas/document-revision.js",
-    "file"
+    &quot;src/server/router.js~router#constructor&quot;,
+    &quot;class/src/server/router.js~Router.html#instance-constructor-constructor&quot;,
+    &quot;src/server/router.js~Router#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/document/index.js",
-    "file/src/models/document/index.js.html",
-    "src/models/document/index.js",
-    "file"
+    &quot;src/server/router.js~router#dispatcher&quot;,
+    &quot;class/src/server/router.js~Router.html#instance-member-dispatcher&quot;,
+    &quot;src/server/router.js~Router#dispatcher&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/document/index.js~documentmodel#constructor",
-    "class/src/models/document/index.js~DocumentModel.html#instance-constructor-constructor",
-    "src/models/document/index.js~DocumentModel#constructor",
-    "method"
+    &quot;src/server/router.js~router#options&quot;,
+    &quot;class/src/server/router.js~Router.html#instance-member-options&quot;,
+    &quot;src/server/router.js~Router#options&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/document/index.js~documentmodel#create",
-    "class/src/models/document/index.js~DocumentModel.html#instance-method-create",
-    "src/models/document/index.js~DocumentModel#create",
-    "method"
+    &quot;src/server/router.js~router#routes&quot;,
+    &quot;class/src/server/router.js~Router.html#instance-member-routes&quot;,
+    &quot;src/server/router.js~Router#routes&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/document/index.js~documentmodel#getactiverevision",
-    "class/src/models/document/index.js~DocumentModel.html#instance-method-getActiveRevision",
-    "src/models/document/index.js~DocumentModel#getActiveRevision",
-    "method"
+    &quot;src/server/router.js~router#server&quot;,
+    &quot;class/src/server/router.js~Router.html#instance-member-server&quot;,
+    &quot;src/server/router.js~Router#server&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/document/index.js~documentmodel#getall",
-    "class/src/models/document/index.js~DocumentModel.html#instance-method-getAll",
-    "src/models/document/index.js~DocumentModel#getAll",
-    "method"
+    &quot;src/server/storageadaptors.js&quot;,
+    &quot;file/src/server/storageAdaptors.js.html&quot;,
+    &quot;src/server/storageAdaptors.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/document/index.js~documentmodel#getbyid",
-    "class/src/models/document/index.js~DocumentModel.html#instance-method-getById",
-    "src/models/document/index.js~DocumentModel#getById",
-    "method"
+    &quot;src/services/app.js&quot;,
+    &quot;file/src/services/app.js.html&quot;,
+    &quot;src/services/app.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/document/schemas/document.js",
-    "file/src/models/document/schemas/document.js.html",
-    "src/models/document/schemas/document.js",
-    "file"
+    &quot;src/services/app.js~appservice#create&quot;,
+    &quot;class/src/services/app.js~AppService.html#instance-method-create&quot;,
+    &quot;src/services/app.js~AppService#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/field/index.js",
-    "file/src/models/field/index.js.html",
-    "src/models/field/index.js",
-    "file"
+    &quot;src/services/app.js~appservice#get&quot;,
+    &quot;class/src/services/app.js~AppService.html#instance-method-get&quot;,
+    &quot;src/services/app.js~AppService#get&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/field/index.js~fieldmodel#constructor",
-    "class/src/models/field/index.js~FieldModel.html#instance-constructor-constructor",
-    "src/models/field/index.js~FieldModel#constructor",
-    "method"
+    &quot;src/services/app.js~appservice#getbyshortid&quot;,
+    &quot;class/src/services/app.js~AppService.html#instance-method-getByShortId&quot;,
+    &quot;src/services/app.js~AppService#getByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/organization/index.js",
-    "file/src/models/organization/index.js.html",
-    "src/models/organization/index.js",
-    "file"
+    &quot;src/services/app.js~appservice#update&quot;,
+    &quot;class/src/services/app.js~AppService.html#instance-method-update&quot;,
+    &quot;src/services/app.js~AppService#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/organization/index.js~organizationmodel#constructor",
-    "class/src/models/organization/index.js~OrganizationModel.html#instance-constructor-constructor",
-    "src/models/organization/index.js~OrganizationModel#constructor",
-    "method"
+    &quot;src/services/app.js~appservice#updatebyshortid&quot;,
+    &quot;class/src/services/app.js~AppService.html#instance-method-updateByShortId&quot;,
+    &quot;src/services/app.js~AppService#updateByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/organization/schemas/organization.js",
-    "file/src/models/organization/schemas/organization.js.html",
-    "src/models/organization/schemas/organization.js",
-    "file"
+    &quot;src/services/auth.js&quot;,
+    &quot;file/src/services/auth.js.html&quot;,
+    &quot;src/services/auth.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/registry/index.js",
-    "file/src/models/registry/index.js.html",
-    "src/models/registry/index.js",
-    "file"
+    &quot;src/services/auth.js~authservice#authenticatebyid&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-authenticateById&quot;,
+    &quot;src/services/auth.js~AuthService#authenticateById&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/registry/index.js~registrymodel#constructor",
-    "class/src/models/registry/index.js~RegistryModel.html#instance-constructor-constructor",
-    "src/models/registry/index.js~RegistryModel#constructor",
-    "method"
+    &quot;src/services/auth.js~authservice#authenticatebyusername&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-authenticateByUsername&quot;,
+    &quot;src/services/auth.js~AuthService#authenticateByUsername&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/registry/index.js~registrymodel#create",
-    "class/src/models/registry/index.js~RegistryModel.html#instance-method-create",
-    "src/models/registry/index.js~RegistryModel#create",
-    "method"
+    &quot;src/services/auth.js~authservice#authorize&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-authorize&quot;,
+    &quot;src/services/auth.js~AuthService#authorize&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/registry/index.js~registrymodel#getall",
-    "class/src/models/registry/index.js~RegistryModel.html#instance-method-getAll",
-    "src/models/registry/index.js~RegistryModel#getAll",
-    "method"
+    &quot;src/services/auth.js~authservice#loginbyid&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-loginById&quot;,
+    &quot;src/services/auth.js~AuthService#loginById&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/registry/index.js~registrymodel#getsettingsbyname",
-    "class/src/models/registry/index.js~RegistryModel.html#instance-method-getSettingsByName",
-    "src/models/registry/index.js~RegistryModel#getSettingsByName",
-    "method"
+    &quot;src/services/auth.js~authservice#loginbyusername&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-loginByUsername&quot;,
+    &quot;src/services/auth.js~AuthService#loginByUsername&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js",
-    "file/src/models/revision/index.js.html",
-    "src/models/revision/index.js",
-    "file"
+    &quot;src/services/auth.js~authservice#logout&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-logout&quot;,
+    &quot;src/services/auth.js~AuthService#logout&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#constructor",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-constructor-constructor",
-    "src/models/revision/index.js~RevisionModel#constructor",
-    "method"
+    &quot;src/services/auth.js~authservice#unauthenticate&quot;,
+    &quot;class/src/services/auth.js~AuthService.html#instance-method-unauthenticate&quot;,
+    &quot;src/services/auth.js~AuthService#unauthenticate&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#getall",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-method-getAll",
-    "src/models/revision/index.js~RevisionModel#getAll",
-    "method"
+    &quot;src/services/organization.js&quot;,
+    &quot;file/src/services/organization.js.html&quot;,
+    &quot;src/services/organization.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#getbyid",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-method-getById",
-    "src/models/revision/index.js~RevisionModel#getById",
-    "method"
+    &quot;src/services/organization.js~organizationservice#create&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html#instance-method-create&quot;,
+    &quot;src/services/organization.js~OrganizationService#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#getfieldreference",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-method-getFieldReference",
-    "src/models/revision/index.js~RevisionModel#getFieldReference",
-    "method"
+    &quot;src/services/organization.js~organizationservice#get&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html#instance-method-get&quot;,
+    &quot;src/services/organization.js~OrganizationService#get&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#getfieldreferences",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-method-getFieldReferences",
-    "src/models/revision/index.js~RevisionModel#getFieldReferences",
-    "method"
+    &quot;src/services/organization.js~organizationservice#getbyshortid&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html#instance-method-getByShortId&quot;,
+    &quot;src/services/organization.js~OrganizationService#getByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#resolvefieldreferences",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-method-resolveFieldReferences",
-    "src/models/revision/index.js~RevisionModel#resolveFieldReferences",
-    "method"
+    &quot;src/services/organization.js~organizationservice#list&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html#instance-method-list&quot;,
+    &quot;src/services/organization.js~OrganizationService#list&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/revision/index.js~revisionmodel#resolvefields",
-    "class/src/models/revision/index.js~RevisionModel.html#instance-method-resolveFields",
-    "src/models/revision/index.js~RevisionModel#resolveFields",
-    "method"
+    &quot;src/services/organization.js~organizationservice#update&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html#instance-method-update&quot;,
+    &quot;src/services/organization.js~OrganizationService#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js",
-    "file/src/models/root.js.html",
-    "src/models/root.js",
-    "file"
+    &quot;src/services/organization.js~organizationservice#updatebyshortid&quot;,
+    &quot;class/src/services/organization.js~OrganizationService.html#instance-method-updateByShortId&quot;,
+    &quot;src/services/organization.js~OrganizationService#updateByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js~rootmodel#constructor",
-    "class/src/models/root.js~RootModel.html#instance-constructor-constructor",
-    "src/models/root.js~RootModel#constructor",
-    "method"
+    &quot;src/services/package.js&quot;,
+    &quot;file/src/services/package.js.html&quot;,
+    &quot;src/services/package.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/root.js~rootmodel#create",
-    "class/src/models/root.js~RootModel.html#instance-method-create",
-    "src/models/root.js~RootModel#create",
-    "method"
+    &quot;src/services/package.js~packageservice#constructor&quot;,
+    &quot;class/src/services/package.js~PackageService.html#instance-constructor-constructor&quot;,
+    &quot;src/services/package.js~PackageService#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js~rootmodel#delete",
-    "class/src/models/root.js~RootModel.html#instance-method-delete",
-    "src/models/root.js~RootModel#delete",
-    "method"
+    &quot;src/services/package.js~packageservice#error&quot;,
+    &quot;class/src/services/package.js~PackageService.html#instance-method-error&quot;,
+    &quot;src/services/package.js~PackageService#error&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js~rootmodel#getall",
-    "class/src/models/root.js~RootModel.html#instance-method-getAll",
-    "src/models/root.js~RootModel#getAll",
-    "method"
+    &quot;src/services/package.js~packageservice#success&quot;,
+    &quot;class/src/services/package.js~PackageService.html#instance-method-success&quot;,
+    &quot;src/services/package.js~PackageService#success&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js~rootmodel#getbyid",
-    "class/src/models/root.js~RootModel.html#instance-method-getById",
-    "src/models/root.js~RootModel#getById",
-    "method"
+    &quot;src/services/password.js&quot;,
+    &quot;file/src/services/password.js.html&quot;,
+    &quot;src/services/password.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/root.js~rootmodel#table",
-    "class/src/models/root.js~RootModel.html#instance-member-table",
-    "src/models/root.js~RootModel#table",
-    "member"
+    &quot;src/services/password.js~passwordservice#constructor&quot;,
+    &quot;class/src/services/password.js~PasswordService.html#instance-constructor-constructor&quot;,
+    &quot;src/services/password.js~PasswordService#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js~rootmodel#update",
-    "class/src/models/root.js~RootModel.html#instance-method-update",
-    "src/models/root.js~RootModel#update",
-    "method"
+    &quot;src/services/password.js~passwordservice#issue&quot;,
+    &quot;class/src/services/password.js~PasswordService.html#instance-method-issue&quot;,
+    &quot;src/services/password.js~PasswordService#issue&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/root.js~rootmodel#validate",
-    "class/src/models/root.js~RootModel.html#instance-method-validate",
-    "src/models/root.js~RootModel#validate",
-    "method"
+    &quot;src/services/password.js~passwordservice#options&quot;,
+    &quot;class/src/services/password.js~PasswordService.html#instance-member-options&quot;,
+    &quot;src/services/password.js~PasswordService#options&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/taxonomy/index.js",
-    "file/src/models/taxonomy/index.js.html",
-    "src/models/taxonomy/index.js",
-    "file"
+    &quot;src/services/password.js~passwordservice#verify&quot;,
+    &quot;class/src/services/password.js~PasswordService.html#instance-method-verify&quot;,
+    &quot;src/services/password.js~PasswordService#verify&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/taxonomy/index.js~taxonomymodel#constructor",
-    "class/src/models/taxonomy/index.js~TaxonomyModel.html#instance-constructor-constructor",
-    "src/models/taxonomy/index.js~TaxonomyModel#constructor",
-    "method"
+    &quot;src/services/short-id.js&quot;,
+    &quot;file/src/services/short-id.js.html&quot;,
+    &quot;src/services/short-id.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/taxonomy/schemas/taxonomy.js",
-    "file/src/models/taxonomy/schemas/taxonomy.js.html",
-    "src/models/taxonomy/schemas/taxonomy.js",
-    "file"
+    &quot;src/services/short-id.js~shortidservice#constructor&quot;,
+    &quot;class/src/services/short-id.js~ShortIdService.html#instance-constructor-constructor&quot;,
+    &quot;src/services/short-id.js~ShortIdService#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template-revision/index.js",
-    "file/src/models/template-revision/index.js.html",
-    "src/models/template-revision/index.js",
-    "file"
+    &quot;src/services/short-id.js~shortidservice#issue&quot;,
+    &quot;class/src/services/short-id.js~ShortIdService.html#instance-method-issue&quot;,
+    &quot;src/services/short-id.js~ShortIdService#issue&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template-revision/index.js~templaterevisionmodel#constructor",
-    "class/src/models/template-revision/index.js~TemplateRevisionModel.html#instance-constructor-constructor",
-    "src/models/template-revision/index.js~TemplateRevisionModel#constructor",
-    "method"
+    &quot;src/services/short-id.js~shortidservice#options&quot;,
+    &quot;class/src/services/short-id.js~ShortIdService.html#instance-member-options&quot;,
+    &quot;src/services/short-id.js~ShortIdService#options&quot;,
+    &quot;member&quot;
   ],
   [
-    "src/models/template-revision/schemas/template-revision.js",
-    "file/src/models/template-revision/schemas/template-revision.js.html",
-    "src/models/template-revision/schemas/template-revision.js",
-    "file"
+    &quot;src/services/template.js&quot;,
+    &quot;file/src/services/template.js.html&quot;,
+    &quot;src/services/template.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/template/index.js",
-    "file/src/models/template/index.js.html",
-    "src/models/template/index.js",
-    "file"
+    &quot;src/services/template.js~templateservice#create&quot;,
+    &quot;class/src/services/template.js~TemplateService.html#instance-method-create&quot;,
+    &quot;src/services/template.js~TemplateService#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template/index.js~templatemodel#constructor",
-    "class/src/models/template/index.js~TemplateModel.html#instance-constructor-constructor",
-    "src/models/template/index.js~TemplateModel#constructor",
-    "method"
+    &quot;src/services/template.js~templateservice#get&quot;,
+    &quot;class/src/services/template.js~TemplateService.html#instance-method-get&quot;,
+    &quot;src/services/template.js~TemplateService#get&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template/index.js~templatemodel#create",
-    "class/src/models/template/index.js~TemplateModel.html#instance-method-create",
-    "src/models/template/index.js~TemplateModel#create",
-    "method"
+    &quot;src/services/template.js~templateservice#getbyshortid&quot;,
+    &quot;class/src/services/template.js~TemplateService.html#instance-method-getByShortId&quot;,
+    &quot;src/services/template.js~TemplateService#getByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template/index.js~templatemodel#getactiverevision",
-    "class/src/models/template/index.js~TemplateModel.html#instance-method-getActiveRevision",
-    "src/models/template/index.js~TemplateModel#getActiveRevision",
-    "method"
+    &quot;src/services/template.js~templateservice#update&quot;,
+    &quot;class/src/services/template.js~TemplateService.html#instance-method-update&quot;,
+    &quot;src/services/template.js~TemplateService#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template/index.js~templatemodel#getall",
-    "class/src/models/template/index.js~TemplateModel.html#instance-method-getAll",
-    "src/models/template/index.js~TemplateModel#getAll",
-    "method"
+    &quot;src/services/template.js~templateservice#updatebyshortid&quot;,
+    &quot;class/src/services/template.js~TemplateService.html#instance-method-updateByShortId&quot;,
+    &quot;src/services/template.js~TemplateService#updateByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/template/index.js~templatemodel#getbyid",
-    "class/src/models/template/index.js~TemplateModel.html#instance-method-getById",
-    "src/models/template/index.js~TemplateModel#getById",
-    "method"
+    &quot;src/services/token.js&quot;,
+    &quot;file/src/services/token.js.html&quot;,
+    &quot;src/services/token.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/template/schemas/template.js",
-    "file/src/models/template/schemas/template.js.html",
-    "src/models/template/schemas/template.js",
-    "file"
+    &quot;src/services/token.js~tokenservice#constructor&quot;,
+    &quot;class/src/services/token.js~TokenService.html#instance-constructor-constructor&quot;,
+    &quot;src/services/token.js~TokenService#constructor&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/index.js",
-    "file/src/models/user/index.js.html",
-    "src/models/user/index.js",
-    "file"
+    &quot;src/services/token.js~tokenservice#issue&quot;,
+    &quot;class/src/services/token.js~TokenService.html#instance-method-issue&quot;,
+    &quot;src/services/token.js~TokenService#issue&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/index.js~usermodel#constructor",
-    "class/src/models/user/index.js~UserModel.html#instance-constructor-constructor",
-    "src/models/user/index.js~UserModel#constructor",
-    "method"
+    &quot;src/services/token.js~tokenservice#verify&quot;,
+    &quot;class/src/services/token.js~TokenService.html#instance-method-verify&quot;,
+    &quot;src/services/token.js~TokenService#verify&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/index.js~usermodel#create",
-    "class/src/models/user/index.js~UserModel.html#instance-method-create",
-    "src/models/user/index.js~UserModel#create",
-    "method"
+    &quot;src/services/user.js&quot;,
+    &quot;file/src/services/user.js.html&quot;,
+    &quot;src/services/user.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/models/user/index.js~usermodel#getbyemail",
-    "class/src/models/user/index.js~UserModel.html#instance-method-getByEmail",
-    "src/models/user/index.js~UserModel#getByEmail",
-    "method"
+    &quot;src/services/user.js~userservice#create&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-create&quot;,
+    &quot;src/services/user.js~UserService#create&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/index.js~usermodel#getbyusername",
-    "class/src/models/user/index.js~UserModel.html#instance-method-getByUsername",
-    "src/models/user/index.js~UserModel#getByUsername",
-    "method"
+    &quot;src/services/user.js~userservice#get&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-get&quot;,
+    &quot;src/services/user.js~UserService#get&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/index.js~usermodel#update",
-    "class/src/models/user/index.js~UserModel.html#instance-method-update",
-    "src/models/user/index.js~UserModel#update",
-    "method"
+    &quot;src/services/user.js~userservice#getbyshortid&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-getByShortId&quot;,
+    &quot;src/services/user.js~UserService#getByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/schemas/create.js",
-    "file/src/models/user/schemas/create.js.html",
-    "src/models/user/schemas/create.js",
-    "file"
+    &quot;src/services/user.js~userservice#getbyusername&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-getByUsername&quot;,
+    &quot;src/services/user.js~UserService#getByUsername&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/models/user/schemas/update.js",
-    "file/src/models/user/schemas/update.js.html",
-    "src/models/user/schemas/update.js",
-    "file"
+    &quot;src/services/user.js~userservice#list&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-list&quot;,
+    &quot;src/services/user.js~UserService#list&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/server/dispatcher.js",
-    "file/src/server/dispatcher.js.html",
-    "src/server/dispatcher.js",
-    "file"
+    &quot;src/services/user.js~userservice#update&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-update&quot;,
+    &quot;src/services/user.js~UserService#update&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/server/dispatcher.js~dispatcher#constructor",
-    "class/src/server/dispatcher.js~Dispatcher.html#instance-constructor-constructor",
-    "src/server/dispatcher.js~Dispatcher#constructor",
-    "method"
+    &quot;src/services/user.js~userservice#updatebyshortid&quot;,
+    &quot;class/src/services/user.js~UserService.html#instance-method-updateByShortId&quot;,
+    &quot;src/services/user.js~UserService#updateByShortId&quot;,
+    &quot;method&quot;
   ],
   [
-    "src/server/dispatcher.js~dispatcher#dispatch",
-    "class/src/server/dispatcher.js~Dispatcher.html#instance-method-dispatch",
-    "src/server/dispatcher.js~Dispatcher#dispatch",
-    "method"
+    &quot;src/start.js&quot;,
+    &quot;file/src/start.js.html&quot;,
+    &quot;src/start.js&quot;,
+    &quot;file&quot;
   ],
   [
-    "src/server/dispatcher.js~dispatcher#options",
-    "class/src/server/dispatcher.js~Dispatcher.html#instance-member-options",
-    "src/server/dispatcher.js~Dispatcher#options",
-    "member"
+    &quot;test/helpers/db.babel.js&quot;,
+    &quot;test-file/test/helpers/db.babel.js.html&quot;,
+    &quot;test/helpers/db.babel.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/index.js",
-    "file/src/server/index.js.html",
-    "src/server/index.js",
-    "file"
+    &quot;test/helpers/db.js&quot;,
+    &quot;test-file/test/helpers/db.js.html&quot;,
+    &quot;test/helpers/db.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js",
-    "file/src/server/router.js.html",
-    "src/server/router.js",
-    "file"
+    &quot;test/helpers/expressobjects.js&quot;,
+    &quot;test-file/test/helpers/expressObjects.js.html&quot;,
+    &quot;test/helpers/expressObjects.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#controllers",
-    "class/src/server/router.js~Router.html#instance-member-Controllers",
-    "src/server/router.js~Router#Controllers",
-    "member"
+    &quot;test/helpers/mock-http-server.js&quot;,
+    &quot;test-file/test/helpers/mock-http-server.js.html&quot;,
+    &quot;test/helpers/mock-http-server.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#constructor",
-    "class/src/server/router.js~Router.html#instance-constructor-constructor",
-    "src/server/router.js~Router#constructor",
-    "method"
+    &quot;test/helpers/start.js&quot;,
+    &quot;test-file/test/helpers/start.js.html&quot;,
+    &quot;test/helpers/start.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#dispatcher",
-    "class/src/server/router.js~Router.html#instance-member-dispatcher",
-    "src/server/router.js~Router#dispatcher",
-    "member"
+    &quot;test/integration/suite.js&quot;,
+    &quot;test-file/test/integration/suite.js.html&quot;,
+    &quot;test/integration/suite.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#generateroutesfromnodes",
-    "class/src/server/router.js~Router.html#instance-method-generateRoutesFromNodes",
-    "src/server/router.js~Router#generateRoutesFromNodes",
-    "method"
+    &quot;test/unit/controllers/auth.js&quot;,
+    &quot;test-file/test/unit/controllers/auth.js.html&quot;,
+    &quot;test/unit/controllers/auth.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#loadroutes",
-    "class/src/server/router.js~Router.html#instance-method-loadRoutes",
-    "src/server/router.js~Router#loadRoutes",
-    "method"
+    &quot;test/unit/controllers/documents.js&quot;,
+    &quot;test-file/test/unit/controllers/documents.js.html&quot;,
+    &quot;test/unit/controllers/documents.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#options",
-    "class/src/server/router.js~Router.html#instance-member-options",
-    "src/server/router.js~Router#options",
-    "member"
+    &quot;test/unit/controllers/organizations.js&quot;,
+    &quot;test-file/test/unit/controllers/organizations.js.html&quot;,
+    &quot;test/unit/controllers/organizations.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#routes",
-    "class/src/server/router.js~Router.html#instance-member-routes",
-    "src/server/router.js~Router#routes",
-    "member"
+    &quot;test/unit/controllers/taxonomies.js&quot;,
+    &quot;test-file/test/unit/controllers/taxonomies.js.html&quot;,
+    &quot;test/unit/controllers/taxonomies.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#server",
-    "class/src/server/router.js~Router.html#instance-member-server",
-    "src/server/router.js~Router#server",
-    "member"
+    &quot;test/unit/controllers/templates.js&quot;,
+    &quot;test-file/test/unit/controllers/templates.js.html&quot;,
+    &quot;test/unit/controllers/templates.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/router.js~router#structroute",
-    "class/src/server/router.js~Router.html#instance-method-structRoute",
-    "src/server/router.js~Router#structRoute",
-    "method"
+    &quot;test/unit/controllers/users.js&quot;,
+    &quot;test-file/test/unit/controllers/users.js.html&quot;,
+    &quot;test/unit/controllers/users.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/server/storageadaptors.js",
-    "file/src/server/storageAdaptors.js.html",
-    "src/server/storageAdaptors.js",
-    "file"
+    &quot;test/unit/flow/flow.js&quot;,
+    &quot;test-file/test/unit/flow/flow.js.html&quot;,
+    &quot;test/unit/flow/flow.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/app.js",
-    "file/src/services/app.js.html",
-    "src/services/app.js",
-    "file"
+    &quot;test/unit/lib/database/driver.js&quot;,
+    &quot;test-file/test/unit/lib/database/driver.js.html&quot;,
+    &quot;test/unit/lib/database/driver.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/app.js~appservice#create",
-    "class/src/services/app.js~AppService.html#instance-method-create",
-    "src/services/app.js~AppService#create",
-    "method"
+    &quot;test/unit/models/auth.js&quot;,
+    &quot;test-file/test/unit/models/auth.js.html&quot;,
+    &quot;test/unit/models/auth.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/app.js~appservice#get",
-    "class/src/services/app.js~AppService.html#instance-method-get",
-    "src/services/app.js~AppService#get",
-    "method"
+    &quot;test/unit/models/document.js&quot;,
+    &quot;test-file/test/unit/models/document.js.html&quot;,
+    &quot;test/unit/models/document.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/app.js~appservice#getbyshortid",
-    "class/src/services/app.js~AppService.html#instance-method-getByShortId",
-    "src/services/app.js~AppService#getByShortId",
-    "method"
+    &quot;test/unit/models/organization.js&quot;,
+    &quot;test-file/test/unit/models/organization.js.html&quot;,
+    &quot;test/unit/models/organization.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/app.js~appservice#update",
-    "class/src/services/app.js~AppService.html#instance-method-update",
-    "src/services/app.js~AppService#update",
-    "method"
+    &quot;test/unit/models/root.js&quot;,
+    &quot;test-file/test/unit/models/root.js.html&quot;,
+    &quot;test/unit/models/root.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/app.js~appservice#updatebyshortid",
-    "class/src/services/app.js~AppService.html#instance-method-updateByShortId",
-    "src/services/app.js~AppService#updateByShortId",
-    "method"
+    &quot;test/unit/models/taxonomy.js&quot;,
+    &quot;test-file/test/unit/models/taxonomy.js.html&quot;,
+    &quot;test/unit/models/taxonomy.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js",
-    "file/src/services/auth.js.html",
-    "src/services/auth.js",
-    "file"
+    &quot;test/unit/models/template.js&quot;,
+    &quot;test-file/test/unit/models/template.js.html&quot;,
+    &quot;test/unit/models/template.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#authenticatebyid",
-    "class/src/services/auth.js~AuthService.html#instance-method-authenticateById",
-    "src/services/auth.js~AuthService#authenticateById",
-    "method"
+    &quot;test/unit/models/user.js&quot;,
+    &quot;test-file/test/unit/models/user.js.html&quot;,
+    &quot;test/unit/models/user.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#authenticatebyusername",
-    "class/src/services/auth.js~AuthService.html#instance-method-authenticateByUsername",
-    "src/services/auth.js~AuthService#authenticateByUsername",
-    "method"
+    &quot;test/unit/routes/auth.js&quot;,
+    &quot;test-file/test/unit/routes/auth.js.html&quot;,
+    &quot;test/unit/routes/auth.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#authorize",
-    "class/src/services/auth.js~AuthService.html#instance-method-authorize",
-    "src/services/auth.js~AuthService#authorize",
-    "method"
+    &quot;test/unit/routes/organizations.js&quot;,
+    &quot;test-file/test/unit/routes/organizations.js.html&quot;,
+    &quot;test/unit/routes/organizations.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#loginbyid",
-    "class/src/services/auth.js~AuthService.html#instance-method-loginById",
-    "src/services/auth.js~AuthService#loginById",
-    "method"
+    &quot;test/unit/server/dispatcher.js&quot;,
+    &quot;test-file/test/unit/server/dispatcher.js.html&quot;,
+    &quot;test/unit/server/dispatcher.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#loginbyusername",
-    "class/src/services/auth.js~AuthService.html#instance-method-loginByUsername",
-    "src/services/auth.js~AuthService#loginByUsername",
-    "method"
+    &quot;test/unit/server/index.js&quot;,
+    &quot;test-file/test/unit/server/index.js.html&quot;,
+    &quot;test/unit/server/index.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#logout",
-    "class/src/services/auth.js~AuthService.html#instance-method-logout",
-    "src/services/auth.js~AuthService#logout",
-    "method"
+    &quot;test/unit/server/router.js&quot;,
+    &quot;test-file/test/unit/server/router.js.html&quot;,
+    &quot;test/unit/server/router.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/auth.js~authservice#unauthenticate",
-    "class/src/services/auth.js~AuthService.html#instance-method-unauthenticate",
-    "src/services/auth.js~AuthService#unauthenticate",
-    "method"
+    &quot;test/unit/services/package.js&quot;,
+    &quot;test-file/test/unit/services/package.js.html&quot;,
+    &quot;test/unit/services/package.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/organization.js",
-    "file/src/services/organization.js.html",
-    "src/services/organization.js",
-    "file"
+    &quot;test/unit/services/password.js&quot;,
+    &quot;test-file/test/unit/services/password.js.html&quot;,
+    &quot;test/unit/services/password.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/organization.js~organizationservice#create",
-    "class/src/services/organization.js~OrganizationService.html#instance-method-create",
-    "src/services/organization.js~OrganizationService#create",
-    "method"
+    &quot;test/unit/services/token.js&quot;,
+    &quot;test-file/test/unit/services/token.js.html&quot;,
+    &quot;test/unit/services/token.js&quot;,
+    &quot;testFile&quot;
   ],
   [
-    "src/services/organization.js~organizationservice#get",
-    "class/src/services/organization.js~OrganizationService.html#instance-method-get",
-    "src/services/organization.js~OrganizationService#get",
-    "method"
-  ],
-  [
-    "src/services/organization.js~organizationservice#getbyshortid",
-    "class/src/services/organization.js~OrganizationService.html#instance-method-getByShortId",
-    "src/services/organization.js~OrganizationService#getByShortId",
-    "method"
-  ],
-  [
-    "src/services/organization.js~organizationservice#list",
-    "class/src/services/organization.js~OrganizationService.html#instance-method-list",
-    "src/services/organization.js~OrganizationService#list",
-    "method"
-  ],
-  [
-    "src/services/organization.js~organizationservice#update",
-    "class/src/services/organization.js~OrganizationService.html#instance-method-update",
-    "src/services/organization.js~OrganizationService#update",
-    "method"
-  ],
-  [
-    "src/services/organization.js~organizationservice#updatebyshortid",
-    "class/src/services/organization.js~OrganizationService.html#instance-method-updateByShortId",
-    "src/services/organization.js~OrganizationService#updateByShortId",
-    "method"
-  ],
-  [
-    "src/services/package.js",
-    "file/src/services/package.js.html",
-    "src/services/package.js",
-    "file"
-  ],
-  [
-    "src/services/package.js~packageservice#constructor",
-    "class/src/services/package.js~PackageService.html#instance-constructor-constructor",
-    "src/services/package.js~PackageService#constructor",
-    "method"
-  ],
-  [
-    "src/services/package.js~packageservice#error",
-    "class/src/services/package.js~PackageService.html#instance-method-error",
-    "src/services/package.js~PackageService#error",
-    "method"
-  ],
-  [
-    "src/services/package.js~packageservice#success",
-    "class/src/services/package.js~PackageService.html#instance-method-success",
-    "src/services/package.js~PackageService#success",
-    "method"
-  ],
-  [
-    "src/services/password.js",
-    "file/src/services/password.js.html",
-    "src/services/password.js",
-    "file"
-  ],
-  [
-    "src/services/password.js~passwordservice#constructor",
-    "class/src/services/password.js~PasswordService.html#instance-constructor-constructor",
-    "src/services/password.js~PasswordService#constructor",
-    "method"
-  ],
-  [
-    "src/services/password.js~passwordservice#issue",
-    "class/src/services/password.js~PasswordService.html#instance-method-issue",
-    "src/services/password.js~PasswordService#issue",
-    "method"
-  ],
-  [
-    "src/services/password.js~passwordservice#options",
-    "class/src/services/password.js~PasswordService.html#instance-member-options",
-    "src/services/password.js~PasswordService#options",
-    "member"
-  ],
-  [
-    "src/services/password.js~passwordservice#verify",
-    "class/src/services/password.js~PasswordService.html#instance-method-verify",
-    "src/services/password.js~PasswordService#verify",
-    "method"
-  ],
-  [
-    "src/services/short-id.js",
-    "file/src/services/short-id.js.html",
-    "src/services/short-id.js",
-    "file"
-  ],
-  [
-    "src/services/short-id.js~shortidservice#constructor",
-    "class/src/services/short-id.js~ShortIdService.html#instance-constructor-constructor",
-    "src/services/short-id.js~ShortIdService#constructor",
-    "method"
-  ],
-  [
-    "src/services/short-id.js~shortidservice#issue",
-    "class/src/services/short-id.js~ShortIdService.html#instance-method-issue",
-    "src/services/short-id.js~ShortIdService#issue",
-    "method"
-  ],
-  [
-    "src/services/short-id.js~shortidservice#options",
-    "class/src/services/short-id.js~ShortIdService.html#instance-member-options",
-    "src/services/short-id.js~ShortIdService#options",
-    "member"
-  ],
-  [
-    "src/services/template.js",
-    "file/src/services/template.js.html",
-    "src/services/template.js",
-    "file"
-  ],
-  [
-    "src/services/template.js~templateservice#create",
-    "class/src/services/template.js~TemplateService.html#instance-method-create",
-    "src/services/template.js~TemplateService#create",
-    "method"
-  ],
-  [
-    "src/services/template.js~templateservice#get",
-    "class/src/services/template.js~TemplateService.html#instance-method-get",
-    "src/services/template.js~TemplateService#get",
-    "method"
-  ],
-  [
-    "src/services/template.js~templateservice#getbyshortid",
-    "class/src/services/template.js~TemplateService.html#instance-method-getByShortId",
-    "src/services/template.js~TemplateService#getByShortId",
-    "method"
-  ],
-  [
-    "src/services/template.js~templateservice#update",
-    "class/src/services/template.js~TemplateService.html#instance-method-update",
-    "src/services/template.js~TemplateService#update",
-    "method"
-  ],
-  [
-    "src/services/template.js~templateservice#updatebyshortid",
-    "class/src/services/template.js~TemplateService.html#instance-method-updateByShortId",
-    "src/services/template.js~TemplateService#updateByShortId",
-    "method"
-  ],
-  [
-    "src/services/token.js",
-    "file/src/services/token.js.html",
-    "src/services/token.js",
-    "file"
-  ],
-  [
-    "src/services/token.js~tokenservice#constructor",
-    "class/src/services/token.js~TokenService.html#instance-constructor-constructor",
-    "src/services/token.js~TokenService#constructor",
-    "method"
-  ],
-  [
-    "src/services/token.js~tokenservice#issue",
-    "class/src/services/token.js~TokenService.html#instance-method-issue",
-    "src/services/token.js~TokenService#issue",
-    "method"
-  ],
-  [
-    "src/services/token.js~tokenservice#verify",
-    "class/src/services/token.js~TokenService.html#instance-method-verify",
-    "src/services/token.js~TokenService#verify",
-    "method"
-  ],
-  [
-    "src/services/user.js",
-    "file/src/services/user.js.html",
-    "src/services/user.js",
-    "file"
-  ],
-  [
-    "src/services/user.js~userservice#create",
-    "class/src/services/user.js~UserService.html#instance-method-create",
-    "src/services/user.js~UserService#create",
-    "method"
-  ],
-  [
-    "src/services/user.js~userservice#get",
-    "class/src/services/user.js~UserService.html#instance-method-get",
-    "src/services/user.js~UserService#get",
-    "method"
-  ],
-  [
-    "src/services/user.js~userservice#getbyshortid",
-    "class/src/services/user.js~UserService.html#instance-method-getByShortId",
-    "src/services/user.js~UserService#getByShortId",
-    "method"
-  ],
-  [
-    "src/services/user.js~userservice#getbyusername",
-    "class/src/services/user.js~UserService.html#instance-method-getByUsername",
-    "src/services/user.js~UserService#getByUsername",
-    "method"
-  ],
-  [
-    "src/services/user.js~userservice#list",
-    "class/src/services/user.js~UserService.html#instance-method-list",
-    "src/services/user.js~UserService#list",
-    "method"
-  ],
-  [
-    "src/services/user.js~userservice#update",
-    "class/src/services/user.js~UserService.html#instance-method-update",
-    "src/services/user.js~UserService#update",
-    "method"
-  ],
-  [
-    "src/services/user.js~userservice#updatebyshortid",
-    "class/src/services/user.js~UserService.html#instance-method-updateByShortId",
-    "src/services/user.js~UserService#updateByShortId",
-    "method"
-  ],
-  [
-    "src/start.js",
-    "file/src/start.js.html",
-    "src/start.js",
-    "file"
-  ],
-  [
-    "test/helpers/db.babel.js",
-    "test-file/test/helpers/db.babel.js.html",
-    "test/helpers/db.babel.js",
-    "testFile"
-  ],
-  [
-    "test/helpers/db.js",
-    "test-file/test/helpers/db.js.html",
-    "test/helpers/db.js",
-    "testFile"
-  ],
-  [
-    "test/helpers/expressobjects.js",
-    "test-file/test/helpers/expressObjects.js.html",
-    "test/helpers/expressObjects.js",
-    "testFile"
-  ],
-  [
-    "test/helpers/mock-http-server.js",
-    "test-file/test/helpers/mock-http-server.js.html",
-    "test/helpers/mock-http-server.js",
-    "testFile"
-  ],
-  [
-    "test/helpers/models.js",
-    "test-file/test/helpers/models.js.html",
-    "test/helpers/models.js",
-    "testFile"
-  ],
-  [
-    "test/helpers/start.js",
-    "test-file/test/helpers/start.js.html",
-    "test/helpers/start.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/controllers.old/app.js",
-    "test-file/test/integration.ava/controllers.old/app.js.html",
-    "test/integration.ava/controllers.old/app.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/controllers.old/auth.js",
-    "test-file/test/integration.ava/controllers.old/auth.js.html",
-    "test/integration.ava/controllers.old/auth.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/controllers.old/organization.js",
-    "test-file/test/integration.ava/controllers.old/organization.js.html",
-    "test/integration.ava/controllers.old/organization.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/controllers.old/template.js",
-    "test-file/test/integration.ava/controllers.old/template.js.html",
-    "test/integration.ava/controllers.old/template.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/controllers.old/user.js",
-    "test-file/test/integration.ava/controllers.old/user.js.html",
-    "test/integration.ava/controllers.old/user.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models.old/app.js",
-    "test-file/test/integration.ava/models.old/app.js.html",
-    "test/integration.ava/models.old/app.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models.old/base.js",
-    "test-file/test/integration.ava/models.old/base.js.html",
-    "test/integration.ava/models.old/base.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models.old/flow.js",
-    "test-file/test/integration.ava/models.old/flow.js.html",
-    "test/integration.ava/models.old/flow.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models.old/organization.js",
-    "test-file/test/integration.ava/models.old/organization.js.html",
-    "test/integration.ava/models.old/organization.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models.old/template.js",
-    "test-file/test/integration.ava/models.old/template.js.html",
-    "test/integration.ava/models.old/template.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models.old/user.js",
-    "test-file/test/integration.ava/models.old/user.js.html",
-    "test/integration.ava/models.old/user.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models/application.js",
-    "test-file/test/integration.ava/models/application.js.html",
-    "test/integration.ava/models/application.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models/core.js",
-    "test-file/test/integration.ava/models/core.js.html",
-    "test/integration.ava/models/core.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models/organization.js",
-    "test-file/test/integration.ava/models/organization.js.html",
-    "test/integration.ava/models/organization.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/models/root.js",
-    "test-file/test/integration.ava/models/root.js.html",
-    "test/integration.ava/models/root.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/nodes.old/core.js",
-    "test-file/test/integration.ava/nodes.old/core.js.html",
-    "test/integration.ava/nodes.old/core.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/nodes.older/app.js",
-    "test-file/test/integration.ava/nodes.older/app.js.html",
-    "test/integration.ava/nodes.older/app.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/nodes.older/bucket.js",
-    "test-file/test/integration.ava/nodes.older/bucket.js.html",
-    "test/integration.ava/nodes.older/bucket.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/nodes.older/organization.js",
-    "test-file/test/integration.ava/nodes.older/organization.js.html",
-    "test/integration.ava/nodes.older/organization.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/nodes.older/user.js",
-    "test-file/test/integration.ava/nodes.older/user.js.html",
-    "test/integration.ava/nodes.older/user.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/routes/index.js",
-    "test-file/test/integration.ava/routes/index.js.html",
-    "test/integration.ava/routes/index.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/app.js",
-    "test-file/test/integration.ava/services/app.js.html",
-    "test/integration.ava/services/app.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/auth.js",
-    "test-file/test/integration.ava/services/auth.js.html",
-    "test/integration.ava/services/auth.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/organization.js",
-    "test-file/test/integration.ava/services/organization.js.html",
-    "test/integration.ava/services/organization.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/package.js",
-    "test-file/test/integration.ava/services/package.js.html",
-    "test/integration.ava/services/package.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/password.js",
-    "test-file/test/integration.ava/services/password.js.html",
-    "test/integration.ava/services/password.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/template.js",
-    "test-file/test/integration.ava/services/template.js.html",
-    "test/integration.ava/services/template.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/token.js",
-    "test-file/test/integration.ava/services/token.js.html",
-    "test/integration.ava/services/token.js",
-    "testFile"
-  ],
-  [
-    "test/integration.ava/services/user.js",
-    "test-file/test/integration.ava/services/user.js.html",
-    "test/integration.ava/services/user.js",
-    "testFile"
-  ],
-  [
-    "test/integration/models/template.js",
-    "test-file/test/integration/models/template.js.html",
-    "test/integration/models/template.js",
-    "testFile"
-  ],
-  [
-    "test/integration/suite.js",
-    "test-file/test/integration/suite.js.html",
-    "test/integration/suite.js",
-    "testFile"
-  ],
-  [
-    "test/unit.ava/lib/database/driver.js",
-    "test-file/test/unit.ava/lib/database/driver.js.html",
-    "test/unit.ava/lib/database/driver.js",
-    "testFile"
-  ],
-  [
-    "test/unit.ava/lib/utils/object.js",
-    "test-file/test/unit.ava/lib/utils/object.js.html",
-    "test/unit.ava/lib/utils/object.js",
-    "testFile"
-  ],
-  [
-    "test/unit.ava/models/base.js",
-    "test-file/test/unit.ava/models/base.js.html",
-    "test/unit.ava/models/base.js",
-    "testFile"
-  ],
-  [
-    "test/unit/controllers/taxonomies.js",
-    "test-file/test/unit/controllers/taxonomies.js.html",
-    "test/unit/controllers/taxonomies.js",
-    "testFile"
-  ],
-  [
-    "test/unit/controllers/users.js",
-    "test-file/test/unit/controllers/users.js.html",
-    "test/unit/controllers/users.js",
-    "testFile"
-  ],
-  [
-    "test/unit/lib/database/driver.js",
-    "test-file/test/unit/lib/database/driver.js.html",
-    "test/unit/lib/database/driver.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/auth.js",
-    "test-file/test/unit/models/auth.js.html",
-    "test/unit/models/auth.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/document.js",
-    "test-file/test/unit/models/document.js.html",
-    "test/unit/models/document.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/organization.js",
-    "test-file/test/unit/models/organization.js.html",
-    "test/unit/models/organization.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/root.js",
-    "test-file/test/unit/models/root.js.html",
-    "test/unit/models/root.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/taxonomy.js",
-    "test-file/test/unit/models/taxonomy.js.html",
-    "test/unit/models/taxonomy.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/template.js",
-    "test-file/test/unit/models/template.js.html",
-    "test/unit/models/template.js",
-    "testFile"
-  ],
-  [
-    "test/unit/models/user.js",
-    "test-file/test/unit/models/user.js.html",
-    "test/unit/models/user.js",
-    "testFile"
-  ],
-  [
-    "test/unit/services/password.js",
-    "test-file/test/unit/services/password.js.html",
-    "test/unit/services/password.js",
-    "testFile"
-  ],
-  [
-    "test/unit/suite.js",
-    "test-file/test/unit/suite.js.html",
-    "test/unit/suite.js",
-    "testFile"
+    &quot;test/unit/suite.js&quot;,
+    &quot;test-file/test/unit/suite.js.html&quot;,
+    &quot;test/unit/suite.js&quot;,
+    &quot;testFile&quot;
   ]
 ]

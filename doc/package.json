@@ -10,6 +10,7 @@
     "start": "node dist/start.js",
     "start-reqlite": "node_modules/forever/bin/forever start node_modules/reqlite/lib/node.js --port-offset 1 -s",
     "stop-reqlite": "node_modules/forever/bin/forever stop node_modules/reqlite/lib/node.js --port-offset 1 -s",
+    "test": "export NODE_ENV=test; export TEST_TYPE=unit; gulp stop-reqlite; npm run start-reqlite; node ./test/helpers/db.babel.js --unit; gulp test; npm run stop-reqlite",
     "test-clean": "export NODE_ENV=test; node ./test/helpers/db.babel.js --drop --integration && gulp test-integration",
     "test-integration": "export NODE_ENV=test; export TEST_TYPE=integration; node ./test/helpers/db.babel.js --integration && gulp mocha-integration",
     "test-unit": "export NODE_ENV=test; export TEST_TYPE=unit; gulp stop-reqlite; npm run start-reqlite; node ./test/helpers/db.babel.js --unit; gulp mocha-unit; npm run stop-reqlite"
@@ -97,8 +98,8 @@
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "structure-test-helpers": "*",
-    "supertest": "^1.2.0",
-    "supertest-as-promised": "^3.1.0",
+    "supertest": "^2.0.0",
+    "supertest-as-promised": "^3.2.0",
     "url-loader": "^0.5.7"
   }
 }

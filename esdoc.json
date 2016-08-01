@@ -19,6 +19,9 @@
   "plugins": [
     {
       "name": "esdoc-es7-plugin"
+    },
+    {
+      "name": "esdoc-html-plugin"
     }
   ],
 

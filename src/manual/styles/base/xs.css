@@ -1,5 +1,17 @@
 body {
-  background-color: #f5f6f7;
+  background-color: #fff;
+  height: 100vh;
+}
+
+a {
+  color: #999;
+  font-size: 13px;
+}
+
+.layout-container > header {
+
+  border-bottom: 1px solid #fff;
+
 }
 
 .navigation {
@@ -7,13 +19,18 @@ body {
   li {
 
     .nav-dir-path {
-      //display: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: capitalize;
     }
 
-    &:first-child {
+    &.hide-path {
+
       .nav-dir-path {
-        display: block;
+        display: none;
       }
+
     }
 
   }

@@ -1,14 +1,14 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 220,
+  "end": 267,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 12,
+      "line": 13,
       "column": 0
     }
   },
@@ -143,22 +143,22 @@
             "column": 38
           }
         },
-        "value": "../../lib/server",
-        "rawValue": "../../lib/server",
-        "raw": "'../../lib/server'"
+        "value": "../../src/server",
+        "rawValue": "../../src/server",
+        "raw": "'../../src/server'"
       }
     },
     {
       "type": "FunctionDeclaration",
       "start": 84,
-      "end": 188,
+      "end": 235,
       "loc": {
         "start": {
           "line": 4,
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 1
         }
       },
@@ -234,14 +234,14 @@
       "body": {
         "type": "BlockStatement",
         "start": 122,
-        "end": 188,
+        "end": 235,
         "loc": {
           "start": {
             "line": 4,
             "column": 38
           },
           "end": {
-            "line": 9,
+            "line": 10,
             "column": 1
           }
         },
@@ -338,82 +338,107 @@
                       },
                       "name": "options"
                     }
-                  ]
-                }
+                  ],
+                  "trailingComments": null
+                },
+                "trailingComments": null
               }
             ],
-            "kind": "var"
+            "kind": "var",
+            "trailingComments": [
+              {
+                "type": "CommentLine",
+                "value": " Supertest wants the express server object",
+                "start": 160,
+                "end": 204,
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 46
+                  }
+                },
+                "range": [
+                  160,
+                  204
+                ]
+              }
+            ]
           },
           {
             "type": "ReturnStatement",
-            "start": 160,
-            "end": 186,
+            "start": 207,
+            "end": 233,
             "loc": {
               "start": {
-                "line": 8,
+                "line": 9,
                 "column": 2
               },
               "end": {
-                "line": 8,
+                "line": 9,
                 "column": 28
               }
             },
             "argument": {
               "type": "CallExpression",
-              "start": 167,
-              "end": 186,
+              "start": 214,
+              "end": 233,
               "loc": {
                 "start": {
-                  "line": 8,
+                  "line": 9,
                   "column": 9
                 },
                 "end": {
-                  "line": 8,
+                  "line": 9,
                   "column": 28
                 }
               },
               "callee": {
                 "type": "Identifier",
-                "start": 167,
-                "end": 174,
+                "start": 214,
+                "end": 221,
                 "loc": {
                   "start": {
-                    "line": 8,
+                    "line": 9,
                     "column": 9
                   },
                   "end": {
-                    "line": 8,
+                    "line": 9,
                     "column": 16
                   }
                 },
-                "name": "request"
+                "name": "request",
+                "leadingComments": null
               },
               "arguments": [
                 {
                   "type": "MemberExpression",
-                  "start": 175,
-                  "end": 185,
+                  "start": 222,
+                  "end": 232,
                   "loc": {
                     "start": {
-                      "line": 8,
+                      "line": 9,
                       "column": 17
                     },
                     "end": {
-                      "line": 8,
+                      "line": 9,
                       "column": 27
                     }
                   },
                   "object": {
                     "type": "Identifier",
-                    "start": 175,
-                    "end": 178,
+                    "start": 222,
+                    "end": 225,
                     "loc": {
                       "start": {
-                        "line": 8,
+                        "line": 9,
                         "column": 17
                       },
                       "end": {
-                        "line": 8,
+                        "line": 9,
                         "column": 20
                       }
                     },
@@ -421,15 +446,15 @@
                   },
                   "property": {
                     "type": "Identifier",
-                    "start": 179,
-                    "end": 185,
+                    "start": 226,
+                    "end": 232,
                     "loc": {
                       "start": {
-                        "line": 8,
+                        "line": 9,
                         "column": 21
                       },
                       "end": {
-                        "line": 8,
+                        "line": 9,
                         "column": 27
                       }
                     },
@@ -437,37 +462,60 @@
                   },
                   "computed": false
                 }
-              ]
-            }
+              ],
+              "leadingComments": null
+            },
+            "leadingComments": [
+              {
+                "type": "CommentLine",
+                "value": " Supertest wants the express server object",
+                "start": 160,
+                "end": 204,
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 46
+                  }
+                },
+                "range": [
+                  160,
+                  204
+                ]
+              }
+            ]
           }
         ]
       }
     },
     {
       "type": "ExportDefaultDeclaration",
-      "start": 190,
-      "end": 219,
+      "start": 237,
+      "end": 266,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 12,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 29
         }
       },
       "declaration": {
         "type": "Identifier",
-        "start": 205,
-        "end": 219,
+        "start": 252,
+        "end": 266,
         "loc": {
           "start": {
-            "line": 11,
+            "line": 12,
             "column": 15
           },
           "end": {
-            "line": 11,
+            "line": 12,
             "column": 29
           }
         },

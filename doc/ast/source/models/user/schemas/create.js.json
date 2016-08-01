@@ -1,7 +1,7 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 154,
+  "end": 170,
   "loc": {
     "start": {
       "line": 1,
@@ -147,7 +147,7 @@
     {
       "type": "ExportDefaultDeclaration",
       "start": 37,
-      "end": 153,
+      "end": 169,
       "loc": {
         "start": {
           "line": 3,
@@ -161,7 +161,7 @@
       "declaration": {
         "type": "NewExpression",
         "start": 52,
-        "end": 153,
+        "end": 169,
         "loc": {
           "start": {
             "line": 3,
@@ -192,7 +192,7 @@
           {
             "type": "ObjectExpression",
             "start": 63,
-            "end": 152,
+            "end": 168,
             "loc": {
               "start": {
                 "line": 3,
@@ -310,7 +310,7 @@
                 "key": {
                   "type": "Identifier",
                   "start": 96,
-                  "end": 100,
+                  "end": 104,
                   "loc": {
                     "start": {
                       "line": 5,
@@ -318,10 +318,10 @@
                     },
                     "end": {
                       "line": 5,
-                      "column": 6
+                      "column": 10
                     }
                   },
-                  "name": "hash"
+                  "name": "username"
                 },
                 "value": {
                   "type": "CallExpression",
@@ -379,7 +379,7 @@
               {
                 "type": "Property",
                 "start": 125,
-                "end": 150,
+                "end": 166,
                 "loc": {
                   "start": {
                     "line": 6,
@@ -387,7 +387,7 @@
                   },
                   "end": {
                     "line": 6,
-                    "column": 27
+                    "column": 43
                   }
                 },
                 "method": false,
@@ -407,12 +407,12 @@
                       "column": 10
                     }
                   },
-                  "name": "username"
+                  "name": "password"
                 },
                 "value": {
                   "type": "CallExpression",
                   "start": 136,
-                  "end": 150,
+                  "end": 166,
                   "loc": {
                     "start": {
                       "line": 6,
@@ -420,7 +420,7 @@
                     },
                     "end": {
                       "line": 6,
-                      "column": 27
+                      "column": 43
                     }
                   },
                   "callee": {
@@ -443,7 +443,7 @@
                     {
                       "type": "Literal",
                       "start": 141,
-                      "end": 149,
+                      "end": 151,
                       "loc": {
                         "start": {
                           "line": 6,
@@ -451,12 +451,82 @@
                         },
                         "end": {
                           "line": 6,
-                          "column": 26
+                          "column": 28
                         }
                       },
-                      "value": "string",
-                      "rawValue": "string",
-                      "raw": "'string'"
+                      "value": "password",
+                      "rawValue": "password",
+                      "raw": "'password'"
+                    },
+                    {
+                      "type": "ObjectExpression",
+                      "start": 153,
+                      "end": 165,
+                      "loc": {
+                        "start": {
+                          "line": 6,
+                          "column": 30
+                        },
+                        "end": {
+                          "line": 6,
+                          "column": 42
+                        }
+                      },
+                      "properties": [
+                        {
+                          "type": "Property",
+                          "start": 154,
+                          "end": 164,
+                          "loc": {
+                            "start": {
+                              "line": 6,
+                              "column": 31
+                            },
+                            "end": {
+                              "line": 6,
+                              "column": 41
+                            }
+                          },
+                          "method": false,
+                          "shorthand": false,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 154,
+                            "end": 158,
+                            "loc": {
+                              "start": {
+                                "line": 6,
+                                "column": 31
+                              },
+                              "end": {
+                                "line": 6,
+                                "column": 35
+                              }
+                            },
+                            "name": "hash"
+                          },
+                          "value": {
+                            "type": "Literal",
+                            "start": 160,
+                            "end": 164,
+                            "loc": {
+                              "start": {
+                                "line": 6,
+                                "column": 37
+                              },
+                              "end": {
+                                "line": 6,
+                                "column": 41
+                              }
+                            },
+                            "value": true,
+                            "rawValue": true,
+                            "raw": "true"
+                          },
+                          "kind": "init"
+                        }
+                      ]
                     }
                   ]
                 },

@@ -1,7 +1,7 @@
 {
-  "coverage": "58.41%",
-  "expectCount": 202,
-  "actualCount": 118,
+  "coverage": "63.2%",
+  "expectCount": 212,
+  "actualCount": 134,
   "files": {
     "src/models/application/index.js": {
       "expectCount": 2,
@@ -25,8 +25,8 @@
       "undocumentLines": []
     },
     "src/controllers/auth/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "src/models/auth/index.js": {
@@ -63,18 +63,14 @@
       "undocumentLines": []
     },
     "src/server/router.js": {
-      "expectCount": 10,
-      "actualCount": 1,
+      "expectCount": 7,
+      "actualCount": 2,
       "undocumentLines": [
-        40,
-        37,
-        41,
-        51,
-        91,
-        38,
-        43,
-        44,
-        95
+        47,
+        48,
+        45,
+        49,
+        50
       ]
     },
     "src/models/digital-asset/index.js": {
@@ -89,11 +85,9 @@
     },
     "src/server/dispatcher.js": {
       "expectCount": 4,
-      "actualCount": 1,
+      "actualCount": 3,
       "undocumentLines": [
-        16,
-        20,
-        17
+        24
       ]
     },
     "src/models/document/index.js": {
@@ -112,8 +106,8 @@
       "undocumentLines": []
     },
     "src/controllers/documents/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/lib/eventemitter.js": {
@@ -199,8 +193,8 @@
       ]
     },
     "src/controllers/organizations/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/services/package.js": {
@@ -311,8 +305,8 @@
       ]
     },
     "src/controllers/templates/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/services/token.js": {
@@ -368,14 +362,14 @@
         11
       ]
     },
-    "src/mixins/mixin.js": {
+    "src/lib/mixin.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         1
       ]
     },
-    "src/lib/mixin.js": {
+    "src/mixins/mixin.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [

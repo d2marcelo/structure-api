@@ -1,7 +1,7 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 314,
+  "end": 311,
   "loc": {
     "start": {
       "line": 1,
@@ -17,7 +17,7 @@
     {
       "type": "ImportDeclaration",
       "start": 0,
-      "end": 54,
+      "end": 51,
       "loc": {
         "start": {
           "line": 1,
@@ -25,7 +25,7 @@
         },
         "end": {
           "line": 1,
-          "column": 54
+          "column": 51
         }
       },
       "specifiers": [
@@ -64,16 +64,16 @@
       "importKind": "value",
       "source": {
         "type": "Literal",
-        "start": 17,
-        "end": 54,
+        "start": 14,
+        "end": 51,
         "loc": {
           "start": {
             "line": 1,
-            "column": 17
+            "column": 14
           },
           "end": {
             "line": 1,
-            "column": 54
+            "column": 51
           }
         },
         "value": "../../../../src/lib/database/driver",
@@ -83,8 +83,8 @@
     },
     {
       "type": "ExpressionStatement",
-      "start": 56,
-      "end": 313,
+      "start": 53,
+      "end": 310,
       "loc": {
         "start": {
           "line": 3,
@@ -97,8 +97,8 @@
       },
       "expression": {
         "type": "CallExpression",
-        "start": 56,
-        "end": 313,
+        "start": 53,
+        "end": 310,
         "loc": {
           "start": {
             "line": 3,
@@ -111,8 +111,8 @@
         },
         "callee": {
           "type": "Identifier",
-          "start": 56,
-          "end": 64,
+          "start": 53,
+          "end": 61,
           "loc": {
             "start": {
               "line": 3,
@@ -128,8 +128,8 @@
         "arguments": [
           {
             "type": "Literal",
-            "start": 65,
-            "end": 73,
+            "start": 62,
+            "end": 70,
             "loc": {
               "start": {
                 "line": 3,
@@ -146,8 +146,8 @@
           },
           {
             "type": "FunctionExpression",
-            "start": 75,
-            "end": 312,
+            "start": 72,
+            "end": 309,
             "loc": {
               "start": {
                 "line": 3,
@@ -165,8 +165,8 @@
             "params": [],
             "body": {
               "type": "BlockStatement",
-              "start": 86,
-              "end": 312,
+              "start": 83,
+              "end": 309,
               "loc": {
                 "start": {
                   "line": 3,
@@ -180,8 +180,8 @@
               "body": [
                 {
                   "type": "ExpressionStatement",
-                  "start": 237,
-                  "end": 309,
+                  "start": 234,
+                  "end": 306,
                   "loc": {
                     "start": {
                       "line": 9,
@@ -194,8 +194,8 @@
                   },
                   "expression": {
                     "type": "CallExpression",
-                    "start": 237,
-                    "end": 309,
+                    "start": 234,
+                    "end": 306,
                     "loc": {
                       "start": {
                         "line": 9,
@@ -208,8 +208,8 @@
                     },
                     "callee": {
                       "type": "Identifier",
-                      "start": 237,
-                      "end": 239,
+                      "start": 234,
+                      "end": 236,
                       "loc": {
                         "start": {
                           "line": 9,
@@ -226,8 +226,8 @@
                     "arguments": [
                       {
                         "type": "Literal",
-                        "start": 240,
-                        "end": 260,
+                        "start": 237,
+                        "end": 257,
                         "loc": {
                           "start": {
                             "line": 9,
@@ -244,8 +244,8 @@
                       },
                       {
                         "type": "FunctionExpression",
-                        "start": 262,
-                        "end": 308,
+                        "start": 259,
+                        "end": 305,
                         "loc": {
                           "start": {
                             "line": 9,
@@ -263,8 +263,8 @@
                         "params": [
                           {
                             "type": "Identifier",
-                            "start": 271,
-                            "end": 275,
+                            "start": 268,
+                            "end": 272,
                             "loc": {
                               "start": {
                                 "line": 9,
@@ -280,8 +280,8 @@
                         ],
                         "body": {
                           "type": "BlockStatement",
-                          "start": 277,
-                          "end": 308,
+                          "start": 274,
+                          "end": 305,
                           "loc": {
                             "start": {
                               "line": 9,
@@ -295,8 +295,8 @@
                           "body": [
                             {
                               "type": "ExpressionStatement",
-                              "start": 284,
-                              "end": 291,
+                              "start": 281,
+                              "end": 288,
                               "loc": {
                                 "start": {
                                   "line": 11,
@@ -309,8 +309,8 @@
                               },
                               "expression": {
                                 "type": "CallExpression",
-                                "start": 284,
-                                "end": 291,
+                                "start": 281,
+                                "end": 288,
                                 "loc": {
                                   "start": {
                                     "line": 11,
@@ -323,8 +323,8 @@
                                 },
                                 "callee": {
                                   "type": "MemberExpression",
-                                  "start": 284,
-                                  "end": 289,
+                                  "start": 281,
+                                  "end": 286,
                                   "loc": {
                                     "start": {
                                       "line": 11,
@@ -337,8 +337,8 @@
                                   },
                                   "object": {
                                     "type": "Identifier",
-                                    "start": 284,
-                                    "end": 285,
+                                    "start": 281,
+                                    "end": 282,
                                     "loc": {
                                       "start": {
                                         "line": 11,
@@ -353,8 +353,8 @@
                                   },
                                   "property": {
                                     "type": "Identifier",
-                                    "start": 286,
-                                    "end": 289,
+                                    "start": 283,
+                                    "end": 286,
                                     "loc": {
                                       "start": {
                                         "line": 11,
@@ -374,8 +374,8 @@
                             },
                             {
                               "type": "ExpressionStatement",
-                              "start": 297,
-                              "end": 303,
+                              "start": 294,
+                              "end": 300,
                               "loc": {
                                 "start": {
                                   "line": 13,
@@ -388,8 +388,8 @@
                               },
                               "expression": {
                                 "type": "CallExpression",
-                                "start": 297,
-                                "end": 303,
+                                "start": 294,
+                                "end": 300,
                                 "loc": {
                                   "start": {
                                     "line": 13,
@@ -402,8 +402,8 @@
                                 },
                                 "callee": {
                                   "type": "Identifier",
-                                  "start": 297,
-                                  "end": 301,
+                                  "start": 294,
+                                  "end": 298,
                                   "loc": {
                                     "start": {
                                       "line": 13,
@@ -424,15 +424,15 @@
                       }
                     ],
                     "leadingComments": null,
-                    "_esdocTestId": 142,
-                    "_esdocTestName": "it142"
+                    "_esdocTestId": 38,
+                    "_esdocTestName": "it38"
                   },
                   "leadingComments": [
                     {
                       "type": "Block",
                       "value": "\n  NOTE: this may seem like a silly test, but it's necessary. If this test fails,\n  it means the driver is not being exported correctly.\n  ",
-                      "start": 91,
-                      "end": 234,
+                      "start": 88,
+                      "end": 231,
                       "loc": {
                         "start": {
                           "line": 5,
@@ -444,8 +444,8 @@
                         }
                       },
                       "range": [
-                        91,
-                        234
+                        88,
+                        231
                       ]
                     }
                   ]
@@ -454,8 +454,8 @@
             }
           }
         ],
-        "_esdocTestId": 141,
-        "_esdocTestName": "describe141"
+        "_esdocTestId": 37,
+        "_esdocTestName": "describe37"
       }
     }
   ]
